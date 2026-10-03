@@ -1,0 +1,814 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "alexnet",
+ "N": 64,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 0,
+  "d_peer": 0,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "25e5e52dbf10c0afcf2bc7174510f53d515ebf90",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 441,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 36274,
+   "unconstrained_optimum": 0.05777483799727128,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 14.100231759002781
+  },
+  "cost": 0.05777483799727129,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.027468233166451615,
+   "intra_transport": 0.02546492368,
+   "intra_reduction": 0.0030952309508196717,
+   "inter": 0.0017464502,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 920032736.0,
+  "memory_node1": 920032736.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {
+  "dp_N": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 560,
+    "unconstrained_optimum": 0.21448690977697868,
+    "memory_slack": false,
+    "incumbent": 0.22935602351949233,
+    "mode": "labels (exact, branch-and-bound)",
+    "labels_per_layer": [
+     1,
+     2,
+     4,
+     8,
+     16,
+     32,
+     32,
+     19
+    ],
+    "seconds": 0.08985213000050862
+   },
+   "cost": 0.2285521851439732,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.014260911070967745,
+    "intra_transport": 0.18026390192,
+    "intra_reduction": 0.03402737215300546,
+    "inter": 0.0,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 11810111968.0,
+   "memory_node1": 841931232.0,
+   "memory_budget_after_reserve": 11811160064.0
+  },
+  "owt": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 547,
+    "unconstrained_optimum": 0.08400099590327516,
+    "memory_slack": true,
+    "mode": "cost-only (memory provably non-binding)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.002949614001408918
+   },
+   "cost": 0.08400099590327517,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=3|radix=5x5x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=50|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.01428458859354839,
+    "intra_transport": 0.05365393268,
+    "intra_reduction": 0.013775808349726776,
+    "inter": 0.00228666628,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 4485971440.0,
+   "memory_node1": 364068336.0,
+   "memory_budget_after_reserve": 11811160064.0,
+   "definition_configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ]
+  }
+ },
+ "verification": {
+  "summary": {
+   "expected_operations": 22,
+   "network_operations": 12,
+   "by_status": {
+    "checked-actual": 12,
+    "local": 10
+   },
+   "packing_checked": 12,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00010999776,
+    "verified_reduction": 1.6549071038251365e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_3",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0008372835200000001,
+    "verified_reduction": 0.00021836590163934426
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_6",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0017500361600000002,
+    "verified_reduction": 0.0004716485245901639
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_8",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0023159395199999996,
+    "verified_reduction": 0.0006286828415300546
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015609648000000002,
+    "verified_reduction": 0.0004191825136612022
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00085545472,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00019485184,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.012104650520000001,
+    "verified_reduction": 0.000928247606557377
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_1",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_1->classifier_4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_4",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393764119999999,
+    "verified_reduction": 0.0004125544918032787
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_4",
+    "candidate": "C-A|g=8|rep|k=0",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_4->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 8.013313914998434,
+  "construction": {
+   "ar_groups": 18,
+   "ag_groups": 192,
+   "a2a": 2265,
+   "seconds": {
+    "AR": 2.656416810998053,
+    "AG": 4.096812699022848,
+    "A2A": 0.6688869330100715
+   }
+  },
+  "plan_seconds": 14.103938821997872,
+  "baselines_seconds": 0.09325377699860837,
+  "verification_seconds": 0.8271853740006918,
+  "total_seconds": 23.046400348001043,
+  "pack": {
+   "hits": 7386,
+   "misses": 2729,
+   "pack_seconds": 0.2041756670550967,
+   "cached_routes": 286254
+  },
+  "peak_rss_bytes": 268566528
+ }
+}

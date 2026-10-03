@@ -1,0 +1,5 @@
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload alexnet --N 256 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload vgg16 --N 256 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload googlenet --N 128 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload resnet50 --N 128 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload alexnet --N 512 --tag final_cold --baselines '' --no-verify

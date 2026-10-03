@@ -1,0 +1,138 @@
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.3050307390003582, 'AG': 4.308466217999012, 'A2A': 1.1303663949383917}} in 7.5s
+alexnet N=64: LHAS 0.065667 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.239046 owt=0.101275 | total 37.0s -> /home/claude/lhas-repro/results/raw/sens/nominal/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.7248258850013372, 'AG': 6.195094958997288, 'A2A': 1.4949688319720735}} in 10.4s
+alexnet N=64: LHAS 0.060921 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.236249 owt=0.098472 | total 35.6s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.25/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.5443543380060873, 'AG': 5.755258530012725, 'A2A': 1.3525634269863076}} in 9.4s
+alexnet N=64: LHAS 0.056176 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.233452 owt=0.095670 | total 41.7s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.5/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.856091274999926, 'AG': 6.422068987001694, 'A2A': 1.61921894700572}} in 10.8s
+alexnet N=64: LHAS 0.051272 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.230656 owt=0.092867 | total 40.4s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.75/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.1888748329965892, 'AG': 4.609278231002463, 'A2A': 1.0838724130135233}} in 7.7s
+alexnet N=64: LHAS 0.045702 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.227848 owt=0.090054 | total 30.4s -> /home/claude/lhas-repro/results/raw/sens/alpha_1.0/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.4268611970019265, 'AG': 4.363315624990719, 'A2A': 1.0642424400393793}} in 7.5s
+alexnet N=64: LHAS 0.089232 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.253790 owt=0.116043 | total 31.2s -> /home/claude/lhas-repro/results/raw/sens/rho_0.25/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.1382775860020047, 'AG': 4.517497465987617, 'A2A': 1.1927415219415707}} in 7.6s
+alexnet N=64: LHAS 0.056349 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.234131 owt=0.096352 | total 31.8s -> /home/claude/lhas-repro/results/raw/sens/rho_0.75/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.2284718449973298, 'AG': 4.21249368399549, 'A2A': 0.9241287850054505}} in 6.9s
+alexnet N=64: LHAS 0.051691 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.231674 owt=0.093891 | total 30.0s -> /home/claude/lhas-repro/results/raw/sens/rho_1.0/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.159656053998333, 'AG': 4.666302962998088, 'A2A': 1.046202838941099}} in 7.5s
+alexnet N=64: LHAS 0.067493 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.272562 owt=0.113782 | total 32.6s -> /home/claude/lhas-repro/results/raw/sens/redeff_0.25/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.3980501500009268, 'AG': 5.303898008016404, 'A2A': 1.3681833009995898}} in 8.9s
+alexnet N=64: LHAS 0.064753 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.222288 owt=0.095021 | total 32.4s -> /home/claude/lhas-repro/results/raw/sens/redeff_1.0/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.1786293209988798, 'AG': 4.322443541004759, 'A2A': 0.9862211199506419}} in 7.2s
+alexnet N=64: LHAS 0.065107 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.238606 owt=0.100195 | total 30.5s -> /home/claude/lhas-repro/results/raw/sens/tsetup_5e-6/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.4139928049935406, 'AG': 4.345750902013606, 'A2A': 1.0997132760276145}} in 7.5s
+alexnet N=64: LHAS 0.067738 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.240668 owt=0.105265 | total 30.7s -> /home/claude/lhas-repro/results/raw/sens/tsetup_100e-6/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.3566947869967407, 'AG': 4.856347407991052, 'A2A': 1.200973747028911}} in 8.0s
+alexnet N=64: LHAS 0.067991 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.269144 owt=0.119519 | total 27.4s -> /home/claude/lhas-repro/results/raw/sens/lamW_32/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.6619099490017106, 'AG': 5.482106310990275, 'A2A': 1.1280790260152571}} in 9.0s
+alexnet N=64: LHAS 0.062912 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.239046 owt=0.098043 | total 43.0s -> /home/claude/lhas-repro/results/raw/sens/lamW_128/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.2186400880000292, 'AG': 4.56388918401899, 'A2A': 1.1943026589706278}} in 7.7s
+alexnet N=64: LHAS 0.062009 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.239046 owt=0.095856 | total 42.5s -> /home/claude/lhas-repro/results/raw/sens/lamW_256/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 2.2045947549995617, 'AG': 4.850842677000401, 'A2A': 0.9762662540251767}} in 8.7s
+alexnet N=64: LHAS 0.062525 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.264985 owt=0.105674 | total 72.4s -> /home/claude/lhas-repro/results/raw/sens/reach_15/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 2.4297199830016325, 'AG': 4.594798258001902, 'A2A': 0.9371811039891327}} in 8.7s
+alexnet N=64: LHAS 0.062262 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.264396 owt=0.104755 | total 52.1s -> /home/claude/lhas-repro/results/raw/sens/reach_16/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 2.45229498399749, 'AG': 3.7822269610060175, 'A2A': 0.7101181619982526}} in 7.6s
+alexnet N=64: LHAS 0.058258 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.227856 owt=0.084485 | total 20.3s -> /home/claude/lhas-repro/results/raw/sens/reach_unrestricted_nopeer/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.3001651219983614, 'AG': 4.530743634999453, 'A2A': 1.038027845985198}} in 7.5s
+alexnet N=64: LHAS 0.100851 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.429254 owt=0.173909 | total 33.7s -> /home/claude/lhas-repro/results/raw/sens/eps_0.5/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.8157303290026903, 'AG': 6.507476961003704, 'A2A': 1.562724294990403}} in 10.8s
+alexnet N=64: LHAS 0.071034 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.496621 owt=0.183377 | total 40.8s -> /home/claude/lhas-repro/results/raw/sens/whole_item/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.3339526260006096, 'AG': 4.700650702980056, 'A2A': 0.9990848029683548}} in 7.7s
+alexnet N=64: LHAS 0.065183 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.238562 owt=0.100791 | total 29.9s -> /home/claude/lhas-repro/results/raw/sens/raw_omit/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 0.43771750000087195, 'AG': 3.7841822690024856, 'A2A': 0.9518865670270316}} in 5.8s
+alexnet N=64: LHAS 0.067766 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=nan owt=0.107647 | total 6.6s -> /home/claude/lhas-repro/results/raw/sens/family_one-stage/alexnet_N64.json
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 0.5039720559943817, 'AG': 4.269320677007272, 'A2A': 1.1231135969646857}} in 6.5s
+alexnet N=64: LHAS 0.125688 s [cost-only (memory provably non-binding)] dp_N=0.900805 owt=0.326809 | total 7.6s -> /home/claude/lhas-repro/results/raw/sens/family_deepest/alexnet_N64.json

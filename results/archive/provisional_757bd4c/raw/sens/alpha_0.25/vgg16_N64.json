@@ -1,0 +1,1007 @@
+{
+ "workload": "vgg16",
+ "N": 64,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.25,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 0,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "lhas": {
+  "feasible": true,
+  "cost": 0.43725200610603204,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_2",
+   "features_5",
+   "features_7",
+   "features_10",
+   "features_12",
+   "features_14",
+   "features_17",
+   "features_19",
+   "features_21",
+   "features_24",
+   "features_26",
+   "features_28",
+   "classifier_0",
+   "classifier_3",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.3419886651458064,
+   "intra_transport": 0.09702860383999999,
+   "intra_reduction": 0.011895773027322405,
+   "inter": 0.0056082513199999994,
+   "overlap_credit": 0.019269287227096775
+  },
+  "memory_max": 6041713152.0,
+  "memory_node1": 4485511488.0,
+  "memory_budget": 12884901888.0,
+  "stats": {
+   "configs": [
+    5,
+    4,
+    6,
+    5,
+    14,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 55552,
+   "unconstrained_optimum": 0.4372520061060321,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    5,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 19.773427002999597
+  }
+ },
+ "runtime": {
+  "prefetch_seconds": 5.447133255998779,
+  "prefetch": {
+   "ar_groups": 13,
+   "ag_groups": 97,
+   "a2a": 1696,
+   "seconds": {
+    "AR": 1.2573071030001302,
+    "AG": 2.3813730189958733,
+    "A2A": 0.8325010879761976
+   }
+  },
+  "plan_seconds": 19.780036330999792,
+  "pack": {
+   "hits": 2785,
+   "misses": 1301,
+   "pack_seconds": 0.12494700297793315,
+   "cached_routes": 155520
+  },
+  "total_seconds": 25.284484183999666,
+  "peak_rss_bytes": 290586624
+ },
+ "baselines": {
+  "dp_N": {
+   "feasible": true,
+   "cost": 0.8590592667984137,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.31938610209032253,
+    "intra_transport": 0.5106409265600002,
+    "intra_reduction": 0.044003885901639346,
+    "inter": 0.0,
+    "overlap_credit": 0.014971647753548385
+   },
+   "memory_max": 12374717760.0,
+   "memory_node1": 4008856896.0,
+   "memory_budget": 12884901888.0,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 480,
+    "unconstrained_optimum": 0.7813121226515285,
+    "memory_slack": false,
+    "incumbent": 0.8590592667984137,
+    "mode": "labels (exact, branch-and-bound)",
+    "labels_per_layer": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     6,
+     8,
+     10,
+     12,
+     1,
+     1
+    ],
+    "seconds": 0.03616761599914753
+   },
+   "seconds": 0.03640088999964064
+  },
+  "owt": {
+   "feasible": true,
+   "cost": 0.5027218282677806,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=3|radix=5x5x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=50|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.3194097796129032,
+    "intra_transport": 0.1567353406799999,
+    "intra_reduction": 0.030099213989071033,
+    "inter": 0.012474171759999998,
+    "overlap_credit": 0.015996677774193547
+   },
+   "memory_max": 12879999648.0,
+   "memory_node1": 3411292832.0,
+   "memory_budget": 12884901888.0,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 569,
+    "unconstrained_optimum": 0.5020887799761959,
+    "memory_slack": false,
+    "incumbent": 0.5027218282677806,
+    "mode": "labels (exact, branch-and-bound)",
+    "labels_per_layer": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     5,
+     5,
+     5,
+     5,
+     5,
+     1
+    ],
+    "seconds": 0.019815951000055065
+   }
+  }
+ }
+}

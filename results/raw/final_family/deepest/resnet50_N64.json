@@ -1,0 +1,3458 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "typed-interface (exact additive minimizer, min-charge alternatives, reservation check)",
+ "workload": "resnet50",
+ "N": 64,
+ "B": 1024,
+ "family": "deepest",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "sync",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/resnet50.json",
+  "manifest_sha256": "9c83080ac06ac65d83caeada0c924273cf43c4dbec87ec8c021278fe14077eb6",
+  "code_commit": "f8bc93e4abec703a9e4a92eefc86ac39122a5780",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 440,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "cost": 0.5100227509861308,
+  "cost_unconstrained_minimizer": 0.5100227509861308,
+  "memory_feasible": true,
+  "memory_max": 5627433672.0,
+  "memory_node1": 5529970888.0,
+  "memory_budget_after_reserve": 11811160064.0,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP32",
+   "DP64",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP16",
+   "DP32",
+   "DP16",
+   "DP16",
+   "DP16",
+   "DP16",
+   "DP16",
+   "DP16",
+   "DP16"
+  ],
+  "layers": [
+   "conv1",
+   "layer1_0_conv1",
+   "layer1_0_conv2",
+   "layer1_0_conv3",
+   "layer1_0_downsample_0",
+   "layer1_1_conv1",
+   "layer1_1_conv2",
+   "layer1_1_conv3",
+   "layer1_2_conv1",
+   "layer1_2_conv2",
+   "layer1_2_conv3",
+   "layer2_0_conv1",
+   "layer2_0_conv2",
+   "layer2_0_conv3",
+   "layer2_0_downsample_0",
+   "layer2_1_conv1",
+   "layer2_1_conv2",
+   "layer2_1_conv3",
+   "layer2_2_conv1",
+   "layer2_2_conv2",
+   "layer2_2_conv3",
+   "layer2_3_conv1",
+   "layer2_3_conv2",
+   "layer2_3_conv3",
+   "layer3_0_conv1",
+   "layer3_0_conv2",
+   "layer3_0_conv3",
+   "layer3_0_downsample_0",
+   "layer3_1_conv1",
+   "layer3_1_conv2",
+   "layer3_1_conv3",
+   "layer3_2_conv1",
+   "layer3_2_conv2",
+   "layer3_2_conv3",
+   "layer3_3_conv1",
+   "layer3_3_conv2",
+   "layer3_3_conv3",
+   "layer3_4_conv1",
+   "layer3_4_conv2",
+   "layer3_4_conv3",
+   "layer3_5_conv1",
+   "layer3_5_conv2",
+   "layer3_5_conv3",
+   "layer4_0_conv1",
+   "layer4_0_conv2",
+   "layer4_0_conv3",
+   "layer4_0_downsample_0",
+   "layer4_1_conv1",
+   "layer4_1_conv2",
+   "layer4_1_conv3",
+   "layer4_2_conv1",
+   "layer4_2_conv2",
+   "layer4_2_conv3",
+   "fc"
+  ],
+  "stats": {
+   "major_interfaces": 18,
+   "configs": {
+    "conv1": 14,
+    "layer1_0_conv1": 14,
+    "layer1_0_conv2": 14,
+    "layer1_0_conv3": 14,
+    "layer1_0_downsample_0": 14,
+    "layer1_1_conv1": 14,
+    "layer1_1_conv2": 14,
+    "layer1_1_conv3": 14,
+    "layer1_2_conv1": 14,
+    "layer1_2_conv2": 14,
+    "layer1_2_conv3": 14,
+    "layer2_0_conv1": 14,
+    "layer2_0_conv2": 14,
+    "layer2_0_conv3": 14,
+    "layer2_0_downsample_0": 14,
+    "layer2_1_conv1": 14,
+    "layer2_1_conv2": 14,
+    "layer2_1_conv3": 14,
+    "layer2_2_conv1": 14,
+    "layer2_2_conv2": 14,
+    "layer2_2_conv3": 14,
+    "layer2_3_conv1": 14,
+    "layer2_3_conv2": 14,
+    "layer2_3_conv3": 14,
+    "layer3_0_conv1": 14,
+    "layer3_0_conv2": 14,
+    "layer3_0_conv3": 14,
+    "layer3_0_downsample_0": 14,
+    "layer3_1_conv1": 14,
+    "layer3_1_conv2": 14,
+    "layer3_1_conv3": 14,
+    "layer3_2_conv1": 14,
+    "layer3_2_conv2": 14,
+    "layer3_2_conv3": 14,
+    "layer3_3_conv1": 14,
+    "layer3_3_conv2": 14,
+    "layer3_3_conv3": 14,
+    "layer3_4_conv1": 14,
+    "layer3_4_conv2": 14,
+    "layer3_4_conv3": 14,
+    "layer3_5_conv1": 14,
+    "layer3_5_conv2": 14,
+    "layer3_5_conv3": 14,
+    "layer4_0_conv1": 14,
+    "layer4_0_conv2": 14,
+    "layer4_0_conv3": 14,
+    "layer4_0_downsample_0": 14,
+    "layer4_1_conv1": 14,
+    "layer4_1_conv2": 14,
+    "layer4_1_conv3": 14,
+    "layer4_2_conv1": 14,
+    "layer4_2_conv2": 14,
+    "layer4_2_conv3": 14,
+    "fc": 17
+   },
+   "search_seconds": 12.40290801899937,
+   "search_cost": 0.5100227509861308,
+   "evaluated_cost": 0.5100227509861308
+  },
+  "certificate": "unconstrained minimizer satisfies the budget: memory-constrained optimum within the candidate family"
+ },
+ "baselines": {},
+ "verification": {
+  "summary": {
+   "expected_operations": 304,
+   "network_operations": 168,
+   "by_status": {
+    "checked-actual": 168,
+    "local": 136
+   },
+   "packing_checked": 168,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00042108727999999997,
+    "verified_reduction": 1.875934426229508e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00031229752,
+    "verified_reduction": 8.309508196721311e-07
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0009833861600000002,
+    "verified_reduction": 7.277114754098361e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00057182008,
+    "verified_reduction": 3.3238032786885244e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00057182008,
+    "verified_reduction": 3.3238032786885244e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0005639557600000001,
+    "verified_reduction": 3.2482622950819674e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0009833861600000002,
+    "verified_reduction": 7.277114754098361e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00057182008,
+    "verified_reduction": 3.3238032786885244e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0005639557600000001,
+    "verified_reduction": 3.2482622950819674e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0009833861600000002,
+    "verified_reduction": 7.277114754098361e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022841143999999998,
+    "verified_reduction": 2.518032786885246e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00057182008,
+    "verified_reduction": 3.3238032786885244e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0009021215200000001,
+    "verified_reduction": 6.496524590163935e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.003250931759999999,
+    "verified_reduction": 2.9058098360655733e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015889387999999999,
+    "verified_reduction": 1.3093770491803278e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0029311160800000007,
+    "verified_reduction": 2.598609836065574e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00157321016,
+    "verified_reduction": 1.2942688524590165e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.003250931759999999,
+    "verified_reduction": 2.9058098360655733e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015889387999999999,
+    "verified_reduction": 1.3093770491803278e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00157321016,
+    "verified_reduction": 1.2942688524590165e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.003250931759999999,
+    "verified_reduction": 2.9058098360655733e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015889387999999999,
+    "verified_reduction": 1.3093770491803278e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00157321016,
+    "verified_reduction": 1.2942688524590165e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.003250931759999999,
+    "verified_reduction": 2.9058098360655733e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023103287999999997,
+    "verified_reduction": 5.036065573770492e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015889387999999999,
+    "verified_reduction": 1.3093770491803278e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024676152,
+    "verified_reduction": 2.0144262295081967e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.002920630319999999,
+    "verified_reduction": 2.588537704918033e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.01021580248,
+    "verified_reduction": 0.00011613167213114754
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023627576,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00931468248,
+    "verified_reduction": 0.00010354150819672132
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00026773304000000004,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00026773304000000004,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035868314400000004,
+    "verified_reduction": 4.30583606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.007361765040000001,
+    "verified_reduction": 9.677639344262295e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035868314400000004,
+    "verified_reduction": 4.30583606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.007361765040000001,
+    "verified_reduction": 9.677639344262295e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035868314400000004,
+    "verified_reduction": 4.30583606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.007361765040000001,
+    "verified_reduction": 9.677639344262295e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035868314400000004,
+    "verified_reduction": 4.30583606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.007361765040000001,
+    "verified_reduction": 9.677639344262295e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035868314400000004,
+    "verified_reduction": 4.30583606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.007361765040000001,
+    "verified_reduction": 9.677639344262295e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023198360000000002,
+    "verified_reduction": 8.39344262295082e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0036045261600000005,
+    "verified_reduction": 4.331016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002516444,
+    "verified_reduction": 3.357377049180328e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.006612688560000001,
+    "verified_reduction": 8.61167213114754e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023853719999999997,
+    "verified_reduction": 1.678688524590164e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023853719999999997,
+    "verified_reduction": 1.678688524590164e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.027752400719999997,
+    "verified_reduction": 0.00038693770491803276
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023853719999999997,
+    "verified_reduction": 1.678688524590164e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023853719999999997,
+    "verified_reduction": 1.678688524590164e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.009607191119999999,
+    "verified_reduction": 0.0001380553442622951
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.02476783128,
+    "verified_reduction": 0.0003444668852459016
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00027785879999999997,
+    "verified_reduction": 6.714754098360656e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00027785879999999997,
+    "verified_reduction": 6.714754098360656e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.009579665999999999,
+    "verified_reduction": 0.00013765245901639343
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.021323717199999998,
+    "verified_reduction": 0.0003095501639344262
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.009607191119999999,
+    "verified_reduction": 0.0001380553442622951
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.009579665999999999,
+    "verified_reduction": 0.00013765245901639343
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.021323717199999998,
+    "verified_reduction": 0.0003095501639344262
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00018442503999999997,
+    "verified_reduction": 1.342950819672131e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.009607191119999999,
+    "verified_reduction": 0.0001380553442622951
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021195016,
+    "verified_reduction": 5.371803278688524e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "fc",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 30,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.01853429,
+    "verified_reduction": 0.00026872131147540984
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0020596574399999994,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0020596574399999994,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T25",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005143010879999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T25",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005143010879999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T32",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T32",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T33",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T33",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T35",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T35",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T36",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T36",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T38",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T38",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T39",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T39",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T41",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T41",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T42",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0013884487999999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T42",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0013884487999999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T43",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T43",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T43",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.004471802239999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T43",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.004471802239999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T44",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T44",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T45",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T45",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T47",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T47",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T48",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T48",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 0.0009239289993274724,
+  "plan_seconds": 12.409984427000381,
+  "baselines_seconds": 1.251000867341645e-06,
+  "verification_seconds": 1.3680819189994509,
+  "total_seconds": 13.788874854000824,
+  "pack": {
+   "hits": 26831,
+   "misses": 1324,
+   "pack_seconds": 0.5663060450260673,
+   "cached_routes": 155986
+  },
+  "peak_rss_bytes": 288821248
+ },
+ "family_candidates": {
+  "AR p=2": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=4": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=8": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=16": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=32": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=64": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=1 q=2": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=2"
+  ],
+  "AG p=1 q=4": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=2x2"
+  ],
+  "AG p=1 q=8": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=1 q=16": [
+   "E-A|P|k=0",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=1 q=32": [
+   "E-A|P|k=0",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=1 q=64": [
+   "E-A|P|k=0",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=2 q=1": [
+   "C-A|g=2|rep|k=0",
+   "C-B|P|k=1|radix=2"
+  ],
+  "AG p=2 q=2": [
+   "EQ|k=1|radix=2"
+  ],
+  "AG p=2 q=4": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=2x2"
+  ],
+  "AG p=2 q=8": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=2 q=16": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=2 q=32": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=2 q=64": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=4 q=1": [
+   "C-A|g=4|rep|k=0",
+   "C-B|P|k=2|radix=2x2"
+  ],
+  "AG p=4 q=2": [
+   "C-A|g=2|rep|k=1|radix=2",
+   "C-B|P|k=2|radix=2x2"
+  ],
+  "AG p=4 q=4": [
+   "EQ|k=2|radix=2x2"
+  ],
+  "AG p=4 q=8": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=4 q=16": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=4 q=32": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=4 q=64": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=8 q=1": [
+   "C-A|g=8|rep|k=0",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=2": [
+   "C-A|g=4|rep|k=1|radix=2",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=4": [
+   "C-A|g=2|rep|k=2|radix=2x2",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=8": [
+   "EQ|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=16": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=8 q=32": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=8 q=64": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=16 q=1": [
+   "C-A|g=16|rep|k=0",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=2": [
+   "C-A|g=8|rep|k=1|radix=2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=4": [
+   "C-A|g=4|rep|k=2|radix=2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=8": [
+   "C-A|g=2|rep|k=3|radix=2x2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=16": [
+   "EQ|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=32": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=16 q=64": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=32 q=1": [
+   "C-A|g=32|rep|k=0",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=2": [
+   "C-A|g=16|rep|k=1|radix=2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=4": [
+   "C-A|g=8|rep|k=2|radix=2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=8": [
+   "C-A|g=4|rep|k=3|radix=2x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=16": [
+   "C-A|g=2|rep|k=4|radix=2x2x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=32": [
+   "EQ|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=64": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=1": [
+   "C-A|g=64|rep|k=0",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=2": [
+   "C-A|g=32|rep|k=1|radix=2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=4": [
+   "C-A|g=16|rep|k=2|radix=2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=8": [
+   "C-A|g=8|rep|k=3|radix=2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=16": [
+   "C-A|g=4|rep|k=4|radix=2x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=32": [
+   "C-A|g=2|rep|k=5|radix=2x2x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=64": [
+   "EQ|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=1 q=5": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=1 q=10": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=1 q=20": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=1 q=25": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=1 q=40": [
+   "E-A|P|k=0",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=1 q=50": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=2 q=5": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=2 q=10": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=2 q=20": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=2 q=25": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=2 q=40": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=2 q=50": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=4 q=5": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=4 q=10": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=4 q=20": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=4 q=25": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=4 q=40": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=4 q=50": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=8 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=10": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=8 q=20": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=8 q=25": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=8 q=40": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=8 q=50": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=16 q=5": [
+   "C-A|g=5|rep|k=2|radix=2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=10": [
+   "C-A|joint|Q|k=2|radix=5x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=20": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=16 q=25": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=16 q=40": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=16 q=50": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=32 q=5": [
+   "C-A|g=5|rep|k=1|radix=7",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=10": [
+   "C-A|g=10|rep|k=2|radix=2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=20": [
+   "C-A|joint|Q|k=3|radix=5x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=25": [
+   "C-A|joint|Q|k=2|radix=5x5",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=40": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=32 q=50": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=64 q=5": [
+   "C-A|g=5|rep|k=1|radix=13",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=10": [
+   "C-A|g=10|rep|k=1|radix=7",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=20": [
+   "C-A|g=20|rep|k=2|radix=2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=25": [
+   "C-A|g=25|rep|k=1|radix=3",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=40": [
+   "C-A|joint|Q|k=4|radix=5x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=50": [
+   "C-A|joint|Q|k=3|radix=5x5x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=5": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=5 q=5": [
+   "EQ|k=1|radix=5"
+  ],
+  "AR p=10": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=10 q=10": [
+   "EQ|k=2|radix=5x2"
+  ],
+  "AR p=20": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=20 q=20": [
+   "EQ|k=3|radix=5x2x2"
+  ],
+  "AR p=25": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=25 q=25": [
+   "EQ|k=2|radix=5x5"
+  ],
+  "AR p=40": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=40 q=40": [
+   "EQ|k=4|radix=5x2x2x2"
+  ],
+  "AR p=50": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=50 q=50": [
+   "EQ|k=3|radix=5x5x2"
+  ]
+ }
+}

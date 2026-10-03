@@ -1,0 +1,7512 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "typed-interface (exact additive minimizer, min-charge alternatives, reservation check)",
+ "workload": "googlenet",
+ "N": 64,
+ "B": 1024,
+ "family": "one-stage",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "sync",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/googlenet.json",
+  "manifest_sha256": "786656271ea412814793ed14f31708e538e77febc42fffd214a3773a52d9de34",
+  "code_commit": "f8bc93e4abec703a9e4a92eefc86ac39122a5780",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 440,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "cost": 0.09520135851992238,
+  "cost_unconstrained_minimizer": 0.09520135851992238,
+  "memory_feasible": true,
+  "memory_max": 2935482440.0,
+  "memory_node1": 1523332904.0,
+  "memory_budget_after_reserve": 11811160064.0,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP1"
+  ],
+  "layers": [
+   "conv1_conv",
+   "conv2_conv",
+   "conv3_conv",
+   "inception3a_branch1_conv",
+   "inception3a_branch2_0_conv",
+   "inception3a_branch2_1_conv",
+   "inception3a_branch3_0_conv",
+   "inception3a_branch3_1_conv",
+   "inception3a_branch4_1_conv",
+   "inception3b_branch1_conv",
+   "inception3b_branch2_0_conv",
+   "inception3b_branch2_1_conv",
+   "inception3b_branch3_0_conv",
+   "inception3b_branch3_1_conv",
+   "inception3b_branch4_1_conv",
+   "inception4a_branch1_conv",
+   "inception4a_branch2_0_conv",
+   "inception4a_branch2_1_conv",
+   "inception4a_branch3_0_conv",
+   "inception4a_branch3_1_conv",
+   "inception4a_branch4_1_conv",
+   "inception4b_branch1_conv",
+   "inception4b_branch2_0_conv",
+   "inception4b_branch2_1_conv",
+   "inception4b_branch3_0_conv",
+   "inception4b_branch3_1_conv",
+   "inception4b_branch4_1_conv",
+   "inception4c_branch1_conv",
+   "inception4c_branch2_0_conv",
+   "inception4c_branch2_1_conv",
+   "inception4c_branch3_0_conv",
+   "inception4c_branch3_1_conv",
+   "inception4c_branch4_1_conv",
+   "inception4d_branch1_conv",
+   "inception4d_branch2_0_conv",
+   "inception4d_branch2_1_conv",
+   "inception4d_branch3_0_conv",
+   "inception4d_branch3_1_conv",
+   "inception4d_branch4_1_conv",
+   "inception4e_branch1_conv",
+   "inception4e_branch2_0_conv",
+   "inception4e_branch2_1_conv",
+   "inception4e_branch3_0_conv",
+   "inception4e_branch3_1_conv",
+   "inception4e_branch4_1_conv",
+   "inception5a_branch1_conv",
+   "inception5a_branch2_0_conv",
+   "inception5a_branch2_1_conv",
+   "inception5a_branch3_0_conv",
+   "inception5a_branch3_1_conv",
+   "inception5a_branch4_1_conv",
+   "inception5b_branch1_conv",
+   "inception5b_branch2_0_conv",
+   "inception5b_branch2_1_conv",
+   "inception5b_branch3_0_conv",
+   "inception5b_branch3_1_conv",
+   "inception5b_branch4_1_conv",
+   "fc"
+  ],
+  "stats": {
+   "major_interfaces": 11,
+   "configs": {
+    "conv1_conv": 14,
+    "conv2_conv": 14,
+    "conv3_conv": 19,
+    "inception3a_branch1_conv": 14,
+    "inception3a_branch2_0_conv": 18,
+    "inception3a_branch2_1_conv": 14,
+    "inception3a_branch3_0_conv": 12,
+    "inception3a_branch3_1_conv": 13,
+    "inception3a_branch4_1_conv": 13,
+    "inception3b_branch1_conv": 14,
+    "inception3b_branch2_0_conv": 14,
+    "inception3b_branch2_1_conv": 19,
+    "inception3b_branch3_0_conv": 13,
+    "inception3b_branch3_1_conv": 18,
+    "inception3b_branch4_1_conv": 14,
+    "inception4a_branch1_conv": 19,
+    "inception4a_branch2_0_conv": 18,
+    "inception4a_branch2_1_conv": 15,
+    "inception4a_branch3_0_conv": 12,
+    "inception4a_branch3_1_conv": 17,
+    "inception4a_branch4_1_conv": 14,
+    "inception4b_branch1_conv": 17,
+    "inception4b_branch2_0_conv": 16,
+    "inception4b_branch2_1_conv": 17,
+    "inception4b_branch3_0_conv": 15,
+    "inception4b_branch3_1_conv": 14,
+    "inception4b_branch4_1_conv": 14,
+    "inception4c_branch1_conv": 14,
+    "inception4c_branch2_0_conv": 14,
+    "inception4c_branch2_1_conv": 14,
+    "inception4c_branch3_0_conv": 15,
+    "inception4c_branch3_1_conv": 14,
+    "inception4c_branch4_1_conv": 14,
+    "inception4d_branch1_conv": 16,
+    "inception4d_branch2_0_conv": 20,
+    "inception4d_branch2_1_conv": 21,
+    "inception4d_branch3_0_conv": 13,
+    "inception4d_branch3_1_conv": 14,
+    "inception4d_branch4_1_conv": 14,
+    "inception4e_branch1_conv": 14,
+    "inception4e_branch2_0_conv": 17,
+    "inception4e_branch2_1_conv": 18,
+    "inception4e_branch3_0_conv": 13,
+    "inception4e_branch3_1_conv": 14,
+    "inception4e_branch4_1_conv": 14,
+    "inception5a_branch1_conv": 14,
+    "inception5a_branch2_0_conv": 17,
+    "inception5a_branch2_1_conv": 18,
+    "inception5a_branch3_0_conv": 13,
+    "inception5a_branch3_1_conv": 14,
+    "inception5a_branch4_1_conv": 14,
+    "inception5b_branch1_conv": 19,
+    "inception5b_branch2_0_conv": 19,
+    "inception5b_branch2_1_conv": 19,
+    "inception5b_branch3_0_conv": 17,
+    "inception5b_branch3_1_conv": 14,
+    "inception5b_branch4_1_conv": 14,
+    "fc": 17
+   },
+   "search_seconds": 95.38870344499992,
+   "search_cost": 0.09520135851992245,
+   "evaluated_cost": 0.09520135851992238
+  },
+  "certificate": "unconstrained minimizer satisfies the budget: memory-constrained optimum within the candidate family"
+ },
+ "baselines": {},
+ "verification": {
+  "summary": {
+   "expected_operations": 484,
+   "network_operations": 179,
+   "by_status": {
+    "checked-actual": 179,
+    "local": 305
+   },
+   "packing_checked": 179,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "conv1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00014812864,
+    "verified_reduction": 6.774207650273224e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "conv1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "conv1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "conv2_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 9.373376e-05,
+    "verified_reduction": 3.000655737704918e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "conv2_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "conv2_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "conv3_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0011868742399999998,
+    "verified_reduction": 7.883540983606557e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "conv3_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "conv3_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00017761984,
+    "verified_reduction": 8.820109289617487e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00024118976000000002,
+    "verified_reduction": 1.323016393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0011855635199999998,
+    "verified_reduction": 7.874448087431695e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 8.226496e-05,
+    "verified_reduction": 2.2050273224043717e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0807680000000003e-05,
+    "verified_reduction": 2.273224043715847e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0807680000000003e-05,
+    "verified_reduction": 2.273224043715847e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 9.832128e-05,
+    "verified_reduction": 3.3189071038251364e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00011404992,
+    "verified_reduction": 4.410054644808743e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038864576000000007,
+    "verified_reduction": 2.345967213114754e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038864576000000007,
+    "verified_reduction": 2.345967213114754e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00231933632,
+    "verified_reduction": 0.00015739803278688524
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013502144,
+    "verified_reduction": 5.864918032786885e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00033556160000000005,
+    "verified_reduction": 1.9777049180327868e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception3b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021956288000000003,
+    "verified_reduction": 1.172983606557377e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception3b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception3b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00099813056,
+    "verified_reduction": 6.57416393442623e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00052430528,
+    "verified_reduction": 3.287081967213115e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2446080000000005e-05,
+    "verified_reduction": 1.3639344262295082e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00189499072,
+    "verified_reduction": 0.00012795978142076504
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4739840000000003e-05,
+    "verified_reduction": 2.955191256830601e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4739840000000003e-05,
+    "verified_reduction": 2.955191256830601e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00012945088,
+    "verified_reduction": 5.478469945355191e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0807680000000003e-05,
+    "verified_reduction": 2.273224043715847e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0807680000000003e-05,
+    "verified_reduction": 2.273224043715847e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00012224192,
+    "verified_reduction": 4.978360655737705e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.146304e-05,
+    "verified_reduction": 6.819672131147541e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.146304e-05,
+    "verified_reduction": 6.819672131147541e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00036636352000000007,
+    "verified_reduction": 2.1913879781420765e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0008926175999999999,
+    "verified_reduction": 5.842185792349727e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00063997632,
+    "verified_reduction": 4.089530054644809e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2773760000000003e-05,
+    "verified_reduction": 1.591256830601093e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2773760000000003e-05,
+    "verified_reduction": 1.591256830601093e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0023671776,
+    "verified_reduction": 0.00016071693989071038
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.506752e-05,
+    "verified_reduction": 3.182513661202186e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.506752e-05,
+    "verified_reduction": 3.182513661202186e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00017680064,
+    "verified_reduction": 8.76327868852459e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.097152e-05,
+    "verified_reduction": 3.4098360655737704e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.097152e-05,
+    "verified_reduction": 3.4098360655737704e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00019334848,
+    "verified_reduction": 9.911256830601093e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038733504000000005,
+    "verified_reduction": 2.3368743169398908e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00072419008,
+    "verified_reduction": 4.6737486338797816e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00072419008,
+    "verified_reduction": 4.6737486338797816e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0028201513599999998,
+    "verified_reduction": 0.000209864043715847
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00017680064,
+    "verified_reduction": 8.76327868852459e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.097152e-05,
+    "verified_reduction": 3.4098360655737704e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.097152e-05,
+    "verified_reduction": 3.4098360655737704e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00019334848,
+    "verified_reduction": 9.911256830601093e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4c_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038733504000000005,
+    "verified_reduction": 2.3368743169398908e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4c_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4c_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00063997632,
+    "verified_reduction": 4.089530054644809e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2773760000000003e-05,
+    "verified_reduction": 1.591256830601093e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2773760000000003e-05,
+    "verified_reduction": 1.591256830601093e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00080840384,
+    "verified_reduction": 5.257967213114754e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.342912e-05,
+    "verified_reduction": 2.0459016393442622e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.342912e-05,
+    "verified_reduction": 2.0459016393442622e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0030208553599999997,
+    "verified_reduction": 0.00026555803278688523
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6378240000000005e-05,
+    "verified_reduction": 4.0918032786885245e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6378240000000005e-05,
+    "verified_reduction": 4.0918032786885245e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021890752000000002,
+    "verified_reduction": 1.1684371584699454e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0002405344,
+    "verified_reduction": 1.3184699453551913e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4d_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038733504000000005,
+    "verified_reduction": 2.3368743169398908e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4d_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4d_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.179072e-05,
+    "verified_reduction": 9.092896174863388e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014398432,
+    "verified_reduction": 9.638469945355191e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.000918832,
+    "verified_reduction": 6.0240437158469945e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0032451523199999994,
+    "verified_reduction": 0.0003277989071038251
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.70336e-05,
+    "verified_reduction": 4.546448087431694e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.70336e-05,
+    "verified_reduction": 4.546448087431694e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00022415040000000003,
+    "verified_reduction": 1.2048087431693989e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00043058880000000003,
+    "verified_reduction": 2.6369398907103826e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception4e_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0007451616,
+    "verified_reduction": 4.8192349726775956e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception4e_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception4e_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00223676096,
+    "verified_reduction": 0.0001516695081967213
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.572288e-05,
+    "verified_reduction": 3.637158469945355e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014169056,
+    "verified_reduction": 9.479344262295082e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.37568e-05,
+    "verified_reduction": 2.273224043715847e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0032451523199999994,
+    "verified_reduction": 0.0003277989071038251
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.70336e-05,
+    "verified_reduction": 4.546448087431694e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.70336e-05,
+    "verified_reduction": 4.546448087431694e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00032376512000000006,
+    "verified_reduction": 1.8958688524590163e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.113536e-05,
+    "verified_reduction": 4.546448087431694e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00043058880000000003,
+    "verified_reduction": 2.6369398907103826e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00114362048,
+    "verified_reduction": 7.583475409836065e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5a_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00288372128,
+    "verified_reduction": 0.00022750426229508196
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.8344320000000005e-05,
+    "verified_reduction": 5.455737704918033e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.8344320000000005e-05,
+    "verified_reduction": 5.455737704918033e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0016901907199999998,
+    "verified_reduction": 0.00011375213114754098
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch2_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.4412160000000005e-05,
+    "verified_reduction": 2.7278688524590163e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0037646451199999996,
+    "verified_reduction": 0.00047192131147540985
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.8344320000000005e-05,
+    "verified_reduction": 5.455737704918033e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch2_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.8344320000000005e-05,
+    "verified_reduction": 5.455737704918033e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00046040768,
+    "verified_reduction": 2.8438032786885245e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.146304e-05,
+    "verified_reduction": 6.819672131147541e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch3_0_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.146304e-05,
+    "verified_reduction": 6.819672131147541e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00061933248,
+    "verified_reduction": 3.9463169398907104e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch3_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "inception5b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00114362048,
+    "verified_reduction": 7.583475409836065e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "inception5b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "inception5b_branch4_1_conv",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.310144e-05,
+    "verified_reduction": 1.8185792349726776e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "fc",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6697279999999995e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6697279999999995e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6697279999999995e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.6697279999999995e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.572576e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.572576e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.572576e-05,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "adapted-OSM",
+    "routes": 63,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.572576e-05,
+    "verified_reduction": 0.0
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 0.0009152589991572313,
+  "plan_seconds": 95.40089620899926,
+  "baselines_seconds": 1.2269993021618575e-06,
+  "verification_seconds": 7.016872833999514,
+  "total_seconds": 102.43096063700068,
+  "pack": {
+   "hits": 128296,
+   "misses": 4961,
+   "pack_seconds": 1.0311875339812104,
+   "cached_routes": 815661
+  },
+  "peak_rss_bytes": 429789184
+ },
+ "family_candidates": {
+  "AR p=2": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AR p=4": [
+   "WRHT|m=4|collect",
+   "WRHT|m=4|exchange"
+  ],
+  "AR p=8": [
+   "WRHT|m=8|collect",
+   "WRHT|m=8|exchange"
+  ],
+  "AR p=16": [
+   "WRHT|m=16|collect",
+   "WRHT|m=16|exchange"
+  ],
+  "AR p=32": [
+   "WRHT|m=32|collect",
+   "WRHT|m=32|exchange"
+  ],
+  "AR p=64": [
+   "WRHT|m=64|collect",
+   "WRHT|m=64|exchange"
+  ],
+  "AG p=1 q=2": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=2",
+   "E-C|direct"
+  ],
+  "AG p=1 q=4": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=1 q=8": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=1 q=16": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=1 q=32": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=1 q=64": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=2 q=1": [
+   "C-A|g=2|rep|k=0",
+   "C-B|P|k=1|radix=2",
+   "C-C|direct"
+  ],
+  "AG p=2 q=2": [
+   "EQ|k=1|radix=2"
+  ],
+  "AG p=2 q=4": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=2 q=8": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=2 q=16": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=2 q=32": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=2 q=64": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=4 q=1": [
+   "C-A|g=4|rep|k=0",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AG p=4 q=2": [
+   "C-A|g=2|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AG p=4 q=4": [
+   "EQ|k=1|radix=4"
+  ],
+  "AG p=4 q=8": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=4 q=16": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=4 q=32": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=4 q=64": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=8 q=1": [
+   "C-A|g=8|rep|k=0",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=2": [
+   "C-A|g=4|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=4": [
+   "C-A|g=2|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=8": [
+   "EQ|k=1|radix=8"
+  ],
+  "AG p=8 q=16": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=8 q=32": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=8 q=64": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=16 q=1": [
+   "C-A|g=16|rep|k=0",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=2": [
+   "C-A|g=8|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=4": [
+   "C-A|g=4|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=8": [
+   "C-A|g=2|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=16": [
+   "EQ|k=1|radix=16"
+  ],
+  "AG p=16 q=32": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=16 q=64": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=32 q=1": [
+   "C-A|g=32|rep|k=0",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=2": [
+   "C-A|g=16|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=4": [
+   "C-A|g=8|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=8": [
+   "C-A|g=4|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=16": [
+   "C-A|g=2|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=32": [
+   "EQ|k=1|radix=32"
+  ],
+  "AG p=32 q=64": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=64 q=1": [
+   "C-A|g=64|rep|k=0",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=2": [
+   "C-A|g=32|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=4": [
+   "C-A|g=16|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=8": [
+   "C-A|g=8|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=16": [
+   "C-A|g=4|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=32": [
+   "C-A|g=2|rep|k=1|radix=32",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=64": [
+   "EQ|k=1|radix=64"
+  ],
+  "AG p=1 q=3": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=3",
+   "E-C|direct"
+  ],
+  "AG p=1 q=6": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=1 q=12": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=1 q=24": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=1 q=48": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=2 q=3": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=3",
+   "E-C|direct"
+  ],
+  "AG p=2 q=6": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=2 q=12": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=2 q=24": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=2 q=48": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=4 q=3": [
+   "C-A|joint|Q|k=1|radix=3",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AG p=4 q=6": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=4 q=12": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=4 q=24": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=4 q=48": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=8 q=3": [
+   "C-A|g=3|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=6": [
+   "C-A|joint|Q|k=1|radix=6",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=12": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=8 q=24": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=8 q=48": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=16 q=3": [
+   "C-A|g=3|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=6": [
+   "C-A|g=6|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=24": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=16 q=48": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=32 q=3": [
+   "C-A|g=3|rep|k=1|radix=11",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=6": [
+   "C-A|g=6|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=12": [
+   "C-A|g=12|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=48": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=64 q=3": [
+   "C-A|g=3|rep|k=1|radix=22",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=6": [
+   "C-A|g=6|rep|k=1|radix=11",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=12": [
+   "C-A|g=12|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=24": [
+   "C-A|g=24|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=48": [
+   "C-A|joint|Q|k=1|radix=48",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AR p=3": [
+   "WRHT|m=3|collect",
+   "WRHT|m=3|exchange"
+  ],
+  "AG p=3 q=1": [
+   "C-A|g=3|rep|k=0",
+   "C-B|P|k=1|radix=3",
+   "C-C|direct"
+  ],
+  "AG p=3 q=2": [
+   "C-A|joint|Q|k=1|radix=2",
+   "C-B|P|k=1|radix=3",
+   "C-C|direct"
+  ],
+  "AG p=3 q=3": [
+   "EQ|k=1|radix=3"
+  ],
+  "AG p=3 q=4": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=3 q=6": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=3 q=8": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=3 q=12": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=3 q=16": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=3 q=24": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=3 q=32": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=3 q=48": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=3 q=64": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=6": [
+   "WRHT|m=6|collect",
+   "WRHT|m=6|exchange"
+  ],
+  "AG p=6 q=1": [
+   "C-A|g=6|rep|k=0",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=2": [
+   "C-A|g=3|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=3": [
+   "C-A|g=2|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=4": [
+   "C-A|joint|Q|k=1|radix=4",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=6": [
+   "EQ|k=1|radix=6"
+  ],
+  "AG p=6 q=8": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=6 q=12": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=6 q=16": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=6 q=24": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=6 q=32": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=6 q=48": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=6 q=64": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=12": [
+   "WRHT|m=12|collect",
+   "WRHT|m=12|exchange"
+  ],
+  "AG p=12 q=1": [
+   "C-A|g=12|rep|k=0",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=2": [
+   "C-A|g=6|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=3": [
+   "C-A|g=4|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=4": [
+   "C-A|g=3|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=6": [
+   "C-A|g=2|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=12": [
+   "EQ|k=1|radix=12"
+  ],
+  "AG p=12 q=16": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=12 q=24": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=12 q=32": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=12 q=48": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=12 q=64": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=24": [
+   "WRHT|m=24|collect",
+   "WRHT|m=24|exchange"
+  ],
+  "AG p=24 q=1": [
+   "C-A|g=24|rep|k=0",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=2": [
+   "C-A|g=12|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=3": [
+   "C-A|g=8|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=4": [
+   "C-A|g=6|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=6": [
+   "C-A|g=4|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=8": [
+   "C-A|g=3|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=12": [
+   "C-A|g=2|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=24": [
+   "EQ|k=1|radix=24"
+  ],
+  "AG p=24 q=32": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=24 q=48": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=24 q=64": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=48": [
+   "WRHT|m=48|collect",
+   "WRHT|m=48|exchange"
+  ],
+  "AG p=48 q=1": [
+   "C-A|g=48|rep|k=0",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=2": [
+   "C-A|g=24|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=3": [
+   "C-A|g=16|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=4": [
+   "C-A|g=12|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=6": [
+   "C-A|g=8|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=8": [
+   "C-A|g=6|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=12": [
+   "C-A|g=4|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=16": [
+   "C-A|g=3|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=24": [
+   "C-A|g=2|rep|k=1|radix=24",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=48": [
+   "EQ|k=1|radix=48"
+  ],
+  "AG p=48 q=64": [
+   "E-A|P|k=1|radix=48",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=1 q=13": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=1 q=26": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=1 q=52": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=2 q=13": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=2 q=26": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=2 q=52": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=3 q=13": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=3 q=26": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=3 q=52": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=4 q=13": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=4 q=26": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=4 q=52": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=6 q=13": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=6 q=26": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=6 q=52": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=8 q=13": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=8 q=26": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=8 q=52": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=12 q=13": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=13",
+   "E-C|direct"
+  ],
+  "AG p=12 q=26": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=12 q=52": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=16 q=13": [
+   "C-A|joint|Q|k=1|radix=13",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=26": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=16 q=52": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=24 q=13": [
+   "C-A|joint|Q|k=1|radix=13",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=26": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=26",
+   "E-C|direct"
+  ],
+  "AG p=24 q=52": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=32 q=13": [
+   "C-A|g=13|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=26": [
+   "C-A|joint|Q|k=1|radix=26",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=52": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=48 q=13": [
+   "C-A|g=13|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=26": [
+   "C-A|joint|Q|k=1|radix=26",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=52": [
+   "E-A|P|k=1|radix=48",
+   "E-B|Q|k=1|radix=52",
+   "E-C|direct"
+  ],
+  "AG p=1 q=5": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=1 q=7": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=7",
+   "E-C|direct"
+  ],
+  "AG p=1 q=10": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=1 q=14": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=1 q=20": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=1 q=28": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=1 q=40": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=1 q=56": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=2 q=5": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=2 q=7": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=7",
+   "E-C|direct"
+  ],
+  "AG p=2 q=10": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=2 q=14": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=2 q=20": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=2 q=28": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=2 q=40": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=2 q=56": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=3 q=5": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=3 q=7": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=7",
+   "E-C|direct"
+  ],
+  "AG p=3 q=10": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=3 q=14": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=3 q=20": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=3 q=28": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=3 q=40": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=3 q=56": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=4 q=5": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=4 q=7": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=7",
+   "E-C|direct"
+  ],
+  "AG p=4 q=10": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=4 q=14": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=4 q=20": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=4 q=28": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=4 q=40": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=4 q=56": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=6 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=7": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=7",
+   "E-C|direct"
+  ],
+  "AG p=6 q=10": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=6 q=14": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=6 q=20": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=6 q=28": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=6 q=40": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=6 q=56": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=8 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=7": [
+   "C-A|joint|Q|k=1|radix=7",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=10": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=8 q=14": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=8 q=20": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=8 q=28": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=8 q=40": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=8 q=56": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=12 q=5": [
+   "C-A|g=5|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=7": [
+   "C-A|joint|Q|k=1|radix=7",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=14": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=12 q=20": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=12 q=28": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=12 q=40": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=12 q=56": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=16 q=5": [
+   "C-A|g=5|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=7": [
+   "C-A|g=7|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=14": [
+   "C-A|joint|Q|k=1|radix=14",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=20": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=16 q=28": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=16 q=40": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=16 q=56": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=24 q=5": [
+   "C-A|g=5|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=7": [
+   "C-A|g=7|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=10": [
+   "C-A|g=10|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=14": [
+   "C-A|joint|Q|k=1|radix=14",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=28": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=24 q=40": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=24 q=56": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=32 q=5": [
+   "C-A|g=5|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=7": [
+   "C-A|g=7|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=10": [
+   "C-A|g=10|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=14": [
+   "C-A|g=14|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=28": [
+   "C-A|joint|Q|k=1|radix=28",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=40": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=32 q=56": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=48 q=5": [
+   "C-A|g=5|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=7": [
+   "C-A|g=7|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=10": [
+   "C-A|g=10|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=14": [
+   "C-A|g=14|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=20": [
+   "C-A|g=20|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=28": [
+   "C-A|joint|Q|k=1|radix=28",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=40": [
+   "C-A|joint|Q|k=1|radix=40",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=56": [
+   "E-A|P|k=1|radix=48",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=64 q=5": [
+   "C-A|g=5|rep|k=1|radix=13",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=7": [
+   "C-A|g=7|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=10": [
+   "C-A|g=10|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=14": [
+   "C-A|g=14|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=20": [
+   "C-A|g=20|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=28": [
+   "C-A|g=28|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=40": [
+   "C-A|joint|Q|k=1|radix=40",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=56": [
+   "C-A|joint|Q|k=1|radix=56",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AR p=13": [
+   "WRHT|m=13|collect",
+   "WRHT|m=13|exchange"
+  ],
+  "AG p=13 q=1": [
+   "C-A|g=13|rep|k=0",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=2": [
+   "C-A|g=2|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=3": [
+   "C-A|g=3|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=4": [
+   "C-A|g=4|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=5": [
+   "C-A|g=5|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=6": [
+   "C-A|g=6|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=7": [
+   "C-A|joint|Q|k=1|radix=7",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=13",
+   "C-C|direct"
+  ],
+  "AG p=13 q=14": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=13 q=16": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=13 q=20": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=13 q=24": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=13 q=28": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=13 q=32": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=13 q=40": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=13 q=56": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=13 q=64": [
+   "E-A|P|k=1|radix=13",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=26": [
+   "WRHT|m=26|collect",
+   "WRHT|m=26|exchange"
+  ],
+  "AG p=26 q=1": [
+   "C-A|g=26|rep|k=0",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=2": [
+   "C-A|g=13|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=3": [
+   "C-A|g=3|rep|k=1|radix=9",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=4": [
+   "C-A|g=4|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=5": [
+   "C-A|g=5|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=6": [
+   "C-A|g=6|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=7": [
+   "C-A|g=7|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=8": [
+   "C-A|g=8|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=10": [
+   "C-A|g=10|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=12": [
+   "C-A|g=12|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=14": [
+   "C-A|joint|Q|k=1|radix=14",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=26",
+   "C-C|direct"
+  ],
+  "AG p=26 q=28": [
+   "E-A|P|k=1|radix=26",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=26 q=32": [
+   "E-A|P|k=1|radix=26",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=26 q=40": [
+   "E-A|P|k=1|radix=26",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=26 q=56": [
+   "E-A|P|k=1|radix=26",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=26 q=64": [
+   "E-A|P|k=1|radix=26",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=52": [
+   "WRHT|m=52|collect",
+   "WRHT|m=52|exchange"
+  ],
+  "AG p=52 q=1": [
+   "C-A|g=52|rep|k=0",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=2": [
+   "C-A|g=26|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=3": [
+   "C-A|g=3|rep|k=1|radix=18",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=4": [
+   "C-A|g=13|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=5": [
+   "C-A|g=5|rep|k=1|radix=11",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=6": [
+   "C-A|g=6|rep|k=1|radix=9",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=7": [
+   "C-A|g=7|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=8": [
+   "C-A|g=8|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=10": [
+   "C-A|g=10|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=12": [
+   "C-A|g=12|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=14": [
+   "C-A|g=14|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=16": [
+   "C-A|g=16|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=20": [
+   "C-A|g=20|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=24": [
+   "C-A|g=24|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=28": [
+   "C-A|joint|Q|k=1|radix=28",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=40": [
+   "C-A|joint|Q|k=1|radix=40",
+   "C-B|P|k=1|radix=52",
+   "C-C|direct"
+  ],
+  "AG p=52 q=56": [
+   "E-A|P|k=1|radix=52",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AG p=52 q=64": [
+   "E-A|P|k=1|radix=52",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=7": [
+   "WRHT|m=7|collect",
+   "WRHT|m=7|exchange"
+  ],
+  "AG p=7 q=1": [
+   "C-A|g=7|rep|k=0",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=2": [
+   "C-A|g=2|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=4": [
+   "C-A|joint|Q|k=1|radix=4",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=8": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=7 q=16": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=7 q=32": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=7 q=64": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=7 q=7": [
+   "EQ|k=1|radix=7"
+  ],
+  "AG p=7 q=14": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=14",
+   "E-C|direct"
+  ],
+  "AG p=7 q=28": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=7 q=56": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AR p=14": [
+   "WRHT|m=14|collect",
+   "WRHT|m=14|exchange"
+  ],
+  "AG p=14 q=1": [
+   "C-A|g=14|rep|k=0",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=2": [
+   "C-A|g=7|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=4": [
+   "C-A|g=4|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=16": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=14 q=32": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=14 q=64": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=14 q=7": [
+   "C-A|g=2|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=14": [
+   "EQ|k=1|radix=14"
+  ],
+  "AG p=14 q=28": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=28",
+   "E-C|direct"
+  ],
+  "AG p=14 q=56": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AR p=28": [
+   "WRHT|m=28|collect",
+   "WRHT|m=28|exchange"
+  ],
+  "AG p=28 q=1": [
+   "C-A|g=28|rep|k=0",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=2": [
+   "C-A|g=14|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=4": [
+   "C-A|g=7|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=8": [
+   "C-A|g=8|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=32": [
+   "E-A|P|k=1|radix=28",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=28 q=64": [
+   "E-A|P|k=1|radix=28",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=28 q=7": [
+   "C-A|g=4|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=14": [
+   "C-A|g=2|rep|k=1|radix=14",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=28": [
+   "EQ|k=1|radix=28"
+  ],
+  "AG p=28 q=56": [
+   "E-A|P|k=1|radix=28",
+   "E-B|Q|k=1|radix=56",
+   "E-C|direct"
+  ],
+  "AR p=56": [
+   "WRHT|m=56|collect",
+   "WRHT|m=56|exchange"
+  ],
+  "AG p=56 q=1": [
+   "C-A|g=56|rep|k=0",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=2": [
+   "C-A|g=28|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=4": [
+   "C-A|g=14|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=8": [
+   "C-A|g=7|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=16": [
+   "C-A|g=16|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=64": [
+   "E-A|P|k=1|radix=56",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=56 q=7": [
+   "C-A|g=8|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=14": [
+   "C-A|g=4|rep|k=1|radix=14",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=28": [
+   "C-A|g=2|rep|k=1|radix=28",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=56": [
+   "EQ|k=1|radix=56"
+  ],
+  "AR p=5": [
+   "WRHT|m=5|collect",
+   "WRHT|m=5|exchange"
+  ],
+  "AG p=5 q=1": [
+   "C-A|g=5|rep|k=0",
+   "C-B|P|k=1|radix=5",
+   "C-C|direct"
+  ],
+  "AG p=5 q=2": [
+   "C-A|g=2|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=5",
+   "C-C|direct"
+  ],
+  "AG p=5 q=3": [
+   "C-A|joint|Q|k=1|radix=3",
+   "C-B|P|k=1|radix=5",
+   "C-C|direct"
+  ],
+  "AG p=5 q=4": [
+   "C-A|joint|Q|k=1|radix=4",
+   "C-B|P|k=1|radix=5",
+   "C-C|direct"
+  ],
+  "AG p=5 q=6": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=5 q=8": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=5 q=12": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=5 q=16": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=5 q=24": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=5 q=32": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=5 q=64": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=10": [
+   "WRHT|m=10|collect",
+   "WRHT|m=10|exchange"
+  ],
+  "AG p=10 q=1": [
+   "C-A|g=10|rep|k=0",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=2": [
+   "C-A|g=5|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=3": [
+   "C-A|g=3|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=4": [
+   "C-A|g=4|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=6": [
+   "C-A|joint|Q|k=1|radix=6",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=12": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=10 q=16": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=10 q=24": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=10 q=32": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=10 q=64": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=20": [
+   "WRHT|m=20|collect",
+   "WRHT|m=20|exchange"
+  ],
+  "AG p=20 q=1": [
+   "C-A|g=20|rep|k=0",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=2": [
+   "C-A|g=10|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=3": [
+   "C-A|g=3|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=4": [
+   "C-A|g=5|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=6": [
+   "C-A|g=6|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=8": [
+   "C-A|g=8|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=24": [
+   "E-A|P|k=1|radix=20",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=20 q=32": [
+   "E-A|P|k=1|radix=20",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=20 q=64": [
+   "E-A|P|k=1|radix=20",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=40": [
+   "WRHT|m=40|collect",
+   "WRHT|m=40|exchange"
+  ],
+  "AG p=40 q=1": [
+   "C-A|g=40|rep|k=0",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=2": [
+   "C-A|g=20|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=3": [
+   "C-A|g=3|rep|k=1|radix=14",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=4": [
+   "C-A|g=10|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=6": [
+   "C-A|g=6|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=8": [
+   "C-A|g=5|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=12": [
+   "C-A|g=12|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=16": [
+   "C-A|g=16|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=64": [
+   "E-A|P|k=1|radix=40",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=7 q=3": [
+   "C-A|g=3|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=6": [
+   "C-A|joint|Q|k=1|radix=6",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=12": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=7 q=24": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=14 q=3": [
+   "C-A|g=3|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=6": [
+   "C-A|g=6|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=24": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=28 q=3": [
+   "C-A|g=3|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=6": [
+   "C-A|g=6|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=12": [
+   "C-A|g=12|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=56 q=3": [
+   "C-A|g=3|rep|k=1|radix=19",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=6": [
+   "C-A|g=6|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=12": [
+   "C-A|g=12|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=24": [
+   "C-A|g=24|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=1 q=9": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=1 q=18": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=1 q=36": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=2 q=9": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=2 q=18": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=2 q=36": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=4 q=9": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=4 q=18": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=4 q=36": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=8 q=9": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=8 q=18": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=8 q=36": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=16 q=9": [
+   "C-A|joint|Q|k=1|radix=9",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=18": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=16 q=36": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=32 q=9": [
+   "C-A|g=9|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=18": [
+   "C-A|joint|Q|k=1|radix=18",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=36": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=64 q=9": [
+   "C-A|g=9|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=18": [
+   "C-A|g=18|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=36": [
+   "C-A|joint|Q|k=1|radix=36",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=3 q=9": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=3 q=18": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=3 q=36": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=6 q=9": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=9",
+   "E-C|direct"
+  ],
+  "AG p=6 q=18": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=6 q=36": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AR p=9": [
+   "WRHT|m=9|collect",
+   "WRHT|m=9|exchange"
+  ],
+  "AG p=9 q=1": [
+   "C-A|g=9|rep|k=0",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=2": [
+   "C-A|g=2|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=4": [
+   "C-A|g=4|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=16": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=9 q=32": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=9 q=64": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=9 q=3": [
+   "C-A|g=3|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=6": [
+   "C-A|joint|Q|k=1|radix=6",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=9": [
+   "EQ|k=1|radix=9"
+  ],
+  "AG p=9 q=12": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=9 q=18": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=9 q=24": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=9 q=36": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=9 q=48": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=12 q=9": [
+   "C-A|joint|Q|k=1|radix=9",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=18": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=18",
+   "E-C|direct"
+  ],
+  "AG p=12 q=36": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AR p=18": [
+   "WRHT|m=18|collect",
+   "WRHT|m=18|exchange"
+  ],
+  "AG p=18 q=1": [
+   "C-A|g=18|rep|k=0",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=2": [
+   "C-A|g=9|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=4": [
+   "C-A|g=4|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=8": [
+   "C-A|g=8|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=32": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=18 q=64": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=18 q=3": [
+   "C-A|g=6|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=6": [
+   "C-A|g=3|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=9": [
+   "C-A|g=2|rep|k=1|radix=9",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=18": [
+   "EQ|k=1|radix=18"
+  ],
+  "AG p=18 q=24": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=18 q=36": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AG p=18 q=48": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=24 q=9": [
+   "C-A|g=9|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=18": [
+   "C-A|joint|Q|k=1|radix=18",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=36": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=36",
+   "E-C|direct"
+  ],
+  "AR p=36": [
+   "WRHT|m=36|collect",
+   "WRHT|m=36|exchange"
+  ],
+  "AG p=36 q=1": [
+   "C-A|g=36|rep|k=0",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=2": [
+   "C-A|g=18|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=4": [
+   "C-A|g=9|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=8": [
+   "C-A|g=8|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=16": [
+   "C-A|g=16|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=64": [
+   "E-A|P|k=1|radix=36",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=36 q=3": [
+   "C-A|g=12|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=6": [
+   "C-A|g=6|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=9": [
+   "C-A|g=4|rep|k=1|radix=9",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=12": [
+   "C-A|g=3|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=18": [
+   "C-A|g=2|rep|k=1|radix=18",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=36": [
+   "EQ|k=1|radix=36"
+  ],
+  "AG p=36 q=48": [
+   "E-A|P|k=1|radix=36",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=48 q=9": [
+   "C-A|g=9|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=18": [
+   "C-A|g=18|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=36": [
+   "C-A|joint|Q|k=1|radix=36",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=7 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=1|radix=7",
+   "C-C|direct"
+  ],
+  "AG p=7 q=10": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=7 q=20": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=7 q=40": [
+   "E-A|P|k=1|radix=7",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=14 q=5": [
+   "C-A|g=5|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=14",
+   "C-C|direct"
+  ],
+  "AG p=14 q=20": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=14 q=40": [
+   "E-A|P|k=1|radix=14",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=28 q=5": [
+   "C-A|g=5|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=10": [
+   "C-A|g=10|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=28",
+   "C-C|direct"
+  ],
+  "AG p=28 q=40": [
+   "E-A|P|k=1|radix=28",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=56 q=5": [
+   "C-A|g=5|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=10": [
+   "C-A|g=10|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=20": [
+   "C-A|g=20|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=56 q=40": [
+   "C-A|joint|Q|k=1|radix=40",
+   "C-B|P|k=1|radix=56",
+   "C-C|direct"
+  ],
+  "AG p=9 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=1|radix=9",
+   "C-C|direct"
+  ],
+  "AG p=9 q=10": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=9 q=20": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=9 q=40": [
+   "E-A|P|k=1|radix=9",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=18 q=5": [
+   "C-A|g=5|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=18",
+   "C-C|direct"
+  ],
+  "AG p=18 q=20": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=18 q=40": [
+   "E-A|P|k=1|radix=18",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=36 q=5": [
+   "C-A|g=5|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=10": [
+   "C-A|g=10|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=36",
+   "C-C|direct"
+  ],
+  "AG p=36 q=40": [
+   "E-A|P|k=1|radix=36",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=5 q=5": [
+   "EQ|k=1|radix=5"
+  ],
+  "AG p=5 q=10": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=5 q=20": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=5 q=40": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=10 q=5": [
+   "C-A|g=2|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=10",
+   "C-C|direct"
+  ],
+  "AG p=10 q=10": [
+   "EQ|k=1|radix=10"
+  ],
+  "AG p=10 q=20": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=10 q=40": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=20 q=5": [
+   "C-A|g=4|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=10": [
+   "C-A|g=2|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=20",
+   "C-C|direct"
+  ],
+  "AG p=20 q=20": [
+   "EQ|k=1|radix=20"
+  ],
+  "AG p=20 q=40": [
+   "E-A|P|k=1|radix=20",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=40 q=5": [
+   "C-A|g=8|rep|k=1|radix=5",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=10": [
+   "C-A|g=4|rep|k=1|radix=10",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=20": [
+   "C-A|g=2|rep|k=1|radix=20",
+   "C-B|P|k=1|radix=40",
+   "C-C|direct"
+  ],
+  "AG p=40 q=40": [
+   "EQ|k=1|radix=40"
+  ],
+  "AG p=5 q=48": [
+   "E-A|P|k=1|radix=5",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=10 q=48": [
+   "E-A|P|k=1|radix=10",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=20 q=48": [
+   "E-A|P|k=1|radix=20",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=40 q=48": [
+   "E-A|P|k=1|radix=40",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=1 q=25": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=1 q=50": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=2 q=25": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=2 q=50": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=3 q=25": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=3 q=50": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=4 q=25": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=4 q=50": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=6 q=25": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=6 q=50": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=8 q=25": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=8 q=50": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=12 q=25": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=12 q=50": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=16 q=25": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=16 q=50": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=24 q=25": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=24 q=50": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=32 q=25": [
+   "C-A|joint|Q|k=1|radix=25",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=50": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=48 q=25": [
+   "C-A|joint|Q|k=1|radix=25",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=50": [
+   "E-A|P|k=1|radix=48",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=64 q=25": [
+   "C-A|g=25|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=50": [
+   "C-A|joint|Q|k=1|radix=50",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AR p=25": [
+   "WRHT|m=25|collect",
+   "WRHT|m=25|exchange"
+  ],
+  "AG p=25 q=25": [
+   "EQ|k=1|radix=25"
+  ],
+  "AR p=50": [
+   "WRHT|m=50|collect",
+   "WRHT|m=50|exchange"
+  ],
+  "AG p=50 q=50": [
+   "EQ|k=1|radix=50"
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+workload,N,family,lhas,status,structures
+alexnet,64,all,0.06518299018087784,feasible,0
+alexnet,64,one-stage,0.06728263479727128,feasible,208
+alexnet,64,deepest,0.12520463336046536,feasible,208
+vgg16,64,all,0.4559246197640966,feasible,0
+vgg16,64,one-stage,0.4585369438200529,feasible,108
+vgg16,64,deepest,0.6809554492212797,feasible,108
+googlenet,64,all,0.08321152597522294,feasible,0
+googlenet,64,one-stage,0.09520135851992238,feasible,615
+googlenet,64,deepest,0.17395929901203597,feasible,615
+resnet50,64,all,0.2357282227716975,feasible,0
+resnet50,64,one-stage,0.25376030200492156,feasible,108
+resnet50,64,deepest,0.5100227509861308,feasible,108

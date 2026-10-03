@@ -1,0 +1,9 @@
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 1024 --tag final_supp
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 512 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 512 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 512 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 64 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 128 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 64 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 128 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 256 --tag final

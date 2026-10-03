@@ -1,0 +1,2 @@
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.2473160870003994, 'AG': 1.5050866480005425, 'A2A': 0.6822568649995446}} in 4.0s
+vgg16 N=64: LHAS 0.456521 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=inf dp_N=0.874031 dp_best=0.874031 owt=0.518719 flexflow_mcmc=0.456871 | total 324.7s -> /home/claude/lhas-repro/results/raw/main_retain/vgg16_N64.json

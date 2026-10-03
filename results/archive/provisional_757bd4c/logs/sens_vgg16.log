@@ -1,0 +1,115 @@
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.336354327004301, 'AG': 2.8557256150106696, 'A2A': 0.9325892259385}} in 6.1s
+vgg16 N=64: LHAS 0.456521 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.874031 owt=0.518719 | total 24.9s -> /home/claude/lhas-repro/results/raw/sens/nominal/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.2573071030001302, 'AG': 2.3813730189958733, 'A2A': 0.8325010879761976}} in 5.4s
+vgg16 N=64: LHAS 0.437252 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.859059 owt=0.502722 | total 25.3s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.25/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.0162341129962442, 'AG': 2.7714766129920463, 'A2A': 0.8216815640171262}} in 5.6s
+vgg16 N=64: LHAS 0.417597 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.843702 owt=0.486725 | total 25.0s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.5/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.138889552996261, 'AG': 2.774423733993899, 'A2A': 0.8480663929694856}} in 5.8s
+vgg16 N=64: LHAS 0.396387 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.826947 owt=0.469965 | total 25.8s -> /home/claude/lhas-repro/results/raw/sens/alpha_0.75/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.22783072999664, 'AG': 2.643256287003169, 'A2A': 0.8694134449870035}} in 5.8s
+vgg16 N=64: LHAS 0.372379 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.809624 owt=0.452636 | total 25.2s -> /home/claude/lhas-repro/results/raw/sens/alpha_1.0/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.1278935670015926, 'AG': 2.689274772983481, 'A2A': 0.8536902679898049}} in 5.5s
+vgg16 N=64: LHAS 0.794124 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=1.193417 owt=0.838128 | total 25.3s -> /home/claude/lhas-repro/results/raw/sens/rho_0.25/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.1116820629977155, 'AG': 2.9808765390098415, 'A2A': 0.7134938220351614}} in 5.7s
+vgg16 N=64: LHAS 0.342525 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.767569 owt=0.412249 | total 25.4s -> /home/claude/lhas-repro/results/raw/sens/rho_0.75/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.1292861870006163, 'AG': 2.801756089014816, 'A2A': 0.8313198810283211}} in 5.8s
+vgg16 N=64: LHAS 0.285527 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.714338 owt=0.359014 | total 25.6s -> /home/claude/lhas-repro/results/raw/sens/rho_1.0/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.9825116760039236, 'AG': 2.6885990200116794, 'A2A': 0.8522681569829729}} in 5.5s
+vgg16 N=64: LHAS 0.466487 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.916104 owt=0.547660 | total 26.0s -> /home/claude/lhas-repro/results/raw/sens/redeff_0.25/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.3671144350009854, 'AG': 2.988180041000305, 'A2A': 0.9131284719624091}} in 6.1s
+vgg16 N=64: LHAS 0.450348 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.851804 owt=0.503669 | total 25.9s -> /home/claude/lhas-repro/results/raw/sens/redeff_1.0/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.1945508639983018, 'AG': 2.717255159008346, 'A2A': 0.88199029898351}} in 5.9s
+vgg16 N=64: LHAS 0.455601 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.873230 owt=0.517238 | total 25.7s -> /home/claude/lhas-repro/results/raw/sens/tsetup_5e-6/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.265783241004101, 'AG': 2.822668580007303, 'A2A': 0.8127716279614106}} in 5.9s
+vgg16 N=64: LHAS 0.459971 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.877031 owt=0.524236 | total 26.8s -> /home/claude/lhas-repro/results/raw/sens/tsetup_100e-6/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.1149196670030506, 'AG': 2.8284933519971673, 'A2A': 0.8238788550133904}} in 5.7s
+vgg16 N=64: LHAS 0.465583 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.892212 owt=0.558403 | total 20.5s -> /home/claude/lhas-repro/results/raw/sens/lamW_32/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.0852241890006553, 'AG': 2.886204540000108, 'A2A': 0.6795693390213273}} in 5.6s
+vgg16 N=64: LHAS 0.449620 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.874031 owt=0.513625 | total 35.4s -> /home/claude/lhas-repro/results/raw/sens/lamW_128/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.469706079999014, 'AG': 2.8809295410010236, 'A2A': 0.8019254719674791}} in 6.2s
+vgg16 N=64: LHAS 0.447692 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.874031 owt=0.510201 | total 37.4s -> /home/claude/lhas-repro/results/raw/sens/lamW_256/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 2.412105289005922, 'AG': 3.024377848005315, 'A2A': 0.8221181269454974}} in 7.4s
+vgg16 N=64: LHAS 0.453328 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.884235 owt=0.532749 | total 70.8s -> /home/claude/lhas-repro/results/raw/sens/reach_15/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.5113311279983463, 'AG': 2.0342232849998254, 'A2A': 0.512898513032269}} in 4.7s
+vgg16 N=64: LHAS 0.452703 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.883513 owt=0.531064 | total 29.6s -> /home/claude/lhas-repro/results/raw/sens/reach_16/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.9517361859961966, 'AG': 1.862414727003852, 'A2A': 0.42332617401189054}} in 4.9s
+vgg16 N=64: LHAS 0.436609 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=nan owt=0.491553 | total 18.5s -> /home/claude/lhas-repro/results/raw/sens/reach_unrestricted_nopeer/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.7630560910038184, 'AG': 1.8582328319935186, 'A2A': 0.564269315029378}} in 3.8s
+vgg16 N=64: LHAS 0.557569 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=1.383200 owt=0.686047 | total 16.8s -> /home/claude/lhas-repro/results/raw/sens/eps_0.5/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.7915400450019661, 'AG': 2.0095089449932857, 'A2A': 0.5728338880435331}} in 4.1s
+vgg16 N=64: LHAS 0.508164 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=1.411499 owt=0.722976 | total 18.2s -> /home/claude/lhas-repro/results/raw/sens/whole_item/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.9230506840049202, 'AG': 1.9290753159930318, 'A2A': 0.5667376969577163}} in 4.0s
+vgg16 N=64: LHAS 0.455925 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=0.873434 owt=0.518122 | total 17.1s -> /home/claude/lhas-repro/results/raw/sens/raw_omit/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.2532897620021686, 'AG': 1.6017380770026648, 'A2A': 0.6108656580290699}} in 3.1s
+vgg16 N=64: LHAS 0.459134 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=nan owt=0.516221 | total 4.0s -> /home/claude/lhas-repro/results/raw/sens/family_one-stage/vgg16_N64.json
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 0.25377634600226884, 'AG': 1.5369058219948784, 'A2A': 0.5469495629986341}} in 3.0s
+vgg16 N=64: LHAS 0.681552 s [cost-only minimizer is memory-feasible (equals lower bound)] dp_N=2.320183 owt=1.056199 | total 3.9s -> /home/claude/lhas-repro/results/raw/sens/family_deepest/vgg16_N64.json

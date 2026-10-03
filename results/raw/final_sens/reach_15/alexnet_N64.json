@@ -1,0 +1,813 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "alexnet",
+ "N": 64,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 15,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "25e5e52dbf10c0afcf2bc7174510f53d515ebf90",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 441,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 66840,
+   "unconstrained_optimum": 0.062041325793992595,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 53.33908858400173
+  },
+  "cost": 0.0620413257939926,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=10|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=10|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=10|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=10|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=10|exchange"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.027468233166451615,
+   "intra_transport": 0.03012349072,
+   "intra_reduction": 0.0018536351475409837,
+   "inter": 0.00259596676,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 932628736.0,
+  "memory_node1": 925930976.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {
+  "dp_N": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 464,
+    "unconstrained_optimum": 0.2645014569743557,
+    "memory_slack": false,
+    "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.00405652200061013
+   },
+   "cost": 0.2645014569743556,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.014260911070967745,
+    "intra_transport": 0.2379655390399999,
+    "intra_reduction": 0.012275006863387979,
+    "inter": 0.0,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 2101098976.0,
+   "memory_node1": 841931232.0,
+   "memory_budget_after_reserve": 11811160064.0
+  },
+  "owt": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 631,
+    "unconstrained_optimum": 0.10519027788600738,
+    "memory_slack": true,
+    "mode": "cost-only (memory provably non-binding)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.0028478669992182404
+   },
+   "cost": 0.10519027788600739,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=10|exchange"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=3|radix=5x5x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=9|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.01428458859354839,
+    "intra_transport": 0.08257900015999999,
+    "intra_reduction": 0.004122684852459016,
+    "inter": 0.0042040042800000005,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 1171691504.0,
+   "memory_node1": 376813040.0,
+   "memory_budget_after_reserve": 11811160064.0,
+   "definition_configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ]
+  }
+ },
+ "verification": {
+  "summary": {
+   "expected_operations": 22,
+   "network_operations": 12,
+   "by_status": {
+    "checked-actual": 12,
+    "local": 10
+   },
+   "packing_checked": 12,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=10|exchange",
+    "routes": 156,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00019455552,
+    "verified_reduction": 4.837420765027322e-06
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_3",
+    "candidate": "WRHT|m=10|exchange",
+    "routes": 156,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015913045999999998,
+    "verified_reduction": 6.383003278688524e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_6",
+    "candidate": "WRHT|m=10|exchange",
+    "routes": 156,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00296052856,
+    "verified_reduction": 0.00013786649180327868
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_8",
+    "candidate": "WRHT|m=10|exchange",
+    "routes": 156,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0038094785999999996,
+    "verified_reduction": 0.0001837688306010929
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=10|exchange",
+    "routes": 156,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0026769215199999997,
+    "verified_reduction": 0.0001225302732240437
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00161051944,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00028930368,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.012104650520000001,
+    "verified_reduction": 0.000928247606557377
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_1",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_1->classifier_4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_4",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393764119999999,
+    "verified_reduction": 0.0004125544918032787
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_4",
+    "candidate": "C-A|g=8|rep|k=0",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_4->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 6.8619080569988,
+  "construction": {
+   "ar_groups": 18,
+   "ag_groups": 192,
+   "a2a": 2265,
+   "seconds": {
+    "AR": 2.021687832995667,
+    "AG": 3.5915867279873055,
+    "A2A": 0.6770280160308175
+   }
+  },
+  "plan_seconds": 53.342544007999095,
+  "baselines_seconds": 0.007191204997070599,
+  "verification_seconds": 0.5981441289986833,
+  "total_seconds": 60.81901833899974,
+  "pack": {
+   "hits": 5262,
+   "misses": 2470,
+   "pack_seconds": 0.21228912017613766,
+   "cached_routes": 278330
+  },
+  "peak_rss_bytes": 317562880
+ }
+}

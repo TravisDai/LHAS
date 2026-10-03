@@ -1,0 +1,147 @@
+### python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/all --family all --baselines ''
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final_family/all]: LHAS feasible 0.06518299018087784 |  | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 30s -> /home/claude/lhas-repro/results/raw/final_family/all/alexnet_N64.json
+### EXIT 0 2026-09-28T05:30:56Z
+### python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final_family/one-stage]: LHAS feasible 0.06728263479727128 |  | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 6s -> /home/claude/lhas-repro/results/raw/final_family/one-stage/alexnet_N64.json
+### EXIT 0 2026-09-28T05:31:02Z
+### python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/deepest --family deepest --baselines ''
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final_family/deepest]: LHAS feasible 0.12520463336046536 |  | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 6s -> /home/claude/lhas-repro/results/raw/final_family/deepest/alexnet_N64.json
+### EXIT 0 2026-09-28T05:31:09Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/all --family all --baselines ''
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.18GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final_family/all]: LHAS feasible 0.4559246197640966 |  | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 24s -> /home/claude/lhas-repro/results/raw/final_family/all/vgg16_N64.json
+### EXIT 0 2026-09-28T05:31:33Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.18GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final_family/one-stage]: LHAS feasible 0.4585369438200529 |  | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 6s -> /home/claude/lhas-repro/results/raw/final_family/one-stage/vgg16_N64.json
+### EXIT 0 2026-09-28T05:31:39Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/deepest --family deepest --baselines ''
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.18GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final_family/deepest]: LHAS feasible 0.6809554492212797 |  | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 5s -> /home/claude/lhas-repro/results/raw/final_family/deepest/vgg16_N64.json
+### EXIT 0 2026-09-28T05:31:45Z
+### python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/all --family all --baselines ''
+googlenet N=64 [final_family/all]: LHAS feasible 0.083212 |  | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 112s -> /home/claude/lhas-repro/results/raw/final_family/all/googlenet_N64.json
+### EXIT 0 2026-09-28T05:33:38Z
+### python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+googlenet N=64 [final_family/one-stage]: LHAS feasible 0.095201 |  | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 102s -> /home/claude/lhas-repro/results/raw/final_family/one-stage/googlenet_N64.json
+### EXIT 0 2026-09-28T05:35:21Z
+### python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/deepest --family deepest --baselines ''
+googlenet N=64 [final_family/deepest]: LHAS feasible 0.173959 |  | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 84s -> /home/claude/lhas-repro/results/raw/final_family/deepest/googlenet_N64.json
+### EXIT 0 2026-09-28T05:36:46Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/all --family all --baselines ''
+resnet50 N=64 [final_family/all]: LHAS feasible 0.235728 |  | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 24s -> /home/claude/lhas-repro/results/raw/final_family/all/resnet50_N64.json
+### EXIT 0 2026-09-28T05:37:11Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+resnet50 N=64 [final_family/one-stage]: LHAS feasible 0.253760 |  | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 19s -> /home/claude/lhas-repro/results/raw/final_family/one-stage/resnet50_N64.json
+### EXIT 0 2026-09-28T05:37:31Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/deepest --family deepest --baselines ''
+resnet50 N=64 [final_family/deepest]: LHAS feasible 0.510023 |  | verify {'expected_operations': 304, 'network_operations': 168, 'by_status': {'checked-actual': 168, 'local': 136}, 'packing_checked': 168, 'all_network_operations_checked': True} | 14s -> /home/claude/lhas-repro/results/raw/final_family/deepest/resnet50_N64.json
+### EXIT 0 2026-09-28T05:37:46Z
+### python experiments/run_chain.py --workload alexnet --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final_batch/B256]: LHAS feasible 0.026771378303183498 | dp_N=feasible:0.22786657408118463 dp_best=feasible:0.11294125603046008 owt=feasible:0.04109434073221223 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 27s -> /home/claude/lhas-repro/results/raw/final_batch/B256/alexnet_N64.json
+### EXIT 0 2026-09-28T05:38:14Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+prefetch 500/2518 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2518 A2A (4, 1) 0.0s rss=0.19GiB
+prefetch 1500/2518 A2A (8, 16) 0.0s rss=0.19GiB
+prefetch 2000/2518 A2A (32, 2) 0.0s rss=0.20GiB
+prefetch 2500/2518 A2A (64, 64) 0.0s rss=0.20GiB
+vgg16 N=64 [final_batch/B256]: LHAS feasible 0.1642112103359422 | dp_N=feasible:0.6343421695919621 dp_best=feasible:0.6343421695919621 owt=feasible:0.18482067837369998 | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 36s -> /home/claude/lhas-repro/results/raw/final_batch/B256/vgg16_N64.json
+### EXIT 0 2026-09-28T05:38:50Z
+### python experiments/run_graph.py --workload googlenet --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+googlenet N=64 [final_batch/B256]: LHAS feasible 0.052765 | dp_N=feasible:0.06352743727218758 dp_best=feasible:0.056036809670058155 owt=feasible:0.0625549198428133 | verify {'expected_operations': 484, 'network_operations': 183, 'by_status': {'checked-actual': 183, 'local': 301}, 'packing_checked': 183, 'all_network_operations_checked': True} | 142s -> /home/claude/lhas-repro/results/raw/final_batch/B256/googlenet_N64.json
+### EXIT 0 2026-09-28T05:41:13Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+resnet50 N=64 [final_batch/B256]: LHAS feasible 0.147874 | dp_N=feasible:0.16790132854210474 dp_best=feasible:0.1518715541395099 owt=feasible:0.18681286263745464 | verify {'expected_operations': 304, 'network_operations': 164, 'by_status': {'checked-actual': 164, 'local': 140}, 'packing_checked': 164, 'all_network_operations_checked': True} | 23s -> /home/claude/lhas-repro/results/raw/final_batch/B256/resnet50_N64.json
+### EXIT 0 2026-09-28T05:41:37Z
+### rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload alexnet --N 256 --tag final_cold --baselines '' --no-verify
+prefetch 500/4033 A2A (0, 0) 0.0s rss=0.24GiB
+prefetch 1000/4033 A2A (2, 4) 0.0s rss=0.31GiB
+prefetch 1500/4033 A2A (4, 16) 0.0s rss=0.32GiB
+prefetch 2000/4033 A2A (8, 64) 0.0s rss=0.33GiB
+prefetch 2500/4033 A2A (16, 256) 0.0s rss=0.35GiB
+prefetch 3000/4033 A2A (64, 1) 0.0s rss=0.38GiB
+prefetch 3500/4033 A2A (128, 8) 0.0s rss=0.41GiB
+prefetch 3987/4033 AG (256, 128) 8.2s rss=0.48GiB
+prefetch 4000/4033 A2A (256, 128) 0.0s rss=0.48GiB
+alexnet N=256 [final_cold]: LHAS feasible 0.07258220079464833 |  | verify {'not_run': True, 'reason': '--no-verify'} | 162s -> /home/claude/lhas-repro/results/raw/final_cold/alexnet_N256.json
+### EXIT 0 2026-09-28T05:44:20Z
+### rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload vgg16 --N 256 --tag final_cold --baselines '' --no-verify
+prefetch 500/3114 AG (1, 20) 0.0s rss=0.35GiB
+prefetch 1000/3114 A2A (4, 8) 0.0s rss=0.36GiB
+prefetch 1500/3114 A2A (8, 128) 0.0s rss=0.37GiB
+prefetch 2000/3114 A2A (32, 8) 0.0s rss=0.39GiB
+prefetch 2500/3114 A2A (100, 8) 0.0s rss=0.43GiB
+prefetch 3000/3114 A2A (256, 32) 0.0s rss=0.49GiB
+prefetch 3062/3114 AG (256, 128) 8.3s rss=0.50GiB
+vgg16 N=256 [final_cold]: LHAS feasible 0.2828456251808778 |  | verify {'not_run': True, 'reason': '--no-verify'} | 144s -> /home/claude/lhas-repro/results/raw/final_cold/vgg16_N256.json
+### EXIT 0 2026-09-28T05:46:45Z
+### rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload googlenet --N 128 --tag final_cold --baselines '' --no-verify
+googlenet N=128 [final_cold]: LHAS feasible 0.094633 |  | verify {'not_run': True, 'reason': '--no-verify'} | 377s -> /home/claude/lhas-repro/results/raw/final_cold/googlenet_N128.json
+### EXIT 0 2026-09-28T05:53:03Z
+### rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload resnet50 --N 128 --tag final_cold --baselines '' --no-verify
+resnet50 N=128 [final_cold]: LHAS feasible 0.246064 |  | verify {'not_run': True, 'reason': '--no-verify'} | 53s -> /home/claude/lhas-repro/results/raw/final_cold/resnet50_N128.json
+### EXIT 0 2026-09-28T05:53:57Z
+### python experiments/run_chain.py --workload alexnet --N 64 --tag final
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final]: LHAS feasible 0.06518299018087784 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.23856225738441045 dp_best=feasible:0.19850672245626652 owt=feasible:0.10079137448688172 flexflow_mcmc=feasible:0.06518299018087784 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 34s -> /home/claude/lhas-repro/results/raw/final/alexnet_N64.json
+### EXIT 0 2026-09-28T05:54:31Z
+### python experiments/run_chain.py --workload alexnet --N 128 --tag final
+prefetch 500/3229 A2A (1, 2) 0.0s rss=0.21GiB
+prefetch 1000/3229 A2A (2, 32) 0.0s rss=0.21GiB
+prefetch 1500/3229 A2A (5, 128) 0.0s rss=0.22GiB
+prefetch 2000/3229 A2A (16, 4) 0.0s rss=0.22GiB
+prefetch 2500/3229 A2A (32, 64) 0.0s rss=0.23GiB
+prefetch 3000/3229 A2A (128, 2) 0.0s rss=0.26GiB
+alexnet N=128 [final]: LHAS feasible 0.06652071124429403 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.27572050355471883 dp_best=feasible:0.19850672245626652 owt=feasible:0.13291022982699807 flexflow_mcmc=feasible:0.07346503751933721 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 60s -> /home/claude/lhas-repro/results/raw/final/alexnet_N128.json
+### EXIT 0 2026-09-28T05:55:33Z
+### python experiments/run_graph.py --workload googlenet --N 64 --tag final
+googlenet N=64 [final]: LHAS feasible 0.083212 | single_node=infeasible:inf dp_N=feasible:0.08672974547432395 dp_best=feasible:0.08672974547432395 owt=feasible:0.08951534878961392 flexflow_mcmc=feasible:0.08346552451832183 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 218s -> /home/claude/lhas-repro/results/raw/final/googlenet_N64.json
+### EXIT 0 2026-09-28T05:59:12Z
+### python experiments/run_graph.py --workload googlenet --N 128 --tag final
+googlenet N=128 [final]: LHAS feasible 0.094633 | single_node=infeasible:inf dp_N=feasible:0.09962493585235323 dp_best=feasible:0.09817835258164635 owt=feasible:0.10975771291014981 flexflow_mcmc=feasible:0.09484492505340385 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 507s -> /home/claude/lhas-repro/results/raw/final/googlenet_N128.json
+### EXIT 0 2026-09-28T06:07:40Z
+### python experiments/run_graph.py --workload googlenet --N 256 --tag final
+googlenet N=256 [final]: LHAS feasible 0.094633 | single_node=infeasible:inf dp_N=feasible:0.14275386757601274 dp_best=feasible:0.09817835258164635 owt=feasible:0.17872295115496567 flexflow_mcmc=feasible:0.09614462191909746 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 1187s -> /home/claude/lhas-repro/results/raw/final/googlenet_N256.json
+### EXIT 0 2026-09-28T06:27:28Z
+### python experiments/run_graph.py --workload googlenet --N 512 --tag final
+googlenet N=512 [final]: LHAS feasible 0.094633 | single_node=infeasible:inf dp_N=feasible:0.30180850153882605 dp_best=feasible:0.09817835258164635 owt=feasible:0.4287082663732205 flexflow_mcmc=feasible:0.09614462191909746 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 2856s -> /home/claude/lhas-repro/results/raw/final/googlenet_N512.json
+### EXIT 0 2026-09-28T07:15:05Z
+### python experiments/run_chain.py --workload vgg16 --N 128 --tag final
+prefetch 500/2416 AG (1, 128) 0.0s rss=0.22GiB
+prefetch 1000/2416 A2A (4, 64) 0.0s rss=0.22GiB
+prefetch 1500/2416 A2A (16, 32) 0.0s rss=0.23GiB
+prefetch 2000/2416 A2A (64, 8) 0.0s rss=0.24GiB
+vgg16 N=128 [final]: LHAS feasible 0.32316360789470117 | single_node=infeasible:inf dp_N=feasible:0.7602472673509185 dp_best=feasible:0.7602472673509185 owt=feasible:0.45274202069204994 flexflow_mcmc=feasible:0.3529765545917575 | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 7156s -> /home/claude/lhas-repro/results/raw/final/vgg16_N128.json
+### EXIT 0 2026-09-28T09:14:23Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.18GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final]: LHAS feasible 0.4559246197640966 | single_node=infeasible:inf dp_N=feasible:0.8750863999145145 dp_best=feasible:0.8750863999145145 owt=feasible:0.5197739914045265 flexflow_mcmc=feasible:0.4559246197640966 | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 3337s -> /home/claude/lhas-repro/results/raw/final/vgg16_N64.json
+### EXIT 0 2026-09-28T10:10:01Z

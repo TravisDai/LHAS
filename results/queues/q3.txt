@@ -1,0 +1,28 @@
+python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/all --family all --baselines ''
+python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+python experiments/run_chain.py --workload alexnet --N 64 --tag final_family/deepest --family deepest --baselines ''
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/all --family all --baselines ''
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final_family/deepest --family deepest --baselines ''
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/all --family all --baselines ''
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_family/deepest --family deepest --baselines ''
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/all --family all --baselines ''
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/one-stage --family one-stage --baselines ''
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_family/deepest --family deepest --baselines ''
+python experiments/run_chain.py --workload alexnet --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_batch/B256 --B 256 --baselines dp,dpbest,owt
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload alexnet --N 256 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_chain.py --workload vgg16 --N 256 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload googlenet --N 128 --tag final_cold --baselines '' --no-verify
+rm -rf results/cache/cold && mkdir -p results/cache/cold && LHAS_PACK_CACHE_DIR=results/cache/cold python experiments/run_graph.py --workload resnet50 --N 128 --tag final_cold --baselines '' --no-verify
+python experiments/run_chain.py --workload alexnet --N 64 --tag final
+python experiments/run_chain.py --workload alexnet --N 128 --tag final
+python experiments/run_graph.py --workload googlenet --N 64 --tag final
+python experiments/run_graph.py --workload googlenet --N 128 --tag final
+python experiments/run_graph.py --workload googlenet --N 256 --tag final
+python experiments/run_graph.py --workload googlenet --N 512 --tag final
+python experiments/run_chain.py --workload vgg16 --N 128 --tag final
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final

@@ -1,0 +1,111 @@
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 64 --tag final
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.18GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final]: LHAS feasible 0.4559246197640966 | single_node=infeasible:inf dp_N=feasible:0.8750863999145145 dp_best=feasible:0.8750863999145145 owt=feasible:0.5197739914045265 flexflow_mcmc=feasible:0.4559246197640966 | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 2095s -> /home/claude/lhas-repro/results/raw/final/vgg16_N64.json
+### EXIT 0 2026-09-28T16:17:52Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 128 --tag final
+prefetch 500/2416 AG (1, 128) 0.0s rss=0.22GiB
+prefetch 1000/2416 A2A (4, 64) 0.0s rss=0.22GiB
+prefetch 1500/2416 A2A (16, 32) 0.0s rss=0.23GiB
+prefetch 2000/2416 A2A (64, 8) 0.0s rss=0.24GiB
+vgg16 N=128 [final]: LHAS feasible 0.32316360789470117 | single_node=infeasible:inf dp_N=feasible:0.7602472673509185 dp_best=feasible:0.7602472673509185 owt=feasible:0.45274202069204994 flexflow_mcmc=feasible:0.3529765545917575 | verify {'expected_operations': 46, 'network_operations': 20, 'by_status': {'checked-actual': 20, 'local': 26}, 'packing_checked': 20, 'all_network_operations_checked': True} | 4062s -> /home/claude/lhas-repro/results/raw/final/vgg16_N128.json
+### EXIT 0 2026-09-28T17:25:34Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 64 --tag final
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.18GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final]: LHAS feasible 0.06518299018087784 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.23856225738441045 dp_best=feasible:0.19850672245626652 owt=feasible:0.10079137448688172 flexflow_mcmc=feasible:0.06518299018087784 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 21s -> /home/claude/lhas-repro/results/raw/final/alexnet_N64.json
+### EXIT 0 2026-09-28T17:25:56Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 128 --tag final
+prefetch 500/3229 A2A (1, 2) 0.0s rss=0.21GiB
+prefetch 1000/3229 A2A (2, 32) 0.0s rss=0.21GiB
+prefetch 1500/3229 A2A (5, 128) 0.0s rss=0.22GiB
+prefetch 2000/3229 A2A (16, 4) 0.0s rss=0.22GiB
+prefetch 2500/3229 A2A (32, 64) 0.0s rss=0.23GiB
+prefetch 3000/3229 A2A (128, 2) 0.0s rss=0.26GiB
+alexnet N=128 [final]: LHAS feasible 0.06652071124429403 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.27572050355471883 dp_best=feasible:0.19850672245626652 owt=feasible:0.13291022982699807 flexflow_mcmc=feasible:0.07346503751933721 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 38s -> /home/claude/lhas-repro/results/raw/final/alexnet_N128.json
+### EXIT 0 2026-09-28T17:26:34Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 256 --tag final
+prefetch 500/4033 A2A (0, 0) 0.0s rss=0.24GiB
+prefetch 1000/4033 A2A (2, 4) 0.0s rss=0.31GiB
+prefetch 1500/4033 A2A (4, 16) 0.0s rss=0.32GiB
+prefetch 2000/4033 A2A (8, 64) 0.0s rss=0.33GiB
+prefetch 2500/4033 A2A (16, 256) 0.0s rss=0.35GiB
+prefetch 3000/4033 A2A (64, 1) 0.0s rss=0.38GiB
+prefetch 3500/4033 A2A (128, 8) 0.0s rss=0.41GiB
+prefetch 3987/4033 AG (256, 128) 5.5s rss=0.48GiB
+prefetch 4000/4033 A2A (256, 128) 0.0s rss=0.48GiB
+alexnet N=256 [final]: LHAS feasible 0.07258220079464833 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.29786629617867094 dp_best=feasible:0.19850672245626652 owt=feasible:0.2166409510960127 flexflow_mcmc=feasible:0.07458955026010929 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 104s -> /home/claude/lhas-repro/results/raw/final/alexnet_N256.json
+### EXIT 0 2026-09-28T17:28:19Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 512 --tag final
+prefetch 500/4719 A2A (0, 0) 0.0s rss=0.52GiB
+prefetch 1000/4719 A2A (1, 512) 0.0s rss=0.58GiB
+prefetch 1500/4719 A2A (4, 2) 0.0s rss=0.59GiB
+prefetch 2000/4719 A2A (8, 4) 0.0s rss=0.61GiB
+prefetch 2500/4719 AG (16, 10) 0.0s rss=0.64GiB
+prefetch 3000/4719 A2A (32, 32) 0.0s rss=0.68GiB
+prefetch 3500/4719 A2A (64, 96) 0.0s rss=0.75GiB
+prefetch 4000/4719 A2A (128, 512) 0.1s rss=0.87GiB
+prefetch 4319/4719 AG (256, 128) 6.4s rss=0.87GiB
+prefetch 4406/4719 AG (384, 128) 12.1s rss=0.92GiB
+prefetch 4500/4719 A2A (512, 4) 0.0s rss=0.98GiB
+prefetch 4620/4719 AG (512, 64) 6.6s rss=0.98GiB
+prefetch 4655/4719 AG (512, 128) 16.8s rss=0.98GiB
+prefetch 4687/4719 AG (512, 256) 46.9s rss=0.98GiB
+alexnet N=512 [final]: LHAS feasible 0.07258220079464833 | single_node=feasible:0.9126983085419357 dp_N=feasible:0.4999284433894448 dp_best=feasible:0.19850672245626652 owt=feasible:0.5715509787362033 flexflow_mcmc=feasible:0.0779118798074881 | verify {'expected_operations': 22, 'network_operations': 12, 'by_status': {'checked-actual': 12, 'local': 10}, 'packing_checked': 12, 'all_network_operations_checked': True} | 358s -> /home/claude/lhas-repro/results/raw/final/alexnet_N512.json
+### EXIT 0 2026-09-28T17:34:17Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 256 --tag final
+googlenet N=256 [final]: LHAS feasible 0.094633 | single_node=infeasible:inf dp_N=feasible:0.14275386757601274 dp_best=feasible:0.09817835258164635 owt=feasible:0.17872295115496567 flexflow_mcmc=feasible:0.09614462191909746 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 861s -> /home/claude/lhas-repro/results/raw/final/googlenet_N256.json
+### EXIT 0 2026-09-28T17:48:39Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 256 --tag final
+resnet50 N=256 [final]: LHAS feasible 0.252397 | single_node=infeasible:inf dp_N=feasible:0.3214212389543453 dp_best=feasible:0.2523970871389107 owt=feasible:1.5029564508442728 flexflow_mcmc=feasible:0.2523970871389107 | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 212s -> /home/claude/lhas-repro/results/raw/final/resnet50_N256.json
+### EXIT 0 2026-09-28T17:52:12Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/2475 A2A (1, 8) 0.0s rss=0.18GiB
+prefetch 1000/2475 A2A (4, 1) 0.0s rss=0.18GiB
+prefetch 1500/2475 A2A (8, 32) 0.0s rss=0.19GiB
+prefetch 2000/2475 AG (32, 4) 0.0s rss=0.19GiB
+alexnet N=64 [final_profiled_T4]: LHAS feasible 0.06848989075267652 | dp_N=feasible:0.2599077281067475 dp_best=feasible:0.18756465184300977 owt=feasible:0.10603937996194457 | verify {'expected_operations': 22, 'network_operations': 13, 'by_status': {'checked-actual': 13, 'local': 9}, 'packing_checked': 13, 'all_network_operations_checked': True} | 16s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/alexnet_N64.json
+### EXIT 0 2026-09-28T17:52:28Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.19GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final_profiled_T4]: LHAS feasible 0.41259745997624747 | dp_N=feasible:0.850325848149364 dp_best=feasible:0.850325848149364 owt=feasible:0.47717139159733707 | verify {'expected_operations': 46, 'network_operations': 21, 'by_status': {'checked-actual': 21, 'local': 25}, 'packing_checked': 21, 'all_network_operations_checked': True} | 19s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/vgg16_N64.json
+### EXIT 0 2026-09-28T17:52:48Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+googlenet N=64 [final_profiled_T4]: LHAS feasible 0.099319 | dp_N=feasible:0.10324705340783595 dp_best=feasible:0.10324705340783595 owt=feasible:0.10607711336417507 | verify {'expected_operations': 484, 'network_operations': 179, 'by_status': {'checked-actual': 179, 'local': 305}, 'packing_checked': 179, 'all_network_operations_checked': True} | 68s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/googlenet_N64.json
+### EXIT 0 2026-09-28T17:53:56Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+resnet50 N=64 [final_profiled_T4]: LHAS feasible 0.277768 | dp_N=feasible:0.27776778756124826 dp_best=feasible:0.27776778756124826 owt=feasible:0.33697996479730813 | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 16s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/resnet50_N64.json
+### EXIT 0 2026-09-28T17:54:13Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/4033 A2A (0, 0) 0.0s rss=0.25GiB
+prefetch 1000/4033 A2A (2, 4) 0.0s rss=0.32GiB
+prefetch 1500/4033 A2A (4, 16) 0.0s rss=0.32GiB
+prefetch 2000/4033 A2A (8, 64) 0.0s rss=0.34GiB
+prefetch 2500/4033 A2A (16, 256) 0.0s rss=0.35GiB
+prefetch 3000/4033 A2A (64, 1) 0.0s rss=0.38GiB
+prefetch 3500/4033 A2A (128, 8) 0.0s rss=0.42GiB
+prefetch 3987/4033 AG (256, 128) 5.6s rss=0.48GiB
+prefetch 4000/4033 A2A (256, 128) 0.0s rss=0.48GiB
+alexnet N=256 [final_profiled_T4]: LHAS feasible 0.07605689458793403 | dp_N=feasible:0.3204369168553423 dp_best=feasible:0.18756465184300977 owt=feasible:0.22689589465059296 | verify {'expected_operations': 22, 'network_operations': 13, 'by_status': {'checked-actual': 13, 'local': 9}, 'packing_checked': 13, 'all_network_operations_checked': True} | 95s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/alexnet_N256.json
+### EXIT 0 2026-09-28T17:55:49Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/3114 AG (1, 20) 0.0s rss=0.36GiB
+prefetch 1000/3114 A2A (4, 8) 0.0s rss=0.37GiB
+prefetch 1500/3114 A2A (8, 128) 0.0s rss=0.38GiB
+prefetch 2000/3114 A2A (32, 8) 0.0s rss=0.39GiB
+prefetch 2500/3114 A2A (100, 8) 0.0s rss=0.43GiB
+prefetch 3000/3114 A2A (256, 32) 0.0s rss=0.49GiB
+prefetch 3062/3114 AG (256, 128) 5.8s rss=0.50GiB
+vgg16 N=256 [final_profiled_T4]: LHAS feasible 0.3095331680640045 | dp_N=feasible:0.7830219238570258 dp_best=feasible:0.7830219238570258 owt=feasible:0.605523300780651 | verify {'expected_operations': 46, 'network_operations': 21, 'by_status': {'checked-actual': 21, 'local': 25}, 'packing_checked': 21, 'all_network_operations_checked': True} | 117s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/vgg16_N256.json
+### EXIT 0 2026-09-28T17:57:46Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+googlenet N=256 [final_profiled_T4]: LHAS feasible 0.111330 | dp_N=feasible:0.16130142440639053 dp_best=feasible:0.11570621903096497 owt=feasible:0.19718223872644078 | verify {'expected_operations': 484, 'network_operations': 181, 'by_status': {'checked-actual': 181, 'local': 303}, 'packing_checked': 181, 'all_network_operations_checked': True} | 794s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/googlenet_N256.json
+### EXIT 0 2026-09-28T18:11:00Z
+### export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+resnet50 N=256 [final_profiled_T4]: LHAS feasible 0.298049 | dp_N=feasible:0.34792039813998116 dp_best=feasible:0.2980492109430598 owt=feasible:1.531831152826681 | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 187s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/resnet50_N256.json
+### EXIT 0 2026-09-28T18:14:08Z

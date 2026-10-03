@@ -1,0 +1,18 @@
+{
+ "description": "Final nominal experiment specification (author decisions D1-D17, 2026-09-28). Runners read these defaults; command-line flags override them and every output records the values used.",
+ "B": 1024,
+ "raw_input_grad": "omit",
+ "norm_policy": "sync",
+ "optimizer": "SGD with momentum (coefficient 0.9 recorded; one float32 buffer per trainable parameter)",
+ "optimizer_state_factor": 1.0,
+ "runtime_reserve_bytes": 1073741824,
+ "workspace_bytes": 0,
+ "alpha": 0.0,
+ "googlenet_aux_logits": false,
+ "N_primary": [64, 128, 256, 512],
+ "N_supplementary": [1024],
+ "batch_sensitivity": {"B": 256, "N": 64},
+ "mcmc": {"iterations": 1000, "seeds": [0, 1, 2], "starts": ["best-common DP", "adapted OWT", "DP(N)", "random feasible"]},
+ "gpipe": {"micro": [1, 2, 4, 8, 16, 32], "rematerialization": [false, true], "workloads": ["alexnet", "vgg16"]},
+ "collective_families": ["all", "one-stage", "deepest"]
+}

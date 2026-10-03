@@ -1,0 +1,2 @@
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.2599970789997315, 'AG': 2.8784533269999883, 'A2A': 1.0236486089997925}} in 5.6s
+alexnet N=64: LHAS 0.065667 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=0.943650 dp_N=0.239046 dp_best=0.202376 owt=0.101275 flexflow_mcmc=0.071351 | total 25.6s -> /home/claude/lhas-repro/results/raw/main_retain/alexnet_N64.json

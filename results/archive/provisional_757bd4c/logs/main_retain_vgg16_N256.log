@@ -1,0 +1,11 @@
+prefetch 500/3114 AG (1, 20) 0.0s
+prefetch 1000/3114 A2A (4, 8) 0.0s
+prefetch 1500/3114 A2A (8, 128) 0.0s
+prefetch 2000/3114 A2A (32, 8) 0.0s
+prefetch 2500/3114 A2A (100, 8) 0.0s
+prefetch 3000/3114 A2A (256, 32) 0.0s
+prefetch 3026/3114 AG (256, 64) 6.4s
+prefetch 3062/3114 AG (256, 128) 12.3s
+prefetch 3094/3114 AG (256, 200) 5.3s
+prefetch 3096/3114 AG (256, 250) 8.8s
+prefetch {'ar_groups': 19, 'ag_groups': 181, 'a2a': 2914, 'seconds': {'AR': 6.4909711239979515, 'AG': 89.50232939199304, 'A2A': 26.97182518799127}} in 133.0s

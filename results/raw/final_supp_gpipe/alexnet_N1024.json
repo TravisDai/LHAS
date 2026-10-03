@@ -1,0 +1,136 @@
+{
+ "schema": "lhas-gpipe-v2",
+ "contract": "D13 (final)",
+ "workload": "alexnet",
+ "N": 1024,
+ "B": 1024,
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 1024,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "9a7c1d19a4eb03815f986442612a8bd8b691db29",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 445,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "search_space": {
+  "stages": "1..number of weighted layers (S=1 labeled degenerate DP)",
+  "replicas": "R | B, R*S <= N",
+  "micro": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32
+  ],
+  "rematerialization": [
+   false,
+   true
+  ],
+  "partition": "min-max linear partition of per-example stage compute"
+ },
+ "result": {
+  "status": "feasible",
+  "cost": 0.13121193265626674,
+  "S": 5,
+  "R": 8,
+  "active_nodes": 40,
+  "M": 32,
+  "rematerialization": false,
+  "degenerate_dp": false,
+  "stages": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    8
+   ]
+  ],
+  "breakdown": {
+   "forward": 0.01413153904344087,
+   "backward": 0.02718328008430109,
+   "setup": 5e-05,
+   "allreduce": 0.08984711352852479,
+   "boundary_circuits_simultaneous": true,
+   "allreduce_candidates": [
+    "WRHT|m=8|exchange",
+    "WRHT|m=8|exchange",
+    "WRHT|m=8|exchange",
+    "WRHT|m=8|exchange",
+    "WRHT|m=8|exchange"
+   ]
+  },
+  "memory_max": 2691376736.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "stats": {
+  "candidates": 754,
+  "evaluated": 493,
+  "pruned_by_bound": 261,
+  "allreduce_selection_unresolved": 0
+ },
+ "runtime": {
+  "search_seconds": 126.43516675399951,
+  "total_seconds": 126.4598925600003,
+  "pack": {
+   "hits": 26024,
+   "misses": 4483,
+   "pack_seconds": 90.85502318111685,
+   "cached_routes": 2212838,
+   "disk_hits": 3
+  },
+  "peak_rss_bytes": 797736960
+ }
+}

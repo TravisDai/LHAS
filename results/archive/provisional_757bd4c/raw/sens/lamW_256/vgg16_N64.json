@@ -1,0 +1,1007 @@
+{
+ "workload": "vgg16",
+ "N": 64,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 256,
+  "w_tx": 256,
+  "w_rx": 256,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 0,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "lhas": {
+  "feasible": true,
+  "cost": 0.4476919395936893,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP16",
+   "MP16",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_2",
+   "features_5",
+   "features_7",
+   "features_10",
+   "features_12",
+   "features_14",
+   "features_17",
+   "features_19",
+   "features_21",
+   "features_24",
+   "features_26",
+   "features_28",
+   "classifier_0",
+   "classifier_3",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=16"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=16|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=16|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=16|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.3321171677316128,
+   "intra_transport": 0.09770665247999992,
+   "intra_reduction": 0.014508618142076503,
+   "inter": 0.00335950124,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 6060096000.0,
+  "memory_node1": 5433485632.0,
+  "memory_budget": 12884901888.0,
+  "stats": {
+   "configs": [
+    5,
+    4,
+    6,
+    5,
+    14,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 66342,
+   "unconstrained_optimum": 0.4476919395936893,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    5,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 31.195070109999506
+  }
+ },
+ "runtime": {
+  "prefetch_seconds": 6.156709236000097,
+  "prefetch": {
+   "ar_groups": 13,
+   "ag_groups": 97,
+   "a2a": 1696,
+   "seconds": {
+    "AR": 1.469706079999014,
+    "AG": 2.8809295410010236,
+    "A2A": 0.8019254719674791
+   }
+  },
+  "plan_seconds": 31.205772255998454,
+  "pack": {
+   "hits": 2785,
+   "misses": 1301,
+   "pack_seconds": 0.15423461899263202,
+   "cached_routes": 155520
+  },
+  "total_seconds": 37.427926288999515,
+  "peak_rss_bytes": 309661696
+ },
+ "baselines": {
+  "dp_N": {
+   "feasible": true,
+   "cost": 0.8740309145519621,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.31938610209032253,
+    "intra_transport": 0.5106409265600002,
+    "intra_reduction": 0.044003885901639346,
+    "inter": 0.0,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 12374717760.0,
+   "memory_node1": 4008856896.0,
+   "memory_budget": 12884901888.0,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 480,
+    "unconstrained_optimum": 0.796283770405077,
+    "memory_slack": false,
+    "incumbent": 0.8740309145519621,
+    "mode": "labels (exact, branch-and-bound)",
+    "labels_per_layer": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     6,
+     8,
+     10,
+     12,
+     1,
+     1
+    ],
+    "seconds": 0.03353774400056864
+   },
+   "seconds": 0.033768960000088555
+  },
+  "owt": {
+   "feasible": true,
+   "cost": 0.5102014306277665,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=2|radix=8x8"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=2|radix=8x8"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=64|collect"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=2|radix=10x5"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=50|collect"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.3194097796129032,
+    "intra_transport": 0.15801754167999987,
+    "intra_reduction": 0.028887072174863384,
+    "inter": 0.0038870371599999997,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 12358533792.0,
+   "memory_node1": 3493446304.0,
+   "memory_budget": 12884901888.0,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 656,
+    "unconstrained_optimum": 0.5073876429103895,
+    "memory_slack": false,
+    "incumbent": 0.5102014306277665,
+    "mode": "labels (exact, branch-and-bound)",
+    "labels_per_layer": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     6,
+     8,
+     8,
+     8,
+     16,
+     4
+    ],
+    "seconds": 0.030513415000314126
+   }
+  }
+ }
+}

@@ -1,0 +1,36 @@
+### python experiments/run_chain.py --workload vgg16 --N 512 --tag final
+prefetch 500/3849 A2A (1, 4) 0.0s rss=0.85GiB
+prefetch 1000/3849 A2A (2, 256) 0.0s rss=0.86GiB
+prefetch 1500/3849 A2A (8, 8) 0.0s rss=0.88GiB
+prefetch 2000/3849 A2A (16, 128) 0.0s rss=0.90GiB
+prefetch 2500/3849 A2A (64, 1) 0.0s rss=0.97GiB
+prefetch 3000/3849 A2A (128, 16) 0.0s rss=1.08GiB
+prefetch 3140/3849 AG (128, 512) 6.0s rss=1.10GiB
+prefetch 3396/3849 AG (256, 64) 6.0s rss=1.11GiB
+prefetch 3432/3849 AG (256, 128) 15.0s rss=1.11GiB
+prefetch 3485/3849 AG (256, 500) 6.6s rss=1.14GiB
+prefetch 3487/3849 AG (256, 512) 9.3s rss=1.15GiB
+prefetch 3500/3849 A2A (256, 512) 0.5s rss=1.15GiB
+prefetch 3535/3849 AG (512, 1) 6.8s rss=1.19GiB
+prefetch 3560/3849 AG (512, 2) 6.2s rss=1.19GiB
+prefetch 3589/3849 AG (512, 4) 7.1s rss=1.19GiB
+prefetch 3620/3849 AG (512, 5) 5.3s rss=1.19GiB
+prefetch 3622/3849 AG (512, 8) 9.1s rss=1.19GiB
+prefetch 3654/3849 AG (512, 10) 6.5s rss=1.19GiB
+prefetch 3656/3849 AG (512, 16) 7.4s rss=1.19GiB
+prefetch 3688/3849 AG (512, 20) 5.1s rss=1.19GiB
+prefetch 3690/3849 AG (512, 25) 5.7s rss=1.19GiB
+prefetch 3692/3849 AG (512, 32) 10.5s rss=1.19GiB
+prefetch 3724/3849 AG (512, 40) 5.8s rss=1.19GiB
+prefetch 3726/3849 AG (512, 50) 6.6s rss=1.19GiB
+prefetch 3728/3849 AG (512, 64) 17.2s rss=1.19GiB
+prefetch 3760/3849 AG (512, 100) 5.5s rss=1.19GiB
+prefetch 3762/3849 AG (512, 125) 5.3s rss=1.19GiB
+prefetch 3764/3849 AG (512, 128) 43.3s rss=1.19GiB
+prefetch 3796/3849 AG (512, 200) 5.6s rss=1.19GiB
+prefetch 3798/3849 AG (512, 250) 5.6s rss=1.20GiB
+prefetch 3800/3849 AG (512, 256) 103.9s rss=1.20GiB
+prefetch 3832/3849 AG (512, 500) 9.2s rss=1.24GiB
+prefetch 3835/3849 AG (512, 512) 5.4s rss=1.24GiB
+vgg16 N=512 [final]: LHAS feasible 0.3528483450297197 | single_node=infeasible:inf dp_N=feasible:1.1296008121074566 dp_best=feasible:0.7871356660464376 owt=feasible:1.4027355898725757 flexflow_mcmc=feasible:0.3948656023532522 | verify {'expected_operations': 46, 'network_operations': 24, 'by_status': {'checked-actual': 24, 'local': 22}, 'packing_checked': 24, 'all_network_operations_checked': True} | 4354s -> /home/claude/lhas-repro/results/raw/final/vgg16_N512.json
+### EXIT 0 2026-09-28T08:34:21Z

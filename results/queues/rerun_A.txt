@@ -1,0 +1,16 @@
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 64 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 128 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 64 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 128 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 256 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 512 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 256 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 256 --tag final
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload alexnet --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_chain.py --workload vgg16 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload googlenet --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings PYTHONPATH=src; python experiments/run_graph.py --workload resnet50 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt

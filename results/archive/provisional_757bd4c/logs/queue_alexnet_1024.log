@@ -1,0 +1,352 @@
+### python experiments/run_chain.py --workload alexnet --N 1024 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/5377 A2A (0, 0) 0.0s
+prefetch 1000/5377 A2A (1, 256) 0.0s
+prefetch 1500/5377 AG (3, 2) 0.0s
+prefetch 2000/5377 AG (6, 8) 0.0s
+prefetch 2500/5377 A2A (12, 64) 0.0s
+prefetch 3000/5377 A2A (25, 1024) 0.9s
+prefetch 3451/5377 AG (48, 1024) 7.0s
+prefetch 3500/5377 A2A (64, 1) 0.0s
+prefetch 3804/5377 AG (64, 512) 5.3s
+prefetch 3827/5377 AG (64, 1000) 12.5s
+prefetch 3829/5377 AG (64, 1024) 12.4s
+prefetch 3889/5377 AG (96, 512) 6.6s
+prefetch 3892/5377 AG (96, 1024) 18.8s
+prefetch 3910/5377 A2A (100, 1024) 6.6s
+prefetch 3927/5377 A2A (125, 1024) 13.0s
+prefetch 4000/5377 A2A (128, 4) 0.0s
+prefetch 4236/5377 AG (128, 500) 7.9s
+prefetch 4238/5377 AG (128, 512) 9.4s
+prefetch 4260/5377 AG (128, 1000) 29.9s
+prefetch 4262/5377 AG (128, 1024) 27.6s
+prefetch 4319/5377 AG (192, 384) 6.7s
+prefetch 4320/5377 AG (192, 512) 13.3s
+prefetch 4323/5377 AG (192, 1024) 42.0s
+prefetch 4340/5377 A2A (200, 1024) 22.6s
+prefetch 4354/5377 A2A (250, 512) 8.1s
+prefetch 4356/5377 A2A (250, 1024) 31.5s
+prefetch 4500/5377 A2A (256, 16) 0.0s
+prefetch 4564/5377 AG (256, 64) 5.5s
+prefetch 4601/5377 AG (256, 128) 10.9s
+prefetch 4633/5377 AG (256, 250) 5.2s
+prefetch 4651/5377 AG (256, 500) 16.4s
+prefetch 4653/5377 AG (256, 512) 20.9s
+prefetch 4674/5377 AG (256, 1000) 68.1s
+prefetch 4675/5377 A2A (256, 1000) 5.7s
+prefetch 4676/5377 AG (256, 1024) 67.8s
+prefetch 4683/5377 A2A (256, 1024) 5.5s
+prefetch 4686/5377 A2A (256, 1024) 5.1s
+prefetch 4688/5377 A2A (256, 1024) 5.8s
+prefetch 4690/5377 A2A (256, 1024) 5.6s
+prefetch 4692/5377 A2A (256, 1024) 6.1s
+prefetch 4694/5377 A2A (256, 1024) 5.6s
+prefetch 4695/5377 A2A (256, 1024) 5.4s
+prefetch 4697/5377 AG (384, 1) 12.7s
+prefetch 4699/5377 AG (384, 2) 5.3s
+prefetch 4701/5377 AG (384, 4) 5.1s
+prefetch 4703/5377 AG (384, 8) 5.5s
+prefetch 4705/5377 AG (384, 16) 6.1s
+prefetch 4707/5377 AG (384, 32) 7.1s
+prefetch 4709/5377 AG (384, 64) 11.0s
+prefetch 4711/5377 AG (384, 128) 25.2s
+prefetch 4713/5377 AG (384, 256) 13.1s
+prefetch 4716/5377 AG (384, 512) 32.8s
+prefetch 4718/5377 AG (384, 1024) 131.0s
+prefetch 4719/5377 A2A (384, 1024) 9.0s
+prefetch 4728/5377 A2A (500, 256) 5.8s
+prefetch 4729/5377 AR (500, 500) 24.7s
+prefetch 4730/5377 AG (500, 500) 6.6s
+prefetch 4731/5377 A2A (500, 512) 35.0s
+prefetch 4733/5377 A2A (500, 1024) 180.1s
+prefetch 4735/5377 AG (512, 1) 36.3s
+prefetch 4762/5377 AG (512, 2) 11.5s
+prefetch 4793/5377 AG (512, 4) 11.4s
+prefetch 4820/5377 AG (512, 5) 16.3s
+prefetch 4826/5377 AG (512, 8) 12.8s
+prefetch 4853/5377 AG (512, 10) 15.5s
+prefetch 4859/5377 AG (512, 16) 13.7s
+prefetch 4886/5377 AG (512, 20) 13.3s
+prefetch 4892/5377 AG (512, 25) 12.8s
+prefetch 4894/5377 AG (512, 32) 15.0s
+prefetch 4921/5377 AG (512, 40) 13.2s
+prefetch 4927/5377 AG (512, 50) 13.1s
+prefetch 4929/5377 AG (512, 64) 20.4s
+prefetch 4960/5377 AG (512, 100) 14.7s
+prefetch 4962/5377 AG (512, 125) 13.9s
+prefetch 4964/5377 AG (512, 128) 42.0s
+prefetch 4992/5377 AG (512, 200) 16.4s
+prefetch 4994/5377 AG (512, 250) 18.8s
+prefetch 4996/5377 AG (512, 256) 104.2s
+prefetch 5000/5377 A2A (512, 256) 0.0s
+prefetch 5018/5377 A2A (512, 384) 14.5s
+prefetch 5020/5377 AG (512, 500) 69.8s
+prefetch 5022/5377 AR (512, 512) 5.6s
+prefetch 5023/5377 AG (512, 512) 7.0s
+prefetch 5029/5377 AG (512, 1000) 264.8s
+prefetch 5030/5377 A2A (512, 1000) 13.6s
+prefetch 5031/5377 AG (512, 1024) 251.5s
+prefetch 5041/5377 A2A (512, 1024) 14.3s
+prefetch 5043/5377 A2A (512, 1024) 13.7s
+prefetch 5045/5377 A2A (512, 1024) 14.8s
+prefetch 5047/5377 A2A (512, 1024) 13.3s
+prefetch 5048/5377 A2A (512, 1024) 13.0s
+prefetch 5057/5377 A2A (1000, 128) 20.9s
+prefetch 5058/5377 A2A (1000, 256) 69.1s
+prefetch 5059/5377 A2A (1000, 512) 124.1s
+### EXIT 137 2026-09-27T21:08:29Z
+### LHAS_PACK_CACHE_DIR=results/cache/packings python experiments/run_chain.py --workload alexnet --N 1024 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/5377 A2A (0, 0) 0.0s
+prefetch 1000/5377 A2A (1, 256) 0.0s
+prefetch 1500/5377 AG (3, 2) 0.0s
+prefetch 2000/5377 AG (6, 8) 0.0s
+prefetch 2500/5377 A2A (12, 64) 0.0s
+prefetch 3000/5377 A2A (25, 1024) 0.5s
+prefetch 3500/5377 A2A (64, 1) 0.0s
+prefetch 3827/5377 AG (64, 1000) 8.3s
+prefetch 3829/5377 AG (64, 1024) 8.2s
+prefetch 3892/5377 AG (96, 1024) 13.0s
+prefetch 3927/5377 A2A (125, 1024) 8.6s
+prefetch 4000/5377 A2A (128, 4) 0.0s
+prefetch 4236/5377 AG (128, 500) 5.2s
+prefetch 4238/5377 AG (128, 512) 6.2s
+prefetch 4260/5377 AG (128, 1000) 18.4s
+prefetch 4262/5377 AG (128, 1024) 17.9s
+prefetch 4320/5377 AG (192, 512) 8.7s
+prefetch 4323/5377 AG (192, 1024) 26.3s
+prefetch 4340/5377 A2A (200, 1024) 13.4s
+prefetch 4354/5377 A2A (250, 512) 5.5s
+prefetch 4356/5377 A2A (250, 1024) 18.9s
+prefetch 4500/5377 A2A (256, 16) 0.0s
+prefetch 4601/5377 AG (256, 128) 7.0s
+prefetch 4651/5377 AG (256, 500) 11.7s
+prefetch 4653/5377 AG (256, 512) 13.1s
+prefetch 4674/5377 AG (256, 1000) 43.0s
+prefetch 4676/5377 AG (256, 1024) 43.9s
+prefetch 4697/5377 AG (384, 1) 8.0s
+prefetch 4709/5377 AG (384, 64) 6.9s
+prefetch 4711/5377 AG (384, 128) 16.0s
+prefetch 4713/5377 AG (384, 256) 8.3s
+prefetch 4716/5377 AG (384, 512) 21.6s
+prefetch 4718/5377 AG (384, 1024) 87.2s
+prefetch 4719/5377 A2A (384, 1024) 5.7s
+prefetch 4729/5377 AR (500, 500) 16.5s
+prefetch 4731/5377 A2A (500, 512) 24.3s
+prefetch 4733/5377 A2A (500, 1024) 118.8s
+prefetch 4735/5377 AG (512, 1) 23.8s
+prefetch 4762/5377 AG (512, 2) 8.1s
+prefetch 4793/5377 AG (512, 4) 7.8s
+prefetch 4820/5377 AG (512, 5) 9.9s
+prefetch 4826/5377 AG (512, 8) 7.9s
+prefetch 4853/5377 AG (512, 10) 9.5s
+prefetch 4859/5377 AG (512, 16) 8.8s
+prefetch 4886/5377 AG (512, 20) 8.7s
+prefetch 4892/5377 AG (512, 25) 8.3s
+prefetch 4894/5377 AG (512, 32) 9.4s
+prefetch 4921/5377 AG (512, 40) 8.3s
+prefetch 4927/5377 AG (512, 50) 8.6s
+prefetch 4929/5377 AG (512, 64) 13.1s
+prefetch 4960/5377 AG (512, 100) 9.2s
+prefetch 4962/5377 AG (512, 125) 9.5s
+prefetch 4964/5377 AG (512, 128) 27.0s
+prefetch 4992/5377 AG (512, 200) 10.7s
+prefetch 4994/5377 AG (512, 250) 12.1s
+prefetch 4996/5377 AG (512, 256) 67.4s
+prefetch 5000/5377 A2A (512, 256) 0.0s
+prefetch 5018/5377 A2A (512, 384) 9.6s
+prefetch 5020/5377 AG (512, 500) 47.0s
+prefetch 5029/5377 AG (512, 1000) 163.0s
+prefetch 5030/5377 A2A (512, 1000) 8.4s
+prefetch 5031/5377 AG (512, 1024) 160.4s
+prefetch 5041/5377 A2A (512, 1024) 8.9s
+prefetch 5043/5377 A2A (512, 1024) 8.4s
+prefetch 5045/5377 A2A (512, 1024) 8.7s
+prefetch 5047/5377 A2A (512, 1024) 9.2s
+prefetch 5048/5377 A2A (512, 1024) 8.2s
+prefetch 5057/5377 A2A (1000, 128) 13.0s
+prefetch 5058/5377 A2A (1000, 256) 45.6s
+prefetch 5059/5377 A2A (1000, 512) 81.0s
+### EXIT 137 2026-09-27T22:02:23Z
+### LHAS_PACK_CACHE_DIR=results/cache/packings python experiments/run_chain.py --workload alexnet --N 1024 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/5377 A2A (0, 0) 0.0s
+prefetch 1000/5377 A2A (1, 256) 0.0s
+prefetch 1500/5377 AG (3, 2) 0.0s
+prefetch 2000/5377 AG (6, 8) 0.0s
+prefetch 2500/5377 A2A (12, 64) 0.0s
+prefetch 3000/5377 A2A (25, 1024) 0.7s
+prefetch 3500/5377 A2A (64, 1) 0.0s
+prefetch 3827/5377 AG (64, 1000) 7.8s
+prefetch 3829/5377 AG (64, 1024) 7.6s
+prefetch 3892/5377 AG (96, 1024) 9.8s
+prefetch 4000/5377 A2A (128, 4) 0.0s
+prefetch 4238/5377 AG (128, 512) 5.6s
+prefetch 4260/5377 AG (128, 1000) 14.1s
+prefetch 4262/5377 AG (128, 1024) 14.3s
+prefetch 4320/5377 AG (192, 512) 6.9s
+prefetch 4323/5377 AG (192, 1024) 18.5s
+prefetch 4500/5377 A2A (256, 16) 0.0s
+prefetch 4601/5377 AG (256, 128) 7.5s
+prefetch 4651/5377 AG (256, 500) 7.6s
+prefetch 4653/5377 AG (256, 512) 8.5s
+prefetch 4674/5377 AG (256, 1000) 26.7s
+prefetch 4676/5377 AG (256, 1024) 25.2s
+prefetch 4709/5377 AG (384, 64) 7.1s
+prefetch 4711/5377 AG (384, 128) 16.0s
+prefetch 4713/5377 AG (384, 256) 6.1s
+prefetch 4716/5377 AG (384, 512) 12.1s
+prefetch 4718/5377 AG (384, 1024) 36.4s
+prefetch 4719/5377 A2A (384, 1024) 5.9s
+prefetch 4733/5377 A2A (500, 1024) 8.6s
+prefetch 4735/5377 AG (512, 1) 8.2s
+prefetch 4762/5377 AG (512, 2) 8.1s
+prefetch 4793/5377 AG (512, 4) 8.1s
+prefetch 4820/5377 AG (512, 5) 9.0s
+prefetch 4826/5377 AG (512, 8) 8.4s
+prefetch 4853/5377 AG (512, 10) 9.1s
+prefetch 4859/5377 AG (512, 16) 8.2s
+prefetch 4886/5377 AG (512, 20) 8.4s
+prefetch 4892/5377 AG (512, 25) 8.7s
+prefetch 4894/5377 AG (512, 32) 9.7s
+prefetch 4921/5377 AG (512, 40) 8.4s
+prefetch 4927/5377 AG (512, 50) 8.1s
+prefetch 4929/5377 AG (512, 64) 13.1s
+prefetch 4960/5377 AG (512, 100) 8.8s
+prefetch 4962/5377 AG (512, 125) 8.6s
+prefetch 4964/5377 AG (512, 128) 26.0s
+prefetch 4992/5377 AG (512, 200) 9.5s
+prefetch 4994/5377 AG (512, 250) 10.2s
+prefetch 4996/5377 AG (512, 256) 60.7s
+prefetch 5000/5377 A2A (512, 256) 0.0s
+prefetch 5020/5377 AG (512, 500) 17.4s
+prefetch 5029/5377 AG (512, 1000) 50.7s
+prefetch 5030/5377 A2A (512, 1000) 8.8s
+prefetch 5031/5377 AG (512, 1024) 51.8s
+prefetch 5041/5377 A2A (512, 1024) 8.8s
+prefetch 5043/5377 A2A (512, 1024) 8.8s
+prefetch 5045/5377 A2A (512, 1024) 8.4s
+prefetch 5047/5377 A2A (512, 1024) 8.8s
+prefetch 5048/5377 A2A (512, 1024) 8.7s
+prefetch 5059/5377 A2A (1000, 512) 8.8s
+prefetch 5060/5377 AR (1000, 1000) 19.6s
+prefetch 5061/5377 AG (1000, 1000) 30.6s
+prefetch 5062/5377 A2A (1000, 1024) 446.0s
+### EXIT 137 2026-09-27T22:45:23Z
+### LHAS_PACK_CACHE_DIR=results/cache/packings LHAS_PACK_CACHE_MAX_ROUTES=1500000 python experiments/run_chain.py --workload alexnet --N 1024 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/5377 A2A (0, 0) 0.0s rss=1.34GiB
+prefetch 1000/5377 A2A (1, 256) 0.0s rss=1.37GiB
+prefetch 1500/5377 AG (3, 2) 0.0s rss=1.40GiB
+prefetch 2000/5377 AG (6, 8) 0.0s rss=1.45GiB
+prefetch 2500/5377 A2A (12, 64) 0.0s rss=1.48GiB
+prefetch 3000/5377 A2A (25, 1024) 0.5s rss=1.62GiB
+prefetch 3500/5377 A2A (64, 1) 0.0s rss=1.81GiB
+prefetch 3827/5377 AG (64, 1000) 7.7s rss=2.16GiB
+prefetch 3829/5377 AG (64, 1024) 7.3s rss=2.16GiB
+prefetch 3892/5377 AG (96, 1024) 9.7s rss=2.16GiB
+prefetch 4000/5377 A2A (128, 4) 0.0s rss=2.16GiB
+prefetch 4238/5377 AG (128, 512) 5.3s rss=2.10GiB
+prefetch 4260/5377 AG (128, 1000) 14.0s rss=2.18GiB
+prefetch 4262/5377 AG (128, 1024) 14.0s rss=2.18GiB
+prefetch 4320/5377 AG (192, 512) 6.5s rss=2.10GiB
+prefetch 4323/5377 AG (192, 1024) 17.7s rss=2.14GiB
+prefetch 4500/5377 A2A (256, 16) 0.0s rss=2.14GiB
+prefetch 4601/5377 AG (256, 128) 7.3s rss=2.14GiB
+prefetch 4651/5377 AG (256, 500) 7.1s rss=2.14GiB
+prefetch 4653/5377 AG (256, 512) 8.3s rss=2.18GiB
+prefetch 4674/5377 AG (256, 1000) 25.7s rss=2.23GiB
+prefetch 4676/5377 AG (256, 1024) 25.0s rss=2.20GiB
+prefetch 4709/5377 AG (384, 64) 7.2s rss=2.23GiB
+prefetch 4711/5377 AG (384, 128) 15.5s rss=2.20GiB
+prefetch 4713/5377 AG (384, 256) 6.1s rss=2.20GiB
+prefetch 4716/5377 AG (384, 512) 11.6s rss=2.16GiB
+prefetch 4718/5377 AG (384, 1024) 34.8s rss=2.28GiB
+prefetch 4719/5377 A2A (384, 1024) 5.8s rss=2.28GiB
+prefetch 4733/5377 A2A (500, 1024) 8.1s rss=2.28GiB
+prefetch 4735/5377 AG (512, 1) 7.7s rss=2.22GiB
+prefetch 4762/5377 AG (512, 2) 7.9s rss=2.22GiB
+prefetch 4793/5377 AG (512, 4) 7.8s rss=2.22GiB
+prefetch 4820/5377 AG (512, 5) 8.6s rss=2.22GiB
+prefetch 4826/5377 AG (512, 8) 7.9s rss=2.22GiB
+prefetch 4853/5377 AG (512, 10) 9.0s rss=2.22GiB
+prefetch 4859/5377 AG (512, 16) 8.3s rss=2.22GiB
+prefetch 4886/5377 AG (512, 20) 8.4s rss=2.22GiB
+prefetch 4892/5377 AG (512, 25) 8.3s rss=2.22GiB
+prefetch 4894/5377 AG (512, 32) 9.4s rss=2.22GiB
+prefetch 4921/5377 AG (512, 40) 8.0s rss=2.22GiB
+prefetch 4927/5377 AG (512, 50) 8.5s rss=2.22GiB
+prefetch 4929/5377 AG (512, 64) 13.2s rss=2.22GiB
+prefetch 4960/5377 AG (512, 100) 9.2s rss=2.22GiB
+prefetch 4962/5377 AG (512, 125) 8.5s rss=2.22GiB
+prefetch 4964/5377 AG (512, 128) 25.3s rss=2.22GiB
+prefetch 4992/5377 AG (512, 200) 9.0s rss=2.22GiB
+prefetch 4994/5377 AG (512, 250) 9.2s rss=2.16GiB
+prefetch 4996/5377 AG (512, 256) 58.9s rss=2.16GiB
+prefetch 5000/5377 A2A (512, 256) 0.0s rss=2.16GiB
+prefetch 5020/5377 AG (512, 500) 16.7s rss=2.16GiB
+prefetch 5029/5377 AG (512, 1000) 50.0s rss=2.47GiB
+prefetch 5030/5377 A2A (512, 1000) 9.1s rss=2.47GiB
+prefetch 5031/5377 AG (512, 1024) 49.9s rss=2.62GiB
+prefetch 5041/5377 A2A (512, 1024) 8.8s rss=2.62GiB
+prefetch 5043/5377 A2A (512, 1024) 8.8s rss=2.62GiB
+prefetch 5045/5377 A2A (512, 1024) 9.6s rss=2.62GiB
+prefetch 5047/5377 A2A (512, 1024) 9.2s rss=2.62GiB
+prefetch 5048/5377 A2A (512, 1024) 9.2s rss=2.62GiB
+prefetch 5059/5377 A2A (1000, 512) 8.5s rss=2.39GiB
+### EXIT 137 2026-09-27T23:04:53Z
+### LHAS_PACK_CACHE_DIR=results/cache/packings LHAS_PACK_CACHE_MAX_ROUTES=1500000 python experiments/run_chain.py --workload alexnet --N 1024 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/5377 A2A (0, 0) 0.0s rss=1.35GiB
+prefetch 1000/5377 A2A (1, 256) 0.0s rss=1.38GiB
+prefetch 1500/5377 AG (3, 2) 0.0s rss=1.39GiB
+prefetch 2000/5377 AG (6, 8) 0.0s rss=1.43GiB
+prefetch 2500/5377 A2A (12, 64) 0.0s rss=1.48GiB
+prefetch 3000/5377 A2A (25, 1024) 0.3s rss=1.59GiB
+prefetch 3500/5377 A2A (64, 1) 0.0s rss=1.81GiB
+prefetch 3827/5377 AG (64, 1000) 6.0s rss=2.17GiB
+prefetch 3829/5377 AG (64, 1024) 5.3s rss=2.17GiB
+prefetch 3892/5377 AG (96, 1024) 6.4s rss=2.12GiB
+prefetch 4000/5377 A2A (128, 4) 0.0s rss=2.12GiB
+prefetch 4260/5377 AG (128, 1000) 10.0s rss=2.18GiB
+prefetch 4262/5377 AG (128, 1024) 9.1s rss=2.18GiB
+prefetch 4323/5377 AG (192, 1024) 11.1s rss=2.14GiB
+prefetch 4500/5377 A2A (256, 16) 0.0s rss=2.14GiB
+prefetch 4601/5377 AG (256, 128) 6.4s rss=2.14GiB
+prefetch 4674/5377 AG (256, 1000) 16.1s rss=2.23GiB
+prefetch 4676/5377 AG (256, 1024) 14.8s rss=2.20GiB
+prefetch 4711/5377 AG (384, 128) 13.0s rss=2.20GiB
+prefetch 4718/5377 AG (384, 1024) 17.2s rss=2.27GiB
+prefetch 4929/5377 AG (512, 64) 7.2s rss=2.23GiB
+prefetch 4964/5377 AG (512, 128) 19.2s rss=2.23GiB
+prefetch 4996/5377 AG (512, 256) 50.9s rss=2.23GiB
+prefetch 5000/5377 A2A (512, 256) 0.0s rss=2.23GiB
+prefetch 5020/5377 AG (512, 500) 5.3s rss=2.23GiB
+prefetch 5029/5377 AG (512, 1000) 21.3s rss=2.41GiB
+prefetch 5031/5377 AG (512, 1024) 19.9s rss=2.59GiB
+prefetch 5061/5377 AG (1000, 1000) 7.7s rss=2.40GiB
+prefetch 5064/5377 AG (1024, 1) 19.9s rss=2.54GiB
+prefetch 5091/5377 AG (1024, 2) 14.2s rss=2.54GiB
+prefetch 5122/5377 AG (1024, 4) 14.0s rss=2.56GiB
+prefetch 5149/5377 AG (1024, 5) 46.9s rss=2.70GiB
+prefetch 5155/5377 AG (1024, 8) 15.1s rss=2.51GiB
+prefetch 5182/5377 AG (1024, 10) 21.7s rss=2.67GiB
+prefetch 5188/5377 AG (1024, 16) 14.8s rss=2.58GiB
+prefetch 5215/5377 AG (1024, 20) 17.5s rss=2.57GiB
+prefetch 5221/5377 AG (1024, 25) 16.2s rss=2.57GiB
+prefetch 5223/5377 AG (1024, 32) 16.9s rss=2.59GiB
+prefetch 5250/5377 AG (1024, 40) 15.6s rss=2.57GiB
+prefetch 5256/5377 AG (1024, 50) 19.4s rss=2.57GiB
+prefetch 5258/5377 AG (1024, 64) 25.0s rss=2.63GiB
+prefetch 5285/5377 A2A (1024, 96) 6.8s rss=2.63GiB
+prefetch 5289/5377 AG (1024, 100) 28.4s rss=2.70GiB
+prefetch 5291/5377 AG (1024, 125) 35.8s rss=2.68GiB
+prefetch 5293/5377 AG (1024, 128) 65.1s rss=2.79GiB
+prefetch 5317/5377 A2A (1024, 192) 29.3s rss=2.79GiB
+prefetch 5321/5377 AG (1024, 200) 56.3s rss=2.74GiB
+prefetch 5323/5377 AG (1024, 250) 61.9s rss=2.76GiB
+prefetch 5325/5377 AG (1024, 256) 216.0s rss=2.85GiB
+prefetch 5347/5377 A2A (1024, 384) 62.2s rss=2.85GiB
+prefetch 5349/5377 AG (1024, 500) 94.5s rss=2.82GiB
+prefetch 5351/5377 AG (1024, 512) 615.0s rss=3.13GiB
+prefetch 5369/5377 AG (1024, 1000) 840.4s rss=3.35GiB
+prefetch 5371/5377 AR (1024, 1024) 8.5s rss=3.22GiB
+prefetch 5372/5377 AG (1024, 1024) 9.5s rss=2.89GiB
+prefetch {'ar_groups': 31, 'ag_groups': 465, 'a2a': 4881, 'seconds': {'AR': 18.528267265002796, 'AG': 2691.502293590991, 'A2A': 234.01427421303015}} in 3017.1s
+alexnet N=1024: LHAS 0.073066 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=0.943650 dp_N=0.587010 dp_best=0.202376 owt=1.635590 flexflow_mcmc=0.093349 | total 3179.8s -> /home/claude/lhas-repro/results/raw/main_retain/alexnet_N1024.json
+### EXIT 0 2026-09-28T00:02:09Z

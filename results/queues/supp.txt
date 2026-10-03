@@ -1,0 +1,2 @@
+python experiments/run_chain.py --workload alexnet --N 1024 --tag final_supp
+python experiments/run_gpipe.py --workload alexnet --N 1024 --tag final_supp_gpipe

@@ -1,0 +1,39 @@
+{
+ "workload": "vgg16",
+ "N": 256,
+ "B": 1024,
+ "contract": "PROPOSED D13 (pending author approval)",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "result": {
+  "cost": 0.6841442517018819,
+  "S": 2,
+  "R": 128,
+  "M": 8,
+  "rematerialization": false,
+  "stages": [
+   [
+    0,
+    6
+   ],
+   [
+    6,
+    16
+   ]
+  ],
+  "breakdown": {
+   "forward": 0.03743677089720429,
+   "backward": 0.06662750595440858,
+   "allreduce": 0.580079974850269
+  },
+  "memory_max": 8011132096.0
+ },
+ "seconds": 11.29392170400024
+}

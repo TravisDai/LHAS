@@ -1,0 +1,926 @@
+{
+ "workload": "alexnet",
+ "N": 256,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 256,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 0,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "lhas": {
+  "feasible": true,
+  "cost": 0.07306582608497092,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=16|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.027951858456774194,
+   "intra_transport": 0.03378131808,
+   "intra_reduction": 0.002950773508196721,
+   "inter": 0.00838187604,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 869970432.0,
+  "memory_node1": 866498880.0,
+  "memory_budget": 12884901888.0,
+  "stats": {
+   "configs": [
+    16,
+    23,
+    24,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "alternatives": 128154,
+   "unconstrained_optimum": 0.07306582608497092,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    16,
+    23,
+    24,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "seconds": 48.380292812000334
+  }
+ },
+ "runtime": {
+  "prefetch_seconds": 134.4879245609991,
+  "prefetch": {
+   "ar_groups": 26,
+   "ag_groups": 342,
+   "a2a": 3665,
+   "seconds": {
+    "AR": 5.473043291000067,
+    "AG": 95.44920214000922,
+    "A2A": 24.335449553962462
+   }
+  },
+  "plan_seconds": 48.384601802999896,
+  "pack": {
+   "hits": 10391,
+   "misses": 5237,
+   "pack_seconds": 17.557778392900218,
+   "cached_routes": 2996567
+  },
+  "total_seconds": 184.82868714199867,
+  "peak_rss_bytes": 915869696
+ },
+ "baselines": {
+  "ablations": {
+   "strategy_only": {
+    "feasible": true,
+    "cost": 0.21676185741859336,
+    "configs": [
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "MP256",
+     "MP256",
+     "MP250"
+    ],
+    "layers": [
+     "features_0",
+     "features_3",
+     "features_6",
+     "features_8",
+     "features_10",
+     "classifier_1",
+     "classifier_4",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=7|radix=4x2x2x2x2x2x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "C-B|P|k=7|radix=4x2x2x2x2x2x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=4|radix=5x5x5x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.003686641465806452,
+     "intra_transport": 0.11808584395999999,
+     "intra_reduction": 0.007717462032786884,
+     "inter": 0.08727190996,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 1666728352.0,
+    "memory_node1": 408237600.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "alternatives": 3104,
+     "unconstrained_optimum": 0.21676185741859336,
+     "memory_slack": false,
+     "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+     "labels_per_layer": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "seconds": 0.015305853999961982
+    },
+    "seconds": 0.020135184000537265
+   },
+   "dp_only_counts": {
+    "feasible": true,
+    "cost": 0.11056233102531994,
+    "configs": [
+     "DP64",
+     "DP64",
+     "DP64",
+     "DP64",
+     "DP64",
+     "DP1",
+     "DP1",
+     "DP1"
+    ],
+    "layers": [
+     "features_0",
+     "features_3",
+     "features_6",
+     "features_8",
+     "features_10",
+     "classifier_1",
+     "classifier_4",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=16|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.09099089457548387,
+     "intra_transport": 0.014890616159999998,
+     "intra_reduction": 0.0016099714098360657,
+     "inter": 0.0030708488800000005,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 813209920.0,
+    "memory_node1": 813209920.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+     ],
+     "alternatives": 10048,
+     "unconstrained_optimum": 0.11056233102531994,
+     "memory_slack": false,
+     "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+     "labels_per_layer": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+     ],
+     "seconds": 0.0667296499996155
+    },
+    "seconds": 0.06864285600022413
+   },
+   "mp_only_counts": {
+    "feasible": true,
+    "cost": 0.6018657123988225,
+    "configs": [
+     "MP1",
+     "MP6",
+     "MP6",
+     "MP8",
+     "MP8",
+     "MP8",
+     "MP16",
+     "MP1"
+    ],
+    "layers": [
+     "features_0",
+     "features_3",
+     "features_6",
+     "features_8",
+     "features_10",
+     "classifier_1",
+     "classifier_4",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AG_y",
+       "E-A|P|k=0"
+      ],
+      [
+       "AR_x",
+       "local"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=1|radix=6"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=6|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "E-B|Q|k=1|radix=8"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=6|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=1|radix=8"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=1|radix=8"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "E-B|Q|k=1|radix=16"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "C-A|g=16|rep|k=0"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=16|collect"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "local"
+      ],
+      [
+       "AR_x",
+       "local"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.22105834000516128,
+     "intra_transport": 0.36131272224000005,
+     "intra_reduction": 0.0187984465136612,
+     "inter": 0.0006962036399999999,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 12830266432.0,
+    "memory_node1": 12830266432.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      7,
+      14,
+      15,
+      9,
+      9,
+      9,
+      9,
+      14
+     ],
+     "alternatives": 58763,
+     "unconstrained_optimum": 0.5636505626866422,
+     "memory_slack": false,
+     "incumbent": 0.6018657123988225,
+     "mode": "labels (exact, branch-and-bound)",
+     "labels_per_layer": [
+      1,
+      3,
+      11,
+      7,
+      8,
+      5,
+      4,
+      3
+     ],
+     "seconds": 0.3294670800005406
+    },
+    "seconds": 0.3321718059996783
+   },
+   "greedy_layerwise": {
+    "feasible": true,
+    "cost": 0.08301224764670544,
+    "configs": [
+     "DP256",
+     "DP256",
+     "DP64",
+     "DP64",
+     "DP64",
+     "MP8",
+     "MP8",
+     "DP1"
+    ],
+    "layers": [
+     "features_0",
+     "features_3",
+     "features_6",
+     "features_8",
+     "features_10",
+     "classifier_1",
+     "classifier_4",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=64|collect"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=1|radix=8"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "C-A|g=8|rep|k=0"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.02339610723096774,
+     "intra_transport": 0.03746115008,
+     "intra_reduction": 0.0029868086557377047,
+     "inter": 0.01916818168,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 852711744.0,
+    "memory_node1": 852711744.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "alternatives": 168,
+     "unconstrained_optimum": 0.08301224764670545,
+     "memory_slack": true,
+     "mode": "cost-only (memory provably non-binding)",
+     "labels_per_layer": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "seconds": 0.002111132998834364
+    },
+    "greedy_configs": [
+     "DP256",
+     "DP256",
+     "DP64",
+     "DP64",
+     "DP64",
+     "MP8",
+     "MP8",
+     "DP1"
+    ]
+   }
+  }
+ }
+}

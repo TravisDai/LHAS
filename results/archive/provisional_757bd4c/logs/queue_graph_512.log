@@ -1,0 +1,6 @@
+### LHAS_PACK_CACHE_DIR=results/cache/packings python experiments/run_graph.py --workload resnet50 --N 512 --B 1024 --raw retain --norm sync --tag main_retain
+resnet50 N=512: LHAS 0.253209s memfeas=True single_node=5.839872 dp_N=0.643371 dp_best=0.253209 owt=7.234020 flexflow_mcmc=0.643371 | 1465.1s -> /home/claude/lhas-repro/results/raw/main_retain/resnet50_N512.json
+### EXIT 0 2026-09-27T22:34:10Z
+### LHAS_PACK_CACHE_DIR=results/cache/packings python experiments/run_graph.py --workload googlenet --N 512 --B 1024 --raw retain --norm sync --tag main_retain
+googlenet N=512: LHAS 0.095445s memfeas=True single_node=2.031907 dp_N=0.301910 dp_best=0.098990 owt=0.428810 flexflow_mcmc=0.286979 | 2650.0s -> /home/claude/lhas-repro/results/raw/main_retain/googlenet_N512.json
+### EXIT 0 2026-09-27T23:18:21Z

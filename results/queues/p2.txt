@@ -1,0 +1,4 @@
+python experiments/run_chain.py --workload vgg16 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+python experiments/run_chain.py --workload vgg16 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+python experiments/run_graph.py --workload resnet50 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt

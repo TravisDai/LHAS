@@ -1,0 +1,85 @@
+### python experiments/run_graph.py --workload googlenet --N 64 --B 1024 --raw retain --norm sync --tag main_retain
+googlenet N=64: LHAS 0.084024s memfeas=True single_node=2.031907 dp_N=0.087542 dp_best=0.087542 owt=0.090327 flexflow_mcmc=0.084278 | 179.2s -> /home/claude/lhas-repro/results/raw/main_retain/googlenet_N64.json
+### EXIT 0 2026-09-27T19:55:08Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --B 1024 --raw retain --norm sync --tag main_retain
+resnet50 N=64: LHAS 0.236540s memfeas=True single_node=5.839872 dp_N=0.236540 dp_best=0.236540 owt=0.293650 flexflow_mcmc=0.236540 | 41.4s -> /home/claude/lhas-repro/results/raw/main_retain/resnet50_N64.json
+### EXIT 0 2026-09-27T19:55:51Z
+### python experiments/run_chain.py --workload vgg16 --N 128 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3 --verify
+prefetch 500/2416 AG (1, 128) 0.0s
+prefetch 1000/2416 A2A (4, 64) 0.0s
+prefetch 1500/2416 A2A (16, 32) 0.0s
+prefetch 2000/2416 A2A (64, 8) 0.0s
+prefetch {'ar_groups': 16, 'ag_groups': 136, 'a2a': 2264, 'seconds': {'AR': 1.9544580059937289, 'AG': 11.139310009995825, 'A2A': 3.2734669869932986}} in 20.4s
+vgg16 N=128: LHAS 0.323462 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=inf dp_N=0.760546 dp_best=0.760546 owt=0.453040 flexflow_mcmc=0.336356 | total 601.1s -> /home/claude/lhas-repro/results/raw/main_retain/vgg16_N128.json
+### EXIT 0 2026-09-27T20:05:52Z
+### python experiments/run_chain.py --workload vgg16 --N 256 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3 --verify
+prefetch 500/3114 AG (1, 20) 0.0s
+prefetch 1000/3114 A2A (4, 8) 0.0s
+prefetch 1500/3114 A2A (8, 128) 0.0s
+prefetch 2000/3114 A2A (32, 8) 0.0s
+prefetch 2500/3114 A2A (100, 8) 0.0s
+prefetch 3000/3114 A2A (256, 32) 0.0s
+prefetch 3062/3114 AG (256, 128) 7.4s
+prefetch {'ar_groups': 19, 'ag_groups': 181, 'a2a': 2914, 'seconds': {'AR': 4.068511490000674, 'AG': 52.19290274100058, 'A2A': 16.49115531802454}} in 83.0s
+### EXIT 137 2026-09-27T20:18:04Z
+### python experiments/run_graph.py --workload googlenet --N 128 --B 1024 --raw retain --norm sync --tag main_retain
+googlenet N=128: LHAS 0.095290s memfeas=True single_node=2.031907 dp_N=0.100031 dp_best=0.098990 owt=0.110164 flexflow_mcmc=0.095480 | 585.2s -> /home/claude/lhas-repro/results/raw/main_retain/googlenet_N128.json
+### EXIT 0 2026-09-27T20:27:50Z
+### python experiments/run_graph.py --workload resnet50 --N 128 --B 1024 --raw retain --norm sync --tag main_retain
+resnet50 N=128: LHAS 0.246470s memfeas=True single_node=5.839872 dp_N=0.246470 dp_best=0.246470 owt=0.450142 flexflow_mcmc=0.246470 | 118.6s -> /home/claude/lhas-repro/results/raw/main_retain/resnet50_N128.json
+### EXIT 0 2026-09-27T20:29:50Z
+### python experiments/run_graph.py --workload googlenet --N 256 --B 1024 --raw retain --norm sync --tag main_retain
+googlenet N=256: LHAS 0.095445s memfeas=True single_node=2.031907 dp_N=0.142957 dp_best=0.098990 owt=0.178926 flexflow_mcmc=0.137129 | 1733.0s -> /home/claude/lhas-repro/results/raw/main_retain/googlenet_N256.json
+### EXIT 0 2026-09-27T20:58:44Z
+### python experiments/run_graph.py --workload resnet50 --N 256 --B 1024 --raw retain --norm sync --tag main_retain
+resnet50 N=256: LHAS 0.253209s memfeas=True single_node=5.839872 dp_N=0.321624 dp_best=0.253209 owt=1.503159 flexflow_mcmc=0.321624 | 444.5s -> /home/claude/lhas-repro/results/raw/main_retain/resnet50_N256.json
+### EXIT 0 2026-09-27T21:06:10Z
+### python experiments/run_chain.py --workload alexnet --N 64 --B 1024 --raw retain --baselines ablations --tag ablations
+prefetch 500/2475 A2A (1, 8) 0.0s
+prefetch 1000/2475 A2A (4, 1) 0.0s
+prefetch 1500/2475 A2A (8, 32) 0.0s
+prefetch 2000/2475 AG (32, 4) 0.0s
+prefetch {'ar_groups': 18, 'ag_groups': 192, 'a2a': 2265, 'seconds': {'AR': 1.597147810000024, 'AG': 5.943797743000687, 'A2A': 1.3773404820094584}} in 9.5s
+alexnet N=64: LHAS 0.065667 s [cost-only minimizer is memory-feasible (equals lower bound)] ablations=nan | total 37.6s -> /home/claude/lhas-repro/results/raw/ablations/alexnet_N64.json
+### EXIT 0 2026-09-27T21:06:48Z
+### python experiments/run_chain.py --workload vgg16 --N 64 --B 1024 --raw retain --baselines ablations --tag ablations
+prefetch 500/1806 A2A (2, 4) 0.0s
+prefetch 1000/1806 A2A (8, 16) 0.0s
+prefetch 1500/1806 A2A (32, 16) 0.0s
+prefetch {'ar_groups': 13, 'ag_groups': 97, 'a2a': 1696, 'seconds': {'AR': 1.2331102440020913, 'AG': 2.985693691021879, 'A2A': 0.9169040760134521}} in 6.1s
+vgg16 N=64: LHAS 0.456521 s [cost-only minimizer is memory-feasible (equals lower bound)] ablations=nan | total 26.9s -> /home/claude/lhas-repro/results/raw/ablations/vgg16_N64.json
+### EXIT 0 2026-09-27T21:07:16Z
+### python experiments/run_chain.py --workload alexnet --N 256 --B 1024 --raw retain --baselines ablations --tag ablations
+prefetch 500/4033 A2A (0, 0) 0.0s
+prefetch 1000/4033 A2A (2, 4) 0.0s
+prefetch 1500/4033 A2A (4, 16) 0.0s
+prefetch 2000/4033 A2A (8, 64) 0.0s
+prefetch 2500/4033 A2A (16, 256) 0.0s
+prefetch 3000/4033 A2A (64, 1) 0.0s
+prefetch 3500/4033 A2A (128, 8) 0.0s
+prefetch 3987/4033 AG (256, 128) 7.3s
+prefetch 4000/4033 A2A (256, 128) 0.0s
+prefetch {'ar_groups': 26, 'ag_groups': 342, 'a2a': 3665, 'seconds': {'AR': 5.473043291000067, 'AG': 95.44920214000922, 'A2A': 24.335449553962462}} in 134.5s
+alexnet N=256: LHAS 0.073066 s [cost-only minimizer is memory-feasible (equals lower bound)] ablations=nan | total 184.8s -> /home/claude/lhas-repro/results/raw/ablations/alexnet_N256.json
+### EXIT 0 2026-09-27T21:10:22Z
+### python experiments/run_chain.py --workload vgg16 --N 256 --B 1024 --raw retain --baselines ablations --tag ablations
+prefetch 500/3114 AG (1, 20) 0.0s
+prefetch 1000/3114 A2A (4, 8) 0.0s
+prefetch 1500/3114 A2A (8, 128) 0.0s
+prefetch 2000/3114 A2A (32, 8) 0.0s
+prefetch 2500/3114 A2A (100, 8) 0.0s
+prefetch 3000/3114 A2A (256, 32) 0.0s
+prefetch 3062/3114 AG (256, 128) 7.4s
+prefetch {'ar_groups': 19, 'ag_groups': 181, 'a2a': 2914, 'seconds': {'AR': 3.999733220001872, 'AG': 51.84480027899917, 'A2A': 16.844366954010184}} in 83.2s
+vgg16 N=256: LHAS 0.282995 s [cost-only minimizer is memory-feasible (equals lower bound)] ablations=nan | total 132.8s -> /home/claude/lhas-repro/results/raw/ablations/vgg16_N256.json
+### EXIT 0 2026-09-27T21:12:35Z
+### python experiments/run_chain.py --workload vgg16 --N 256 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3 --verify
+prefetch 500/3114 AG (1, 20) 0.0s
+prefetch 1000/3114 A2A (4, 8) 0.0s
+prefetch 1500/3114 A2A (8, 128) 0.0s
+prefetch 2000/3114 A2A (32, 8) 0.0s
+prefetch 2500/3114 A2A (100, 8) 0.0s
+prefetch 3000/3114 A2A (256, 32) 0.0s
+prefetch 3062/3114 AG (256, 128) 7.5s
+prefetch {'ar_groups': 19, 'ag_groups': 181, 'a2a': 2914, 'seconds': {'AR': 4.0842275459963275, 'AG': 53.449014239013195, 'A2A': 17.03880225899229}} in 84.6s
+### EXIT 137 2026-09-27T21:27:53Z

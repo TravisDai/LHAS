@@ -1,0 +1,1461 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "vgg16",
+ "N": 64,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 32,
+  "w_tx": 32,
+  "w_rx": 32,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/vgg16.json",
+  "manifest_sha256": "236b4227eff8811c9e73571f443dcd30f15e518d52aa7ab942301960e6872178",
+  "code_commit": "25e5e52dbf10c0afcf2bc7174510f53d515ebf90",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 441,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    5,
+    4,
+    6,
+    5,
+    14,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 50151,
+   "unconstrained_optimum": 0.46498622677218404,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    5,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 23.507256012999278
+  },
+  "cost": 0.46498622677218404,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_2",
+   "features_5",
+   "features_7",
+   "features_10",
+   "features_12",
+   "features_14",
+   "features_17",
+   "features_19",
+   "features_21",
+   "features_24",
+   "features_26",
+   "features_28",
+   "classifier_0",
+   "classifier_3",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.3413919915767742,
+   "intra_transport": 0.10723996271999998,
+   "intra_reduction": 0.005834143475409836,
+   "inter": 0.010520129,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 5193285888.0,
+  "memory_node1": 4633114080.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {
+  "dp_N": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 480,
+    "unconstrained_optimum": 0.8916155049094873,
+    "memory_slack": false,
+    "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.009781042001122842
+   },
+   "cost": 0.8916155049094873,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.31878942852129033,
+    "intra_transport": 0.5456081988800002,
+    "intra_reduction": 0.027217877508196722,
+    "inter": 0.0,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 9234952416.0,
+   "memory_node1": 4562287072.0,
+   "memory_budget_after_reserve": 11811160064.0
+  },
+  "owt": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 658,
+    "unconstrained_optimum": 0.5578061743490076,
+    "memory_slack": false,
+    "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.007638019997102674
+   },
+   "cost": 0.5578061743490075,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ],
+   "layers": [
+    "features_0",
+    "features_2",
+    "features_5",
+    "features_7",
+    "features_10",
+    "features_12",
+    "features_14",
+    "features_17",
+    "features_19",
+    "features_21",
+    "features_24",
+    "features_26",
+    "features_28",
+    "classifier_0",
+    "classifier_3",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=5|radix=4x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=8|exchange"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=3|radix=5x5x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=9|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.318813106043871,
+    "intra_transport": 0.20402892163999992,
+    "intra_reduction": 0.009552863825136612,
+    "inter": 0.025411282839999993,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 5120342000.0,
+   "memory_node1": 3468262896.0,
+   "memory_budget_after_reserve": 11811160064.0,
+   "definition_configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP64",
+    "MP64",
+    "MP50"
+   ]
+  }
+ },
+ "verification": {
+  "summary": {
+   "expected_operations": 46,
+   "network_operations": 20,
+   "by_status": {
+    "checked-actual": 20,
+    "local": 26
+   },
+   "packing_checked": 20,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 8.908256000000001e-05,
+    "verified_reduction": 3.5252459016393445e-07
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00035892704000000004,
+    "verified_reduction": 7.264524590163934e-06
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_2->features_5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_2->features_5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_5",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00064253408,
+    "verified_reduction": 1.4529049180327868e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_5->features_7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_5->features_7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_7",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0012087651199999998,
+    "verified_reduction": 2.9032918032786884e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_7->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_7->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022154580799999997,
+    "verified_reduction": 5.806583606557377e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->features_12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->features_12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_12",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0033479801599999998,
+    "verified_reduction": 0.00011608131147540984
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_12->features_14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_12->features_14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_14",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0033479801599999998,
+    "verified_reduction": 0.00011608131147540984
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_14->features_17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_14->features_17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_17",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005614007359999999,
+    "verified_reduction": 0.00023216262295081968
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_17->features_19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_17->features_19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_19",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010144155679999997,
+    "verified_reduction": 0.00046422452459016396
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_19->features_21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_19->features_21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_21",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010144155679999997,
+    "verified_reduction": 0.00046422452459016396
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_21->features_24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_21->features_24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_24",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010144155679999997,
+    "verified_reduction": 0.00046422452459016396
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_24->features_26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_24->features_26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_26",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010144155679999997,
+    "verified_reduction": 0.00046422452459016396
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_26->features_28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_26->features_28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_28",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 168,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010144155679999997,
+    "verified_reduction": 0.00046422452459016396
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_28->classifier_0",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00833836476,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_28->classifier_0",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014856205999999998,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_0",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03290839836,
+    "verified_reduction": 0.0025268962622950818
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_0",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_0->classifier_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393764119999999,
+    "verified_reduction": 0.0004125544918032787
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_3",
+    "candidate": "C-A|g=8|rep|k=0",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_3->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 7.179179867001949,
+  "construction": {
+   "ar_groups": 13,
+   "ag_groups": 97,
+   "a2a": 1696,
+   "seconds": {
+    "AR": 1.5182238119959948,
+    "AG": 3.482193333999021,
+    "A2A": 0.9506812610488851
+   }
+  },
+  "plan_seconds": 23.512043693001033,
+  "baselines_seconds": 0.018022055002802517,
+  "verification_seconds": 1.4842859370000951,
+  "total_seconds": 32.20304723400113,
+  "pack": {
+   "hits": 4045,
+   "misses": 1301,
+   "pack_seconds": 0.16314483499445487,
+   "cached_routes": 155520
+  },
+  "peak_rss_bytes": 281231360
+ }
+}

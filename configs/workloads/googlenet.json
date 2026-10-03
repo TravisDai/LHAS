@@ -1,0 +1,5230 @@
+{
+ "workload": "googlenet",
+ "constructor": "torchvision.models.googlenet",
+ "constructor_kwargs": {
+  "weights": null,
+  "num_classes": 1000,
+  "aux_logits": false,
+  "transform_input": false,
+  "init_weights": true
+ },
+ "mode": "train",
+ "input_per_example": [
+  3,
+  224,
+  224
+ ],
+ "dtype": "float32",
+ "versions": {
+  "torch": "2.14.0+cu130",
+  "torchvision": "0.29.0+cu130",
+  "python": "3.11.15"
+ },
+ "trainable_params": 6624904,
+ "buffers": 14617,
+ "nodes": [
+  {
+   "id": "x",
+   "fx_op": "placeholder",
+   "inputs": [],
+   "shape": [
+    3,
+    224,
+    224
+   ],
+   "op": "input"
+  },
+  {
+   "id": "conv1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "x"
+   ],
+   "shape": [
+    64,
+    112,
+    112
+   ],
+   "target": "conv1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 3,
+   "out_channels": 64,
+   "kernel": [
+    7,
+    7
+   ],
+   "stride": [
+    2,
+    2
+   ],
+   "padding": [
+    3,
+    3
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 9408
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "conv1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "conv1_conv"
+   ],
+   "shape": [
+    64,
+    112,
+    112
+   ],
+   "target": "conv1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu",
+   "fx_op": "call_function",
+   "inputs": [
+    "conv1_bn"
+   ],
+   "shape": [
+    64,
+    112,
+    112
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "maxpool1",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu"
+   ],
+   "shape": [
+    64,
+    56,
+    56
+   ],
+   "target": "maxpool1",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "conv2_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool1"
+   ],
+   "shape": [
+    64,
+    56,
+    56
+   ],
+   "target": "conv2.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 64,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 4096
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "conv2_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "conv2_conv"
+   ],
+   "shape": [
+    64,
+    56,
+    56
+   ],
+   "target": "conv2.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_1",
+   "fx_op": "call_function",
+   "inputs": [
+    "conv2_bn"
+   ],
+   "shape": [
+    64,
+    56,
+    56
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "conv3_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_1"
+   ],
+   "shape": [
+    192,
+    56,
+    56
+   ],
+   "target": "conv3.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 64,
+   "out_channels": 192,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 110592
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "conv3_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "conv3_conv"
+   ],
+   "shape": [
+    192,
+    56,
+    56
+   ],
+   "target": "conv3.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 192,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 192,
+    "bias": 192
+   },
+   "buffer_numel": {
+    "running_mean": 192,
+    "running_var": 192,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_2",
+   "fx_op": "call_function",
+   "inputs": [
+    "conv3_bn"
+   ],
+   "shape": [
+    192,
+    56,
+    56
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "maxpool2",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_2"
+   ],
+   "shape": [
+    192,
+    28,
+    28
+   ],
+   "target": "maxpool2",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool2"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "inception3a.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 12288
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch1_conv"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "inception3a.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_3",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch1_bn"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3a_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool2"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "inception3a.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 96,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 18432
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch2_0_conv"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "inception3a.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 96,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 96,
+    "bias": 96
+   },
+   "buffer_numel": {
+    "running_mean": 96,
+    "running_var": 96,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_4",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch2_0_bn"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3a_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_4"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3a.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 96,
+   "out_channels": 128,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 110592
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch2_1_conv"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3a.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_5",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch2_1_bn"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3a_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool2"
+   ],
+   "shape": [
+    16,
+    28,
+    28
+   ],
+   "target": "inception3a.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 16,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 3072
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch3_0_conv"
+   ],
+   "shape": [
+    16,
+    28,
+    28
+   ],
+   "target": "inception3a.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 16,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 16,
+    "bias": 16
+   },
+   "buffer_numel": {
+    "running_mean": 16,
+    "running_var": 16,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_6",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch3_0_bn"
+   ],
+   "shape": [
+    16,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3a_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_6"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3a.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 16,
+   "out_channels": 32,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 4608
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch3_1_conv"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3a.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_7",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch3_1_bn"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3a_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool2"
+   ],
+   "shape": [
+    192,
+    28,
+    28
+   ],
+   "target": "inception3a.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch4_0"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3a.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 32,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 6144
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3a_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3a_branch4_1_conv"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3a.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_8",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3a_branch4_1_bn"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_3",
+    "relu_5",
+    "relu_7",
+    "relu_8"
+   ],
+   "shape": [
+    256,
+    28,
+    28
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception3b_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3b.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 256,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 32768
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch1_conv"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3b.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_9",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch1_bn"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3b_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3b.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 256,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 32768
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch2_0_conv"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "inception3b.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_10",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch2_0_bn"
+   ],
+   "shape": [
+    128,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3b_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_10"
+   ],
+   "shape": [
+    192,
+    28,
+    28
+   ],
+   "target": "inception3b.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 128,
+   "out_channels": 192,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 221184
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch2_1_conv"
+   ],
+   "shape": [
+    192,
+    28,
+    28
+   ],
+   "target": "inception3b.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 192,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 192,
+    "bias": 192
+   },
+   "buffer_numel": {
+    "running_mean": 192,
+    "running_var": 192,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_11",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch2_1_bn"
+   ],
+   "shape": [
+    192,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3b_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3b.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 256,
+   "out_channels": 32,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 8192
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch3_0_conv"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "inception3b.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_12",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch3_0_bn"
+   ],
+   "shape": [
+    32,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3b_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_12"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "inception3b.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 32,
+   "out_channels": 96,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 27648
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch3_1_conv"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "inception3b.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 96,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 96,
+    "bias": 96
+   },
+   "buffer_numel": {
+    "running_mean": 96,
+    "running_var": 96,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_13",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch3_1_bn"
+   ],
+   "shape": [
+    96,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception3b_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat"
+   ],
+   "shape": [
+    256,
+    28,
+    28
+   ],
+   "target": "inception3b.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch4_0"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "inception3b.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 256,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 16384
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception3b_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception3b_branch4_1_conv"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "inception3b.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_14",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception3b_branch4_1_bn"
+   ],
+   "shape": [
+    64,
+    28,
+    28
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_1",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_9",
+    "relu_11",
+    "relu_13",
+    "relu_14"
+   ],
+   "shape": [
+    480,
+    28,
+    28
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "maxpool3",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_1"
+   ],
+   "shape": [
+    480,
+    14,
+    14
+   ],
+   "target": "maxpool3",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool3"
+   ],
+   "shape": [
+    192,
+    14,
+    14
+   ],
+   "target": "inception4a.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 480,
+   "out_channels": 192,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 92160
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch1_conv"
+   ],
+   "shape": [
+    192,
+    14,
+    14
+   ],
+   "target": "inception4a.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 192,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 192,
+    "bias": 192
+   },
+   "buffer_numel": {
+    "running_mean": 192,
+    "running_var": 192,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_15",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch1_bn"
+   ],
+   "shape": [
+    192,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4a_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool3"
+   ],
+   "shape": [
+    96,
+    14,
+    14
+   ],
+   "target": "inception4a.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 480,
+   "out_channels": 96,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 46080
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch2_0_conv"
+   ],
+   "shape": [
+    96,
+    14,
+    14
+   ],
+   "target": "inception4a.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 96,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 96,
+    "bias": 96
+   },
+   "buffer_numel": {
+    "running_mean": 96,
+    "running_var": 96,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_16",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch2_0_bn"
+   ],
+   "shape": [
+    96,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4a_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_16"
+   ],
+   "shape": [
+    208,
+    14,
+    14
+   ],
+   "target": "inception4a.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 96,
+   "out_channels": 208,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 179712
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch2_1_conv"
+   ],
+   "shape": [
+    208,
+    14,
+    14
+   ],
+   "target": "inception4a.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 208,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 208,
+    "bias": 208
+   },
+   "buffer_numel": {
+    "running_mean": 208,
+    "running_var": 208,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_17",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch2_1_bn"
+   ],
+   "shape": [
+    208,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4a_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool3"
+   ],
+   "shape": [
+    16,
+    14,
+    14
+   ],
+   "target": "inception4a.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 480,
+   "out_channels": 16,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 7680
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch3_0_conv"
+   ],
+   "shape": [
+    16,
+    14,
+    14
+   ],
+   "target": "inception4a.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 16,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 16,
+    "bias": 16
+   },
+   "buffer_numel": {
+    "running_mean": 16,
+    "running_var": 16,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_18",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch3_0_bn"
+   ],
+   "shape": [
+    16,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4a_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_18"
+   ],
+   "shape": [
+    48,
+    14,
+    14
+   ],
+   "target": "inception4a.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 16,
+   "out_channels": 48,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 6912
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch3_1_conv"
+   ],
+   "shape": [
+    48,
+    14,
+    14
+   ],
+   "target": "inception4a.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 48,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 48,
+    "bias": 48
+   },
+   "buffer_numel": {
+    "running_mean": 48,
+    "running_var": 48,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_19",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch3_1_bn"
+   ],
+   "shape": [
+    48,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4a_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool3"
+   ],
+   "shape": [
+    480,
+    14,
+    14
+   ],
+   "target": "inception4a.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch4_0"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4a.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 480,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 30720
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4a_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4a_branch4_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4a.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_20",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4a_branch4_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_2",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_15",
+    "relu_17",
+    "relu_19",
+    "relu_20"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception4b_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_2"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "inception4b.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 160,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 81920
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch1_conv"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "inception4b.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 160,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 160,
+    "bias": 160
+   },
+   "buffer_numel": {
+    "running_mean": 160,
+    "running_var": 160,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_21",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch1_bn"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4b_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_2"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "inception4b.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 112,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 57344
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch2_0_conv"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "inception4b.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 112,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 112,
+    "bias": 112
+   },
+   "buffer_numel": {
+    "running_mean": 112,
+    "running_var": 112,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_22",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch2_0_bn"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4b_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_22"
+   ],
+   "shape": [
+    224,
+    14,
+    14
+   ],
+   "target": "inception4b.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 112,
+   "out_channels": 224,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 225792
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch2_1_conv"
+   ],
+   "shape": [
+    224,
+    14,
+    14
+   ],
+   "target": "inception4b.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 224,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 224,
+    "bias": 224
+   },
+   "buffer_numel": {
+    "running_mean": 224,
+    "running_var": 224,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_23",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch2_1_bn"
+   ],
+   "shape": [
+    224,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4b_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_2"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "inception4b.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 24,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 12288
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch3_0_conv"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "inception4b.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 24,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 24,
+    "bias": 24
+   },
+   "buffer_numel": {
+    "running_mean": 24,
+    "running_var": 24,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_24",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch3_0_bn"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4b_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_24"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4b.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 24,
+   "out_channels": 64,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 13824
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch3_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4b.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_25",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch3_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4b_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_2"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "inception4b.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch4_0"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4b.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 32768
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4b_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4b_branch4_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4b.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_26",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4b_branch4_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_3",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_21",
+    "relu_23",
+    "relu_25",
+    "relu_26"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception4c_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_3"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4c.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 65536
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch1_conv"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4c.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_27",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch1_bn"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4c_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_3"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4c.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 65536
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch2_0_conv"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4c.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_28",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch2_0_bn"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4c_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_28"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "inception4c.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 128,
+   "out_channels": 256,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 294912
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch2_1_conv"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "inception4c.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 256,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 256,
+    "bias": 256
+   },
+   "buffer_numel": {
+    "running_mean": 256,
+    "running_var": 256,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_29",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch2_1_bn"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4c_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_3"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "inception4c.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 24,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 12288
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch3_0_conv"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "inception4c.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 24,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 24,
+    "bias": 24
+   },
+   "buffer_numel": {
+    "running_mean": 24,
+    "running_var": 24,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_30",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch3_0_bn"
+   ],
+   "shape": [
+    24,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4c_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_30"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4c.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 24,
+   "out_channels": 64,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 13824
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch3_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4c.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_31",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch3_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4c_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_3"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "inception4c.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch4_0"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4c.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 32768
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4c_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4c_branch4_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4c.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_32",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4c_branch4_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_4",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_27",
+    "relu_29",
+    "relu_31",
+    "relu_32"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception4d_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_4"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "inception4d.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 112,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 57344
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch1_conv"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "inception4d.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 112,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 112,
+    "bias": 112
+   },
+   "buffer_numel": {
+    "running_mean": 112,
+    "running_var": 112,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_33",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch1_bn"
+   ],
+   "shape": [
+    112,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4d_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_4"
+   ],
+   "shape": [
+    144,
+    14,
+    14
+   ],
+   "target": "inception4d.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 144,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 73728
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch2_0_conv"
+   ],
+   "shape": [
+    144,
+    14,
+    14
+   ],
+   "target": "inception4d.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 144,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 144,
+    "bias": 144
+   },
+   "buffer_numel": {
+    "running_mean": 144,
+    "running_var": 144,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_34",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch2_0_bn"
+   ],
+   "shape": [
+    144,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4d_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_34"
+   ],
+   "shape": [
+    288,
+    14,
+    14
+   ],
+   "target": "inception4d.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 144,
+   "out_channels": 288,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 373248
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch2_1_conv"
+   ],
+   "shape": [
+    288,
+    14,
+    14
+   ],
+   "target": "inception4d.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 288,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 288,
+    "bias": 288
+   },
+   "buffer_numel": {
+    "running_mean": 288,
+    "running_var": 288,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_35",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch2_1_bn"
+   ],
+   "shape": [
+    288,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4d_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_4"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "inception4d.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 32,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 16384
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch3_0_conv"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "inception4d.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_36",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch3_0_bn"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4d_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_36"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4d.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 32,
+   "out_channels": 64,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 18432
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch3_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4d.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_37",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch3_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4d_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_4"
+   ],
+   "shape": [
+    512,
+    14,
+    14
+   ],
+   "target": "inception4d.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch4_0"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4d.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 512,
+   "out_channels": 64,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 32768
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4d_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4d_branch4_1_conv"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "inception4d.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 64,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 64,
+    "bias": 64
+   },
+   "buffer_numel": {
+    "running_mean": 64,
+    "running_var": 64,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_38",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4d_branch4_1_bn"
+   ],
+   "shape": [
+    64,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_5",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_33",
+    "relu_35",
+    "relu_37",
+    "relu_38"
+   ],
+   "shape": [
+    528,
+    14,
+    14
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception4e_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_5"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "inception4e.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 528,
+   "out_channels": 256,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 135168
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch1_conv"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "inception4e.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 256,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 256,
+    "bias": 256
+   },
+   "buffer_numel": {
+    "running_mean": 256,
+    "running_var": 256,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_39",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch1_bn"
+   ],
+   "shape": [
+    256,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4e_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_5"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "inception4e.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 528,
+   "out_channels": 160,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 84480
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch2_0_conv"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "inception4e.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 160,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 160,
+    "bias": 160
+   },
+   "buffer_numel": {
+    "running_mean": 160,
+    "running_var": 160,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_40",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch2_0_bn"
+   ],
+   "shape": [
+    160,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4e_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_40"
+   ],
+   "shape": [
+    320,
+    14,
+    14
+   ],
+   "target": "inception4e.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 160,
+   "out_channels": 320,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 460800
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch2_1_conv"
+   ],
+   "shape": [
+    320,
+    14,
+    14
+   ],
+   "target": "inception4e.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 320,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 320,
+    "bias": 320
+   },
+   "buffer_numel": {
+    "running_mean": 320,
+    "running_var": 320,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_41",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch2_1_bn"
+   ],
+   "shape": [
+    320,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4e_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_5"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "inception4e.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 528,
+   "out_channels": 32,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 16896
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch3_0_conv"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "inception4e.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_42",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch3_0_bn"
+   ],
+   "shape": [
+    32,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4e_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_42"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4e.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 32,
+   "out_channels": 128,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 36864
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch3_1_conv"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4e.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_43",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch3_1_bn"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception4e_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_5"
+   ],
+   "shape": [
+    528,
+    14,
+    14
+   ],
+   "target": "inception4e.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch4_0"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4e.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 528,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 67584
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception4e_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception4e_branch4_1_conv"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "inception4e.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_44",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception4e_branch4_1_bn"
+   ],
+   "shape": [
+    128,
+    14,
+    14
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_6",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_39",
+    "relu_41",
+    "relu_43",
+    "relu_44"
+   ],
+   "shape": [
+    832,
+    14,
+    14
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "maxpool4",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_6"
+   ],
+   "shape": [
+    832,
+    7,
+    7
+   ],
+   "target": "maxpool4",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 2,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool4"
+   ],
+   "shape": [
+    256,
+    7,
+    7
+   ],
+   "target": "inception5a.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 256,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 212992
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch1_conv"
+   ],
+   "shape": [
+    256,
+    7,
+    7
+   ],
+   "target": "inception5a.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 256,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 256,
+    "bias": 256
+   },
+   "buffer_numel": {
+    "running_mean": 256,
+    "running_var": 256,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_45",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch1_bn"
+   ],
+   "shape": [
+    256,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5a_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool4"
+   ],
+   "shape": [
+    160,
+    7,
+    7
+   ],
+   "target": "inception5a.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 160,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 133120
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch2_0_conv"
+   ],
+   "shape": [
+    160,
+    7,
+    7
+   ],
+   "target": "inception5a.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 160,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 160,
+    "bias": 160
+   },
+   "buffer_numel": {
+    "running_mean": 160,
+    "running_var": 160,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_46",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch2_0_bn"
+   ],
+   "shape": [
+    160,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5a_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_46"
+   ],
+   "shape": [
+    320,
+    7,
+    7
+   ],
+   "target": "inception5a.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 160,
+   "out_channels": 320,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 460800
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch2_1_conv"
+   ],
+   "shape": [
+    320,
+    7,
+    7
+   ],
+   "target": "inception5a.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 320,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 320,
+    "bias": 320
+   },
+   "buffer_numel": {
+    "running_mean": 320,
+    "running_var": 320,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_47",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch2_1_bn"
+   ],
+   "shape": [
+    320,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5a_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool4"
+   ],
+   "shape": [
+    32,
+    7,
+    7
+   ],
+   "target": "inception5a.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 32,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 26624
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch3_0_conv"
+   ],
+   "shape": [
+    32,
+    7,
+    7
+   ],
+   "target": "inception5a.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 32,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 32,
+    "bias": 32
+   },
+   "buffer_numel": {
+    "running_mean": 32,
+    "running_var": 32,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_48",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch3_0_bn"
+   ],
+   "shape": [
+    32,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5a_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_48"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5a.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 32,
+   "out_channels": 128,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 36864
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch3_1_conv"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5a.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_49",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch3_1_bn"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5a_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "maxpool4"
+   ],
+   "shape": [
+    832,
+    7,
+    7
+   ],
+   "target": "inception5a.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch4_0"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5a.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 106496
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5a_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5a_branch4_1_conv"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5a.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_50",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5a_branch4_1_bn"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_7",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_45",
+    "relu_47",
+    "relu_49",
+    "relu_50"
+   ],
+   "shape": [
+    832,
+    7,
+    7
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "inception5b_branch1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_7"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "inception5b.branch1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 384,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 319488
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch1_conv"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "inception5b.branch1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 384,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 384,
+    "bias": 384
+   },
+   "buffer_numel": {
+    "running_mean": 384,
+    "running_var": 384,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_51",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch1_bn"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5b_branch2_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_7"
+   ],
+   "shape": [
+    192,
+    7,
+    7
+   ],
+   "target": "inception5b.branch2.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 192,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 159744
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch2_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch2_0_conv"
+   ],
+   "shape": [
+    192,
+    7,
+    7
+   ],
+   "target": "inception5b.branch2.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 192,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 192,
+    "bias": 192
+   },
+   "buffer_numel": {
+    "running_mean": 192,
+    "running_var": 192,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_52",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch2_0_bn"
+   ],
+   "shape": [
+    192,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5b_branch2_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_52"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "inception5b.branch2.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 384,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 663552
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch2_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch2_1_conv"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "inception5b.branch2.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 384,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 384,
+    "bias": 384
+   },
+   "buffer_numel": {
+    "running_mean": 384,
+    "running_var": 384,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_53",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch2_1_bn"
+   ],
+   "shape": [
+    384,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5b_branch3_0_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_7"
+   ],
+   "shape": [
+    48,
+    7,
+    7
+   ],
+   "target": "inception5b.branch3.0.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 48,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 39936
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch3_0_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch3_0_conv"
+   ],
+   "shape": [
+    48,
+    7,
+    7
+   ],
+   "target": "inception5b.branch3.0.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 48,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 48,
+    "bias": 48
+   },
+   "buffer_numel": {
+    "running_mean": 48,
+    "running_var": 48,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_54",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch3_0_bn"
+   ],
+   "shape": [
+    48,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5b_branch3_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "relu_54"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5b.branch3.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 48,
+   "out_channels": 128,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 55296
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch3_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch3_1_conv"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5b.branch3.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_55",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch3_1_bn"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "inception5b_branch4_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_7"
+   ],
+   "shape": [
+    832,
+    7,
+    7
+   ],
+   "target": "inception5b.branch4.0",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 1,
+   "padding": 1,
+   "ceil_mode": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch4_1_conv",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch4_0"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5b.branch4.1.conv",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 832,
+   "out_channels": 128,
+   "kernel": [
+    1,
+    1
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    0,
+    0
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": false,
+   "param_numel": {
+    "weight": 106496
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "inception5b_branch4_1_bn",
+   "fx_op": "call_module",
+   "inputs": [
+    "inception5b_branch4_1_conv"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "inception5b.branch4.1.bn",
+   "module": "BatchNorm2d",
+   "op": "batchnorm",
+   "num_features": 128,
+   "eps": 0.001,
+   "momentum": 0.1,
+   "affine": true,
+   "track_running_stats": true,
+   "param_numel": {
+    "weight": 128,
+    "bias": 128
+   },
+   "buffer_numel": {
+    "running_mean": 128,
+    "running_var": 128,
+    "num_batches_tracked": 1
+   }
+  },
+  {
+   "id": "relu_56",
+   "fx_op": "call_function",
+   "inputs": [
+    "inception5b_branch4_1_bn"
+   ],
+   "shape": [
+    128,
+    7,
+    7
+   ],
+   "target": "relu",
+   "op": "relu"
+  },
+  {
+   "id": "cat_8",
+   "fx_op": "call_function",
+   "inputs": [
+    "relu_51",
+    "relu_53",
+    "relu_55",
+    "relu_56"
+   ],
+   "shape": [
+    1024,
+    7,
+    7
+   ],
+   "target": "cat",
+   "op": "cat",
+   "dim": 1
+  },
+  {
+   "id": "avgpool",
+   "fx_op": "call_module",
+   "inputs": [
+    "cat_8"
+   ],
+   "shape": [
+    1024,
+    1,
+    1
+   ],
+   "target": "avgpool",
+   "module": "AdaptiveAvgPool2d",
+   "op": "adaptive_avgpool",
+   "output_size": [
+    1,
+    1
+   ],
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "flatten",
+   "fx_op": "call_function",
+   "inputs": [
+    "avgpool"
+   ],
+   "shape": [
+    1024
+   ],
+   "target": "flatten",
+   "op": "flatten",
+   "start_dim": 1
+  },
+  {
+   "id": "dropout",
+   "fx_op": "call_module",
+   "inputs": [
+    "flatten"
+   ],
+   "shape": [
+    1024
+   ],
+   "target": "dropout",
+   "module": "Dropout",
+   "op": "dropout",
+   "p": 0.2,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "fc",
+   "fx_op": "call_module",
+   "inputs": [
+    "dropout"
+   ],
+   "shape": [
+    1000
+   ],
+   "target": "fc",
+   "module": "Linear",
+   "op": "linear",
+   "in_features": 1024,
+   "out_features": 1000,
+   "bias": true,
+   "param_numel": {
+    "weight": 1024000,
+    "bias": 1000
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "output",
+   "fx_op": "output",
+   "inputs": [
+    "fc"
+   ],
+   "shape": [
+    1000
+   ],
+   "op": "output"
+  }
+ ],
+ "note": "Shapes are per example (batch dimension removed). Traced in train mode on CPU; no pretrained weights, no timing."
+}

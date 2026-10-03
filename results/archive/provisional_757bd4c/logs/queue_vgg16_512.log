@@ -1,0 +1,37 @@
+### LHAS_PACK_CACHE_DIR=results/cache/packings python experiments/run_chain.py --workload vgg16 --N 512 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3
+prefetch 500/3849 A2A (1, 4) 0.0s
+prefetch 1000/3849 A2A (2, 256) 0.0s
+prefetch 1500/3849 A2A (8, 8) 0.0s
+prefetch 2000/3849 A2A (16, 128) 0.0s
+prefetch 2500/3849 A2A (64, 1) 0.0s
+prefetch 3000/3849 A2A (128, 16) 0.0s
+prefetch 3201/3849 A2A (250, 512) 6.8s
+prefetch 3432/3849 AG (256, 128) 7.8s
+prefetch 3485/3849 AG (256, 500) 12.4s
+prefetch 3487/3849 AG (256, 512) 14.2s
+prefetch 3500/3849 A2A (256, 512) 0.8s
+prefetch 3531/3849 AR (500, 500) 26.7s
+prefetch 3533/3849 A2A (500, 512) 28.7s
+prefetch 3535/3849 AG (512, 1) 34.0s
+prefetch 3560/3849 AG (512, 2) 7.1s
+prefetch 3589/3849 AG (512, 4) 7.1s
+prefetch 3620/3849 AG (512, 5) 8.3s
+prefetch 3622/3849 AG (512, 8) 7.4s
+prefetch 3654/3849 AG (512, 10) 7.6s
+prefetch 3656/3849 AG (512, 16) 8.0s
+prefetch 3688/3849 AG (512, 20) 7.4s
+prefetch 3690/3849 AG (512, 25) 7.3s
+prefetch 3692/3849 AG (512, 32) 8.8s
+prefetch 3724/3849 AG (512, 40) 6.8s
+prefetch 3726/3849 AG (512, 50) 7.2s
+prefetch 3728/3849 AG (512, 64) 12.2s
+prefetch 3760/3849 AG (512, 100) 8.9s
+prefetch 3762/3849 AG (512, 125) 9.3s
+prefetch 3764/3849 AG (512, 128) 28.2s
+prefetch 3796/3849 AG (512, 200) 12.0s
+prefetch 3798/3849 AG (512, 250) 12.1s
+prefetch 3800/3849 AG (512, 256) 67.8s
+prefetch 3832/3849 AG (512, 500) 63.7s
+prefetch {'ar_groups': 21, 'ag_groups': 221, 'a2a': 3607, 'seconds': {'AR': 34.147172960991156, 'AG': 440.347504299978, 'A2A': 152.56916101292882}} in 666.5s
+vgg16 N=512: LHAS 0.352998 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=inf dp_N=1.129675 dp_best=0.787434 owt=1.402810 flexflow_mcmc=0.378763 | total 1028.9s -> /home/claude/lhas-repro/results/raw/main_retain/vgg16_N512.json
+### EXIT 0 2026-09-27T22:12:25Z

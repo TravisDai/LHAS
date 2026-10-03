@@ -1,0 +1,561 @@
+{
+ "workload": "alexnet",
+ "constructor": "torchvision.models.alexnet",
+ "constructor_kwargs": {
+  "weights": null,
+  "num_classes": 1000
+ },
+ "mode": "train",
+ "input_per_example": [
+  3,
+  224,
+  224
+ ],
+ "dtype": "float32",
+ "versions": {
+  "torch": "2.14.0+cu130",
+  "torchvision": "0.29.0+cu130",
+  "python": "3.11.15"
+ },
+ "trainable_params": 61100840,
+ "buffers": 0,
+ "nodes": [
+  {
+   "id": "x",
+   "fx_op": "placeholder",
+   "inputs": [],
+   "shape": [
+    3,
+    224,
+    224
+   ],
+   "op": "input"
+  },
+  {
+   "id": "features_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "x"
+   ],
+   "shape": [
+    64,
+    55,
+    55
+   ],
+   "target": "features.0",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 3,
+   "out_channels": 64,
+   "kernel": [
+    11,
+    11
+   ],
+   "stride": [
+    4,
+    4
+   ],
+   "padding": [
+    2,
+    2
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": true,
+   "param_numel": {
+    "weight": 23232,
+    "bias": 64
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_1",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_0"
+   ],
+   "shape": [
+    64,
+    55,
+    55
+   ],
+   "target": "features.1",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_2",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_1"
+   ],
+   "shape": [
+    64,
+    27,
+    27
+   ],
+   "target": "features.2",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": false,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_3",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_2"
+   ],
+   "shape": [
+    192,
+    27,
+    27
+   ],
+   "target": "features.3",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 64,
+   "out_channels": 192,
+   "kernel": [
+    5,
+    5
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    2,
+    2
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": true,
+   "param_numel": {
+    "weight": 307200,
+    "bias": 192
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_4",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_3"
+   ],
+   "shape": [
+    192,
+    27,
+    27
+   ],
+   "target": "features.4",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_5",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_4"
+   ],
+   "shape": [
+    192,
+    13,
+    13
+   ],
+   "target": "features.5",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": false,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_6",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_5"
+   ],
+   "shape": [
+    384,
+    13,
+    13
+   ],
+   "target": "features.6",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 192,
+   "out_channels": 384,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": true,
+   "param_numel": {
+    "weight": 663552,
+    "bias": 384
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_7",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_6"
+   ],
+   "shape": [
+    384,
+    13,
+    13
+   ],
+   "target": "features.7",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_8",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_7"
+   ],
+   "shape": [
+    256,
+    13,
+    13
+   ],
+   "target": "features.8",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 384,
+   "out_channels": 256,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": true,
+   "param_numel": {
+    "weight": 884736,
+    "bias": 256
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_9",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_8"
+   ],
+   "shape": [
+    256,
+    13,
+    13
+   ],
+   "target": "features.9",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_10",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_9"
+   ],
+   "shape": [
+    256,
+    13,
+    13
+   ],
+   "target": "features.10",
+   "module": "Conv2d",
+   "op": "conv",
+   "in_channels": 256,
+   "out_channels": 256,
+   "kernel": [
+    3,
+    3
+   ],
+   "stride": [
+    1,
+    1
+   ],
+   "padding": [
+    1,
+    1
+   ],
+   "dilation": [
+    1,
+    1
+   ],
+   "groups": 1,
+   "bias": true,
+   "param_numel": {
+    "weight": 589824,
+    "bias": 256
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_11",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_10"
+   ],
+   "shape": [
+    256,
+    13,
+    13
+   ],
+   "target": "features.11",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "features_12",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_11"
+   ],
+   "shape": [
+    256,
+    6,
+    6
+   ],
+   "target": "features.12",
+   "module": "MaxPool2d",
+   "op": "maxpool",
+   "kernel": 3,
+   "stride": 2,
+   "padding": 0,
+   "ceil_mode": false,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "avgpool",
+   "fx_op": "call_module",
+   "inputs": [
+    "features_12"
+   ],
+   "shape": [
+    256,
+    6,
+    6
+   ],
+   "target": "avgpool",
+   "module": "AdaptiveAvgPool2d",
+   "op": "adaptive_avgpool",
+   "output_size": [
+    6,
+    6
+   ],
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "flatten",
+   "fx_op": "call_function",
+   "inputs": [
+    "avgpool"
+   ],
+   "shape": [
+    9216
+   ],
+   "target": "flatten",
+   "op": "flatten",
+   "start_dim": 1
+  },
+  {
+   "id": "classifier_0",
+   "fx_op": "call_module",
+   "inputs": [
+    "flatten"
+   ],
+   "shape": [
+    9216
+   ],
+   "target": "classifier.0",
+   "module": "Dropout",
+   "op": "dropout",
+   "p": 0.5,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_1",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_0"
+   ],
+   "shape": [
+    4096
+   ],
+   "target": "classifier.1",
+   "module": "Linear",
+   "op": "linear",
+   "in_features": 9216,
+   "out_features": 4096,
+   "bias": true,
+   "param_numel": {
+    "weight": 37748736,
+    "bias": 4096
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_2",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_1"
+   ],
+   "shape": [
+    4096
+   ],
+   "target": "classifier.2",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_3",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_2"
+   ],
+   "shape": [
+    4096
+   ],
+   "target": "classifier.3",
+   "module": "Dropout",
+   "op": "dropout",
+   "p": 0.5,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_4",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_3"
+   ],
+   "shape": [
+    4096
+   ],
+   "target": "classifier.4",
+   "module": "Linear",
+   "op": "linear",
+   "in_features": 4096,
+   "out_features": 4096,
+   "bias": true,
+   "param_numel": {
+    "weight": 16777216,
+    "bias": 4096
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_5",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_4"
+   ],
+   "shape": [
+    4096
+   ],
+   "target": "classifier.5",
+   "module": "ReLU",
+   "op": "relu",
+   "inplace": true,
+   "param_numel": {},
+   "buffer_numel": {}
+  },
+  {
+   "id": "classifier_6",
+   "fx_op": "call_module",
+   "inputs": [
+    "classifier_5"
+   ],
+   "shape": [
+    1000
+   ],
+   "target": "classifier.6",
+   "module": "Linear",
+   "op": "linear",
+   "in_features": 4096,
+   "out_features": 1000,
+   "bias": true,
+   "param_numel": {
+    "weight": 4096000,
+    "bias": 1000
+   },
+   "buffer_numel": {}
+  },
+  {
+   "id": "output",
+   "fx_op": "output",
+   "inputs": [
+    "classifier_6"
+   ],
+   "shape": [
+    1000
+   ],
+   "op": "output"
+  }
+ ],
+ "note": "Shapes are per example (batch dimension removed). Traced in train mode on CPU; no pretrained weights, no timing."
+}

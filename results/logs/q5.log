@@ -1,0 +1,62 @@
+### python experiments/run_chain.py --workload vgg16 --N 512 --tag final
+prefetch 500/3849 A2A (1, 4) 0.0s rss=0.85GiB
+prefetch 1000/3849 A2A (2, 256) 0.0s rss=0.86GiB
+prefetch 1500/3849 A2A (8, 8) 0.0s rss=0.88GiB
+prefetch 2000/3849 A2A (16, 128) 0.0s rss=0.90GiB
+prefetch 2500/3849 A2A (64, 1) 0.0s rss=0.97GiB
+prefetch 2785/3849 AG (64, 500) 5.8s rss=1.08GiB
+prefetch 2787/3849 AG (64, 512) 5.6s rss=1.08GiB
+prefetch 3000/3849 A2A (128, 16) 0.0s rss=1.08GiB
+prefetch 3138/3849 AG (128, 500) 5.6s rss=1.08GiB
+prefetch 3140/3849 AG (128, 512) 6.4s rss=1.08GiB
+prefetch 3396/3849 AG (256, 64) 6.2s rss=1.09GiB
+prefetch 3432/3849 AG (256, 128) 14.2s rss=1.09GiB
+prefetch 3485/3849 AG (256, 500) 6.9s rss=1.14GiB
+prefetch 3487/3849 AG (256, 512) 10.6s rss=1.15GiB
+prefetch 3500/3849 A2A (256, 512) 0.5s rss=1.15GiB
+prefetch 3535/3849 AG (512, 1) 6.9s rss=1.20GiB
+prefetch 3560/3849 AG (512, 2) 6.6s rss=1.20GiB
+prefetch 3589/3849 AG (512, 4) 6.7s rss=1.20GiB
+prefetch 3620/3849 AG (512, 5) 6.0s rss=1.20GiB
+prefetch 3622/3849 AG (512, 8) 7.2s rss=1.20GiB
+prefetch 3654/3849 AG (512, 10) 6.6s rss=1.20GiB
+prefetch 3656/3849 AG (512, 16) 7.4s rss=1.20GiB
+prefetch 3688/3849 AG (512, 20) 6.0s rss=1.20GiB
+prefetch 3690/3849 AG (512, 25) 6.4s rss=1.20GiB
+prefetch 3692/3849 AG (512, 32) 9.0s rss=1.20GiB
+prefetch 3724/3849 AG (512, 40) 5.0s rss=1.20GiB
+prefetch 3726/3849 AG (512, 50) 6.6s rss=1.20GiB
+prefetch 3728/3849 AG (512, 64) 16.7s rss=1.20GiB
+prefetch 3760/3849 AG (512, 100) 5.5s rss=1.20GiB
+prefetch 3762/3849 AG (512, 125) 5.4s rss=1.20GiB
+prefetch 3764/3849 AG (512, 128) 40.8s rss=1.20GiB
+prefetch 3796/3849 AG (512, 200) 5.5s rss=1.20GiB
+prefetch 3798/3849 AG (512, 250) 5.9s rss=1.20GiB
+prefetch 3800/3849 AG (512, 256) 109.2s rss=1.21GiB
+prefetch 3832/3849 AG (512, 500) 9.8s rss=1.24GiB
+prefetch 3835/3849 AG (512, 512) 5.7s rss=1.24GiB
+### EXIT 143 2026-09-28T07:04:35Z
+### python experiments/run_gpipe.py --workload alexnet --N 64 --tag final_gpipe
+alexnet N=64 GPipe: feasible 0.11617746115775093 S=4 R=16 P=64 M=32 remat=False | {'candidates': 466, 'evaluated': 194, 'pruned_by_bound': 272, 'allreduce_selection_unresolved': 0} | 3s -> /home/claude/lhas-repro/results/raw/final_gpipe/alexnet_N64.json
+### EXIT 0 2026-09-28T07:04:40Z
+### python experiments/run_gpipe.py --workload alexnet --N 128 --tag final_gpipe
+alexnet N=128 GPipe: feasible 0.12001384151775095 S=5 R=16 P=80 M=32 remat=False | {'candidates': 556, 'evaluated': 285, 'pruned_by_bound': 271, 'allreduce_selection_unresolved': 0} | 8s -> /home/claude/lhas-repro/results/raw/final_gpipe/alexnet_N128.json
+### EXIT 0 2026-09-28T07:04:49Z
+### python experiments/run_gpipe.py --workload alexnet --N 256 --tag final_gpipe
+alexnet N=256 GPipe: feasible 0.13121193265626674 S=5 R=8 P=40 M=32 remat=False | {'candidates': 638, 'evaluated': 377, 'pruned_by_bound': 261, 'allreduce_selection_unresolved': 0} | 13s -> /home/claude/lhas-repro/results/raw/final_gpipe/alexnet_N256.json
+### EXIT 0 2026-09-28T07:05:04Z
+### python experiments/run_gpipe.py --workload alexnet --N 512 --tag final_gpipe
+alexnet N=512 GPipe: feasible 0.13121193265626674 S=5 R=8 P=40 M=32 remat=False | {'candidates': 704, 'evaluated': 443, 'pruned_by_bound': 261, 'allreduce_selection_unresolved': 0} | 23s -> /home/claude/lhas-repro/results/raw/final_gpipe/alexnet_N512.json
+### EXIT 0 2026-09-28T07:05:28Z
+### python experiments/run_gpipe.py --workload vgg16 --N 64 --tag final_gpipe
+vgg16 N=64 GPipe: feasible 0.6347221772473458 S=4 R=16 P=64 M=32 remat=False | {'candidates': 754, 'evaluated': 33, 'pruned_by_bound': 721, 'allreduce_selection_unresolved': 0} | 2s -> /home/claude/lhas-repro/results/raw/final_gpipe/vgg16_N64.json
+### EXIT 0 2026-09-28T07:05:31Z
+### python experiments/run_gpipe.py --workload vgg16 --N 128 --tag final_gpipe
+vgg16 N=128 GPipe: feasible 0.4928225210473459 S=7 R=16 P=112 M=32 remat=False | {'candidates': 940, 'evaluated': 95, 'pruned_by_bound': 845, 'allreduce_selection_unresolved': 0} | 6s -> /home/claude/lhas-repro/results/raw/final_gpipe/vgg16_N128.json
+### EXIT 0 2026-09-28T07:05:38Z
+### python experiments/run_gpipe.py --workload vgg16 --N 256 --tag final_gpipe
+vgg16 N=256 GPipe: feasible 0.5663272979273462 S=10 R=16 P=160 M=32 remat=False | {'candidates': 1118, 'evaluated': 244, 'pruned_by_bound': 874, 'allreduce_selection_unresolved': 0} | 20s -> /home/claude/lhas-repro/results/raw/final_gpipe/vgg16_N256.json
+### EXIT 0 2026-09-28T07:06:00Z
+### python experiments/run_gpipe.py --workload vgg16 --N 512 --tag final_gpipe
+vgg16 N=512 GPipe: feasible 0.6595502569787652 S=2 R=256 P=512 M=4 remat=False | {'candidates': 1280, 'evaluated': 446, 'pruned_by_bound': 834, 'allreduce_selection_unresolved': 0} | 47s -> /home/claude/lhas-repro/results/raw/final_gpipe/vgg16_N512.json
+### EXIT 0 2026-09-28T07:06:48Z

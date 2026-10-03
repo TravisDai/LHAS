@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.nbi
+*.nbc
+.pytest_cache/
+results/raw/*.tmp
+*.egg-info/
+build/
+dist/
+results/cache/

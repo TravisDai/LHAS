@@ -1,0 +1,47 @@
+{
+ "workload": "alexnet",
+ "N": 64,
+ "B": 1024,
+ "contract": "PROPOSED D13 (pending author approval)",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "result": {
+  "cost": 0.12320632639904126,
+  "S": 4,
+  "R": 16,
+  "M": 32,
+  "rematerialization": false,
+  "stages": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    4,
+    8
+   ]
+  ],
+  "breakdown": {
+   "forward": 0.011414516721720431,
+   "backward": 0.01900649032344086,
+   "allreduce": 0.09278531935387997
+  },
+  "memory_max": 4365889856.0
+ },
+ "seconds": 3.5095530729995517
+}

@@ -1,0 +1,12 @@
+prefetch 500/3849 A2A (1, 4) 0.0s
+prefetch 1000/3849 A2A (2, 256) 0.0s
+prefetch 1500/3849 A2A (8, 8) 0.0s
+prefetch 2000/3849 A2A (16, 128) 0.0s
+prefetch 2500/3849 A2A (64, 1) 0.0s
+prefetch 3000/3849 A2A (128, 16) 0.0s
+prefetch 3138/3849 AG (128, 500) 6.6s
+prefetch 3140/3849 AG (128, 512) 7.5s
+prefetch 3201/3849 A2A (250, 512) 9.0s
+prefetch 3396/3849 AG (256, 64) 5.0s
+prefetch 3432/3849 AG (256, 128) 11.7s
+prefetch 3466/3849 AG (256, 250) 5.6s

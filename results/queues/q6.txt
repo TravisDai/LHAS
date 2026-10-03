@@ -1,0 +1,1 @@
+python experiments/run_chain.py --workload vgg16 --N 512 --tag final

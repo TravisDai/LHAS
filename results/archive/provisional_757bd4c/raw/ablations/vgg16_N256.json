@@ -1,0 +1,1362 @@
+{
+ "workload": "vgg16",
+ "N": 256,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "retain",
+  "optimizer_state_factor": 0.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 256,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 0,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "lhas": {
+  "feasible": true,
+  "cost": 0.2829947935731359,
+  "configs": [
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "DP256",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_2",
+   "features_5",
+   "features_7",
+   "features_10",
+   "features_12",
+   "features_14",
+   "features_17",
+   "features_19",
+   "features_21",
+   "features_24",
+   "features_26",
+   "features_28",
+   "classifier_0",
+   "classifier_3",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=17|exchange"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.10436341627870967,
+   "intra_transport": 0.14748468688,
+   "intra_reduction": 0.00856801993442623,
+   "inter": 0.02257867048,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 2492631872.0,
+  "memory_node1": 2492631872.0,
+  "memory_budget": 12884901888.0,
+  "stats": {
+   "configs": [
+    7,
+    6,
+    8,
+    7,
+    18,
+    8,
+    8,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "alternatives": 132768,
+   "unconstrained_optimum": 0.28299479357313584,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    7,
+    6,
+    8,
+    7,
+    18,
+    8,
+    8,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "seconds": 48.50566146899837
+  }
+ },
+ "runtime": {
+  "prefetch_seconds": 83.24715991899939,
+  "prefetch": {
+   "ar_groups": 19,
+   "ag_groups": 181,
+   "a2a": 2914,
+   "seconds": {
+    "AR": 3.999733220001872,
+    "AG": 51.84480027899917,
+    "A2A": 16.844366954010184
+   }
+  },
+  "plan_seconds": 48.510434646999784,
+  "pack": {
+   "hits": 6446,
+   "misses": 2851,
+   "pack_seconds": 12.086215159026324,
+   "cached_routes": 2998817
+  },
+  "total_seconds": 132.8054154700003,
+  "peak_rss_bytes": 1008279552
+ },
+ "baselines": {
+  "ablations": {
+   "strategy_only": {
+    "feasible": true,
+    "cost": 0.5807233146466984,
+    "configs": [
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "MP256",
+     "MP256",
+     "MP250"
+    ],
+    "layers": [
+     "features_0",
+     "features_2",
+     "features_5",
+     "features_7",
+     "features_10",
+     "features_12",
+     "features_14",
+     "features_17",
+     "features_19",
+     "features_21",
+     "features_24",
+     "features_26",
+     "features_28",
+     "classifier_0",
+     "classifier_3",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=7|radix=4x2x2x2x2x2x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "C-B|P|k=7|radix=4x2x2x2x2x2x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=4|radix=5x5x5x2"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=17|exchange"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.07984703289806451,
+     "intra_transport": 0.25784658955999995,
+     "intra_reduction": 0.018618305748633882,
+     "inter": 0.22441138644,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 4546179808.0,
+    "memory_node1": 1458707104.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "alternatives": 3186,
+     "unconstrained_optimum": 0.5807233146466982,
+     "memory_slack": false,
+     "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+     "labels_per_layer": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "seconds": 0.015220686000247952
+    },
+    "seconds": 0.020373788000142667
+   },
+   "dp_only_counts": {
+    "feasible": true,
+    "cost": 0.3663890311777472,
+    "configs": [
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP1",
+     "DP1",
+     "DP1"
+    ],
+    "layers": [
+     "features_0",
+     "features_2",
+     "features_5",
+     "features_7",
+     "features_10",
+     "features_12",
+     "features_14",
+     "features_17",
+     "features_19",
+     "features_21",
+     "features_24",
+     "features_26",
+     "features_28",
+     "classifier_0",
+     "classifier_3",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.24256438007741932,
+     "intra_transport": 0.10779023712000001,
+     "intra_reduction": 0.005628569180327869,
+     "inter": 0.0104058448,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 2368334656.0,
+    "memory_node1": 2368334656.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      7,
+      6,
+      8,
+      7,
+      9,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+     ],
+     "alternatives": 19963,
+     "unconstrained_optimum": 0.3663890311777472,
+     "memory_slack": false,
+     "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+     "labels_per_layer": [
+      7,
+      6,
+      8,
+      7,
+      9,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+     ],
+     "seconds": 0.0984036499994545
+    },
+    "seconds": 0.10199287500108767
+   },
+   "mp_only_counts": {
+    "feasible": false,
+    "stats": {
+     "configs": [
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      14
+     ],
+     "reason": "empty A_i"
+    },
+    "seconds": 0.003843757000140613
+   },
+   "greedy_layerwise": {
+    "feasible": true,
+    "cost": 0.2829947935731359,
+    "configs": [
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "MP8",
+     "MP8",
+     "DP1"
+    ],
+    "layers": [
+     "features_0",
+     "features_2",
+     "features_5",
+     "features_7",
+     "features_10",
+     "features_12",
+     "features_14",
+     "features_17",
+     "features_19",
+     "features_21",
+     "features_24",
+     "features_26",
+     "features_28",
+     "classifier_0",
+     "classifier_3",
+     "classifier_6"
+    ],
+    "choices": [
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "empty"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "WRHT|m=17|exchange"
+      ],
+      [
+       "A2A_fp",
+       "adapted-OSM"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "EQ|k=1|radix=8"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "empty"
+      ]
+     ],
+     [
+      [
+       "AG_y",
+       "C-A|g=8|rep|k=0"
+      ],
+      [
+       "AR_x",
+       "WRHT|m=8|exchange"
+      ],
+      [
+       "A2A_bp",
+       "adapted-OSM"
+      ]
+     ],
+     [
+      [
+       "AR_w",
+       "local"
+      ]
+     ]
+    ],
+    "breakdown": {
+     "compute": 0.10436341627870967,
+     "intra_transport": 0.14748468688,
+     "intra_reduction": 0.00856801993442623,
+     "inter": 0.02257867048,
+     "overlap_credit": 0.0
+    },
+    "memory_max": 2492631872.0,
+    "memory_node1": 2492631872.0,
+    "memory_budget": 12884901888.0,
+    "stats": {
+     "configs": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "alternatives": 372,
+     "unconstrained_optimum": 0.28299479357313584,
+     "memory_slack": false,
+     "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+     "labels_per_layer": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "seconds": 0.004033502000311273
+    },
+    "greedy_configs": [
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "DP256",
+     "MP8",
+     "MP8",
+     "DP1"
+    ]
+   }
+  }
+ }
+}

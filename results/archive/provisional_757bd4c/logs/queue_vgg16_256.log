@@ -1,0 +1,11 @@
+### python experiments/run_chain.py --workload vgg16 --N 256 --B 1024 --raw retain --tag main_retain --mcmc-iters 1000 --mcmc-seeds 3 --verify
+prefetch 500/3114 AG (1, 20) 0.0s
+prefetch 1000/3114 A2A (4, 8) 0.0s
+prefetch 1500/3114 A2A (8, 128) 0.0s
+prefetch 2000/3114 A2A (32, 8) 0.0s
+prefetch 2500/3114 A2A (100, 8) 0.0s
+prefetch 3000/3114 A2A (256, 32) 0.0s
+prefetch 3062/3114 AG (256, 128) 6.8s
+prefetch {'ar_groups': 19, 'ag_groups': 181, 'a2a': 2914, 'seconds': {'AR': 4.167049871999552, 'AG': 51.141081126990684, 'A2A': 16.827828267028963}} in 82.6s
+vgg16 N=256: LHAS 0.282995 s [cost-only minimizer is memory-feasible (equals lower bound)] single_node=inf dp_N=0.730705 dp_best=0.730705 owt=0.580723 flexflow_mcmc=0.303507 | total 596.4s -> /home/claude/lhas-repro/results/raw/main_retain/vgg16_N256.json
+### EXIT 0 2026-09-27T21:45:24Z

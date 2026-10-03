@@ -1,0 +1,1236 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "vgg16",
+ "N": 64,
+ "B": 1024,
+ "family": "deepest",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/vgg16.json",
+  "manifest_sha256": "236b4227eff8811c9e73571f443dcd30f15e518d52aa7ab942301960e6872178",
+  "code_commit": "f8bc93e4abec703a9e4a92eefc86ac39122a5780",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 440,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "family_candidates": {
+  "AG p=1 q=2": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=2"
+  ],
+  "AG p=1 q=4": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=2x2"
+  ],
+  "AG p=1 q=5": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=1 q=8": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=1 q=10": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=1 q=16": [
+   "E-A|P|k=0",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=1 q=20": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=1 q=25": [
+   "E-A|P|k=0",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=1 q=32": [
+   "E-A|P|k=0",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=1 q=40": [
+   "E-A|P|k=0",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=1 q=50": [
+   "E-A|P|k=0",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=1 q=64": [
+   "E-A|P|k=0",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=2 q=1": [
+   "C-A|g=2|rep|k=0",
+   "C-B|P|k=1|radix=2"
+  ],
+  "AR p=2": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=2 q=2": [
+   "EQ|k=1|radix=2"
+  ],
+  "AG p=2 q=4": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=2x2"
+  ],
+  "AG p=2 q=5": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=2 q=8": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=2 q=10": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=2 q=16": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=2 q=20": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=2 q=25": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=2 q=32": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=2 q=40": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=2 q=50": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=2 q=64": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=4 q=1": [
+   "C-A|g=4|rep|k=0",
+   "C-B|P|k=2|radix=2x2"
+  ],
+  "AG p=4 q=2": [
+   "C-A|g=2|rep|k=1|radix=2",
+   "C-B|P|k=2|radix=2x2"
+  ],
+  "AR p=4": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=4 q=4": [
+   "EQ|k=2|radix=2x2"
+  ],
+  "AG p=4 q=5": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=1|radix=5"
+  ],
+  "AG p=4 q=8": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=2x2x2"
+  ],
+  "AG p=4 q=10": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=4 q=16": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=4 q=20": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=4 q=25": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=4 q=32": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=4 q=40": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=4 q=50": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=4 q=64": [
+   "E-A|P|k=2|radix=2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=5": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=5 q=5": [
+   "EQ|k=1|radix=5"
+  ],
+  "AG p=8 q=1": [
+   "C-A|g=8|rep|k=0",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=2": [
+   "C-A|g=4|rep|k=1|radix=2",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=4": [
+   "C-A|g=2|rep|k=2|radix=2x2",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=3|radix=2x2x2"
+  ],
+  "AR p=8": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=8 q=8": [
+   "EQ|k=3|radix=2x2x2"
+  ],
+  "AG p=8 q=10": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=2|radix=5x2"
+  ],
+  "AG p=8 q=16": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=4|radix=2x2x2x2"
+  ],
+  "AG p=8 q=20": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=8 q=25": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=8 q=32": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=8 q=40": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=8 q=50": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=8 q=64": [
+   "E-A|P|k=3|radix=2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=10": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=10 q=10": [
+   "EQ|k=2|radix=5x2"
+  ],
+  "AG p=16 q=1": [
+   "C-A|g=16|rep|k=0",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=2": [
+   "C-A|g=8|rep|k=1|radix=2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=4": [
+   "C-A|g=4|rep|k=2|radix=2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=5": [
+   "C-A|g=5|rep|k=2|radix=2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=8": [
+   "C-A|g=2|rep|k=3|radix=2x2x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=10": [
+   "C-A|joint|Q|k=2|radix=5x2",
+   "C-B|P|k=4|radix=2x2x2x2"
+  ],
+  "AR p=16": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=16 q=16": [
+   "EQ|k=4|radix=2x2x2x2"
+  ],
+  "AG p=16 q=20": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=3|radix=5x2x2"
+  ],
+  "AG p=16 q=25": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=2|radix=5x5"
+  ],
+  "AG p=16 q=32": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=16 q=40": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=16 q=50": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=16 q=64": [
+   "E-A|P|k=4|radix=2x2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=20": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=20 q=20": [
+   "EQ|k=3|radix=5x2x2"
+  ],
+  "AR p=25": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=25 q=25": [
+   "EQ|k=2|radix=5x5"
+  ],
+  "AG p=32 q=1": [
+   "C-A|g=32|rep|k=0",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=2": [
+   "C-A|g=16|rep|k=1|radix=2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=4": [
+   "C-A|g=8|rep|k=2|radix=2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=5": [
+   "C-A|g=5|rep|k=1|radix=7",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=8": [
+   "C-A|g=4|rep|k=3|radix=2x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=10": [
+   "C-A|g=10|rep|k=2|radix=2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=16": [
+   "C-A|g=2|rep|k=4|radix=2x2x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=20": [
+   "C-A|joint|Q|k=3|radix=5x2x2",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=25": [
+   "C-A|joint|Q|k=2|radix=5x5",
+   "C-B|P|k=5|radix=2x2x2x2x2"
+  ],
+  "AR p=32": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=32 q=32": [
+   "EQ|k=5|radix=2x2x2x2x2"
+  ],
+  "AG p=32 q=40": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=4|radix=5x2x2x2"
+  ],
+  "AG p=32 q=50": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=3|radix=5x5x2"
+  ],
+  "AG p=32 q=64": [
+   "E-A|P|k=5|radix=2x2x2x2x2",
+   "E-B|Q|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=40": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=40 q=40": [
+   "EQ|k=4|radix=5x2x2x2"
+  ],
+  "AR p=50": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=50 q=50": [
+   "EQ|k=3|radix=5x5x2"
+  ],
+  "AG p=64 q=1": [
+   "C-A|g=64|rep|k=0",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=2": [
+   "C-A|g=32|rep|k=1|radix=2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=4": [
+   "C-A|g=16|rep|k=2|radix=2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=5": [
+   "C-A|g=5|rep|k=1|radix=13",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=8": [
+   "C-A|g=8|rep|k=3|radix=2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=10": [
+   "C-A|g=10|rep|k=1|radix=7",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=16": [
+   "C-A|g=4|rep|k=4|radix=2x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=20": [
+   "C-A|g=20|rep|k=2|radix=2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=25": [
+   "C-A|g=25|rep|k=1|radix=3",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=32": [
+   "C-A|g=2|rep|k=5|radix=2x2x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=40": [
+   "C-A|joint|Q|k=4|radix=5x2x2x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AG p=64 q=50": [
+   "C-A|joint|Q|k=3|radix=5x5x2",
+   "C-B|P|k=6|radix=2x2x2x2x2x2"
+  ],
+  "AR p=64": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=64 q=64": [
+   "EQ|k=6|radix=2x2x2x2x2x2"
+  ]
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    5,
+    4,
+    6,
+    5,
+    14,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 2962,
+   "unconstrained_optimum": 0.6809554492212798,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    5,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 1.2783296939996944
+  },
+  "cost": 0.6809554492212797,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP2",
+   "MP2",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_2",
+   "features_5",
+   "features_7",
+   "features_10",
+   "features_12",
+   "features_14",
+   "features_17",
+   "features_19",
+   "features_21",
+   "features_24",
+   "features_26",
+   "features_28",
+   "classifier_0",
+   "classifier_3",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=2"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=2|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=2|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.40062097606193553,
+   "intra_transport": 0.27061317703999993,
+   "intra_reduction": 0.003874509639344262,
+   "inter": 0.0058467864799999995,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 4575756256.0,
+  "memory_node1": 4575756256.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {},
+ "verification": {
+  "summary": {
+   "expected_operations": 46,
+   "network_operations": 20,
+   "by_status": {
+    "checked-actual": 20,
+    "local": 26
+   },
+   "packing_checked": 20,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00026249016,
+    "verified_reduction": 3.5252459016393445e-07
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_2",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00098207544,
+    "verified_reduction": 7.264524590163933e-06
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_2->features_5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_2->features_5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_5",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00173836088,
+    "verified_reduction": 1.4529049180327866e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_5->features_7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_5->features_7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_7",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0032483103200000004,
+    "verified_reduction": 2.9032918032786884e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_7->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_7->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0060596570399999985,
+    "verified_reduction": 5.806583606557377e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->features_12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->features_12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_12",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010212197999999999,
+    "verified_reduction": 0.00011608131147540982
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_12->features_14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_12->features_14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_14",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.010212197999999999,
+    "verified_reduction": 0.00011608131147540982
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_14->features_17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_14->features_17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_17",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0185208844,
+    "verified_reduction": 0.00023216262295081965
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_17->features_19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_17->features_19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_19",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03513122823999999,
+    "verified_reduction": 0.000464224524590164
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_19->features_21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_19->features_21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_21",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03513122823999999,
+    "verified_reduction": 0.000464224524590164
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_21->features_24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_21->features_24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_24",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03513122823999999,
+    "verified_reduction": 0.000464224524590164
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_24->features_26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_24->features_26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_26",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03513122823999999,
+    "verified_reduction": 0.000464224524590164
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_26->features_28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_26->features_28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_28",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.03513122823999999,
+    "verified_reduction": 0.000464224524590164
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_28->classifier_0",
+    "candidate": "adapted-OSM",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00208456244,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_28->classifier_0",
+    "candidate": "adapted-OSM",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0010528444799999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_0",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 2,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.032908368359999995,
+    "verified_reduction": 0.0008422987540983607
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_0",
+    "candidate": "EQ|k=1|radix=2",
+    "routes": 2,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0027093795599999995,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_0->classifier_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_3",
+    "candidate": "WRHT|m=2|exchange",
+    "routes": 2,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393734119999999,
+    "verified_reduction": 0.00013751816393442622
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_3",
+    "candidate": "C-A|g=2|rep|k=0",
+    "routes": 1,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0027093795599999995,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_3->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 1,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0027093795599999995,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 3.2410604010001407,
+  "construction": {
+   "ar_groups": 13,
+   "ag_groups": 97,
+   "a2a": 1696,
+   "seconds": {
+    "AR": 0.27627314300480066,
+    "AG": 1.623457541998505,
+    "A2A": 0.5348100050468929
+   }
+  },
+  "plan_seconds": 1.2802290579984401,
+  "baselines_seconds": 1.3070002751192078e-06,
+  "verification_seconds": 0.29865751000033924,
+  "total_seconds": 4.831105330000355,
+  "pack": {
+   "hits": 3095,
+   "misses": 1301,
+   "pack_seconds": 0.12549750596554077,
+   "cached_routes": 155520
+  },
+  "peak_rss_bytes": 206643200
+ }
+}

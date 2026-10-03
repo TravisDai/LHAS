@@ -1,0 +1,67 @@
+{
+ "R": 2350841456722.1846,
+ "affine": {
+  "a_ms": 0.25310724606757995,
+  "R_tflops": 4.328154209809158,
+  "mdare": 0.505249764072463,
+  "p90": 0.9275041798063888,
+  "tw": 0.5043676462216566
+ },
+ "tw_abs": 0.8097833410636113,
+ "tw_signed": 0.30226220597188935,
+ "red_rate": 218582643942.9842,
+ "measured": 1759,
+ "total": 1783,
+ "uses_meas": 2770,
+ "uses_all": 2801,
+ "above_peak": 70,
+ "scale": {
+  "1": 0.2858085585206105,
+  "2": 0.3889866292068976,
+  "4": 0.5605981718544124,
+  "8": 1.0363371047778986,
+  "16": 1.301079337849322,
+  "32": 1.2283877255467908,
+  "64": 1.1294950801509684,
+  "128": 1.1066180272448949,
+  "256": 1.0345363690819265,
+  "512": 1.0072804632954169,
+  "1024": 1.0
+ },
+ "validation": {
+  "n_measured": 1759,
+  "n_calibration": 879,
+  "n_validation": 880,
+  "model": "t = 3 * flops_per_product / R (R fitted on calibration shapes of this GPU)",
+  "status": "ok",
+  "achieved_flops_calibration": 2350841456722.1855,
+  "utilization_vs_entered_peak": null,
+  "validation": {
+   "n": 880,
+   "signed_relative_error_median": -0.3908288360376668,
+   "absolute_relative_error_median": 0.6923822204036076,
+   "absolute_relative_error_p90": 0.9901253190356,
+   "absolute_relative_error_p95": 1.4323437375745616,
+   "absolute_relative_error_max": 4.140288459495884,
+   "spearman_rank_correlation": 0.886453385132116
+  },
+  "validation_conv": {
+   "n": 814,
+   "signed_relative_error_median": -0.40438229180354335,
+   "absolute_relative_error_median": 0.6904561995180719,
+   "absolute_relative_error_p90": 0.9839826574428466,
+   "absolute_relative_error_p95": 1.4982241562703056,
+   "absolute_relative_error_max": 4.140288459495884,
+   "spearman_rank_correlation": 0.8828465316364223
+  },
+  "validation_fc": {
+   "n": 66,
+   "signed_relative_error_median": -0.1447910472463176,
+   "absolute_relative_error_median": 0.7193325235615098,
+   "absolute_relative_error_p90": 1.0508275259593658,
+   "absolute_relative_error_p95": 1.1458561161830414,
+   "absolute_relative_error_max": 1.5059503015165994,
+   "spearman_rank_correlation": 0.8288466194406919
+  }
+ }
+}

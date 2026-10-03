@@ -1,0 +1,8 @@
+python experiments/run_graph.py --workload googlenet --N 64 --tag final
+python experiments/run_graph.py --workload googlenet --N 128 --tag final
+python experiments/run_graph.py --workload googlenet --N 256 --tag final
+python experiments/run_graph.py --workload googlenet --N 512 --tag final
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final
+python experiments/run_graph.py --workload resnet50 --N 128 --tag final
+python experiments/run_graph.py --workload resnet50 --N 256 --tag final
+python experiments/run_graph.py --workload resnet50 --N 512 --tag final

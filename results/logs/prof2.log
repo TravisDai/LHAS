@@ -1,0 +1,22 @@
+### python experiments/run_chain.py --workload vgg16 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/1806 A2A (2, 4) 0.0s rss=0.18GiB
+prefetch 1000/1806 A2A (8, 16) 0.0s rss=0.19GiB
+prefetch 1500/1806 A2A (32, 16) 0.0s rss=0.19GiB
+vgg16 N=64 [final_profiled_T4]: LHAS feasible 0.41259745997624747 | dp_N=feasible:0.850325848149364 dp_best=feasible:0.850325848149364 owt=feasible:0.47717139159733707 | verify {'expected_operations': 46, 'network_operations': 21, 'by_status': {'checked-actual': 21, 'local': 25}, 'packing_checked': 21, 'all_network_operations_checked': True} | 21s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/vgg16_N64.json
+### EXIT 0 2026-09-28T14:09:41Z
+### python experiments/run_graph.py --workload resnet50 --N 64 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+resnet50 N=64 [final_profiled_T4]: LHAS feasible 0.277768 | dp_N=feasible:0.27776778756124826 dp_best=feasible:0.27776778756124826 owt=feasible:0.33697996479730813 | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 17s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/resnet50_N64.json
+### EXIT 0 2026-09-28T14:09:59Z
+### python experiments/run_chain.py --workload vgg16 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+prefetch 500/3114 AG (1, 20) 0.0s rss=0.36GiB
+prefetch 1000/3114 A2A (4, 8) 0.0s rss=0.37GiB
+prefetch 1500/3114 A2A (8, 128) 0.0s rss=0.38GiB
+prefetch 2000/3114 A2A (32, 8) 0.0s rss=0.39GiB
+prefetch 2500/3114 A2A (100, 8) 0.0s rss=0.43GiB
+prefetch 3000/3114 A2A (256, 32) 0.0s rss=0.49GiB
+prefetch 3062/3114 AG (256, 128) 6.8s rss=0.50GiB
+vgg16 N=256 [final_profiled_T4]: LHAS feasible 0.3095331680640045 | dp_N=feasible:0.7830219238570258 dp_best=feasible:0.7830219238570258 owt=feasible:0.605523300780651 | verify {'expected_operations': 46, 'network_operations': 21, 'by_status': {'checked-actual': 21, 'local': 25}, 'packing_checked': 21, 'all_network_operations_checked': True} | 120s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/vgg16_N256.json
+### EXIT 0 2026-09-28T14:11:59Z
+### python experiments/run_graph.py --workload resnet50 --N 256 --tag final_profiled_T4 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt
+resnet50 N=256 [final_profiled_T4]: LHAS feasible 0.298049 | dp_N=feasible:0.34792039813998116 dp_best=feasible:0.2980492109430598 owt=feasible:1.531831152826681 | verify {'expected_operations': 304, 'network_operations': 160, 'by_status': {'checked-actual': 160, 'local': 144}, 'packing_checked': 160, 'all_network_operations_checked': True} | 155s -> /home/claude/lhas-repro/results/raw/final_profiled_T4/resnet50_N256.json
+### EXIT 0 2026-09-28T14:14:35Z

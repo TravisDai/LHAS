@@ -1,0 +1,1453 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "alexnet",
+ "N": 64,
+ "B": 1024,
+ "family": "one-stage",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "f8bc93e4abec703a9e4a92eefc86ac39122a5780",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 440,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "family_candidates": {
+  "AG p=1 q=2": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=2",
+   "E-C|direct"
+  ],
+  "AG p=1 q=3": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=3",
+   "E-C|direct"
+  ],
+  "AG p=1 q=4": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=1 q=5": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=1 q=6": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=1 q=8": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=1 q=10": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=1 q=12": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=1 q=16": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=1 q=20": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=1 q=24": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=1 q=25": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=1 q=32": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=1 q=40": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=1 q=48": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=1 q=50": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=1 q=64": [
+   "E-A|P|k=0",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=2 q=1": [
+   "C-A|g=2|rep|k=0",
+   "C-B|P|k=1|radix=2",
+   "C-C|direct"
+  ],
+  "AR p=2": [
+   "WRHT|m=2|collect",
+   "WRHT|m=2|exchange"
+  ],
+  "AG p=2 q=2": [
+   "EQ|k=1|radix=2"
+  ],
+  "AG p=2 q=3": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=3",
+   "E-C|direct"
+  ],
+  "AG p=2 q=4": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=2 q=5": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=2 q=6": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=2 q=8": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=2 q=10": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=2 q=12": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=2 q=16": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=2 q=20": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=2 q=24": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=2 q=25": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=2 q=32": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=2 q=40": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=2 q=48": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=2 q=50": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=2 q=64": [
+   "E-A|P|k=1|radix=2",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=3 q=1": [
+   "C-A|g=3|rep|k=0",
+   "C-B|P|k=1|radix=3",
+   "C-C|direct"
+  ],
+  "AG p=3 q=2": [
+   "C-A|joint|Q|k=1|radix=2",
+   "C-B|P|k=1|radix=3",
+   "C-C|direct"
+  ],
+  "AR p=3": [
+   "WRHT|m=3|collect",
+   "WRHT|m=3|exchange"
+  ],
+  "AG p=3 q=3": [
+   "EQ|k=1|radix=3"
+  ],
+  "AG p=3 q=4": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=4",
+   "E-C|direct"
+  ],
+  "AG p=3 q=6": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=3 q=8": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=3 q=12": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=3 q=16": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=3 q=24": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=3 q=32": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=3 q=48": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=3 q=64": [
+   "E-A|P|k=1|radix=3",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=4 q=1": [
+   "C-A|g=4|rep|k=0",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AG p=4 q=2": [
+   "C-A|g=2|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AG p=4 q=3": [
+   "C-A|joint|Q|k=1|radix=3",
+   "C-B|P|k=1|radix=4",
+   "C-C|direct"
+  ],
+  "AR p=4": [
+   "WRHT|m=4|collect",
+   "WRHT|m=4|exchange"
+  ],
+  "AG p=4 q=4": [
+   "EQ|k=1|radix=4"
+  ],
+  "AG p=4 q=5": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=5",
+   "E-C|direct"
+  ],
+  "AG p=4 q=6": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=6",
+   "E-C|direct"
+  ],
+  "AG p=4 q=8": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=4 q=10": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=4 q=12": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=4 q=16": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=4 q=20": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=4 q=24": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=4 q=25": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=4 q=32": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=4 q=40": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=4 q=48": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=4 q=50": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=4 q=64": [
+   "E-A|P|k=1|radix=4",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=5": [
+   "WRHT|m=5|collect",
+   "WRHT|m=5|exchange"
+  ],
+  "AG p=5 q=5": [
+   "EQ|k=1|radix=5"
+  ],
+  "AG p=6 q=1": [
+   "C-A|g=6|rep|k=0",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=2": [
+   "C-A|g=3|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=3": [
+   "C-A|g=2|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AG p=6 q=4": [
+   "C-A|joint|Q|k=1|radix=4",
+   "C-B|P|k=1|radix=6",
+   "C-C|direct"
+  ],
+  "AR p=6": [
+   "WRHT|m=6|collect",
+   "WRHT|m=6|exchange"
+  ],
+  "AG p=6 q=6": [
+   "EQ|k=1|radix=6"
+  ],
+  "AG p=6 q=8": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=8",
+   "E-C|direct"
+  ],
+  "AG p=6 q=12": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=6 q=16": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=6 q=24": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=6 q=32": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=6 q=48": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=6 q=64": [
+   "E-A|P|k=1|radix=6",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=8 q=1": [
+   "C-A|g=8|rep|k=0",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=2": [
+   "C-A|g=4|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=3": [
+   "C-A|g=3|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=4": [
+   "C-A|g=2|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=5": [
+   "C-A|joint|Q|k=1|radix=5",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AG p=8 q=6": [
+   "C-A|joint|Q|k=1|radix=6",
+   "C-B|P|k=1|radix=8",
+   "C-C|direct"
+  ],
+  "AR p=8": [
+   "WRHT|m=8|collect",
+   "WRHT|m=8|exchange"
+  ],
+  "AG p=8 q=8": [
+   "EQ|k=1|radix=8"
+  ],
+  "AG p=8 q=10": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=10",
+   "E-C|direct"
+  ],
+  "AG p=8 q=12": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=12",
+   "E-C|direct"
+  ],
+  "AG p=8 q=16": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=8 q=20": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=8 q=24": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=8 q=25": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=8 q=32": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=8 q=40": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=8 q=48": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=8 q=50": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=8 q=64": [
+   "E-A|P|k=1|radix=8",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=10": [
+   "WRHT|m=10|collect",
+   "WRHT|m=10|exchange"
+  ],
+  "AG p=10 q=10": [
+   "EQ|k=1|radix=10"
+  ],
+  "AG p=12 q=1": [
+   "C-A|g=12|rep|k=0",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=2": [
+   "C-A|g=6|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=3": [
+   "C-A|g=4|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=4": [
+   "C-A|g=3|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=6": [
+   "C-A|g=2|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AG p=12 q=8": [
+   "C-A|joint|Q|k=1|radix=8",
+   "C-B|P|k=1|radix=12",
+   "C-C|direct"
+  ],
+  "AR p=12": [
+   "WRHT|m=12|collect",
+   "WRHT|m=12|exchange"
+  ],
+  "AG p=12 q=12": [
+   "EQ|k=1|radix=12"
+  ],
+  "AG p=12 q=16": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=16",
+   "E-C|direct"
+  ],
+  "AG p=12 q=24": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=12 q=32": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=12 q=48": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=12 q=64": [
+   "E-A|P|k=1|radix=12",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AG p=16 q=1": [
+   "C-A|g=16|rep|k=0",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=2": [
+   "C-A|g=8|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=3": [
+   "C-A|g=3|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=4": [
+   "C-A|g=4|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=5": [
+   "C-A|g=5|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=6": [
+   "C-A|g=6|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=8": [
+   "C-A|g=2|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=10": [
+   "C-A|joint|Q|k=1|radix=10",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AG p=16 q=12": [
+   "C-A|joint|Q|k=1|radix=12",
+   "C-B|P|k=1|radix=16",
+   "C-C|direct"
+  ],
+  "AR p=16": [
+   "WRHT|m=16|collect",
+   "WRHT|m=16|exchange"
+  ],
+  "AG p=16 q=16": [
+   "EQ|k=1|radix=16"
+  ],
+  "AG p=16 q=20": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=20",
+   "E-C|direct"
+  ],
+  "AG p=16 q=24": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=24",
+   "E-C|direct"
+  ],
+  "AG p=16 q=25": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=25",
+   "E-C|direct"
+  ],
+  "AG p=16 q=32": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=16 q=40": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=16 q=48": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=16 q=50": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=16 q=64": [
+   "E-A|P|k=1|radix=16",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=20": [
+   "WRHT|m=20|collect",
+   "WRHT|m=20|exchange"
+  ],
+  "AG p=20 q=20": [
+   "EQ|k=1|radix=20"
+  ],
+  "AG p=24 q=1": [
+   "C-A|g=24|rep|k=0",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=2": [
+   "C-A|g=12|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=3": [
+   "C-A|g=8|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=4": [
+   "C-A|g=6|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=6": [
+   "C-A|g=4|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=8": [
+   "C-A|g=3|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=12": [
+   "C-A|g=2|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AG p=24 q=16": [
+   "C-A|joint|Q|k=1|radix=16",
+   "C-B|P|k=1|radix=24",
+   "C-C|direct"
+  ],
+  "AR p=24": [
+   "WRHT|m=24|collect",
+   "WRHT|m=24|exchange"
+  ],
+  "AG p=24 q=24": [
+   "EQ|k=1|radix=24"
+  ],
+  "AG p=24 q=32": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=32",
+   "E-C|direct"
+  ],
+  "AG p=24 q=48": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=24 q=64": [
+   "E-A|P|k=1|radix=24",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=25": [
+   "WRHT|m=25|collect",
+   "WRHT|m=25|exchange"
+  ],
+  "AG p=25 q=25": [
+   "EQ|k=1|radix=25"
+  ],
+  "AG p=32 q=1": [
+   "C-A|g=32|rep|k=0",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=2": [
+   "C-A|g=16|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=3": [
+   "C-A|g=3|rep|k=1|radix=11",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=4": [
+   "C-A|g=8|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=5": [
+   "C-A|g=5|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=6": [
+   "C-A|g=6|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=8": [
+   "C-A|g=4|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=10": [
+   "C-A|g=10|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=12": [
+   "C-A|g=12|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=16": [
+   "C-A|g=2|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=20": [
+   "C-A|joint|Q|k=1|radix=20",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=24": [
+   "C-A|joint|Q|k=1|radix=24",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AG p=32 q=25": [
+   "C-A|joint|Q|k=1|radix=25",
+   "C-B|P|k=1|radix=32",
+   "C-C|direct"
+  ],
+  "AR p=32": [
+   "WRHT|m=32|collect",
+   "WRHT|m=32|exchange"
+  ],
+  "AG p=32 q=32": [
+   "EQ|k=1|radix=32"
+  ],
+  "AG p=32 q=40": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=40",
+   "E-C|direct"
+  ],
+  "AG p=32 q=48": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=48",
+   "E-C|direct"
+  ],
+  "AG p=32 q=50": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=50",
+   "E-C|direct"
+  ],
+  "AG p=32 q=64": [
+   "E-A|P|k=1|radix=32",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=40": [
+   "WRHT|m=40|collect",
+   "WRHT|m=40|exchange"
+  ],
+  "AG p=40 q=40": [
+   "EQ|k=1|radix=40"
+  ],
+  "AG p=48 q=1": [
+   "C-A|g=48|rep|k=0",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=2": [
+   "C-A|g=24|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=3": [
+   "C-A|g=16|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=4": [
+   "C-A|g=12|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=6": [
+   "C-A|g=8|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=8": [
+   "C-A|g=6|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=12": [
+   "C-A|g=4|rep|k=1|radix=12",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=16": [
+   "C-A|g=3|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=24": [
+   "C-A|g=2|rep|k=1|radix=24",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AG p=48 q=32": [
+   "C-A|joint|Q|k=1|radix=32",
+   "C-B|P|k=1|radix=48",
+   "C-C|direct"
+  ],
+  "AR p=48": [
+   "WRHT|m=48|collect",
+   "WRHT|m=48|exchange"
+  ],
+  "AG p=48 q=48": [
+   "EQ|k=1|radix=48"
+  ],
+  "AG p=48 q=64": [
+   "E-A|P|k=1|radix=48",
+   "E-B|Q|k=1|radix=64",
+   "E-C|direct"
+  ],
+  "AR p=50": [
+   "WRHT|m=50|collect",
+   "WRHT|m=50|exchange"
+  ],
+  "AG p=50 q=50": [
+   "EQ|k=1|radix=50"
+  ],
+  "AG p=64 q=1": [
+   "C-A|g=64|rep|k=0",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=2": [
+   "C-A|g=32|rep|k=1|radix=2",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=3": [
+   "C-A|g=3|rep|k=1|radix=22",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=4": [
+   "C-A|g=16|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=5": [
+   "C-A|g=5|rep|k=1|radix=13",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=6": [
+   "C-A|g=6|rep|k=1|radix=11",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=8": [
+   "C-A|g=8|rep|k=1|radix=8",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=10": [
+   "C-A|g=10|rep|k=1|radix=7",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=12": [
+   "C-A|g=12|rep|k=1|radix=6",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=16": [
+   "C-A|g=4|rep|k=1|radix=16",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=20": [
+   "C-A|g=20|rep|k=1|radix=4",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=24": [
+   "C-A|g=24|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=25": [
+   "C-A|g=25|rep|k=1|radix=3",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=32": [
+   "C-A|g=2|rep|k=1|radix=32",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=40": [
+   "C-A|joint|Q|k=1|radix=40",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=48": [
+   "C-A|joint|Q|k=1|radix=48",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AG p=64 q=50": [
+   "C-A|joint|Q|k=1|radix=50",
+   "C-B|P|k=1|radix=64",
+   "C-C|direct"
+  ],
+  "AR p=64": [
+   "WRHT|m=64|collect",
+   "WRHT|m=64|exchange"
+  ],
+  "AG p=64 q=64": [
+   "EQ|k=1|radix=64"
+  ]
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "alternatives": 3235,
+   "unconstrained_optimum": 0.06728263479727127,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    14,
+    19,
+    19,
+    14,
+    14,
+    14,
+    14,
+    17
+   ],
+   "seconds": 1.0934936989997368
+  },
+  "cost": 0.06728263479727128,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.027468233166451615,
+   "intra_transport": 0.03369846064,
+   "intra_reduction": 0.0030952309508196717,
+   "inter": 0.00302071004,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 928290272.0,
+  "memory_node1": 928290272.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {},
+ "verification": {
+  "summary": {
+   "expected_operations": 22,
+   "network_operations": 12,
+   "by_status": {
+    "checked-actual": 12,
+    "local": 10
+   },
+   "packing_checked": 12,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00028903104000000003,
+    "verified_reduction": 1.6549071038251365e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_3",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00285078944,
+    "verified_reduction": 0.00021836590163934426
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_6",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0037636620799999998,
+    "verified_reduction": 0.0004716485245901639
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_8",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.004329685439999999,
+    "verified_reduction": 0.0006286828415300546
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=64|collect",
+    "routes": 126,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0035745907199999996,
+    "verified_reduction": 0.0004191825136612022
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0019880368,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 504,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0003365296,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.012104650520000001,
+    "verified_reduction": 0.000928247606557377
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_1",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_1->classifier_4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_4",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393764119999999,
+    "verified_reduction": 0.0004125544918032787
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_4",
+    "candidate": "C-A|g=8|rep|k=0",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_4->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 7,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 4.409883297999841,
+  "construction": {
+   "ar_groups": 18,
+   "ag_groups": 192,
+   "a2a": 2265,
+   "seconds": {
+    "AR": 0.3102987530055543,
+    "AG": 2.825425515005918,
+    "A2A": 0.7568683640238305
+   }
+  },
+  "plan_seconds": 1.0955409050002345,
+  "baselines_seconds": 1.390999386785552e-06,
+  "verification_seconds": 0.6501921380004205,
+  "total_seconds": 6.164726498000164,
+  "pack": {
+   "hits": 5258,
+   "misses": 2134,
+   "pack_seconds": 0.22232583902587066,
+   "cached_routes": 271088
+  },
+  "peak_rss_bytes": 211140608
+ }
+}

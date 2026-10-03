@@ -1,0 +1,42 @@
+136 weighted layers match the manifests
+1566 timed kernel signatures; 2801 layer/configuration uses
+0/24 shapes, 0s elapsed
+measured: 24 of 24 shapes
+reduction measurements written
+136 weighted layers match the manifests
+1566 timed kernel signatures; 2801 layer/configuration uses
+measured: 24 of 24 shapes
+reduction measurements written
+136 weighted layers match the manifests
+1566 timed kernel signatures; 2801 layer/configuration uses
+{
+ "n_measured": 24,
+ "n_calibration": 12,
+ "n_validation": 12,
+ "unit": "timed kernel signature (one record each from notebook v3)",
+ "model": "t = 3 * flops_per_product / R (R fitted on calibration signatures of this GPU)",
+ "status": "insufficient samples",
+ "note": "need >= 10 calibration and >= 20 validation shapes"
+}
+{
+ "shapes_total": 1566,
+ "shapes_run": 24,
+ "measured": 24,
+ "table_entries": 27,
+ "rejections": {
+  "batch": true,
+  "manifest_hash": true,
+  "manifest_check": true,
+  "tf32": true,
+  "local_dims": true,
+  "nan_timing": true,
+  "missing_column": true,
+  "duplicate_signature": true,
+  "no_fingerprint": true
+ },
+ "resume_guard": true,
+ "rejected_resume_unchanged": true,
+ "compatible_resume_unchanged": true
+}
+CPU smoke test passed (no GPU timing performed; outputs are not measurements)
+exit 0

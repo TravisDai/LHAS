@@ -1,0 +1,46 @@
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/nominal  --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/alpha_0.25 --alpha 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/alpha_0.5 --alpha 0.5 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/alpha_0.75 --alpha 0.75 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/alpha_1.0 --alpha 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/rho_0.25 --rho 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/rho_0.75 --rho 0.75 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/rho_1.0 --rho 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/redeff_0.25 --red-eff 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/redeff_1.0 --red-eff 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/tsetup_5e-6 --t-setup 5e-6 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/tsetup_100e-6 --t-setup 100e-6 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/lamW_32 --lam 32 --w 32 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/lamW_128 --lam 128 --w 128 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/lamW_256 --lam 256 --w 256 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/reach_15 --reach 15 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/reach_16 --reach 16 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/reach_unrestricted_nopeer --reach 0 --dpeer 0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/eps_0.5 --eps 0.5 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/whole_item --kappa 0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/raw_retain --raw retain --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/reserve_0 --reserve 0 --baselines dp,owt
+python experiments/run_graph.py --workload googlenet --N 64 --tag final_sens/no_momentum --opt-state 0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/nominal  --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/alpha_0.25 --alpha 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/alpha_0.5 --alpha 0.5 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/alpha_0.75 --alpha 0.75 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/alpha_1.0 --alpha 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/rho_0.25 --rho 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/rho_0.75 --rho 0.75 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/rho_1.0 --rho 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/redeff_0.25 --red-eff 0.25 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/redeff_1.0 --red-eff 1.0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/tsetup_5e-6 --t-setup 5e-6 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/tsetup_100e-6 --t-setup 100e-6 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/lamW_32 --lam 32 --w 32 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/lamW_128 --lam 128 --w 128 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/lamW_256 --lam 256 --w 256 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/reach_15 --reach 15 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/reach_16 --reach 16 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/reach_unrestricted_nopeer --reach 0 --dpeer 0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/eps_0.5 --eps 0.5 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/whole_item --kappa 0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/raw_retain --raw retain --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/reserve_0 --reserve 0 --baselines dp,owt
+python experiments/run_graph.py --workload resnet50 --N 64 --tag final_sens/no_momentum --opt-state 0 --baselines dp,owt

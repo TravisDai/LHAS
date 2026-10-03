@@ -1,0 +1,3247 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "typed-interface (exact additive minimizer, min-charge alternatives, reservation check)",
+ "workload": "resnet50",
+ "N": 64,
+ "B": 256,
+ "family": "all",
+ "settings": {
+  "B": 256,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "sync",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 64,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/resnet50.json",
+  "manifest_sha256": "9c83080ac06ac65d83caeada0c924273cf43c4dbec87ec8c021278fe14077eb6",
+  "code_commit": "f8bc93e4abec703a9e4a92eefc86ac39122a5780",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 440,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "cost": 0.14787384300588752,
+  "cost_unconstrained_minimizer": 0.14787384300588752,
+  "memory_feasible": true,
+  "memory_max": 3444543600.0,
+  "memory_node1": 2826077320.0,
+  "memory_budget_after_reserve": 11811160064.0,
+  "configs": [
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP8",
+   "DP32",
+   "DP8",
+   "DP8",
+   "DP8",
+   "DP8",
+   "DP8",
+   "DP8",
+   "DP8"
+  ],
+  "layers": [
+   "conv1",
+   "layer1_0_conv1",
+   "layer1_0_conv2",
+   "layer1_0_conv3",
+   "layer1_0_downsample_0",
+   "layer1_1_conv1",
+   "layer1_1_conv2",
+   "layer1_1_conv3",
+   "layer1_2_conv1",
+   "layer1_2_conv2",
+   "layer1_2_conv3",
+   "layer2_0_conv1",
+   "layer2_0_conv2",
+   "layer2_0_conv3",
+   "layer2_0_downsample_0",
+   "layer2_1_conv1",
+   "layer2_1_conv2",
+   "layer2_1_conv3",
+   "layer2_2_conv1",
+   "layer2_2_conv2",
+   "layer2_2_conv3",
+   "layer2_3_conv1",
+   "layer2_3_conv2",
+   "layer2_3_conv3",
+   "layer3_0_conv1",
+   "layer3_0_conv2",
+   "layer3_0_conv3",
+   "layer3_0_downsample_0",
+   "layer3_1_conv1",
+   "layer3_1_conv2",
+   "layer3_1_conv3",
+   "layer3_2_conv1",
+   "layer3_2_conv2",
+   "layer3_2_conv3",
+   "layer3_3_conv1",
+   "layer3_3_conv2",
+   "layer3_3_conv3",
+   "layer3_4_conv1",
+   "layer3_4_conv2",
+   "layer3_4_conv3",
+   "layer3_5_conv1",
+   "layer3_5_conv2",
+   "layer3_5_conv3",
+   "layer4_0_conv1",
+   "layer4_0_conv2",
+   "layer4_0_conv3",
+   "layer4_0_downsample_0",
+   "layer4_1_conv1",
+   "layer4_1_conv2",
+   "layer4_1_conv3",
+   "layer4_2_conv1",
+   "layer4_2_conv2",
+   "layer4_2_conv3",
+   "fc"
+  ],
+  "stats": {
+   "major_interfaces": 18,
+   "configs": {
+    "conv1": 14,
+    "layer1_0_conv1": 14,
+    "layer1_0_conv2": 14,
+    "layer1_0_conv3": 14,
+    "layer1_0_downsample_0": 14,
+    "layer1_1_conv1": 14,
+    "layer1_1_conv2": 14,
+    "layer1_1_conv3": 14,
+    "layer1_2_conv1": 14,
+    "layer1_2_conv2": 14,
+    "layer1_2_conv3": 14,
+    "layer2_0_conv1": 14,
+    "layer2_0_conv2": 14,
+    "layer2_0_conv3": 14,
+    "layer2_0_downsample_0": 14,
+    "layer2_1_conv1": 14,
+    "layer2_1_conv2": 14,
+    "layer2_1_conv3": 14,
+    "layer2_2_conv1": 14,
+    "layer2_2_conv2": 14,
+    "layer2_2_conv3": 14,
+    "layer2_3_conv1": 14,
+    "layer2_3_conv2": 14,
+    "layer2_3_conv3": 14,
+    "layer3_0_conv1": 14,
+    "layer3_0_conv2": 14,
+    "layer3_0_conv3": 14,
+    "layer3_0_downsample_0": 14,
+    "layer3_1_conv1": 14,
+    "layer3_1_conv2": 14,
+    "layer3_1_conv3": 14,
+    "layer3_2_conv1": 14,
+    "layer3_2_conv2": 14,
+    "layer3_2_conv3": 14,
+    "layer3_3_conv1": 14,
+    "layer3_3_conv2": 14,
+    "layer3_3_conv3": 14,
+    "layer3_4_conv1": 14,
+    "layer3_4_conv2": 14,
+    "layer3_4_conv3": 14,
+    "layer3_5_conv1": 14,
+    "layer3_5_conv2": 14,
+    "layer3_5_conv3": 14,
+    "layer4_0_conv1": 14,
+    "layer4_0_conv2": 14,
+    "layer4_0_conv3": 14,
+    "layer4_0_downsample_0": 14,
+    "layer4_1_conv1": 14,
+    "layer4_1_conv2": 14,
+    "layer4_1_conv3": 14,
+    "layer4_2_conv1": 14,
+    "layer4_2_conv2": 14,
+    "layer4_2_conv3": 14,
+    "fc": 17
+   },
+   "search_seconds": 18.840483504000076,
+   "search_cost": 0.1478738430058875,
+   "evaluated_cost": 0.14787384300588752
+  },
+  "certificate": "unconstrained minimizer satisfies the budget: memory-constrained optimum within the candidate family"
+ },
+ "baselines": {
+  "dp_N": {
+   "status": "feasible",
+   "cost": 0.16790132854210474,
+   "cost_if_feasible": 0.16790132854210474,
+   "memory_max": 4164420744.0,
+   "memory_lower_bound_max": 1260952712.0,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64"
+   ]
+  },
+  "dp_best": {
+   "status": "feasible",
+   "p": 32,
+   "cost": 0.1518715541395099,
+   "unresolved_counts": [],
+   "per_count": {
+    "1": {
+     "status": "infeasible",
+     "cost": "inf"
+    },
+    "2": {
+     "status": "infeasible",
+     "cost": "inf"
+    },
+    "4": {
+     "status": "infeasible",
+     "cost": "inf"
+    },
+    "8": {
+     "status": "feasible",
+     "cost": 0.22025376236787586
+    },
+    "16": {
+     "status": "feasible",
+     "cost": 0.1689210748993477
+    },
+    "32": {
+     "status": "feasible",
+     "cost": 0.1518715541395099
+    },
+    "64": {
+     "status": "feasible",
+     "cost": 0.16790132854210474
+    }
+   },
+   "configs": [
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32",
+    "DP32"
+   ]
+  },
+  "owt": {
+   "status": "feasible",
+   "cost": 0.18681286263745464,
+   "cost_if_feasible": 0.18681286263745464,
+   "memory_max": 4006518680.0,
+   "memory_lower_bound_max": 1615075960.0,
+   "configs": [
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "DP64",
+    "MP50"
+   ]
+  }
+ },
+ "verification": {
+  "summary": {
+   "expected_operations": 304,
+   "network_operations": 164,
+   "by_status": {
+    "checked-actual": 164,
+    "local": 140
+   },
+   "packing_checked": 164,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 9.906432e-05,
+    "verified_reduction": 3.439213114754098e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 7.186688e-05,
+    "verified_reduction": 1.5234098360655737e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023963904000000002,
+    "verified_reduction": 1.3341377049180328e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013674752,
+    "verified_reduction": 6.093639344262295e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013674752,
+    "verified_reduction": 6.093639344262295e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013478144000000003,
+    "verified_reduction": 5.955147540983607e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023963904000000002,
+    "verified_reduction": 1.3341377049180328e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013674752,
+    "verified_reduction": 6.093639344262295e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013478144000000003,
+    "verified_reduction": 5.955147540983607e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00023963904000000002,
+    "verified_reduction": 1.3341377049180328e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.0895360000000005e-05,
+    "verified_reduction": 4.616393442622951e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00013674752,
+    "verified_reduction": 6.093639344262295e-06
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer1_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00021932288000000002,
+    "verified_reduction": 1.1910295081967214e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00080652544,
+    "verified_reduction": 5.327318032786885e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0003910272,
+    "verified_reduction": 2.4005245901639344e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0007265715200000001,
+    "verified_reduction": 4.7641180327868855e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038709504,
+    "verified_reduction": 2.3728262295081966e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00080652544,
+    "verified_reduction": 5.327318032786885e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0003910272,
+    "verified_reduction": 2.4005245901639344e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038709504,
+    "verified_reduction": 2.3728262295081966e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00080652544,
+    "verified_reduction": 5.327318032786885e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0003910272,
+    "verified_reduction": 2.4005245901639344e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00038709504,
+    "verified_reduction": 2.3728262295081966e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00080652544,
+    "verified_reduction": 5.327318032786885e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.155072e-05,
+    "verified_reduction": 9.232786885245902e-08
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0003910272,
+    "verified_reduction": 2.4005245901639344e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer2_3_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00072395008,
+    "verified_reduction": 4.745652459016393e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0020689887999999997,
+    "verified_reduction": 0.00018982609836065573
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014194433599999997,
+    "verified_reduction": 5.7411147540983604e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_1_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014194433599999997,
+    "verified_reduction": 5.7411147540983604e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_2_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014194433599999997,
+    "verified_reduction": 5.7411147540983604e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_3_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014194433599999997,
+    "verified_reduction": 5.7411147540983604e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_4_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014194433599999997,
+    "verified_reduction": 5.7411147540983604e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022328288,
+    "verified_reduction": 0.0002129080655737705
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.2861440000000005e-05,
+    "verified_reduction": 1.8465573770491803e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=16|exchange",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0014253415999999999,
+    "verified_reduction": 5.774688524590164e-05
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer3_5_conv3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 6.072576e-05,
+    "verified_reduction": 7.386229508196721e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00206636736,
+    "verified_reduction": 0.0001894567868852459
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv1",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.006764827839999997,
+    "verified_reduction": 0.0008512629508196721
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv2",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 5.548288e-05,
+    "verified_reduction": 3.6931147540983606e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00137247516,
+    "verified_reduction": 0.00010354150819672131
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0061014835199999975,
+    "verified_reduction": 0.0007578271475409836
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 7.121152e-05,
+    "verified_reduction": 1.4772459016393443e-06
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_0_downsample_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 7.121152e-05,
+    "verified_reduction": 1.4772459016393443e-06
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.001368543,
+    "verified_reduction": 0.00010323934426229508
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0030462645999999997,
+    "verified_reduction": 0.00023216262295081968
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00137247516,
+    "verified_reduction": 0.00010354150819672131
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_1_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.001368543,
+    "verified_reduction": 0.00010323934426229508
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0030462645999999997,
+    "verified_reduction": 0.00023216262295081968
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv2",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 2.6365720000000002e-05,
+    "verified_reduction": 1.0072131147540984e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00137247516,
+    "verified_reduction": 0.00010354150819672131
+   },
+   {
+    "kind": "AR_bnstat_fp",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_bnstat_bp",
+    "where": "layer4_2_conv3",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 3.029788e-05,
+    "verified_reduction": 4.0288524590163935e-07
+   },
+   {
+    "kind": "AR_w",
+    "where": "fc",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0026477749999999993,
+    "verified_reduction": 0.00020154098360655737
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T1",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T2",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T5",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T7",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T9",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T11",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T12",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T13",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T14",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T15",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T16",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T17",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T18",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T19",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T20",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T21",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T22",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T23",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T24",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T25",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T26",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T27",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T28",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T29",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T30",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T30",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T31",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T32",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T32",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T33",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T33",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T34",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T35",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T35",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T36",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T36",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T37",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T38",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T38",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T39",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T39",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T40",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T41",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T41",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T42",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0007958833599999998,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T42",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0007958833599999998,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T43",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T43",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T43",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0017240531199999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T43",
+    "candidate": "adapted-OSM",
+    "routes": 31,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0017240531199999999,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T44",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T44",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T45",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T45",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T46",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T47",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T47",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T48",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T48",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_fp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_id_bp",
+    "where": "T49",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 0.0009188999993057223,
+  "plan_seconds": 18.86440134499935,
+  "baselines_seconds": 0.1853175199994439,
+  "verification_seconds": 3.6541609819996665,
+  "total_seconds": 22.71621722800046,
+  "pack": {
+   "hits": 44126,
+   "misses": 1324,
+   "pack_seconds": 0.5706058729938377,
+   "cached_routes": 155986
+  },
+  "peak_rss_bytes": 298663936
+ }
+}

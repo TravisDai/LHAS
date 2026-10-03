@@ -1,0 +1,255 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "alexnet",
+ "N": 512,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 512,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.5,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "analytic_reference"
+ },
+ "input_mode": "analytic_reference",
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "9a7c1d19a4eb03815f986442612a8bd8b691db29",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "results/cache/cold",
+  "pack_cache_files_at_start": 0,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    17,
+    24,
+    26,
+    19,
+    19,
+    20,
+    20,
+    25
+   ],
+   "alternatives": 151542,
+   "unconstrained_optimum": 0.07258220079464833,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    17,
+    24,
+    26,
+    19,
+    19,
+    20,
+    20,
+    25
+   ],
+   "seconds": 115.27636713000174
+  },
+  "cost": 0.07258220079464833,
+  "configs": [
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "DP64",
+   "MP8",
+   "MP8",
+   "DP1"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=16|exchange"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=64|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "C-A|g=8|rep|k=0"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "local"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.027468233166451615,
+   "intra_transport": 0.03378131808,
+   "intra_reduction": 0.002950773508196721,
+   "inter": 0.00838187604,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 920032736.0,
+  "memory_node1": 920032736.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {},
+ "verification": {
+  "summary": {
+   "not_run": true,
+   "reason": "--no-verify"
+  }
+ },
+ "runtime": {
+  "construction_seconds": 787.985057138998,
+  "construction": {
+   "ar_groups": 29,
+   "ag_groups": 413,
+   "a2a": 4277,
+   "seconds": {
+    "AR": 45.246543870001915,
+    "AG": 571.9220663649758,
+    "A2A": 138.92873573489487
+   }
+  },
+  "plan_seconds": 115.28697772400119,
+  "baselines_seconds": 1.8810023902915418e-06,
+  "verification_seconds": 3.3479991543572396e-06,
+  "total_seconds": 903.2830729779998,
+  "pack": {
+   "hits": 13192,
+   "misses": 6421,
+   "pack_seconds": 389.7983001368848,
+   "cached_routes": 2899780,
+   "disk_hits": 6
+  },
+  "peak_rss_bytes": 1972772864
+ }
+}

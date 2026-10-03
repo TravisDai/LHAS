@@ -1,0 +1,880 @@
+{
+ "schema": "lhas-run-v2",
+ "engine": "chain (exact memory-aware label DP)",
+ "workload": "alexnet",
+ "N": 256,
+ "B": 1024,
+ "family": "all",
+ "settings": {
+  "B": 1024,
+  "alpha": 0.0,
+  "raw_input_grad": "omit",
+  "optimizer_state_factor": 1.0,
+  "workspace_bytes": 0,
+  "norm_policy": "none",
+  "max_mp_p": null
+ },
+ "transport": {
+  "N": 256,
+  "lam": 64,
+  "w_tx": 64,
+  "w_rx": 64,
+  "reach": 8,
+  "d_peer": 16,
+  "seg_len_m": 1,
+  "v_g": 200000000.0,
+  "rate_bps": 25000000000.0,
+  "eps": 1,
+  "t_setup": 2.5e-05,
+  "t_tx": 1e-08,
+  "t_rx": 1e-08,
+  "t_fwd": 0,
+  "kappa_bytes": 1048576
+ },
+ "compute": {
+  "peak_flops": 9300000000000.0,
+  "utilization": 0.5,
+  "peak_mem_bw": 732000000000.0,
+  "reduction_efficiency": 0.29863387978142075,
+  "psi": 4,
+  "budget_bytes": 12884901888,
+  "runtime_reserve_bytes": 1073741824,
+  "input_mode": "profiled_Tesla_T4"
+ },
+ "input_mode": "profiled_Tesla_T4",
+ "provenance": {
+  "manifest": "configs/workloads/alexnet.json",
+  "manifest_sha256": "3c76f5fd29f14d4dacc50eb6a520c447c46bc9fd8b9cf831df9c47298a18ae45",
+  "code_commit": "f5b600f3976f8b0a7e52598f97ebb93c607f35a4",
+  "code_dirty": false,
+  "python": "3.11.15",
+  "pack_cache_dir": "/home/claude/lhas-repro/results/cache/packings",
+  "pack_cache_files_at_start": 445,
+  "nominal_spec": "configs/nominal_experiment.json"
+ },
+ "profile": {
+  "path": "configs/profiles/profiled_Tesla_T4_B1024.json",
+  "sha256": "5ca61653e704abe545981d47c49cf71b2470abf7b685ec77c7c54c71f82a7f73",
+  "input_mode": "profiled_Tesla_T4",
+  "device": "Tesla T4",
+  "B": 1024,
+  "source_zip_sha256": "e1648ca8e6dbb6a199a47e329a13a1f0d04b97a905b66f69cec6bf54f2b161d3",
+  "measured_entries": 2770,
+  "unmeasured_entries": 31
+ },
+ "lhas": {
+  "status": "feasible",
+  "feasible": true,
+  "stats": {
+   "configs": [
+    16,
+    23,
+    24,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "alternatives": 119891,
+   "unconstrained_optimum": 0.07605689458793405,
+   "memory_slack": false,
+   "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+   "labels_per_layer": [
+    16,
+    23,
+    24,
+    18,
+    18,
+    18,
+    18,
+    23
+   ],
+   "seconds": 38.898382329000015
+  },
+  "cost": 0.07605689458793403,
+  "configs": [
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "DP32",
+   "MP8",
+   "MP8",
+   "DP8"
+  ],
+  "layers": [
+   "features_0",
+   "features_3",
+   "features_6",
+   "features_8",
+   "features_10",
+   "classifier_1",
+   "classifier_4",
+   "classifier_6"
+  ],
+  "choices": [
+   [
+    [
+     "AR_w",
+     "WRHT|m=32|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=32|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=32|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=32|collect"
+    ],
+    [
+     "A2A_fp",
+     "empty"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=32|collect"
+    ],
+    [
+     "A2A_fp",
+     "adapted-OSM"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "empty"
+    ]
+   ],
+   [
+    [
+     "AG_y",
+     "EQ|k=1|radix=8"
+    ],
+    [
+     "AR_x",
+     "WRHT|m=8|exchange"
+    ],
+    [
+     "A2A_bp",
+     "adapted-OSM"
+    ]
+   ],
+   [
+    [
+     "AR_w",
+     "WRHT|m=8|exchange"
+    ]
+   ]
+  ],
+  "breakdown": {
+   "compute": 0.03433702387660742,
+   "intra_transport": 0.033478491,
+   "intra_reduction": 0.0044109123513266235,
+   "inter": 0.00383046736,
+   "overlap_credit": 0.0
+  },
+  "memory_max": 1203018464.0,
+  "memory_node1": 1119924960.0,
+  "memory_budget_after_reserve": 11811160064.0
+ },
+ "baselines": {
+  "dp_N": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 216,
+    "unconstrained_optimum": 0.3204369168553423,
+    "memory_slack": false,
+    "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.003323554999951739
+   },
+   "cost": 0.3204369168553423,
+   "configs": [
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.010376383915543555,
+    "intra_transport": 0.2709291624,
+    "intra_reduction": 0.03913137053979872,
+    "inter": 0.0,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 4915247488.0,
+   "memory_node1": 894188256.0,
+   "memory_budget_after_reserve": 11811160064.0
+  },
+  "dp_best": {
+   "status": "feasible",
+   "p": 8,
+   "cost": 0.18756465184300977,
+   "unresolved_counts": [],
+   "per_count": {
+    "1": {
+     "status": "feasible",
+     "cost": 0.8342195764183998
+    },
+    "2": {
+     "status": "feasible",
+     "cost": 0.5092663054346208
+    },
+    "4": {
+     "status": "feasible",
+     "cost": 0.2913599830052691
+    },
+    "8": {
+     "status": "feasible",
+     "cost": 0.18756465184300977
+    },
+    "16": {
+     "status": "feasible",
+     "cost": 0.2245914558786038
+    },
+    "32": {
+     "status": "feasible",
+     "cost": 0.22181485267646217
+    },
+    "64": {
+     "status": "feasible",
+     "cost": 0.26381665569262125
+    },
+    "128": {
+     "status": "feasible",
+     "cost": 0.30605834331082477
+    },
+    "256": {
+     "status": "feasible",
+     "cost": 0.3204369168553423
+    }
+   },
+   "configs": [
+    "DP8",
+    "DP8",
+    "DP8",
+    "DP8",
+    "DP8",
+    "DP8",
+    "DP8",
+    "DP8"
+   ]
+  },
+  "owt": {
+   "status": "feasible",
+   "feasible": true,
+   "stats": {
+    "configs": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "alternatives": 594,
+    "unconstrained_optimum": 0.22689589465059293,
+    "memory_slack": false,
+    "mode": "cost-only minimizer is memory-feasible (equals lower bound)",
+    "labels_per_layer": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 0.0029038510000418682
+   },
+   "cost": 0.22689589465059296,
+   "configs": [
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "MP256",
+    "MP256",
+    "MP250"
+   ],
+   "layers": [
+    "features_0",
+    "features_3",
+    "features_6",
+    "features_8",
+    "features_10",
+    "classifier_1",
+    "classifier_4",
+    "classifier_6"
+   ],
+   "choices": [
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "empty"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AR_w",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_fp",
+      "adapted-OSM"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=7|radix=4x2x2x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_bp",
+      "empty"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "C-B|P|k=7|radix=4x2x2x2x2x2x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=17|exchange"
+     ],
+     [
+      "A2A_bp",
+      "adapted-OSM"
+     ]
+    ],
+    [
+     [
+      "AG_y",
+      "EQ|k=4|radix=5x5x5x2"
+     ],
+     [
+      "AR_x",
+      "WRHT|m=17|exchange"
+     ]
+    ]
+   ],
+   "breakdown": {
+    "compute": 0.008616863951086998,
+    "intra_transport": 0.11808584395999999,
+    "intra_reduction": 0.012921276779505947,
+    "inter": 0.08727190996,
+    "overlap_credit": 0.0
+   },
+   "memory_max": 1677524784.0,
+   "memory_node1": 419034032.0,
+   "memory_budget_after_reserve": 11811160064.0,
+   "definition_configs": [
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "DP256",
+    "MP256",
+    "MP256",
+    "MP250"
+   ]
+  }
+ },
+ "verification": {
+  "summary": {
+   "expected_operations": 22,
+   "network_operations": 13,
+   "by_status": {
+    "checked-actual": 13,
+    "local": 9
+   },
+   "packing_checked": 13,
+   "all_network_operations_checked": true
+  },
+  "operations": [
+   {
+    "kind": "AR_w",
+    "where": "features_0",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00016951552,
+    "verified_reduction": 1.406711802378774e-05
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_0->features_3",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_3",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0015083721599999998,
+    "verified_reduction": 0.00018561639524245196
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_3->features_6",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_6",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0024212447999999998,
+    "verified_reduction": 0.00040091286367795057
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_6->features_8",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_8",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0029872681599999997,
+    "verified_reduction": 0.000534395901189387
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_8->features_10",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_w",
+    "where": "features_10",
+    "candidate": "WRHT|m=32|collect",
+    "routes": 62,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0022321734399999996,
+    "verified_reduction": 0.00035631546203110706
+   },
+   {
+    "kind": "A2A_fp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 248,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.0032213579999999997,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "features_10->classifier_1",
+    "candidate": "adapted-OSM",
+    "routes": 248,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00050016828,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_1",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.012104650520000001,
+    "verified_reduction": 0.0015541565599268069
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_1",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_1->classifier_4",
+    "candidate": "local",
+    "routes": 0,
+    "status": "local",
+    "packing_checked": false
+   },
+   {
+    "kind": "AR_x",
+    "where": "classifier_4",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005393764119999999,
+    "verified_reduction": 0.0006907362488563587
+   },
+   {
+    "kind": "AG_y",
+    "where": "classifier_4",
+    "candidate": "EQ|k=1|radix=8",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00069614364,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "A2A_bp",
+    "where": "classifier_4->classifier_6",
+    "candidate": "adapted-OSM",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.00010894107999999998,
+    "verified_reduction": 0.0
+   },
+   {
+    "kind": "AR_w",
+    "where": "classifier_6",
+    "candidate": "WRHT|m=8|exchange",
+    "routes": 56,
+    "status": "checked-actual",
+    "packing_checked": true,
+    "verified_transport": 0.005269215,
+    "verified_reduction": 0.000674711802378774
+   }
+  ]
+ },
+ "runtime": {
+  "construction_seconds": 57.326841230000014,
+  "construction": {
+   "ar_groups": 26,
+   "ag_groups": 342,
+   "a2a": 3665,
+   "seconds": {
+    "AR": 2.1315455460002113,
+    "AG": 42.27702816099975,
+    "A2A": 7.579074540998022
+   }
+  },
+  "plan_seconds": 38.90130945400006,
+  "baselines_seconds": 0.03902919600000132,
+  "verification_seconds": 0.18051887500007524,
+  "total_seconds": 96.52397796399998,
+  "pack": {
+   "hits": 10582,
+   "misses": 4924,
+   "pack_seconds": 8.59604591700463,
+   "cached_routes": 2981643,
+   "disk_hits": 10
+  },
+  "peak_rss_bytes": 975568896
+ }
+}

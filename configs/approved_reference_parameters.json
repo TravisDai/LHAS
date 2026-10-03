@@ -1,0 +1,46 @@
+{
+  "approval_date": "2026-09-28",
+  "status": "author-approved analytical reference; not measured hardware",
+  "optical": {
+    "lambda_per_direction": 64,
+    "tx_channels_per_node_total": 64,
+    "rx_channels_per_node_total": 64,
+    "per_label_resources_shared_across_directions": true,
+    "concurrent_tx_rx": true,
+    "optical_multicast": false,
+    "reach_segments": 8,
+    "peer_union_limit_per_round": 16,
+    "segment_length_m": 1,
+    "propagation_speed_m_s": 200000000.0,
+    "wavelength_rate_bit_s": 25000000000.0,
+    "effective_bandwidth_fraction": 1,
+    "setup_s": 2.5e-05,
+    "endpoint_tx_s": 1e-08,
+    "endpoint_rx_s": 1e-08,
+    "extra_relay_handling_s": 0,
+    "pipelined_round_max_chunk_bytes": 1048576,
+    "direct_only_rounds_send_whole_items": true,
+    "nominal_overlap": 0
+  },
+  "compute": {
+    "reference_device": "hypothetical P100 PCIe 16 GB",
+    "original_device_variant": "unknown",
+    "original_profiles_available": false,
+    "input_mode": "analytic_reference",
+    "precision": "float32",
+    "bytes_per_element": 4,
+    "peak_fp32_flop_s": 9300000000000.0,
+    "utilization_assumed": 0.5,
+    "utilization_sensitivity": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "peak_memory_bandwidth_byte_s": 732000000000.0,
+    "reduction_bandwidth_efficiency_assumed": 0.5,
+    "effective_reduction_bandwidth_byte_s": 366000000000.0,
+    "modeled_total_per_node_budget_bytes": 12884901888
+  },
+  "workload_manifest_status": "numerical batches, model versions, optimizer/workspaces and baseline contracts still to be pinned; see CLAUDE_HANDOFF.md"
+}
