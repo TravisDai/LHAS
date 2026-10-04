@@ -8,7 +8,13 @@ root commit. Hashes such as `be19689` below and in the raw outputs refer to deve
 that are therefore not reachable in this repository. The source digest is the public link
 between them.
 
-## What this tree contains relative to development commit 80f9b07
+## What the initial public checkpoint contains relative to development commit 80f9b07
+
+The comparison below describes public commit `4b608a12a7201837bbc833501bc7e41b51405d67`.
+Subsequent reader-facing documentation adds a reproduction guide, citation and
+contribution guidance, issue and CI configuration, and a CPU-only subset of the
+existing dependency pins. These additions do not change the scientific source,
+the original full requirements file, model inputs, measurements, or stored results.
 
 * **Identical** (byte for byte): `src/`, `experiments/`, `tests/`, `configs/`, `colab/`,
   `environment/`, `figures/`, `results/raw/`, `results/colab/`, `results/queues/`,

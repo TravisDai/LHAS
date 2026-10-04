@@ -1,0 +1,9 @@
+# CPU-only subset of requirements-lock.txt, with the same pinned versions.
+# Runs the simulator, analysis scripts, and tests that do not require PyTorch.
+# Use requirements-lock.txt for graph export and the PyTorch-dependent checks.
+numpy==2.4.4
+numba==0.67.0
+llvmlite==0.49.0
+pytest==9.1.1
+matplotlib==3.10.9
+nbformat==5.11.1
