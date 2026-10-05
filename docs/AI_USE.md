@@ -13,8 +13,8 @@ experiments, to:
   schedule verifier (`src/lhas_verify/`), the profiling notebook and its generator (`colab/`),
   the experiment runners (`experiments/`), the analysis and table scripts (`scripts/`), and
   their tests (`tests/`);
-* prepare the paper's evaluation-workflow diagram (Figure 5), and redraw Figure 2 for print
-  from the authors' corrected drawing;
+* prepare the paper's node and ring schematic (Figure 1) and evaluation-workflow diagram
+  (Figure 5), and redraw Figure 2 for print from the authors' corrected drawing;
 * produce the processed results, the tables and the T4 validation figure (Figure 11) from the
   stored outputs (`results/processed/`, `figures/`);
 * adjust Figures 6 and 11 for print (labels of the logarithmic axes in Figure 6, printed size

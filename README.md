@@ -248,7 +248,7 @@ the code auditor. The audit reports are not included.
 |---|---|---|
 | public checkpoint 1 (`4b608a1`) | 2026-10-04 | implementation, configurations, tests, notebook, raw and processed results, artifact documentation |
 | public checkpoint 2 (`b6a2b87`) | 2026-10-06 | plotting script and snapshot for the paper's Figures 6-10 and 12, figure and table mapping, MIT License, generative-AI note |
-| public checkpoint 3 (this commit) | 2026-10-06 | Figures 6 and 11 made legible in print (axis labels, printed size); results unchanged |
+| public checkpoint 3 (`6313d40` and this commit) | 2026-10-06 | Figures 6 and 11 made legible in print (axis labels, printed size); generative-AI note updated; results unchanged |
 
 The Python source of `src/lhas` and `experiments` is unchanged since checkpoint 1 (source
 digest `af07e85b…`, see `PROVENANCE.md`). No archival release (for example Zenodo) has been made yet.
