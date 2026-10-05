@@ -56,6 +56,23 @@ source digest and all provenance records below still apply.
 * `tests/test_presentation_figures.py`, `LICENSE` (MIT), `docs/AI_USE.md`, and updates to
   `README.md`, `docs/STATUS.md` and this file.
 
+## Public checkpoint 3 (2026-10-06)
+
+Added on top of public checkpoint 2 (`b6a2b87`) to make two paper figures legible in print.
+Nothing in `src/`, `experiments/`, `configs/`, `colab/`, `results/` or the snapshot
+`results/processed/presentation_plot_data.json` changed; the source digest below still applies.
+
+* `scripts/make_presentation_figures.py`: the logarithmic y axes of Figure 6
+  (`fig_main_comparison_compact`) are labeled at 1-2-5 steps. The plotted data and the y-axis
+  ranges are unchanged. The other five figures are drawn exactly as before.
+* `scripts/analyse_profile.py`: Figure 11 (`figures/fig_t4_compute_validation.*`) is drawn at
+  its printed size, 5.47 x 2.9 in. The analysis is unchanged: rerun in a copy of this tree, the
+  script reproduces `results/processed/t4_validation.{json,md}` byte for byte.
+* The regenerated figures are pixel-identical (150 dpi) to Figures 6 and 11 of the revised
+  paper, and the other plots to its Figures 7-10 and 12.
+* Updates to `docs/presentation_figures.md`, `docs/AI_USE.md`, `docs/STATUS.md`, `README.md`
+  and this file.
+
 ## Source digests
 
 Every run records `provenance.code_commit` and `provenance.code_dirty`; runs since the audit of
@@ -67,7 +84,7 @@ Digests for the earlier commits were computed afterwards from the development re
 |---|---|---|---|
 | `be196897b649` | 2026-09-29 | `af07e85b148ccc02bded3327b29ea017dd42e306749489db0f550759b95cd81b` (recorded in the outputs) | `results/raw/final/` (16), `final_supp/` (1), `final_profiled_T4/` (8); all `code_dirty = false` |
 | `80f9b070f87c` | 2026-09-30 | `af07e85b148c…` (same; `src/` and `experiments/` unchanged since be19689) | none (documentation, notebook and analysis scripts only) |
-| this public tree | 2026-10-04 | `af07e85b148c…` (same; checked when this checkpoint was made) | none |
+| public checkpoints 1-3 | 2026-10-04 to 2026-10-06 | `af07e85b148c…` (same; checked at each checkpoint) | none |
 | `f8bc93e4abec` | 2026-09-28 | `bad9b594b22887a43dd04a4c93f336073b319484f1b6c0046f429a21bd9db6e8` | `final_batch/` (4), `final_family/` (12), `final_sens/` (46 of 92), `final_cold/` (4 of 5) |
 | `25e5e52dbf10` | 2026-09-28 | `b25dfa76d701815a3b076f333bfdc8136809c4888b78880ab45ec285e5b081fb` | `final_ablations/` (4), `final_gpipe/` (8), `final_sens/` (46 of 92) |
 | `9a7c1d19a4eb` | 2026-09-28 | `b25dfa76d701…` (same source as 25e5e52) | `final_cold/` (1 of 5), `final_supp_gpipe/` (1) |

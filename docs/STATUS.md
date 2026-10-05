@@ -1,6 +1,6 @@
 # Status of the artifact: outstanding work and open items
 
-Public checkpoint 2 of 2026-10-06 (see `PROVENANCE.md`). Items that concern only the unpublished
+Public checkpoint 3 of 2026-10-06 (see `PROVENANCE.md`). Items that concern only the unpublished
 manuscript are tracked privately and are not listed here.
 
 ## Open items from the code audits
@@ -34,7 +34,8 @@ manuscript are tracked privately and are not listed here.
 
 * **License:** MIT (`LICENSE`).
 * **Archival release:** none yet (no tagged release, no Zenodo deposit).
-* **Paper figures:** the plotting script for Figures 6-10 and 12 is included and reproduces them
-  from the stored results (`docs/presentation_figures.md`).
+* **Paper figures:** the plotting script for Figures 6-10 and 12 and the T4 analysis for
+  Figure 11 are included and reproduce these figures of the revised paper from the stored results
+  (`docs/presentation_figures.md`).
 * `configs/approved_reference_parameters.json` (frozen, author-approved) still carries its
   original status note about unpinned inputs; `configs/nominal_experiment.json` pins them.

@@ -569,6 +569,8 @@ def write_markdown(res: dict, out=OUT_MD):
 
 
 def plot(res: dict, stem=FIG):
+    """Figure at its printed size: 5.47 x 2.9 in (the 394 pt text width of the ACM small format),
+    so the 7-8 pt labels print at their nominal size."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -577,34 +579,37 @@ def plot(res: dict, stem=FIG):
     F, T, kind = np.array(f["all_F"]), np.array(f["all_T"]), np.array(f["all_kind"])
     vT, vp, vk = np.array(f["val_T"]), np.array(f["val_pred"]), np.array(f["val_kind"])
     R, peak = f["R"], res["source"]["fp32_peak_flops"]
-    fig, ax = plt.subplots(1, 2, figsize=(9.2, 3.6))
-    for k, col, lab in (("conv", BLUE, "CONV"), ("fc", ORANGE, "FC")):
-        m = kind == k
-        ax[0].scatter(F[m], F[m] / T[m] / 1e12, s=9, color=col, alpha=0.55, linewidths=0, label=lab)
-        m = vk == k
-        ax[1].scatter(vT[m] * 1e3, vp[m] * 1e3, s=9, color=col, alpha=0.55, linewidths=0, label=lab)
-    ax[0].axhline(peak / 1e12, color=MUTED, lw=1, ls="--")
-    ax[0].text(F.min() * 1.3, peak / 1e12 * 1.08, "FP32 peak (datasheet)", color=MUTED, fontsize=8)
-    ax[0].axhline(R / 1e12, color=INK, lw=1)
-    ax[0].text(F.min() * 1.3, R / 1e12 * 1.08, f"fitted R = {R / 1e12:.2f}", color=INK, fontsize=8)
-    ax[0].set_xlabel("FLOPs of the kernel signature (3 products)")
-    ax[0].set_ylabel("direct-FLOP-equivalent rate (TFLOP/s)")
-    lo, hi = vT.min() * 1e3 * 0.7, vT.max() * 1e3 * 1.4
-    ax[1].plot([lo, hi], [lo, hi], color=MUTED, lw=1, ls="--")
-    ax[1].set_xlabel("measured time (ms), validation signatures")
-    ax[1].set_ylabel("predicted time (ms)")
-    for a in ax:
-        a.set_xscale("log"); a.set_yscale("log")
-        a.legend(fontsize=8, frameon=False, loc="lower right")
-        a.grid(alpha=0.25, which="major")
-        for s in ("top", "right"):
-            a.spines[s].set_visible(False)
-    ax[0].set_title("(a) direct-FLOP-equivalent rate by signature", fontsize=9, loc="left")
-    ax[1].set_title("(b) constant-throughput model, held-out signatures", fontsize=9, loc="left")
-    fig.tight_layout()
-    for ext in ("pdf", "png"):
-        fig.savefig(f"{stem}.{ext}", dpi=160)
-    plt.close(fig)
+    rc = {"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7, "ytick.labelsize": 7,
+          "legend.fontsize": 7, "axes.titlesize": 8}
+    with plt.rc_context(rc):
+        fig, ax = plt.subplots(1, 2, figsize=(5.47, 2.9))
+        for k, col, lab in (("conv", BLUE, "CONV"), ("fc", ORANGE, "FC")):
+            m = kind == k
+            ax[0].scatter(F[m], F[m] / T[m] / 1e12, s=4, color=col, alpha=0.55, linewidths=0, label=lab)
+            m = vk == k
+            ax[1].scatter(vT[m] * 1e3, vp[m] * 1e3, s=4, color=col, alpha=0.55, linewidths=0, label=lab)
+        ax[0].axhline(peak / 1e12, color=MUTED, lw=0.8, ls="--")
+        ax[0].text(F.min() * 1.3, peak / 1e12 * 1.1, "FP32 peak (datasheet)", color=MUTED, fontsize=7)
+        ax[0].axhline(R / 1e12, color=INK, lw=0.8)
+        ax[0].text(F.min() * 1.3, R / 1e12 * 1.1, f"fitted R = {R / 1e12:.2f}", color=INK, fontsize=7)
+        ax[0].set_xlabel("FLOPs of the kernel signature\n(3 products)")
+        ax[0].set_ylabel("direct-FLOP-equivalent\nrate (TFLOP/s)")
+        lo, hi = vT.min() * 1e3 * 0.7, vT.max() * 1e3 * 1.4
+        ax[1].plot([lo, hi], [lo, hi], color=MUTED, lw=0.8, ls="--")
+        ax[1].set_xlabel("measured time (ms),\nvalidation signatures")
+        ax[1].set_ylabel("predicted time (ms)")
+        for a in ax:
+            a.set_xscale("log"); a.set_yscale("log")
+            a.legend(frameon=False, loc="lower right", markerscale=2, handletextpad=0.2)
+            a.grid(alpha=0.25, which="major")
+            for s in ("top", "right"):
+                a.spines[s].set_visible(False)
+        ax[0].set_title("(a) direct-FLOP-equivalent rate\nby signature", loc="left")
+        ax[1].set_title("(b) constant-throughput model,\nheld-out signatures", loc="left")
+        fig.tight_layout(pad=0.3, w_pad=1.0)
+        for ext in ("pdf", "png"):
+            fig.savefig(f"{stem}.{ext}", dpi=300)
+        plt.close(fig)
 
 
 def main(zpath=ZIP):

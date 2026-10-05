@@ -15,6 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch, Rectangle
+from matplotlib.ticker import FuncFormatter, LogLocator, NullLocator
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKLOADS = ["alexnet", "vgg16", "googlenet", "resnet50"]
@@ -99,6 +100,10 @@ def main_figure(data):
         ax.set(xscale="log", yscale="log", title=f"({letter}) {NAMES[w]}", xlabel="Physical nodes, N")
         ax.set_xticks([r["N"] for r in rs], [str(r["N"]) + ("*" if r["N"] == 1024 else "") for r in rs])
         ax.minorticks_off()
+        # label the log axis at 1-2-5 steps so that every panel shows at least two values
+        ax.yaxis.set_major_locator(LogLocator(base=10, subs=(1.0, 2.0, 5.0)))
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+        ax.yaxis.set_minor_locator(NullLocator())
         ax.grid(axis="y", alpha=.22)
     for ax in axes[:, 0]: ax.set_ylabel("Predicted time (ms)")
     fig.legend(*axes[0,0].get_legend_handles_labels(), loc="lower center", ncol=3, frameon=False,
