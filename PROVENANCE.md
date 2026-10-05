@@ -28,7 +28,8 @@ between them.
   themselves, so they did not detect it). The analysis itself is unchanged: rerun in a copy of
   this tree, it reproduces `results/processed/t4_validation.{json,md}` and the figure exactly.
   The same one-line fix was applied to the development repository (commit f339b1c).
-* **Added**: this file, `docs/STATUS.md`, `scripts/check_reproduction.py`.
+* **Added**: this file, `docs/STATUS.md`, `scripts/check_reproduction.py` (checkpoint 1; see
+  checkpoint 2 below for later additions).
 * **Withheld until publication**: the manuscript sources, figures and build scripts, the
   documents answering the code audits, two LaTeX build logs, the generated manuscript numbers
   and tables (`results/processed/manuscript_numbers.json`, `manuscript_tables.tex`), and the
@@ -37,6 +38,23 @@ between them.
 
 No experiment queue was rerun to make this checkpoint, and no raw output, profile, measurement
 or provenance record was modified.
+
+## Public checkpoint 2 (2026-10-06)
+
+Added on top of public checkpoint 1 (`4b608a1`); nothing in `src/`, `experiments/`, `configs/`,
+`colab/`, `results/raw/`, `results/colab/` or the existing processed outputs changed, so the
+source digest and all provenance records below still apply.
+
+* `scripts/make_presentation_figures.py`, `results/processed/presentation_plot_data.json` and
+  `docs/presentation_figures.md`: supplied by the authors (written with ChatGPT; see
+  `docs/AI_USE.md`). The snapshot records the SHA-256 hash of each of the 146 raw files it reads;
+  its `baseline_commit` field names development commit e8f8d15, whose raw results are the files
+  in this repository.
+* `figures/presentation/*`: drawn from `results/raw` by that script in this repository. The
+  re-extracted snapshot equals the stored one in every field, all hashes match, and the PDFs
+  rendered at 150 dpi are pixel-identical to the paper's Figures 6-10 and 12.
+* `tests/test_presentation_figures.py`, `LICENSE` (MIT), `docs/AI_USE.md`, and updates to
+  `README.md`, `docs/STATUS.md` and this file.
 
 ## Source digests
 

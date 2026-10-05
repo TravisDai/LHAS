@@ -1,8 +1,8 @@
 # LHAS reproducibility artifact
 
-A reimplementation of the approved analytical model of the paper "LHAS: layer-wise
-hybrid parallelism on wavelength-routed optical interconnects". The paper is not yet
-published, and its manuscript is not part of this repository. The artifact covers:
+A reimplementation of the approved analytical model of the paper "Layer-wise Hybrid
+Parallelism for Distributed DNN Training on Optical Interconnects" (LHAS). The paper is not
+yet published, and its manuscript is not part of this repository. The artifact covers:
 
 * a physical transport scheduler with deterministic first-fit;
 * collective candidate families: adapted OSM, WRHT, mixed-radix OpTree, and unequal-group A/B/C;
@@ -25,7 +25,8 @@ computation.
 > from development commits whose hashes are recorded in the raw outputs. `PROVENANCE.md`
 > maps the public tree to those commits (the Python source is byte-identical to the source
 > that produced the primary, supplementary and profiled results). Outstanding work and open
-> audit items: `docs/STATUS.md`. No license and no archival release yet.
+> audit items: `docs/STATUS.md`. Released under the MIT License (`LICENSE`); no archival
+> release yet. Use of generative AI tools: `docs/AI_USE.md`.
 
 ## Final specification
 
@@ -67,8 +68,10 @@ docs/                                         specification, memory ledger, veri
 results/raw/final*                            final results; results/raw/archive_0892134/ and results/archive/ hold
                                               superseded outputs (kept unchanged for traceability)
 results/processed/, figures/                  summaries, tables and figures generated from the raw results
+figures/presentation/                         the paper's Figures 6-10 and 12 (PDF, PNG, SVG)
 results/colab/                                the author's unmodified Tesla T4 profiling ZIP (notebook v2)
 PROVENANCE.md                                 relation between this public tree and the development commits
+LICENSE                                       MIT License
 tests/                                        pytest suite
 ```
 
@@ -124,7 +127,34 @@ cd scripts && python make_figures.py && python make_tables.py && python compare_
 # 6. check reruns against the archived outputs of commit 0892134 (nonzero exit on any
 #    difference in costs, plans or recorded incumbent-cost traces, or a missing file)
 python scripts/compare_reruns.py
+
+# 7. the paper's Figures 6-10 and 12 from the stored raw results (no experiment is run);
+#    see docs/presentation_figures.md for the snapshot and hash checks
+python scripts/make_presentation_figures.py --output figures/presentation
 ```
+
+## Paper figures and tables
+
+Every evaluation figure and table of the paper is produced from the stored results by the
+commands below; no experiment needs to be rerun. The paper's Figures 1-5 and Tables 1 and 3-6
+are diagrams, definitions or notation.
+
+| Paper | Content | Command | Inputs | Output |
+|---|---|---|---|---|
+| Table 2 | worked example (N = p = 4) | `python -m pytest tests/test_worked_example.py` | approved parameters | values asserted in the test |
+| Fig. 6, Table 7 | main comparison | `scripts/make_presentation_figures.py`; `scripts/make_tables.py` | `results/raw/final*`, `final_gpipe`, `final_supp*` | `figures/presentation/fig_main_comparison_compact.*`; `results/processed/tables.md` (main comparison) |
+| Fig. 7, Tables 8-9 | planner ablations; collective families | as above | `results/raw/final_ablations`, `final_family` | `fig_ablations_families.*`; `tables.md` |
+| Fig. 8, Table 10 | one-at-a-time sensitivity | as above | `results/raw/final_sens` | `fig_sensitivity_compact.*`; `tables.md` |
+| Fig. 9, Table 11 | batch-size sensitivity | as above | `results/raw/final`, `final_batch/B256` | `fig_batch_comparison.*`; `tables.md` |
+| Fig. 10, Table 12 | selected configurations | as above | `results/raw/final`, `final_supp` | `fig_layer_configurations.*`; `tables.md` |
+| Table 13 | verification coverage and planner runtime | `scripts/make_tables.py` | `results/raw/final`, `final_supp` | `tables.md` (coverage); `results/processed/main_summary.csv` (`construction_s`, `plan_s`) |
+| Fig. 11, Table 14 | T4 compute-model validation | `python scripts/analyse_profile.py` | `results/colab/Tesla_T4_2026-09-28/lhas_profile_Tesla_T4.zip` | `figures/fig_t4_compute_validation.*`; `results/processed/t4_validation.{json,md}` |
+| Fig. 12, Table 15 | measured-computation sensitivity | `scripts/make_presentation_figures.py`; `scripts/make_tables.py` | `results/raw/final_profiled_T4`, `final` | `fig_profiled_comparison.*`; `tables.md` |
+
+`scripts/make_presentation_figures.py` writes a snapshot of its inputs with the SHA-256 hash of
+every raw file it reads; `tests/test_presentation_figures.py` checks that the snapshot
+regenerates exactly from `results/raw`. The other files in `figures/` are earlier artifact
+plots of the same results, kept for reference.
 
 **Cheap reproduction check** (under a minute: 19 s on a 2-core container; no queue, no GPU). It reruns one
 primary configuration into a scratch directory and compares it with the stored result:
@@ -204,13 +234,24 @@ measured local shape are excluded for every method), for example
   the T4 validation protocol.
 * `docs/REPORT.md`: what was executed, passed, failed and remains unverified.
 * `docs/STATUS.md`: outstanding work and open items.
-* `PROVENANCE.md`: development commits, source digests and what differs in this public tree.
+* `docs/presentation_figures.md`: commands, inputs and checks for the paper's Figures 6-10 and 12.
+* `docs/AI_USE.md`: how generative AI tools were used for the artifact and the paper.
+* `PROVENANCE.md`: development commits, source digests, versions of this public repository.
 
 Identifiers such as 0892134, ac66b9e and e8f8d15 in test names, documents and generated reports
 refer to development commits that were audited independently; "reviewer" in those places means
 the code auditor. The audit reports are not included.
 
+## Versions
+
+| Version | Date | Content |
+|---|---|---|
+| public checkpoint 1 (`4b608a1`) | 2026-10-04 | implementation, configurations, tests, notebook, raw and processed results, artifact documentation |
+| public checkpoint 2 (this commit) | 2026-10-06 | plotting script and snapshot for the paper's Figures 6-10 and 12, figure and table mapping, MIT License, generative-AI note |
+
+The Python source of `src/lhas` and `experiments` is unchanged since checkpoint 1 (source
+digest `af07e85b…`, see `PROVENANCE.md`). No archival release (for example Zenodo) has been made yet.
+
 ## License
 
-No license has been chosen yet; the author will add one. This repository therefore contains
-no license file at present.
+MIT License; see `LICENSE`.
