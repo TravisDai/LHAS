@@ -8,7 +8,13 @@ root commit. Hashes such as `be19689` below and in the raw outputs refer to deve
 that are therefore not reachable in this repository. The source digest is the public link
 between them.
 
-## What this tree contains relative to development commit 80f9b07
+## What the initial public checkpoint contains relative to development commit 80f9b07
+
+The comparison below describes public commit `4b608a12a7201837bbc833501bc7e41b51405d67`.
+Subsequent reader-facing documentation adds a reproduction guide, citation and
+contribution guidance, issue and CI configuration, and a CPU-only subset of the
+existing dependency pins. These additions do not change the scientific source,
+the original full requirements file, model inputs, measurements, or stored results.
 
 * **Identical** (byte for byte): `src/`, `experiments/`, `tests/`, `configs/`, `colab/`,
   `environment/`, `figures/`, `results/raw/`, `results/colab/`, `results/queues/`,
@@ -119,3 +125,15 @@ not been run on a GPU, so no stored measurement comes from it.
 Three independent code audits were made of development commits 0892134, ac66b9e and
 e8f8d15. Their findings, fixes and regression tests are summarized in `docs/change_log.md` and
 `docs/REPORT.md`; the audit reports and responses are not included.
+
+## Reader and reviewer guide (2026-10-06)
+
+The documentation branch integrates the existing reader-guide work with checkpoint 3.
+It adds CPU-only installation instructions, a reviewer entry point, paper-figure
+and table links, citation/contribution guidance, and a CPU GitHub Actions check.
+The CPU requirements are a subset of the existing full dependency pins. The
+reproduction CLI now supports required baseline keys and an explicit CI-only
+source-digest exception; its strict default is preserved and focused regression
+tests cover both behaviors. No files
+in `src/`, `experiments/`, `configs/`, `colab/`, or the stored results and figures
+are changed by this documentation update. No experiment queue was rerun.

@@ -92,6 +92,33 @@ stored report `results/processed/t4_validation.json`. It is not generated
 by this six-figure script. Figures 1-5 of the paper are diagrams, not plots
 of results.
 
+## Paper figure and table map
+
+Run the commands from the repository root. The table commands reproduce the
+numerical contents in Markdown/CSV; the private manuscript supplies the LaTeX
+layout. Tables 1 and 3-6 contain definitions and notation, rather than experimental
+results. The worked example (Table 2) is checked by
+`python -m pytest -q tests/test_worked_example.py`.
+
+| Paper item | Evidence and raw-result paths | Reproduction command | Generated output |
+|---|---|---|---|
+| Fig. 6; Table 7 | `results/raw/final/`, `final_gpipe/`, `final_supp/`, `final_supp_gpipe/` | `python scripts/make_presentation_figures.py`; `python scripts/make_tables.py` | `figures/presentation/fig_main_comparison_compact.*`; main comparison in `results/processed/tables.md` |
+| Fig. 7; Tables 8-9 | `results/raw/final_ablations/`, `final_family/` | Same two commands | `fig_ablations_families.*`; ablation and family tables |
+| Fig. 8; Table 10 | `results/raw/final_sens/` | Same two commands | `fig_sensitivity_compact.*`; sensitivity table |
+| Fig. 9; Table 11 | `results/raw/final/`, `final_batch/B256/` | Same two commands | `fig_batch_comparison.*`; batch table |
+| Fig. 10; Table 12 | `results/raw/final/`, `final_supp/` | Same two commands | `fig_layer_configurations.*`; configuration table, including supplementary AlexNet |
+| Table 13 | `results/raw/final/`, `final_supp/`; operation coverage and recorded runtimes | `python scripts/make_figures.py`; `python scripts/make_tables.py` | Coverage table in `tables.md`; `construction_s` and `plan_s` in `results/processed/main_summary.csv` |
+| Fig. 11; Table 14 | Original T4 ZIP in `results/colab/Tesla_T4_2026-09-28/` | `python scripts/analyse_profile.py` | `figures/fig_t4_compute_validation.*`; `results/processed/t4_validation.{json,md}` |
+| Fig. 12; Table 15 | `results/raw/final_profiled_T4/`, `final/` | `python scripts/make_presentation_figures.py`; `python scripts/make_tables.py` | `fig_profiled_comparison.*`; profiled comparison table |
+
+Presentation plot basenames in this table are under `figures/presentation/`;
+the experiment tags following the first raw path are under `results/raw/`.
+The scripts do not rerun the experiments. Reporting scripts rewrite generated
+files, so use a separate checkout when comparing regenerated outputs with the
+stored version. Use `--output <directory>` for the presentation plotter when you
+want its outputs elsewhere. PDF timestamps may differ; compare data and rendered
+figures rather than expecting every PDF byte to match.
+
 ## Interpretation and verification
 
 - Times remain model predictions. The measured-input comparison combines
