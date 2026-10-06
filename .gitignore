@@ -9,3 +9,4 @@ results/raw/*.tmp
 build/
 dist/
 results/cache/
+figures/presentation/presentation_plot_data.json

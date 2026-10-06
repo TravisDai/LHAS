@@ -32,4 +32,5 @@ jobs:
         run: |
           python experiments/run_chain.py --workload alexnet --N 64 \
             --baselines dp,dpbest,owt --out "$RUNNER_TEMP/lhas-check" --tag check
-          python scripts/check_reproduction.py "$RUNNER_TEMP/lhas-check/check/alexnet_N64.json"
+          python scripts/check_reproduction.py "$RUNNER_TEMP/lhas-check/check/alexnet_N64.json" \
+            --require-baselines dp_N,dp_best,owt --allow-source-change

@@ -1,0 +1,4037 @@
+{
+  "baseline_commit": "e8f8d15",
+  "units": "seconds",
+  "main": [
+    {
+      "workload": "alexnet",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_3",
+        "features_6",
+        "features_8",
+        "features_10",
+        "classifier_1",
+        "classifier_4",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 3.9325258799999574,
+        "construction": {
+          "ar_groups": 18,
+          "ag_groups": 192,
+          "a2a": 2265,
+          "seconds": {
+            "AR": 0.728819588000988,
+            "AG": 2.2697786649951013,
+            "A2A": 0.45136080399515777
+          }
+        },
+        "plan_seconds": 12.320197009000367,
+        "baselines_seconds": 4.235147639999923,
+        "verification_seconds": 0.490430877000108,
+        "total_seconds": 20.987141350000456,
+        "pack": {
+          "hits": 4933,
+          "misses": 2134,
+          "pack_seconds": 0.1416673340345369,
+          "cached_routes": 271088
+        },
+        "peak_rss_bytes": 295342080
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10079137448688172,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "gpipe": {
+        "seconds": 0.11617746115775093,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 128,
+      "lhas": {
+        "seconds": 0.06652071124429403,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_3",
+        "features_6",
+        "features_8",
+        "features_10",
+        "classifier_1",
+        "classifier_4",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 11.930307528000412,
+        "construction": {
+          "ar_groups": 22,
+          "ag_groups": 262,
+          "a2a": 2945,
+          "seconds": {
+            "AR": 1.1117432379996899,
+            "AG": 7.878235544986637,
+            "A2A": 1.4549828840144983
+          }
+        },
+        "plan_seconds": 18.551342615000067,
+        "baselines_seconds": 4.67764537200037,
+        "verification_seconds": 2.674336193000272,
+        "total_seconds": 37.84375582699977,
+        "pack": {
+          "hits": 7530,
+          "misses": 3296,
+          "pack_seconds": 1.0356819429962343,
+          "cached_routes": 1214411
+        },
+        "peak_rss_bytes": 471740416
+      },
+      "dp_N": {
+        "seconds": 0.27572050355471883,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.13291022982699807,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.07346503751933721,
+        "status": "feasible"
+      },
+      "gpipe": {
+        "seconds": 0.12001384151775095,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.07258220079464833,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_3",
+        "features_6",
+        "features_8",
+        "features_10",
+        "classifier_1",
+        "classifier_4",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 57.34275991499999,
+        "construction": {
+          "ar_groups": 26,
+          "ag_groups": 342,
+          "a2a": 3665,
+          "seconds": {
+            "AR": 2.1603586060009548,
+            "AG": 42.21196428600433,
+            "A2A": 7.6344289489807124
+          }
+        },
+        "plan_seconds": 39.78787232099967,
+        "baselines_seconds": 6.072180087000561,
+        "verification_seconds": 0.7658382770005119,
+        "total_seconds": 103.97689648899996,
+        "pack": {
+          "hits": 10576,
+          "misses": 4932,
+          "pack_seconds": 8.23638792100519,
+          "cached_routes": 2983457,
+          "disk_hits": 10
+        },
+        "peak_rss_bytes": 970747904
+      },
+      "dp_N": {
+        "seconds": 0.29786629617867094,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2166409510960127,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.07458955026010929,
+        "status": "feasible"
+      },
+      "gpipe": {
+        "seconds": 0.13121193265626674,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 512,
+      "lhas": {
+        "seconds": 0.07258220079464833,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_3",
+        "features_6",
+        "features_8",
+        "features_10",
+        "classifier_1",
+        "classifier_4",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 281.9909302310007,
+        "construction": {
+          "ar_groups": 29,
+          "ag_groups": 413,
+          "a2a": 4277,
+          "seconds": {
+            "AR": 4.43446784400021,
+            "AG": 228.4882708650057,
+            "A2A": 31.273788672013325
+          }
+        },
+        "plan_seconds": 67.91272349600058,
+        "baselines_seconds": 7.457994348998909,
+        "verification_seconds": 0.6489667929999996,
+        "total_seconds": 358.0183820579996,
+        "pack": {
+          "hits": 14009,
+          "misses": 6468,
+          "pack_seconds": 20.085648617015977,
+          "cached_routes": 2903438,
+          "disk_hits": 97
+        },
+        "peak_rss_bytes": 1972527104
+      },
+      "dp_N": {
+        "seconds": 0.4999284433894448,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5715509787362033,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.0779118798074881,
+        "status": "feasible"
+      },
+      "gpipe": {
+        "seconds": 0.13121193265626674,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 1024,
+      "lhas": {
+        "seconds": 0.07258220079464833,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_3",
+        "features_6",
+        "features_8",
+        "features_10",
+        "classifier_1",
+        "classifier_4",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 1501.5428177469998,
+        "construction": {
+          "ar_groups": 31,
+          "ag_groups": 465,
+          "a2a": 4881,
+          "seconds": {
+            "AR": 18.713825458999963,
+            "AG": 1278.4533256909995,
+            "A2A": 140.3396362139954
+          }
+        },
+        "plan_seconds": 139.44914413900005,
+        "baselines_seconds": 11.560604578000039,
+        "verification_seconds": 0.8362154960000225,
+        "total_seconds": 1653.399551195,
+        "pack": {
+          "hits": 17076,
+          "misses": 7808,
+          "pack_seconds": 48.48754266199285,
+          "cached_routes": 2359882,
+          "disk_hits": 507
+        },
+        "peak_rss_bytes": 4211187712
+      },
+      "dp_N": {
+        "seconds": 0.5869799668496951,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 1.6355600561145498,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.07710055262099066,
+        "status": "feasible"
+      },
+      "gpipe": {
+        "seconds": 0.13121193265626674,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_2",
+        "features_5",
+        "features_7",
+        "features_10",
+        "features_12",
+        "features_14",
+        "features_17",
+        "features_19",
+        "features_21",
+        "features_24",
+        "features_26",
+        "features_28",
+        "classifier_0",
+        "classifier_3",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 2.844191624000132,
+        "construction": {
+          "ar_groups": 13,
+          "ag_groups": 97,
+          "a2a": 1696,
+          "seconds": {
+            "AR": 0.6146194059999743,
+            "AG": 1.3567139700010102,
+            "A2A": 0.3125438300025962
+          }
+        },
+        "plan_seconds": 11.175766689000056,
+        "baselines_seconds": 2079.7968672139996,
+        "verification_seconds": 0.8037518869996347,
+        "total_seconds": 2094.6308749030004,
+        "pack": {
+          "hits": 4435,
+          "misses": 1301,
+          "pack_seconds": 0.08477384200205051,
+          "cached_routes": 155520
+        },
+        "peak_rss_bytes": 657002496
+      },
+      "dp_N": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5197739914045265,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.4559246197640966,
+        "status": "resource-limited"
+      },
+      "gpipe": {
+        "seconds": 0.6347221772473458,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 128,
+      "lhas": {
+        "seconds": 0.32316360789470117,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_2",
+        "features_5",
+        "features_7",
+        "features_10",
+        "features_12",
+        "features_14",
+        "features_17",
+        "features_19",
+        "features_21",
+        "features_24",
+        "features_26",
+        "features_28",
+        "classifier_0",
+        "classifier_3",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 10.436857818000135,
+        "construction": {
+          "ar_groups": 16,
+          "ag_groups": 136,
+          "a2a": 2264,
+          "seconds": {
+            "AR": 1.1163227259999076,
+            "AG": 5.793334784003491,
+            "A2A": 1.1860091850189747
+          }
+        },
+        "plan_seconds": 20.937497760000042,
+        "baselines_seconds": 4026.8388867639997,
+        "verification_seconds": 3.3246316040003876,
+        "total_seconds": 4061.545584251,
+        "pack": {
+          "hits": 6342,
+          "misses": 1963,
+          "pack_seconds": 0.7530557160225726,
+          "cached_routes": 738896
+        },
+        "peak_rss_bytes": 1075073024
+      },
+      "dp_N": {
+        "seconds": 0.7602472673509185,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.7602472673509185,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.45274202069204994,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.3529765545917575,
+        "status": "resource-limited"
+      },
+      "gpipe": {
+        "seconds": 0.4928225210473459,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.2828456251808778,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_2",
+        "features_5",
+        "features_7",
+        "features_10",
+        "features_12",
+        "features_14",
+        "features_17",
+        "features_19",
+        "features_21",
+        "features_24",
+        "features_26",
+        "features_28",
+        "classifier_0",
+        "classifier_3",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 46.92971098700036,
+        "construction": {
+          "ar_groups": 19,
+          "ag_groups": 181,
+          "a2a": 2914,
+          "seconds": {
+            "AR": 2.1002905590012233,
+            "AG": 29.378215939006623,
+            "A2A": 6.07754708194625
+          }
+        },
+        "plan_seconds": 43.536043514000994,
+        "baselines_seconds": 5553.166557361001,
+        "verification_seconds": 22.90891331000057,
+        "total_seconds": 5666.5498764330005,
+        "pack": {
+          "hits": 9187,
+          "misses": 2859,
+          "pack_seconds": 5.1167121819325985,
+          "cached_routes": 2996861,
+          "disk_hits": 10
+        },
+        "peak_rss_bytes": 2208419840
+      },
+      "dp_N": {
+        "seconds": 0.7305558064007049,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.7305558064007049,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5805741462544403,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.3061174181779094,
+        "status": "resource-limited"
+      },
+      "gpipe": {
+        "seconds": 0.5663272979273462,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 512,
+      "lhas": {
+        "seconds": 0.3528483450297197,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP256",
+        "DP128",
+        "DP128",
+        "DP64",
+        "MP8",
+        "MP8",
+        "DP1"
+      ],
+      "layers": [
+        "features_0",
+        "features_2",
+        "features_5",
+        "features_7",
+        "features_10",
+        "features_12",
+        "features_14",
+        "features_17",
+        "features_19",
+        "features_21",
+        "features_24",
+        "features_26",
+        "features_28",
+        "classifier_0",
+        "classifier_3",
+        "classifier_6"
+      ],
+      "runtime": {
+        "construction_seconds": 255.35107855299975,
+        "construction": {
+          "ar_groups": 21,
+          "ag_groups": 221,
+          "a2a": 3607,
+          "seconds": {
+            "AR": 4.713724131001982,
+            "AG": 178.0661942419938,
+            "A2A": 33.54997863700373
+          }
+        },
+        "plan_seconds": 99.2002952619996,
+        "baselines_seconds": 1917.0743817780003,
+        "verification_seconds": 2.9905295889993795,
+        "total_seconds": 2274.628312789,
+        "pack": {
+          "hits": 10976,
+          "misses": 3986,
+          "pack_seconds": 9.628138554055113,
+          "cached_routes": 2916212,
+          "disk_hits": 73
+        },
+        "peak_rss_bytes": 3467898880
+      },
+      "dp_N": {
+        "seconds": 1.1296008121074566,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.7871356660464376,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 1.4027355898725757,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.3948656023532522,
+        "status": "resource-limited"
+      },
+      "gpipe": {
+        "seconds": 0.6595502569787652,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP1"
+      ],
+      "layers": [
+        "conv1_conv",
+        "conv2_conv",
+        "conv3_conv",
+        "inception3a_branch1_conv",
+        "inception3a_branch2_0_conv",
+        "inception3a_branch2_1_conv",
+        "inception3a_branch3_0_conv",
+        "inception3a_branch3_1_conv",
+        "inception3a_branch4_1_conv",
+        "inception3b_branch1_conv",
+        "inception3b_branch2_0_conv",
+        "inception3b_branch2_1_conv",
+        "inception3b_branch3_0_conv",
+        "inception3b_branch3_1_conv",
+        "inception3b_branch4_1_conv",
+        "inception4a_branch1_conv",
+        "inception4a_branch2_0_conv",
+        "inception4a_branch2_1_conv",
+        "inception4a_branch3_0_conv",
+        "inception4a_branch3_1_conv",
+        "inception4a_branch4_1_conv",
+        "inception4b_branch1_conv",
+        "inception4b_branch2_0_conv",
+        "inception4b_branch2_1_conv",
+        "inception4b_branch3_0_conv",
+        "inception4b_branch3_1_conv",
+        "inception4b_branch4_1_conv",
+        "inception4c_branch1_conv",
+        "inception4c_branch2_0_conv",
+        "inception4c_branch2_1_conv",
+        "inception4c_branch3_0_conv",
+        "inception4c_branch3_1_conv",
+        "inception4c_branch4_1_conv",
+        "inception4d_branch1_conv",
+        "inception4d_branch2_0_conv",
+        "inception4d_branch2_1_conv",
+        "inception4d_branch3_0_conv",
+        "inception4d_branch3_1_conv",
+        "inception4d_branch4_1_conv",
+        "inception4e_branch1_conv",
+        "inception4e_branch2_0_conv",
+        "inception4e_branch2_1_conv",
+        "inception4e_branch3_0_conv",
+        "inception4e_branch3_1_conv",
+        "inception4e_branch4_1_conv",
+        "inception5a_branch1_conv",
+        "inception5a_branch2_0_conv",
+        "inception5a_branch2_1_conv",
+        "inception5a_branch3_0_conv",
+        "inception5a_branch3_1_conv",
+        "inception5a_branch4_1_conv",
+        "inception5b_branch1_conv",
+        "inception5b_branch2_0_conv",
+        "inception5b_branch2_1_conv",
+        "inception5b_branch3_0_conv",
+        "inception5b_branch3_1_conv",
+        "inception5b_branch4_1_conv",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0008947500000431319,
+        "plan_seconds": 79.46165668200047,
+        "baselines_seconds": 60.02593896700091,
+        "verification_seconds": 4.346031281000251,
+        "total_seconds": 143.84660838800028,
+        "pack": {
+          "hits": 124981,
+          "misses": 4961,
+          "pack_seconds": 0.6936779729712725,
+          "cached_routes": 815661
+        },
+        "peak_rss_bytes": 469237760
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08951534878961392,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.08346552451832183,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 128,
+      "lhas": {
+        "seconds": 0.09463330955030494,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP1"
+      ],
+      "layers": [
+        "conv1_conv",
+        "conv2_conv",
+        "conv3_conv",
+        "inception3a_branch1_conv",
+        "inception3a_branch2_0_conv",
+        "inception3a_branch2_1_conv",
+        "inception3a_branch3_0_conv",
+        "inception3a_branch3_1_conv",
+        "inception3a_branch4_1_conv",
+        "inception3b_branch1_conv",
+        "inception3b_branch2_0_conv",
+        "inception3b_branch2_1_conv",
+        "inception3b_branch3_0_conv",
+        "inception3b_branch3_1_conv",
+        "inception3b_branch4_1_conv",
+        "inception4a_branch1_conv",
+        "inception4a_branch2_0_conv",
+        "inception4a_branch2_1_conv",
+        "inception4a_branch3_0_conv",
+        "inception4a_branch3_1_conv",
+        "inception4a_branch4_1_conv",
+        "inception4b_branch1_conv",
+        "inception4b_branch2_0_conv",
+        "inception4b_branch2_1_conv",
+        "inception4b_branch3_0_conv",
+        "inception4b_branch3_1_conv",
+        "inception4b_branch4_1_conv",
+        "inception4c_branch1_conv",
+        "inception4c_branch2_0_conv",
+        "inception4c_branch2_1_conv",
+        "inception4c_branch3_0_conv",
+        "inception4c_branch3_1_conv",
+        "inception4c_branch4_1_conv",
+        "inception4d_branch1_conv",
+        "inception4d_branch2_0_conv",
+        "inception4d_branch2_1_conv",
+        "inception4d_branch3_0_conv",
+        "inception4d_branch3_1_conv",
+        "inception4d_branch4_1_conv",
+        "inception4e_branch1_conv",
+        "inception4e_branch2_0_conv",
+        "inception4e_branch2_1_conv",
+        "inception4e_branch3_0_conv",
+        "inception4e_branch3_1_conv",
+        "inception4e_branch4_1_conv",
+        "inception5a_branch1_conv",
+        "inception5a_branch2_0_conv",
+        "inception5a_branch2_1_conv",
+        "inception5a_branch3_0_conv",
+        "inception5a_branch3_1_conv",
+        "inception5a_branch4_1_conv",
+        "inception5b_branch1_conv",
+        "inception5b_branch2_0_conv",
+        "inception5b_branch2_1_conv",
+        "inception5b_branch3_0_conv",
+        "inception5b_branch3_1_conv",
+        "inception5b_branch4_1_conv",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0006404069990821881,
+        "plan_seconds": 296.60283399199943,
+        "baselines_seconds": 67.28410503399937,
+        "verification_seconds": 4.962388061001548,
+        "total_seconds": 368.86287734800135,
+        "pack": {
+          "hits": 173338,
+          "misses": 8734,
+          "pack_seconds": 3.239886376008144,
+          "cached_routes": 2998732
+        },
+        "peak_rss_bytes": 883748864
+      },
+      "dp_N": {
+        "seconds": 0.09962493585235323,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.09817835258164635,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10975771291014981,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.09484492505340385,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.09463330955030494,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP1"
+      ],
+      "layers": [
+        "conv1_conv",
+        "conv2_conv",
+        "conv3_conv",
+        "inception3a_branch1_conv",
+        "inception3a_branch2_0_conv",
+        "inception3a_branch2_1_conv",
+        "inception3a_branch3_0_conv",
+        "inception3a_branch3_1_conv",
+        "inception3a_branch4_1_conv",
+        "inception3b_branch1_conv",
+        "inception3b_branch2_0_conv",
+        "inception3b_branch2_1_conv",
+        "inception3b_branch3_0_conv",
+        "inception3b_branch3_1_conv",
+        "inception3b_branch4_1_conv",
+        "inception4a_branch1_conv",
+        "inception4a_branch2_0_conv",
+        "inception4a_branch2_1_conv",
+        "inception4a_branch3_0_conv",
+        "inception4a_branch3_1_conv",
+        "inception4a_branch4_1_conv",
+        "inception4b_branch1_conv",
+        "inception4b_branch2_0_conv",
+        "inception4b_branch2_1_conv",
+        "inception4b_branch3_0_conv",
+        "inception4b_branch3_1_conv",
+        "inception4b_branch4_1_conv",
+        "inception4c_branch1_conv",
+        "inception4c_branch2_0_conv",
+        "inception4c_branch2_1_conv",
+        "inception4c_branch3_0_conv",
+        "inception4c_branch3_1_conv",
+        "inception4c_branch4_1_conv",
+        "inception4d_branch1_conv",
+        "inception4d_branch2_0_conv",
+        "inception4d_branch2_1_conv",
+        "inception4d_branch3_0_conv",
+        "inception4d_branch3_1_conv",
+        "inception4d_branch4_1_conv",
+        "inception4e_branch1_conv",
+        "inception4e_branch2_0_conv",
+        "inception4e_branch2_1_conv",
+        "inception4e_branch3_0_conv",
+        "inception4e_branch3_1_conv",
+        "inception4e_branch4_1_conv",
+        "inception5a_branch1_conv",
+        "inception5a_branch2_0_conv",
+        "inception5a_branch2_1_conv",
+        "inception5a_branch3_0_conv",
+        "inception5a_branch3_1_conv",
+        "inception5a_branch4_1_conv",
+        "inception5b_branch1_conv",
+        "inception5b_branch2_0_conv",
+        "inception5b_branch2_1_conv",
+        "inception5b_branch3_0_conv",
+        "inception5b_branch3_1_conv",
+        "inception5b_branch4_1_conv",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0007069599996611942,
+        "plan_seconds": 783.1021457280003,
+        "baselines_seconds": 72.83059813,
+        "verification_seconds": 4.739331127999321,
+        "total_seconds": 860.6831988009999,
+        "pack": {
+          "hits": 207140,
+          "misses": 26218,
+          "pack_seconds": 42.13274870722307,
+          "cached_routes": 2995965,
+          "disk_hits": 23
+        },
+        "peak_rss_bytes": 1831714816
+      },
+      "dp_N": {
+        "seconds": 0.14275386757601274,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.09817835258164635,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.17872295115496567,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.09614462191909746,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 512,
+      "lhas": {
+        "seconds": 0.09463330955030494,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP1"
+      ],
+      "layers": [
+        "conv1_conv",
+        "conv2_conv",
+        "conv3_conv",
+        "inception3a_branch1_conv",
+        "inception3a_branch2_0_conv",
+        "inception3a_branch2_1_conv",
+        "inception3a_branch3_0_conv",
+        "inception3a_branch3_1_conv",
+        "inception3a_branch4_1_conv",
+        "inception3b_branch1_conv",
+        "inception3b_branch2_0_conv",
+        "inception3b_branch2_1_conv",
+        "inception3b_branch3_0_conv",
+        "inception3b_branch3_1_conv",
+        "inception3b_branch4_1_conv",
+        "inception4a_branch1_conv",
+        "inception4a_branch2_0_conv",
+        "inception4a_branch2_1_conv",
+        "inception4a_branch3_0_conv",
+        "inception4a_branch3_1_conv",
+        "inception4a_branch4_1_conv",
+        "inception4b_branch1_conv",
+        "inception4b_branch2_0_conv",
+        "inception4b_branch2_1_conv",
+        "inception4b_branch3_0_conv",
+        "inception4b_branch3_1_conv",
+        "inception4b_branch4_1_conv",
+        "inception4c_branch1_conv",
+        "inception4c_branch2_0_conv",
+        "inception4c_branch2_1_conv",
+        "inception4c_branch3_0_conv",
+        "inception4c_branch3_1_conv",
+        "inception4c_branch4_1_conv",
+        "inception4d_branch1_conv",
+        "inception4d_branch2_0_conv",
+        "inception4d_branch2_1_conv",
+        "inception4d_branch3_0_conv",
+        "inception4d_branch3_1_conv",
+        "inception4d_branch4_1_conv",
+        "inception4e_branch1_conv",
+        "inception4e_branch2_0_conv",
+        "inception4e_branch2_1_conv",
+        "inception4e_branch3_0_conv",
+        "inception4e_branch3_1_conv",
+        "inception4e_branch4_1_conv",
+        "inception5a_branch1_conv",
+        "inception5a_branch2_0_conv",
+        "inception5a_branch2_1_conv",
+        "inception5a_branch3_0_conv",
+        "inception5a_branch3_1_conv",
+        "inception5a_branch4_1_conv",
+        "inception5b_branch1_conv",
+        "inception5b_branch2_0_conv",
+        "inception5b_branch2_1_conv",
+        "inception5b_branch3_0_conv",
+        "inception5b_branch3_1_conv",
+        "inception5b_branch4_1_conv",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0006780070002605498,
+        "plan_seconds": 1702.3965492810003,
+        "baselines_seconds": 103.34382366499995,
+        "verification_seconds": 5.684913344999586,
+        "total_seconds": 1811.4394470280004,
+        "pack": {
+          "hits": 209191,
+          "misses": 64844,
+          "pack_seconds": 164.71417147294005,
+          "cached_routes": 2993202,
+          "disk_hits": 354
+        },
+        "peak_rss_bytes": 3778416640
+      },
+      "dp_N": {
+        "seconds": 0.30180850153882605,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.09817835258164635,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.4287082663732205,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.09614462191909746,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64"
+      ],
+      "layers": [
+        "conv1",
+        "layer1_0_conv1",
+        "layer1_0_conv2",
+        "layer1_0_conv3",
+        "layer1_0_downsample_0",
+        "layer1_1_conv1",
+        "layer1_1_conv2",
+        "layer1_1_conv3",
+        "layer1_2_conv1",
+        "layer1_2_conv2",
+        "layer1_2_conv3",
+        "layer2_0_conv1",
+        "layer2_0_conv2",
+        "layer2_0_conv3",
+        "layer2_0_downsample_0",
+        "layer2_1_conv1",
+        "layer2_1_conv2",
+        "layer2_1_conv3",
+        "layer2_2_conv1",
+        "layer2_2_conv2",
+        "layer2_2_conv3",
+        "layer2_3_conv1",
+        "layer2_3_conv2",
+        "layer2_3_conv3",
+        "layer3_0_conv1",
+        "layer3_0_conv2",
+        "layer3_0_conv3",
+        "layer3_0_downsample_0",
+        "layer3_1_conv1",
+        "layer3_1_conv2",
+        "layer3_1_conv3",
+        "layer3_2_conv1",
+        "layer3_2_conv2",
+        "layer3_2_conv3",
+        "layer3_3_conv1",
+        "layer3_3_conv2",
+        "layer3_3_conv3",
+        "layer3_4_conv1",
+        "layer3_4_conv2",
+        "layer3_4_conv3",
+        "layer3_5_conv1",
+        "layer3_5_conv2",
+        "layer3_5_conv3",
+        "layer4_0_conv1",
+        "layer4_0_conv2",
+        "layer4_0_conv3",
+        "layer4_0_downsample_0",
+        "layer4_1_conv1",
+        "layer4_1_conv2",
+        "layer4_1_conv3",
+        "layer4_2_conv1",
+        "layer4_2_conv2",
+        "layer4_2_conv3",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0007379130001936574,
+        "plan_seconds": 12.252255473000332,
+        "baselines_seconds": 43.1376992960013,
+        "verification_seconds": 4.1624313370011805,
+        "total_seconds": 59.562498547998985,
+        "pack": {
+          "hits": 45067,
+          "misses": 1324,
+          "pack_seconds": 0.43669456200768764,
+          "cached_routes": 155986
+        },
+        "peak_rss_bytes": 306012160
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2928382503402009,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.2357282227716975,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 128,
+      "lhas": {
+        "seconds": 0.2460640317972148,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128",
+        "DP128"
+      ],
+      "layers": [
+        "conv1",
+        "layer1_0_conv1",
+        "layer1_0_conv2",
+        "layer1_0_conv3",
+        "layer1_0_downsample_0",
+        "layer1_1_conv1",
+        "layer1_1_conv2",
+        "layer1_1_conv3",
+        "layer1_2_conv1",
+        "layer1_2_conv2",
+        "layer1_2_conv3",
+        "layer2_0_conv1",
+        "layer2_0_conv2",
+        "layer2_0_conv3",
+        "layer2_0_downsample_0",
+        "layer2_1_conv1",
+        "layer2_1_conv2",
+        "layer2_1_conv3",
+        "layer2_2_conv1",
+        "layer2_2_conv2",
+        "layer2_2_conv3",
+        "layer2_3_conv1",
+        "layer2_3_conv2",
+        "layer2_3_conv3",
+        "layer3_0_conv1",
+        "layer3_0_conv2",
+        "layer3_0_conv3",
+        "layer3_0_downsample_0",
+        "layer3_1_conv1",
+        "layer3_1_conv2",
+        "layer3_1_conv3",
+        "layer3_2_conv1",
+        "layer3_2_conv2",
+        "layer3_2_conv3",
+        "layer3_3_conv1",
+        "layer3_3_conv2",
+        "layer3_3_conv3",
+        "layer3_4_conv1",
+        "layer3_4_conv2",
+        "layer3_4_conv3",
+        "layer3_5_conv1",
+        "layer3_5_conv2",
+        "layer3_5_conv3",
+        "layer4_0_conv1",
+        "layer4_0_conv2",
+        "layer4_0_conv3",
+        "layer4_0_downsample_0",
+        "layer4_1_conv1",
+        "layer4_1_conv2",
+        "layer4_1_conv3",
+        "layer4_2_conv1",
+        "layer4_2_conv2",
+        "layer4_2_conv3",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0007837489993107738,
+        "plan_seconds": 35.79816766799922,
+        "baselines_seconds": 44.7341838730008,
+        "verification_seconds": 9.926019073000134,
+        "total_seconds": 90.47039536500051,
+        "pack": {
+          "hits": 58166,
+          "misses": 1998,
+          "pack_seconds": 1.1253170230520482,
+          "cached_routes": 740460
+        },
+        "peak_rss_bytes": 550400000
+      },
+      "dp_N": {
+        "seconds": 0.2460640317972148,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2460640317972148,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.4497355797171795,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.2460640317972148,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.2523970871389107,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64"
+      ],
+      "layers": [
+        "conv1",
+        "layer1_0_conv1",
+        "layer1_0_conv2",
+        "layer1_0_conv3",
+        "layer1_0_downsample_0",
+        "layer1_1_conv1",
+        "layer1_1_conv2",
+        "layer1_1_conv3",
+        "layer1_2_conv1",
+        "layer1_2_conv2",
+        "layer1_2_conv3",
+        "layer2_0_conv1",
+        "layer2_0_conv2",
+        "layer2_0_conv3",
+        "layer2_0_downsample_0",
+        "layer2_1_conv1",
+        "layer2_1_conv2",
+        "layer2_1_conv3",
+        "layer2_2_conv1",
+        "layer2_2_conv2",
+        "layer2_2_conv3",
+        "layer2_3_conv1",
+        "layer2_3_conv2",
+        "layer2_3_conv3",
+        "layer3_0_conv1",
+        "layer3_0_conv2",
+        "layer3_0_conv3",
+        "layer3_0_downsample_0",
+        "layer3_1_conv1",
+        "layer3_1_conv2",
+        "layer3_1_conv3",
+        "layer3_2_conv1",
+        "layer3_2_conv2",
+        "layer3_2_conv3",
+        "layer3_3_conv1",
+        "layer3_3_conv2",
+        "layer3_3_conv3",
+        "layer3_4_conv1",
+        "layer3_4_conv2",
+        "layer3_4_conv3",
+        "layer3_5_conv1",
+        "layer3_5_conv2",
+        "layer3_5_conv3",
+        "layer4_0_conv1",
+        "layer4_0_conv2",
+        "layer4_0_conv3",
+        "layer4_0_downsample_0",
+        "layer4_1_conv1",
+        "layer4_1_conv2",
+        "layer4_1_conv3",
+        "layer4_2_conv1",
+        "layer4_2_conv2",
+        "layer4_2_conv3",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0007525700002588565,
+        "plan_seconds": 152.2677931750004,
+        "baselines_seconds": 55.77252366200082,
+        "verification_seconds": 4.273278315000425,
+        "total_seconds": 212.32715293399997,
+        "pack": {
+          "hits": 72301,
+          "misses": 2870,
+          "pack_seconds": 5.240511394911664,
+          "cached_routes": 2998701,
+          "disk_hits": 10
+        },
+        "peak_rss_bytes": 1359314944
+      },
+      "dp_N": {
+        "seconds": 0.3214212389543453,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2523970871389107,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 1.5029564508442728,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.2523970871389107,
+        "status": "resource-limited"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 512,
+      "lhas": {
+        "seconds": 0.2523970871389107,
+        "status": "feasible"
+      },
+      "configs": [
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64",
+        "DP64"
+      ],
+      "layers": [
+        "conv1",
+        "layer1_0_conv1",
+        "layer1_0_conv2",
+        "layer1_0_conv3",
+        "layer1_0_downsample_0",
+        "layer1_1_conv1",
+        "layer1_1_conv2",
+        "layer1_1_conv3",
+        "layer1_2_conv1",
+        "layer1_2_conv2",
+        "layer1_2_conv3",
+        "layer2_0_conv1",
+        "layer2_0_conv2",
+        "layer2_0_conv3",
+        "layer2_0_downsample_0",
+        "layer2_1_conv1",
+        "layer2_1_conv2",
+        "layer2_1_conv3",
+        "layer2_2_conv1",
+        "layer2_2_conv2",
+        "layer2_2_conv3",
+        "layer2_3_conv1",
+        "layer2_3_conv2",
+        "layer2_3_conv3",
+        "layer3_0_conv1",
+        "layer3_0_conv2",
+        "layer3_0_conv3",
+        "layer3_0_downsample_0",
+        "layer3_1_conv1",
+        "layer3_1_conv2",
+        "layer3_1_conv3",
+        "layer3_2_conv1",
+        "layer3_2_conv2",
+        "layer3_2_conv3",
+        "layer3_3_conv1",
+        "layer3_3_conv2",
+        "layer3_3_conv3",
+        "layer3_4_conv1",
+        "layer3_4_conv2",
+        "layer3_4_conv3",
+        "layer3_5_conv1",
+        "layer3_5_conv2",
+        "layer3_5_conv3",
+        "layer4_0_conv1",
+        "layer4_0_conv2",
+        "layer4_0_conv3",
+        "layer4_0_downsample_0",
+        "layer4_1_conv1",
+        "layer4_1_conv2",
+        "layer4_1_conv3",
+        "layer4_2_conv1",
+        "layer4_2_conv2",
+        "layer4_2_conv3",
+        "fc"
+      ],
+      "runtime": {
+        "construction_seconds": 0.0009011189995362656,
+        "plan_seconds": 784.8039278310007,
+        "baselines_seconds": 78.94154760799938,
+        "verification_seconds": 5.056569782999759,
+        "total_seconds": 868.8142640890001,
+        "pack": {
+          "hits": 78387,
+          "misses": 12395,
+          "pack_seconds": 28.119741563959906,
+          "cached_routes": 2946978,
+          "disk_hits": 196
+        },
+        "peak_rss_bytes": 3515748352
+      },
+      "dp_N": {
+        "seconds": 0.6432692020384847,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2523970871389107,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 7.233918041026612,
+        "status": "feasible"
+      },
+      "flexflow_mcmc": {
+        "seconds": 0.2523970871389107,
+        "status": "resource-limited"
+      }
+    }
+  ],
+  "ablations": [
+    {
+      "workload": "alexnet",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "strategy_only": {
+        "seconds": 0.10079137448688172,
+        "status": "feasible"
+      },
+      "dp_only_counts": {
+        "seconds": 0.10653024168122686,
+        "status": "feasible"
+      },
+      "mp_only_counts": {
+        "seconds": 0.49009315602419895,
+        "status": "feasible"
+      },
+      "greedy_layerwise": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.07258220079464833,
+        "status": "feasible"
+      },
+      "strategy_only": {
+        "seconds": 0.2166409510960127,
+        "status": "feasible"
+      },
+      "dp_only_counts": {
+        "seconds": 0.11007870573499735,
+        "status": "feasible"
+      },
+      "mp_only_counts": {
+        "seconds": 0.491435613304199,
+        "status": "feasible"
+      },
+      "greedy_layerwise": {
+        "seconds": 0.0828913413241248,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "strategy_only": {
+        "seconds": 0.5197739914045265,
+        "status": "feasible"
+      },
+      "dp_only_counts": {
+        "seconds": 0.548974902128708,
+        "status": "feasible"
+      },
+      "mp_only_counts": {
+        "seconds": null,
+        "status": "infeasible"
+      },
+      "greedy_layerwise": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.2828456251808778,
+        "status": "feasible"
+      },
+      "strategy_only": {
+        "seconds": 0.5805741462544403,
+        "status": "feasible"
+      },
+      "dp_only_counts": {
+        "seconds": 0.3662398627854891,
+        "status": "feasible"
+      },
+      "mp_only_counts": {
+        "seconds": null,
+        "status": "infeasible"
+      },
+      "greedy_layerwise": {
+        "seconds": 0.2828456251808778,
+        "status": "feasible"
+      }
+    }
+  ],
+  "families": [
+    {
+      "workload": "alexnet",
+      "family": "all",
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "family": "one-stage",
+      "lhas": {
+        "seconds": 0.06728263479727128,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "family": "deepest",
+      "lhas": {
+        "seconds": 0.12520463336046536,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "family": "all",
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "family": "one-stage",
+      "lhas": {
+        "seconds": 0.4585369438200529,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "family": "deepest",
+      "lhas": {
+        "seconds": 0.6809554492212797,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "family": "all",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "family": "one-stage",
+      "lhas": {
+        "seconds": 0.09520135851992238,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "family": "deepest",
+      "lhas": {
+        "seconds": 0.17395929901203597,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "family": "all",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "family": "one-stage",
+      "lhas": {
+        "seconds": 0.25376030200492156,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "family": "deepest",
+      "lhas": {
+        "seconds": 0.5100227509861308,
+        "status": "feasible"
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "workload": "alexnet",
+      "setting": "alpha_0.25",
+      "lhas": {
+        "seconds": 0.06043745271894235,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23576554915602332,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09798874687784948,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "alpha_0.25",
+      "lhas": {
+        "seconds": 0.4366553325369998,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8590956415209662,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5030568922780749,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "alpha_0.25",
+      "lhas": {
+        "seconds": 0.07825105047328747,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08176398481109816,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08454810828122684,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "alpha_0.25",
+      "lhas": {
+        "seconds": 0.22033390748395554,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.22033390748395554,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.27744097536213636,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "alpha_0.5",
+      "lhas": {
+        "seconds": 0.05569191525700687,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23296884092763623,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.0951861192688172,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "alpha_0.5",
+      "lhas": {
+        "seconds": 0.4169999829614878,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8431048831274178,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.48633979315162335,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "alpha_0.5",
+      "lhas": {
+        "seconds": 0.07329057497135198,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07679822414787235,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07958086777283974,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "alpha_0.5",
+      "lhas": {
+        "seconds": 0.2049395921962136,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2049395921962136,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2620437003840719,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "alpha_0.75",
+      "lhas": {
+        "seconds": 0.050788493841628764,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2301721326992491,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09238349165978495,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "alpha_0.75",
+      "lhas": {
+        "seconds": 0.3957900434531641,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8263504670460851,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.46936814146257705,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "alpha_0.75",
+      "lhas": {
+        "seconds": 0.06833009946941648,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07183246348464653,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07461362726445263,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "alpha_0.75",
+      "lhas": {
+        "seconds": 0.18735802062423404,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.18954527690847164,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.24664642540600734,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "alpha_1.0",
+      "lhas": {
+        "seconds": 0.04521799659195487,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.22736458224135384,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.0895700218212445,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "alpha_1.0",
+      "lhas": {
+        "seconds": 0.3717826147203242,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.809027819618685,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.45203957465453176,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "alpha_1.0",
+      "lhas": {
+        "seconds": 0.06335049041556846,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.06684756926950818,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.06962725320415297,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "alpha_1.0",
+      "lhas": {
+        "seconds": 0.16936865823974614,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.174085773249145,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.23118396205635813,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "eps_0.5",
+      "lhas": {
+        "seconds": 0.10036754826087783,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.4287708513044099,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.1734251690468818,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "eps_0.5",
+      "lhas": {
+        "seconds": 0.5569724186484682,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 1.3887098290345155,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.6911301514045267,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "eps_0.5",
+      "lhas": {
+        "seconds": 0.12286943800844699,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.13105362695978842,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.13451579866065216,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "eps_0.5",
+      "lhas": {
+        "seconds": 0.36005460170240783,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.36005460170240783,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.47042252111091126,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "lamW_128",
+      "lhas": {
+        "seconds": 0.06242840981411599,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09755968996688173,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "lamW_128",
+      "lhas": {
+        "seconds": 0.449022909704657,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5138546343645265,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "lamW_128",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08832867794961392,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "lamW_128",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2694148221802009,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "lamW_256",
+      "lhas": {
+        "seconds": 0.061525809174115986,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09537194608688174,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "lamW_256",
+      "lhas": {
+        "seconds": 0.44709526602465705,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.511256915990319,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "lamW_256",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08746962454742815,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "lamW_256",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2570627069402009,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "lamW_32",
+      "lhas": {
+        "seconds": 0.06750738658087785,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.26866028140801695,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.11903538238196366,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "lamW_32",
+      "lhas": {
+        "seconds": 0.46498622677218404,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8916155049094873,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5578061743490075,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "lamW_32",
+      "lhas": {
+        "seconds": 0.08618589859598798,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08951927201508897,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09462846701037891,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "lamW_32",
+      "lhas": {
+        "seconds": 0.24174182819683407,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.24174182819683407,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.34598383837298774,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "no_momentum",
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10079137448688172,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "no_momentum",
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8742603204487222,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5197739914045265,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "no_momentum",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08951534878961392,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "no_momentum",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2928382503402009,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "nominal",
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10079137448688172,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "nominal",
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5197739914045265,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "nominal",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08951534878961392,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "nominal",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2928382503402009,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "raw_retain",
+      "lhas": {
+        "seconds": 0.06566661547120042,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.239045882674733,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.1012749997772043,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "raw_retain",
+      "lhas": {
+        "seconds": 0.45652129333312885,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8756830734835467,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5203706649735588,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "raw_retain",
+      "lhas": {
+        "seconds": 0.08402366499973907,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08754188449884008,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09032748781413005,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "raw_retain",
+      "lhas": {
+        "seconds": 0.2365403617962136,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2365403617962136,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.293650389364717,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "reach_15",
+      "lhas": {
+        "seconds": 0.0620413257939926,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2645014569743556,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10519027788600739,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "reach_15",
+      "lhas": {
+        "seconds": 0.452731063794479,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8836386604850054,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5321522717306468,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "reach_15",
+      "lhas": {
+        "seconds": 0.0744271385473929,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07707364108918734,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07957920205868496,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "reach_15",
+      "lhas": {
+        "seconds": 0.21824939514524938,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.21824939514524938,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.26845747859878016,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "reach_16",
+      "lhas": {
+        "seconds": 0.06177838498087784,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.26391194316801714,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.1042716431019637,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "reach_16",
+      "lhas": {
+        "seconds": 0.452106522652184,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8829167916294861,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5304671702290076,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "reach_16",
+      "lhas": {
+        "seconds": 0.07432381393908681,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07700123233508897,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07947536189037897,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "reach_16",
+      "lhas": {
+        "seconds": 0.2179695725168341,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2179695725168341,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2668172332929878,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "reach_unrestricted_nopeer",
+      "lhas": {
+        "seconds": 0.05777483799727129,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2285521851439732,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08400099590327517,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "reach_unrestricted_nopeer",
+      "lhas": {
+        "seconds": 0.43601244414005286,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": null,
+        "status": "not_established"
+      },
+      "owt": {
+        "seconds": 0.4944004260757835,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "reach_unrestricted_nopeer",
+      "lhas": {
+        "seconds": 0.05953227627992242,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.06135953467126385,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.0634892300521276,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "reach_unrestricted_nopeer",
+      "lhas": {
+        "seconds": 0.18242217496492155,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.18242217496492155,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.22591483221342495,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "redeff_0.25",
+      "lhas": {
+        "seconds": 0.06700963411530407,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.272078729777853,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.11329859582021506,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "redeff_0.25",
+      "lhas": {
+        "seconds": 0.46589008104934243,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.9155078151424926,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.547062859416767,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "redeff_0.25",
+      "lhas": {
+        "seconds": 0.08516195302658905,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08888181186995237,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09166059323988714,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "redeff_0.25",
+      "lhas": {
+        "seconds": 0.25135503149038596,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.25135503149038596,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.3119594175926598,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "redeff_1.0",
+      "lhas": {
+        "seconds": 0.06426966821366473,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2218040211876891,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09453776382021506,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "redeff_1.0",
+      "lhas": {
+        "seconds": 0.44975126261262116,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8542965987779024,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5059365262241986,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "redeff_1.0",
+      "lhas": {
+        "seconds": 0.08223316551008633,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08558378966317642,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08827413270393086,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "redeff_1.0",
+      "lhas": {
+        "seconds": 0.22640915559442973,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.22640915559442973,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2820042421793266,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "reserve_0",
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23856225738441045,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10079137448688172,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "reserve_0",
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8742603204487222,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5189479119387341,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "reserve_0",
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08951534878961392,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "reserve_0",
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.2928382503402009,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "rho_0.25",
+      "lhas": {
+        "seconds": 0.08826521036162877,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.25282316845537817,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.11507596308043011,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "rho_0.25",
+      "lhas": {
+        "seconds": 0.7929305983551699,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 1.193875828435805,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.8385870974483975,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "rho_0.25",
+      "lhas": {
+        "seconds": 0.11373558816735406,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.11685182460722715,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.11964334730316228,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "rho_0.25",
+      "lhas": {
+        "seconds": 0.31933795225814904,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.31933795225814904,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.3764598185879428,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "rho_0.75",
+      "lhas": {
+        "seconds": 0.056026912458727304,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2338086203607545,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09602984495569893,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "rho_0.75",
+      "lhas": {
+        "seconds": 0.3421272892385052,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.7688232570740844,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.4135029560565696,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "rho_0.75",
+      "lhas": {
+        "seconds": 0.07272687938253478,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07668905243002289,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07947268261843114,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "rho_0.75",
+      "lhas": {
+        "seconds": 0.20785831294288026,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.20785831294288026,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.26496439425762025,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "rho_1.0",
+      "lhas": {
+        "seconds": 0.05144887359765204,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23143180184892656,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09364908019010754,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "rho_1.0",
+      "lhas": {
+        "seconds": 0.2852286239757096,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.7156916856538693,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.360367438382591,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "rho_1.0",
+      "lhas": {
+        "seconds": 0.0674845560861907,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07166870590787235,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.07445134953283973,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "rho_1.0",
+      "lhas": {
+        "seconds": 0.19392335802847166,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.19392335802847166,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.25102746621632993,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "tsetup_100e-6",
+      "lhas": {
+        "seconds": 0.06725475419224396,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.24018402139577655,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10478109065824782,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "tsetup_100e-6",
+      "lhas": {
+        "seconds": 0.45937461976409655,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8782363999145144,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5254419435645267,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "tsetup_100e-6",
+      "lhas": {
+        "seconds": 0.11257352102833768,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.1157167405274387,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.12415671432054287,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "tsetup_100e-6",
+      "lhas": {
+        "seconds": 0.26296788811115107,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.26296788811115107,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.3224779156796545,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "tsetup_5e-6",
+      "lhas": {
+        "seconds": 0.06462299018087783,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.23812225738441042,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09971137448688171,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "tsetup_5e-6",
+      "lhas": {
+        "seconds": 0.4550039517632223,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.8742457319136401,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.5182533234036523,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "tsetup_5e-6",
+      "lhas": {
+        "seconds": 0.07511935645915738,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.07873757595825838,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.08000317927354836,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "tsetup_5e-6",
+      "lhas": {
+        "seconds": 0.22827771388251716,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.22827771388251716,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.28474774145102066,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "setting": "whole_item",
+      "lhas": {
+        "seconds": 0.07055015434087784,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.49613775964801693,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.18289307022196366,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "setting": "whole_item",
+      "lhas": {
+        "seconds": 0.5075668354930584,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 1.4109021417208532,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.7223791174698818,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "setting": "whole_item",
+      "lhas": {
+        "seconds": 0.08706585157522295,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.09351325811432397,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.09638939326961393,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "setting": "whole_item",
+      "lhas": {
+        "seconds": 0.29192772697264924,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.30231114936841874,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.4252827637045724,
+        "status": "feasible"
+      }
+    }
+  ],
+  "batch": [
+    {
+      "workload": "alexnet",
+      "B": 1024,
+      "lhas": {
+        "seconds": 0.06518299018087784,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.19850672245626652,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "B": 256,
+      "lhas": {
+        "seconds": 0.026771378303183498,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.11294125603046008,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "B": 1024,
+      "lhas": {
+        "seconds": 0.4559246197640966,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.8750863999145145,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "B": 256,
+      "lhas": {
+        "seconds": 0.1642112103359422,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.6343421695919621,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "B": 1024,
+      "lhas": {
+        "seconds": 0.08321152597522294,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.08672974547432395,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "B": 256,
+      "lhas": {
+        "seconds": 0.05276491494172395,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.056036809670058155,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "B": 1024,
+      "lhas": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2357282227716975,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "B": 256,
+      "lhas": {
+        "seconds": 0.14787384300588752,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.1518715541395099,
+        "status": "feasible"
+      }
+    }
+  ],
+  "profiled": [
+    {
+      "workload": "alexnet",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.06848989075267652,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.2599077281067475,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.18756465184300977,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10603937996194457,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "alexnet",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.07605689458793403,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.3204369168553423,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.18756465184300977,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.22689589465059296,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.41259745997624747,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.850325848149364,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.850325848149364,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.47717139159733707,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "vgg16",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.3095331680640045,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.7830219238570258,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.7830219238570258,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.605523300780651,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.09931875366159468,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.10324705340783595,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.10324705340783595,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.10607711336417507,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "googlenet",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.11133003665226716,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.16130142440639053,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.11570621903096497,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.19718223872644078,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 64,
+      "lhas": {
+        "seconds": 0.27776778756124826,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.27776778756124826,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.27776778756124826,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 0.33697996479730813,
+        "status": "feasible"
+      }
+    },
+    {
+      "workload": "resnet50",
+      "N": 256,
+      "lhas": {
+        "seconds": 0.2980492109430598,
+        "status": "feasible"
+      },
+      "dp_N": {
+        "seconds": 0.34792039813998116,
+        "status": "feasible"
+      },
+      "dp_best": {
+        "seconds": 0.2980492109430598,
+        "status": "feasible"
+      },
+      "owt": {
+        "seconds": 1.531831152826681,
+        "status": "feasible"
+      }
+    }
+  ],
+  "source_sha256": {
+    "results/raw/final/alexnet_N64.json": "8a62a27ed380feec68066c3ca42c466d09344549ba23e0212b2ebd1827dde2c1",
+    "results/raw/final_gpipe/alexnet_N64.json": "98fce954b6150692f9eee1d0b213c89635046987050a4db2ee75f71d57a4d46d",
+    "results/raw/final/alexnet_N128.json": "39aef6d354f6389b61131df616f949153a67729438093c4892e3f6d9ab23c0ec",
+    "results/raw/final_gpipe/alexnet_N128.json": "51824029fa0f5539c4188e45ca6464260b3792b6ba74fdeab336048c1fa11f6f",
+    "results/raw/final/alexnet_N256.json": "fceeced274b7363e058e88113c01e361d8a583f4d9ae55f223ca43da6db8a4c3",
+    "results/raw/final_gpipe/alexnet_N256.json": "b591c8e904d7ec3b3f39557d4b2e60296678551d2bd9c0cc27d02189f2be199f",
+    "results/raw/final/alexnet_N512.json": "0a6078f65123ae944aed1f540c8ed4be4c055959f275b851d5e4b5820f7cf3b0",
+    "results/raw/final_gpipe/alexnet_N512.json": "a6eada6df4da5f03f8c79a8bb0c87e5b48c698e47177fce1c31ef96f176192aa",
+    "results/raw/final_supp/alexnet_N1024.json": "6fdbcc6d35e0c198e302c7ec30b4c0a67a498e6f1b56677ae42ea1111aee3a6a",
+    "results/raw/final_supp_gpipe/alexnet_N1024.json": "bb261e7fba3b02178c82c315240b2ab376ab03bc42b47b97558df78be4d07409",
+    "results/raw/final/vgg16_N64.json": "fcb140abe8038cd705e9028f2a76d2ee07640362b8df3b0543742a60c0aff699",
+    "results/raw/final_gpipe/vgg16_N64.json": "03593bd160174672d27fbdc37a2274c501184bdbbf08e7b692352e158f7c6f56",
+    "results/raw/final/vgg16_N128.json": "05a0b95ba4922a0ad9858c8da654373a839ee6bc2b2a0d708b9704579986621e",
+    "results/raw/final_gpipe/vgg16_N128.json": "675d5115206042837e901dcb23aad20a15ac0d2b3e80f9050c318690b425b2c7",
+    "results/raw/final/vgg16_N256.json": "e9c61d900ed2a69c2fb549e969b6516430971fa83464e530765f663edebe480c",
+    "results/raw/final_gpipe/vgg16_N256.json": "2bb90aa67fb7db176ea5255e44d0448830249208d12130700b360ba8ec313cda",
+    "results/raw/final/vgg16_N512.json": "c166bf2d60f04bc29b6f71ef6190ebf519b9267ae03e565c6035271c455875e0",
+    "results/raw/final_gpipe/vgg16_N512.json": "45b1b27b7ddb04de8255015c070a20ace04c2e7ce5b0da4b51510f5c6659e0ef",
+    "results/raw/final/googlenet_N64.json": "340d5cb09ab7584da5af2627dd21f774c0a67701d176b0a2b8d63a30ee5b7102",
+    "results/raw/final/googlenet_N128.json": "baa974bfcfc220da49c89838314865509246c2013656f94e0f5673e5149b34df",
+    "results/raw/final/googlenet_N256.json": "48b8b91fdd7157dcd1b9b55b3ce1d9cb578b942cde2a7f09e9c51b66bf2ce69e",
+    "results/raw/final/googlenet_N512.json": "6b40a0547a37dc563d832c4d210be6a290996e6907763dbcca812a72c405d7a3",
+    "results/raw/final/resnet50_N64.json": "b718a4900b46309080c34fe5fa6e2a2c3f5572ee5453e0980472d23f0e38491c",
+    "results/raw/final/resnet50_N128.json": "07662b2bdfdcdc288a1f673e53c421112504514b0926d02962c8976d50d3d8cb",
+    "results/raw/final/resnet50_N256.json": "ff46698e38deb7fd58d1e89cca7899a59acb627b847419154ab0bdeeb714a898",
+    "results/raw/final/resnet50_N512.json": "acc58184d9a6e963598b64423de0f9669e0621c83debbdc5949b471ac38a7276",
+    "results/raw/final_ablations/alexnet_N64.json": "3fb07a2b17a747308a9931d5416e0ef4353c3762cbb5c73228350c70bc95142c",
+    "results/raw/final_ablations/alexnet_N256.json": "92f821ae1ea029538ed1dd8712c8d1d2c0f61eb9364e8d7d22cae6a68c6af9c9",
+    "results/raw/final_ablations/vgg16_N64.json": "431bdaa7bdbcdc263983ff6a4c6d479f7417165077b4661bc7f4bb8ebc9dc6f2",
+    "results/raw/final_ablations/vgg16_N256.json": "6447a0a676181e008a209786d1bdbc20472b47129702906208dd46c4122127d8",
+    "results/raw/final_family/all/alexnet_N64.json": "d78f12e2a79e1d25535ca67016e2661aec70bc12fa7b09b138a156558fe6c2ed",
+    "results/raw/final_family/one-stage/alexnet_N64.json": "27a64a226636f3b1856ff984dd519b86a9d8691c99bc02f5b160b05ee7b54589",
+    "results/raw/final_family/deepest/alexnet_N64.json": "04f34017886f408e82551a8eeff6fbfb24e9ba5745d1acf4b674d606e6b95f7e",
+    "results/raw/final_profiled_T4/alexnet_N64.json": "571f5046eaae0c463f6e3145ebe80f4bbfc985095b6750f106596dc81ea253cd",
+    "results/raw/final_profiled_T4/alexnet_N256.json": "46976f7a968a7793096aa561c185ba95db45fe347ca54223c80a64ac5501a748",
+    "results/raw/final_batch/B256/alexnet_N64.json": "02c88ecef4c5fefddff5fb12bfeb86f716dd444ba4d7f68dc95e37286c8d317c",
+    "results/raw/final_family/all/vgg16_N64.json": "f8a542bd09779a0f4d0e2c312f79372915b90602b3f00eabbae14ecffe436266",
+    "results/raw/final_family/one-stage/vgg16_N64.json": "44467bbb729f36ecc8aa20ebfd768b8f689add1df496a8377ab5137d6c32d113",
+    "results/raw/final_family/deepest/vgg16_N64.json": "fb2f84362486e8a02a40dbc900a4ed3dad47012db2023439f320f84a1567480a",
+    "results/raw/final_profiled_T4/vgg16_N64.json": "9556ea0e05a692fc6cd9610b6665ad1cf1e518e5d1a4a53c1d0d3d3512bd5343",
+    "results/raw/final_profiled_T4/vgg16_N256.json": "6c62e528d18b46802cd58282de05115b150904df3b59c99a725b0cd2eb12a041",
+    "results/raw/final_batch/B256/vgg16_N64.json": "552aae63c601486ba84c7b989ee8ca4efe0188df289de83a0520b83e69da65cb",
+    "results/raw/final_family/all/googlenet_N64.json": "1b220cefa63e1a711dc399cb3ae398635bd07de2dd1a44210444fadc11ff40d3",
+    "results/raw/final_family/one-stage/googlenet_N64.json": "a1484e51a8b80795b9ed56afee8a732ad0bb8ffae8b7154ec5cefb26b2508ef8",
+    "results/raw/final_family/deepest/googlenet_N64.json": "d56b718eb62e0e9f7e166f6ea0cfbccd92832b84caa5a086af362fff65e1573f",
+    "results/raw/final_profiled_T4/googlenet_N64.json": "25193f60af19a2ed230f3e21924e6815b3399a40d852468cc7d572a00f9129ce",
+    "results/raw/final_profiled_T4/googlenet_N256.json": "1a64496f7453ed11c60acb1098ad08d1b782c1b83743009b018bd5c5154ca613",
+    "results/raw/final_batch/B256/googlenet_N64.json": "d0a47bcb92efb6d42b4f0dcd8d5d9ad77947c916c5e31fceeb2a1573fe743b1d",
+    "results/raw/final_family/all/resnet50_N64.json": "6f79fa7c63960847d343c7e4d9876fabcb4a08c44f9a5c1e0d7bc3754e6592db",
+    "results/raw/final_family/one-stage/resnet50_N64.json": "98f8dc0d0ada129035f7d228f54764a88e5520caf5ad09463e00a2c2421585ae",
+    "results/raw/final_family/deepest/resnet50_N64.json": "4bdb62cb90c01a3a2f0d66e0718a5c0e7590d9bbdcd59fede9f95819279bb7ee",
+    "results/raw/final_profiled_T4/resnet50_N64.json": "35e24166409c9b1d53aacd7fefb88f3e99a7924aa0110055dcbe8ddf30ece8d5",
+    "results/raw/final_profiled_T4/resnet50_N256.json": "88d2ef9e3cc1d85870d5a55d4e25ac495fc83b99e769fb82ad132ce554bd70ff",
+    "results/raw/final_batch/B256/resnet50_N64.json": "f3629015f778691357802ba367000e3609845a18f0889d31ef6b1ef0ca9cabf1",
+    "results/raw/final_sens/alpha_0.25/alexnet_N64.json": "96e8e9d5e53930d21e03e7947658be9aa862ec163316bb59cb35fe8e1b0a945b",
+    "results/raw/final_sens/alpha_0.25/vgg16_N64.json": "add4fab73043c33db552034f4b8fe0cbe3810270b4b47ad79a38cf23815856c7",
+    "results/raw/final_sens/alpha_0.25/googlenet_N64.json": "e7d2ba40a578a900cb310319b4fc06a79001070cfb3272bd555c1421afce2fab",
+    "results/raw/final_sens/alpha_0.25/resnet50_N64.json": "df71175ba22b08ce8a0f21983ddee7fbfe77f51461c78055579d9ea51b3d8bb8",
+    "results/raw/final_sens/alpha_0.5/alexnet_N64.json": "5115c7e5473468a2a118c8f6b73e8f481f683d9ea6be47701a2241a99cab8849",
+    "results/raw/final_sens/alpha_0.5/vgg16_N64.json": "6d213f8f6fe302155796bc2e5c6de4cbfdd57f400774afd602317cbf5ef9c52c",
+    "results/raw/final_sens/alpha_0.5/googlenet_N64.json": "17d18d01c28a41553a33e09bce7f4034e700acd4b17158ee509b884f6f272d7d",
+    "results/raw/final_sens/alpha_0.5/resnet50_N64.json": "3ea718c95fe7644b1ef6eda1f6c17256570a357839c59c2e7f7bd063a54fcd1a",
+    "results/raw/final_sens/alpha_0.75/alexnet_N64.json": "49b40e52304a08af359c31d1b5a725f72b70d63b0c29ae75b6d177e015694db8",
+    "results/raw/final_sens/alpha_0.75/vgg16_N64.json": "0281aa5e4ea763d90d17ceff32411bf396c5448087f789d9f10303a6ebb0a787",
+    "results/raw/final_sens/alpha_0.75/googlenet_N64.json": "7230da785aacd34f5d2754cb0ecd5615b420019de4e483506a6e5367951725ca",
+    "results/raw/final_sens/alpha_0.75/resnet50_N64.json": "fe12b7ca87af5e5954679991713ace16f2248feeeab5f268d710b57a4dacfccc",
+    "results/raw/final_sens/alpha_1.0/alexnet_N64.json": "1f02b1a2d75178ab07e09930174d39b9a530a812afaa7b285238dd8ae7c50a61",
+    "results/raw/final_sens/alpha_1.0/vgg16_N64.json": "917a0f3c30b66650b9f829e96cb61bad3dbaee5b653abeeb1e361180ae3cabf2",
+    "results/raw/final_sens/alpha_1.0/googlenet_N64.json": "f93b0c9fbb641951583559d2b465fc3dd9d029d89740c9dea93955b72099149c",
+    "results/raw/final_sens/alpha_1.0/resnet50_N64.json": "dbe5e76a68169ef34427bf817f713b96c1274eb71ab443a8acfad0dd4ed8adbc",
+    "results/raw/final_sens/eps_0.5/alexnet_N64.json": "a2d18e9d34f9ac05f50207088c439d1155b1b3ed482d2fef33d207a3a4a165d6",
+    "results/raw/final_sens/eps_0.5/vgg16_N64.json": "d8a3c4c4786a5ca59480c937a5ce222fdbc15f9f485c9fd272484ea9db3b647f",
+    "results/raw/final_sens/eps_0.5/googlenet_N64.json": "bb4e0416b49d5d74f0dd9f363945b08e9d702a9c2c15c4ffa4e6f58f67822475",
+    "results/raw/final_sens/eps_0.5/resnet50_N64.json": "436ca735d53afe511a42e210152cbdbc2ba8910ffc7a745b59faae500f7f67c6",
+    "results/raw/final_sens/lamW_128/alexnet_N64.json": "6b6977916ddc18fde3037a4b2d8ee37613ba7a697f337deb2c3351e3143eeeca",
+    "results/raw/final_sens/lamW_128/vgg16_N64.json": "0e17f5b4080c64b59e94f7ff4ca2733b914e9d716ea7a8655c599f16417fa915",
+    "results/raw/final_sens/lamW_128/googlenet_N64.json": "b2bb22235af74dd0aa492cb56577d430ee62e1b7f7f2f5398fa6504891b474a6",
+    "results/raw/final_sens/lamW_128/resnet50_N64.json": "fd0d7690b7fa1dd4ccdacde7a0ef4f865a8c1c2b26b1a201553d743d3273b80b",
+    "results/raw/final_sens/lamW_256/alexnet_N64.json": "69606a33e3cfd56aee7d5865acf9a134a54bfb598bad414afedc67b3e987ba4f",
+    "results/raw/final_sens/lamW_256/vgg16_N64.json": "5177d96b12167ed8fe9d96f33592c1a2922163d477e810bd58d49efa7ba31b58",
+    "results/raw/final_sens/lamW_256/googlenet_N64.json": "209801f4d4599662a6e7c1856c9639e1aa26b0d20bf40da163be23ebd4e08b61",
+    "results/raw/final_sens/lamW_256/resnet50_N64.json": "e37e0bbbd45fae0bab1538d5025a1320ff8869c235ec69467c1466882772d7ee",
+    "results/raw/final_sens/lamW_32/alexnet_N64.json": "30475effd6621a128e0b689d02457e5fe08dcb3ae8089f1b5c739f52d16c6088",
+    "results/raw/final_sens/lamW_32/vgg16_N64.json": "3a8fee6c81e948adbd99fccf1bfce96224b4426327e42f6856dea0741097eda6",
+    "results/raw/final_sens/lamW_32/googlenet_N64.json": "6d48ca60205d13215fb1aab50d1dbcc1bea87c5c980ef63f26e82d024295228c",
+    "results/raw/final_sens/lamW_32/resnet50_N64.json": "cbe02864e025410112763bbc19da7d13976e386229279fd2988492e016356eeb",
+    "results/raw/final_sens/no_momentum/alexnet_N64.json": "ea81bd710c8e65be9da80849e35832dfe977abac18e33fe24d565d321582729a",
+    "results/raw/final_sens/no_momentum/vgg16_N64.json": "a3122813cafd71145468a0efae4a176bc74795bbedf1abff79754eb7c710f15a",
+    "results/raw/final_sens/no_momentum/googlenet_N64.json": "6cc19768f5b73f4e86c8fb5b5b5788e8e57a469aa78c04ccb40289d0acbb3a8e",
+    "results/raw/final_sens/no_momentum/resnet50_N64.json": "77546ad6eeedb85c4689f2fea2e69911ccaa89166dd99fabca94656615f3412e",
+    "results/raw/final_sens/nominal/alexnet_N64.json": "03016ecedcefd5acdd728ad1524c1dc3eaf9ae6a15d403544d8a9672217553d8",
+    "results/raw/final_sens/nominal/vgg16_N64.json": "83502dc9f103ff46337a12b220e75a715490ad1366cc124c6d48060c25b12d7b",
+    "results/raw/final_sens/nominal/googlenet_N64.json": "6ea14f85392071efec7f7c6029ec4e010b810e949de432adf3b98fef49cc713d",
+    "results/raw/final_sens/nominal/resnet50_N64.json": "b155fa9aa3e50e3aeff8819bce5999f425c577d9d0255d1ae920a8ac3cb3cc21",
+    "results/raw/final_sens/raw_retain/alexnet_N64.json": "9698ee5751254d1de522bd6de46ea456a31cd8bc12fe4ce169ef02f0d1e74e22",
+    "results/raw/final_sens/raw_retain/vgg16_N64.json": "2d7aa33a03fc607a57e88755a82e90b14ee089a392a434db17a7c43efacf31e7",
+    "results/raw/final_sens/raw_retain/googlenet_N64.json": "56019ce2955df36c56770f40a0c5b5dfedd398cce4ab88943cbf82b96c268210",
+    "results/raw/final_sens/raw_retain/resnet50_N64.json": "abd4d7b2211e71eabfda959d19df18169dd787915eec17b5ca8b6efca97540dc",
+    "results/raw/final_sens/reach_15/alexnet_N64.json": "302c4bc5f1e127b446667d822fe32f3d049f245fbc52b62dc08e62b20539acab",
+    "results/raw/final_sens/reach_15/vgg16_N64.json": "21486ab00c5fab1c2b77519696a3170604b33889788c72129cb9a639f8183082",
+    "results/raw/final_sens/reach_15/googlenet_N64.json": "85260d445ae13e794a2c6a6714905a9f2722191ed425b1e33260dbd15e6d8c58",
+    "results/raw/final_sens/reach_15/resnet50_N64.json": "f69725860062639e57b94d1de93c044de5cbce7b7c0ba532dd5d8a1c5014f3ec",
+    "results/raw/final_sens/reach_16/alexnet_N64.json": "c6d4e6ce5a4e88684d3f7b98bff0e1ed3e610588ba2bd0fa7ae082e26e4336f4",
+    "results/raw/final_sens/reach_16/vgg16_N64.json": "0a11debf8077b96ebe5fdcf706cf4bf570938b9192d63aa3e124d2c8c0ae6077",
+    "results/raw/final_sens/reach_16/googlenet_N64.json": "78e8ca86e68be97a7f28161b20834cc5ab1c24549ef5ab71ce16562ce41e66f7",
+    "results/raw/final_sens/reach_16/resnet50_N64.json": "3530f369b815056eb45bce5d5807d3df25a87a5b1191b336f1200716282a80c5",
+    "results/raw/final_sens/reach_unrestricted_nopeer/alexnet_N64.json": "d3531d3463a485ed2e0931a0afae487beb23fc9592f1d868fc1727bee483711d",
+    "results/raw/final_sens/reach_unrestricted_nopeer/vgg16_N64.json": "70309bb4eda0ffc7d34a1b0a2a65aadd1f258fe677c1a8136c3032d3895d05af",
+    "results/raw/final_sens/reach_unrestricted_nopeer/googlenet_N64.json": "186f411369eb46b102ea65af869504980490687e762b0dc0cb233b98540046f0",
+    "results/raw/final_sens/reach_unrestricted_nopeer/resnet50_N64.json": "9c9c450b1d964a7430b3cdf8e4c2d19a203d10b99104662c1c611d7419449389",
+    "results/raw/final_sens/redeff_0.25/alexnet_N64.json": "afa8afc726ea3f95133abb39a22525b34043e822518275db4c3a3f257ddb137f",
+    "results/raw/final_sens/redeff_0.25/vgg16_N64.json": "b1cbb67a2bd123fa71ba239bf53ea346cb267a01055c57dd17f98b205e4f8143",
+    "results/raw/final_sens/redeff_0.25/googlenet_N64.json": "2d0ff61aa5231d04efb7f40e67ad5edeff81e03b324dda5ff511d2263930d6dd",
+    "results/raw/final_sens/redeff_0.25/resnet50_N64.json": "d9f4f3308d3705a144d5d4b68f573af0fdd9769cf84ded075c04470b1b832879",
+    "results/raw/final_sens/redeff_1.0/alexnet_N64.json": "b1e6ce89c78155e7ff0568ebbe1b0b02854eeea07976780247c8d652f1d09489",
+    "results/raw/final_sens/redeff_1.0/vgg16_N64.json": "92b650eab3cb4aca48325458823dc46aeae3ce3b17d4b8a82a96dd3be97b0aef",
+    "results/raw/final_sens/redeff_1.0/googlenet_N64.json": "c2381a44c4be81faac017a1c7b6c93421e8d2df6d1f3b54eb36bc6e8a9b08868",
+    "results/raw/final_sens/redeff_1.0/resnet50_N64.json": "860333dd728513d1d60fbdc4b210635b68623d3240952289d5f9686bc239452d",
+    "results/raw/final_sens/reserve_0/alexnet_N64.json": "bce905b148ef4afd21f656c22a33f1271db750f096ce6bdabc729cc75e6529d5",
+    "results/raw/final_sens/reserve_0/vgg16_N64.json": "9bb70cf2ed69ef9e23d7e833eb8d7287531e12afb88e3ac87dc960c87865f723",
+    "results/raw/final_sens/reserve_0/googlenet_N64.json": "962e20f06b27a21dbffdb8cdb108c81728a5563b3d7e683a39139031e10d267b",
+    "results/raw/final_sens/reserve_0/resnet50_N64.json": "160ecb5ce9fbf33e36c361b17a7953741a8261b0e18f5987bb76714d464be075",
+    "results/raw/final_sens/rho_0.25/alexnet_N64.json": "aa731360b625494383ee365e14f2a9cce88c71e1b77f1905482be5fe65663d1d",
+    "results/raw/final_sens/rho_0.25/vgg16_N64.json": "a147d307fb918bcde75831db422bb5815220b38f155b7e4a0cdb924acdd3a5b8",
+    "results/raw/final_sens/rho_0.25/googlenet_N64.json": "20908d3e11061254b17cc11d9e10b69690ed4b4889ccdbb532eac221f84dfa8a",
+    "results/raw/final_sens/rho_0.25/resnet50_N64.json": "b8069c94ae068912fd7991447ac4a8f019918c59ff4f905661902a49ab74933c",
+    "results/raw/final_sens/rho_0.75/alexnet_N64.json": "ecffd227f74e97d9a8a57ceec1cfb5a494e921423e6569e06d4f4395044bdf5c",
+    "results/raw/final_sens/rho_0.75/vgg16_N64.json": "4b25f68e90cc8bcfee8a556f3410f0f0e607e2a102ab0613d6d41948f8db2bcd",
+    "results/raw/final_sens/rho_0.75/googlenet_N64.json": "79c49c3d43a87ee5af7b79224c48c6cb128c6f95b56c3f5d83cdc754396841a5",
+    "results/raw/final_sens/rho_0.75/resnet50_N64.json": "c42cc221a132408690fc5d79ac0692f0d671cdf811d17b7c956c1b4d7c445446",
+    "results/raw/final_sens/rho_1.0/alexnet_N64.json": "42e9e30e78f07ac86c64807d5c872388f1dfba98dc15442a51d481fb819bb004",
+    "results/raw/final_sens/rho_1.0/vgg16_N64.json": "c7fb5e1768c86dbbe3ef205a409042e09f1e7f79423e1f09212d92817228accc",
+    "results/raw/final_sens/rho_1.0/googlenet_N64.json": "48fe89c948f0543707be5edd4428b7dd49e89b956bf45429fe26ab186558e5f9",
+    "results/raw/final_sens/rho_1.0/resnet50_N64.json": "0a27f177e9af6b76a55d30cd892218777292500e02d5598202344e9cac0f9a1e",
+    "results/raw/final_sens/tsetup_100e-6/alexnet_N64.json": "25de76339097bff377d4628e2f96220ee100f30b132b722f16efecd50a32274a",
+    "results/raw/final_sens/tsetup_100e-6/vgg16_N64.json": "8cd8df6564d1cded4ed215938343c5f247ad79c9969d87701c04d2f4a916d3a5",
+    "results/raw/final_sens/tsetup_100e-6/googlenet_N64.json": "df1405728817d16761af7aab593ab0615690d808eff1ba403b6e9f3f503b24a6",
+    "results/raw/final_sens/tsetup_100e-6/resnet50_N64.json": "78f291ba9c1b7a428ed64e9db55c4d0539989cbd4ebbfb8656a8faf89f9aed4d",
+    "results/raw/final_sens/tsetup_5e-6/alexnet_N64.json": "736008597843c7da76a595cfb7229409545c10826345907c6c3c9d0148397e1a",
+    "results/raw/final_sens/tsetup_5e-6/vgg16_N64.json": "609f988bce1e235257241830c1d3c67c946184956739de634db79bbb00a48c63",
+    "results/raw/final_sens/tsetup_5e-6/googlenet_N64.json": "95c9ab28f1b1adedf4959d38ecc704664a637965601af92aa6b3194440f4381d",
+    "results/raw/final_sens/tsetup_5e-6/resnet50_N64.json": "68e4680734588284bfdd2dff500757e32cabd467bb6c89fea34e0f138368b848",
+    "results/raw/final_sens/whole_item/alexnet_N64.json": "5a015c74a157f80d2ec77bac4c4d27f8cbf2faee6b38f2ffbd323214c9dc6973",
+    "results/raw/final_sens/whole_item/vgg16_N64.json": "6f05b4b865163ac7c6c908874f519e61787974ed7496138fc5c077183a43b030",
+    "results/raw/final_sens/whole_item/googlenet_N64.json": "dbc4d23c801ebd6a4eca27c30038d0c499e2d52980a14d412142f2ca3c5e3925",
+    "results/raw/final_sens/whole_item/resnet50_N64.json": "552b948fe35e8d5d14d6ca6d1472c12dbc41ab603410e54a08aa3f884839497f"
+  }
+}

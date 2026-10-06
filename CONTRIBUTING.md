@@ -37,6 +37,6 @@ The recorded experiments are research evidence:
 - Keep unpublished manuscript sources, bibliography files, manuscript-only
   figures, and review correspondence out of public commits and attachments.
 
-The software license is still pending. This guide does not establish a new
-licensing agreement; confirm the contribution and reuse terms with the maintainer
-before contributing third-party material.
+The artifact is distributed under the [MIT License](LICENSE). Preserve notices
+for third-party material and confirm that any proposed contribution can be
+distributed under the applicable terms.

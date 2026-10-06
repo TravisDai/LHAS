@@ -23,5 +23,4 @@ commit.
 
 An author-approved paper citation and structured `CITATION.cff` can be added when
 the bibliographic metadata are available. Do not infer a publication year,
-article number, DOI, or acceptance status from this repository. Citation guidance
-does not replace the pending software-license decision.
+article number, DOI, or acceptance status from this repository. The artifact is distributed under the [MIT License](LICENSE).

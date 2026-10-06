@@ -36,13 +36,21 @@ the results. There is no need to rerun the full queues to inspect the study.
 LHAS_CHECK_DIR=$(mktemp -d)
 python experiments/run_chain.py --workload alexnet --N 64 \
   --baselines dp,dpbest,owt --out "$LHAS_CHECK_DIR" --tag check
-python scripts/check_reproduction.py "$LHAS_CHECK_DIR/check/alexnet_N64.json"
+python scripts/check_reproduction.py "$LHAS_CHECK_DIR/check/alexnet_N64.json" \
+  --require-baselines dp_N,dp_best,owt
 ```
 
 Expected final output: `RESULT: agrees`. Costs are compared with a relative
 tolerance of `1e-12`; source, workload, and nominal-specification hashes must
 also match. This check covers LHAS and the requested DP/OWT baselines. It does
 not rerun Metropolis or GPipe. First-use compilation affects elapsed time.
+
+The quick start requires the stored source digest. The CI workflow additionally
+passes `--allow-source-change` so legitimate source edits can be tested against
+the frozen numerical results. That exception is printed explicitly; model inputs,
+workload and nominal-specification hashes, configurations, costs, and all three
+required baseline keys are still checked. CI agreement after a source change
+is numerical regression evidence, not a claim of identical source provenance.
 
 ```bash
 python -m pytest -q -rs tests
@@ -56,20 +64,24 @@ Use the reported reasons, rather than a total pass count alone, to describe cove
 ## 3. Inspect and regenerate reports
 
 The stored [tables](../results/processed/tables.md),
-[figures](../figures/), and [T4 report](../results/processed/t4_validation.md)
+[paper figures](../figures/presentation/), and [T4 report](../results/processed/t4_validation.md)
 can be read without installing anything. To regenerate them from the recorded
 inputs, run:
 
 ```bash
+LHAS_FIGURE_DIR=$(mktemp -d)
+python scripts/make_presentation_figures.py --output "$LHAS_FIGURE_DIR"
 python scripts/analyse_profile.py
 python scripts/make_figures.py
 python scripts/make_tables.py
 python scripts/compare_reruns.py
 ```
 
-These commands rewrite generated reports and figures in this checkout. They do
+The first command writes paper Figures 6-10 and 12 to the temporary directory.
+The remaining commands rewrite generated reports and figures in this checkout. They do
 not rerun the experiment queues or measure a GPU. Use a separate checkout if you
-want to preserve the original generated files for comparison. The profile analysis
+want to preserve the original generated files for comparison. [presentation_figures.md](presentation_figures.md#paper-figure-and-table-map)
+maps every evaluation figure and table to its command and input. The profile analysis
 writes `results/processed/t4_validation.json`, its Markdown report, and the T4
 figure. The other reporting scripts consume `results/raw/final*`; their tables
 retain feasibility and resource-limit statuses. The rerun comparison checks 25

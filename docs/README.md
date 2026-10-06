@@ -7,6 +7,8 @@ reproduction check. The pages below provide progressively more detail.
 
 | Document | Purpose |
 |---|---|
+| [Reviewer guide](REVIEWER_GUIDE.md) | A short path through the evidence, reproducibility checks, and limits |
+| [Paper figure and table map](presentation_figures.md#paper-figure-and-table-map) | Figure numbers, commands, inputs, and generated outputs |
 | [Reproduction guide](REPRODUCING.md) | Installation, a small reproduction check, report generation, optional checks, and full experiment queues |
 | [Experiments](experiments.md) | Experiment IDs, workloads, system sizes, baseline coverage, and output directories |
 | [Result tables](../results/processed/tables.md) | Exact modeled costs, statuses, selected configurations, and verification coverage |
@@ -31,6 +33,7 @@ reproduction check. The pages below provide progressively more detail.
   required new runs and why other outputs were retained.
 - [Rerun comparison](../results/processed/rerun_comparison.md): comparisons with
   the archived predecessor outputs.
+- [AI-use documentation](AI_USE.md): tools, author contributions, and checks.
 - [Contributing](../CONTRIBUTING.md) and [citation guidance](../CITATION.md).
 
 References to a "reviewer" or an audit ID in the development records refer to

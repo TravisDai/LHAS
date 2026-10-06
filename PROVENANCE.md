@@ -34,7 +34,8 @@ the original full requirements file, model inputs, measurements, or stored resul
   themselves, so they did not detect it). The analysis itself is unchanged: rerun in a copy of
   this tree, it reproduces `results/processed/t4_validation.{json,md}` and the figure exactly.
   The same one-line fix was applied to the development repository (commit f339b1c).
-* **Added**: this file, `docs/STATUS.md`, `scripts/check_reproduction.py`.
+* **Added**: this file, `docs/STATUS.md`, `scripts/check_reproduction.py` (checkpoint 1; see
+  checkpoint 2 below for later additions).
 * **Withheld until publication**: the manuscript sources, figures and build scripts, the
   documents answering the code audits, two LaTeX build logs, the generated manuscript numbers
   and tables (`results/processed/manuscript_numbers.json`, `manuscript_tables.tex`), and the
@@ -43,6 +44,40 @@ the original full requirements file, model inputs, measurements, or stored resul
 
 No experiment queue was rerun to make this checkpoint, and no raw output, profile, measurement
 or provenance record was modified.
+
+## Public checkpoint 2 (2026-10-06)
+
+Added on top of public checkpoint 1 (`4b608a1`); nothing in `src/`, `experiments/`, `configs/`,
+`colab/`, `results/raw/`, `results/colab/` or the existing processed outputs changed, so the
+source digest and all provenance records below still apply.
+
+* `scripts/make_presentation_figures.py`, `results/processed/presentation_plot_data.json` and
+  `docs/presentation_figures.md`: supplied by the authors (written with ChatGPT; see
+  `docs/AI_USE.md`). The snapshot records the SHA-256 hash of each of the 146 raw files it reads;
+  its `baseline_commit` field names development commit e8f8d15, whose raw results are the files
+  in this repository.
+* `figures/presentation/*`: drawn from `results/raw` by that script in this repository. The
+  re-extracted snapshot equals the stored one in every field, all hashes match, and the PDFs
+  rendered at 150 dpi are pixel-identical to the paper's Figures 6-10 and 12.
+* `tests/test_presentation_figures.py`, `LICENSE` (MIT), `docs/AI_USE.md`, and updates to
+  `README.md`, `docs/STATUS.md` and this file.
+
+## Public checkpoint 3 (2026-10-06)
+
+Added on top of public checkpoint 2 (`b6a2b87`) to make two paper figures legible in print.
+Nothing in `src/`, `experiments/`, `configs/`, `colab/`, `results/` or the snapshot
+`results/processed/presentation_plot_data.json` changed; the source digest below still applies.
+
+* `scripts/make_presentation_figures.py`: the logarithmic y axes of Figure 6
+  (`fig_main_comparison_compact`) are labeled at 1-2-5 steps. The plotted data and the y-axis
+  ranges are unchanged. The other five figures are drawn exactly as before.
+* `scripts/analyse_profile.py`: Figure 11 (`figures/fig_t4_compute_validation.*`) is drawn at
+  its printed size, 5.47 x 2.9 in. The analysis is unchanged: rerun in a copy of this tree, the
+  script reproduces `results/processed/t4_validation.{json,md}` byte for byte.
+* The regenerated figures are pixel-identical (150 dpi) to Figures 6 and 11 of the revised
+  paper, and the other plots to its Figures 7-10 and 12.
+* Updates to `docs/presentation_figures.md`, `docs/AI_USE.md`, `docs/STATUS.md`, `README.md`
+  and this file.
 
 ## Source digests
 
@@ -55,7 +90,7 @@ Digests for the earlier commits were computed afterwards from the development re
 |---|---|---|---|
 | `be196897b649` | 2026-09-29 | `af07e85b148ccc02bded3327b29ea017dd42e306749489db0f550759b95cd81b` (recorded in the outputs) | `results/raw/final/` (16), `final_supp/` (1), `final_profiled_T4/` (8); all `code_dirty = false` |
 | `80f9b070f87c` | 2026-09-30 | `af07e85b148c…` (same; `src/` and `experiments/` unchanged since be19689) | none (documentation, notebook and analysis scripts only) |
-| this public tree | 2026-10-04 | `af07e85b148c…` (same; checked when this checkpoint was made) | none |
+| public checkpoints 1-3 | 2026-10-04 to 2026-10-06 | `af07e85b148c…` (same; checked at each checkpoint) | none |
 | `f8bc93e4abec` | 2026-09-28 | `bad9b594b22887a43dd04a4c93f336073b319484f1b6c0046f429a21bd9db6e8` | `final_batch/` (4), `final_family/` (12), `final_sens/` (46 of 92), `final_cold/` (4 of 5) |
 | `25e5e52dbf10` | 2026-09-28 | `b25dfa76d701815a3b076f333bfdc8136809c4888b78880ab45ec285e5b081fb` | `final_ablations/` (4), `final_gpipe/` (8), `final_sens/` (46 of 92) |
 | `9a7c1d19a4eb` | 2026-09-28 | `b25dfa76d701…` (same source as 25e5e52) | `final_cold/` (1 of 5), `final_supp_gpipe/` (1) |
@@ -90,3 +125,15 @@ not been run on a GPU, so no stored measurement comes from it.
 Three independent code audits were made of development commits 0892134, ac66b9e and
 e8f8d15. Their findings, fixes and regression tests are summarized in `docs/change_log.md` and
 `docs/REPORT.md`; the audit reports and responses are not included.
+
+## Reader and reviewer guide (2026-10-06)
+
+The documentation branch integrates the existing reader-guide work with checkpoint 3.
+It adds CPU-only installation instructions, a reviewer entry point, paper-figure
+and table links, citation/contribution guidance, and a CPU GitHub Actions check.
+The CPU requirements are a subset of the existing full dependency pins. The
+reproduction CLI now supports required baseline keys and an explicit CI-only
+source-digest exception; its strict default is preserved and focused regression
+tests cover both behaviors. No files
+in `src/`, `experiments/`, `configs/`, `colab/`, or the stored results and figures
+are changed by this documentation update. No experiment queue was rerun.

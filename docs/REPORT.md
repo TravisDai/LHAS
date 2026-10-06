@@ -282,9 +282,9 @@ Provisional results are archived unchanged in `results/archive/provisional_757bd
 * `configs/approved_reference_parameters.json` (frozen, author-approved) still carries
   its original status note about unpinned inputs; `configs/nominal_experiment.json`
   now pins them.
-* **Release.** This public checkpoint has no license yet (to be chosen by the author); no
-  archival release (for example Zenodo) has been made. Provenance of the public tree:
-  `PROVENANCE.md`; outstanding work: `docs/STATUS.md`.
+* **Release.** Released under the MIT License (`LICENSE`); no archival release (for example
+  Zenodo) has been made. Provenance of the public tree: `PROVENANCE.md`; outstanding work:
+  `docs/STATUS.md`.
 
 ## 8. Measured-GPU validation (Tesla T4, run by the author with notebook version 2)
 
