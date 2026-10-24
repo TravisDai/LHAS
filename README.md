@@ -1,256 +1,393 @@
-# LHAS reproducibility artifact
+# LHAS: Layer-wise Hybrid Parallelism for Distributed DNN Training
 
-A reimplementation of the analytical model of the paper "Layer-wise Hybrid Parallelism for Distributed DNN Training on Optical Interconnects" (LHAS). The paper is under review at ACM Transactions on Modeling and Performance Evaluation of Computing Systems (ToMPECS), and its manuscript is not part of this repository. The artifact covers:
+LHAS is a research implementation for studying distributed neural network training
+on wavelength-routed optical interconnects. It selects data parallelism (DP) or
+output-feature model parallelism (MP), together with a node count, for each layer
+and evaluates these choices using optical-aware communication schedules.
 
-* a physical transport scheduler with deterministic first-fit;
-* collective candidate families: adapted OSM, WRHT, mixed-radix OpTree, and unequal-group A/B/C;
-* boundary exchanges and typed fork/join interfaces;
-* analytical computation and a conservative accumulated-reservation memory ledger;
-* memory-aware configuration search.
+This repository accompanies **“Layer-wise Hybrid Parallelism for Distributed DNN
+Training on Optical Interconnects,”** currently under review at *ACM Transactions
+on Modeling and Performance Evaluation of Computing Systems* (TOMPECS).
+It contains the implementation, experiment configurations, tests, stored results,
+plotting scripts, and a notebook for profiling local GPU computation. The
+manuscript is not included in this repository.
 
-It also includes an **independent schedule verifier**, the baselines (pure DP,
-adapted OWT, a FlexFlow-derived Metropolis search, an optical-adapted GPipe),
-experiment scripts, figures, and a Colab notebook that profiles local GPU
-computation.
+**How to interpret the results:** distributed training times are model predictions.
+The main evaluation uses a hypothetical P100 PCIe 16 GB computation reference.
+The repository also includes real measurements of local computation on one Tesla
+T4 and a separate sensitivity study that uses those measurements as computation
+inputs. Neither study measures distributed execution on an optical system.
 
-> **Status.** All times produced here are predictions of an analytical model:
-> the hypothetical P100 PCIe 16 GB reference with the approved optical parameters.
-> None of them is a measurement. The original profiles and scripts are lost, and the
-> historical results are not reconstruction targets.
->
-> This repository is a **public checkpoint** of the verified implementation and evaluation
-> results. It was prepared from a private development repository; the experiments were run
-> from development commits whose hashes are recorded in the raw outputs. `PROVENANCE.md`
-> maps the public tree to those commits (the Python source is byte-identical to the source
-> that produced the primary, supplementary and profiled results). Outstanding work and open
-> audit items: `docs/STATUS.md`. Released under the MIT License (`LICENSE`); no archival
-> release yet. Use of generative AI tools: `docs/AI_USE.md`.
+## Start here
 
-## Final specification
-
-The experimental specification (decisions D1–D17, `docs/decision_table.md`) is
-fixed in `configs/nominal_experiment.json` and used as the default by every runner:
-
-| Item | Nominal value |
+| What you want to do | Where to start |
 |---|---|
-| global batch | B = 1024 (sensitivity: B = 256 at N = 64) |
-| system sizes | N = 64, 128, 256, 512 (AlexNet N = 1024 supplementary) |
-| workloads | manifests `configs/workloads/*.json` (sha256 in `SHA256SUMS`); GoogLeNet without auxiliary heads |
-| BatchNorm | synchronized full-batch statistics (DP: 2C forward and 2C backward reductions; MP: none) |
-| raw-input gradient | omitted (nontrainable graph input); `--raw retain` is a sensitivity |
-| optimizer state | SGD momentum, one parameter-sized buffer (`--opt-state 1`) |
-| memory budget | 12 GiB per node, of which a 1 GiB runtime reserve is charged once (`--reserve`) |
-| per-layer workspace | 0 |
+| Read the numerical results | [Result tables](results/processed/tables.md) and [paper figures](figures/presentation/) |
+| Reproduce one small simulation | [Quick start](#quick-start) |
+| Regenerate the evaluation figures and tables | [Figures and tables](#figures-and-tables) |
+| Run or modify experiments | [Experiment configuration](#experiment-configuration) and [running-experiments](#running-experiments) |
+| Understand the implementation and checks | [Model and verification](#model-and-verification) |
+| Collect computation measurements on another GPU | [GPU profiling](#gpu-profiling) |
 
-## Layout
+Browsing the stored results requires no installation. Simulation, analysis of the
+stored T4 data, and figure generation run on a CPU. A GPU is needed only to collect
+new GPU timing measurements.
 
-```
-configs/approved_reference_parameters.json   frozen optical + compute inputs (author-approved)
-configs/nominal_experiment.json               final experimental specification (D1-D17)
-configs/workloads/*.json, SHA256SUMS          pinned torchvision 0.29.0 graph manifests (shapes only) and hashes
-environment/requirements-lock.txt             pinned simulator environment
-src/lhas/params.py                            parameter loading and validation
-src/lhas/transport/                           routing, first-fit packing (numba), timing, setup reuse, export
-src/lhas/collectives/                         OSM, WRHT, OpTree, unequal-group families; alternatives service
-src/lhas/model/                               workloads, layer reservations, boundary matrices, chain and typed-interface charges, profile safeguards
-src/lhas/planner/                             memory-aware chain DP; typed-interface exact search
-src/lhas/baselines/                           common definitions and statuses; chain and branch baselines; GPipe
-src/lhas/verify_plan.py                       re-verifies every selected operation with coverage records
-src/lhas_verify/                              independent verifier (imports nothing from lhas)
-experiments/run_chain.py, run_graph.py        one workload x one system size -> results/raw/<tag>/*.json
-experiments/run_gpipe.py                      optical-adapted GPipe (chain workloads)
-scripts/                                      queues, figures, tables, graph export, pilot, Colab ingestion, diagnostics
-colab/                                        profiling notebook (+ generator and CPU smoke test)
-docs/                                         specification, memory ledger, verification, change log, experiments,
-                                              report, status of outstanding work
-results/raw/final*                            final results; results/raw/archive_0892134/ and results/archive/ hold
-                                              superseded outputs (kept unchanged for traceability)
-results/processed/, figures/                  summaries, tables and figures generated from the raw results
-figures/presentation/                         the paper's Figures 6-10 and 12 (PDF, PNG, SVG)
-results/colab/                                the author's unmodified Tesla T4 profiling ZIP (notebook v2)
-PROVENANCE.md                                 relation between this public tree and the development commits
-LICENSE                                       MIT License
-tests/                                        pytest suite
-```
+## Quick start
 
-## Environment
+The commands below use Linux/Bash and Python 3.11. The recorded experiment
+environment used Python 3.11.15; its dependency versions are listed in
+[environment/requirements-lock.txt](environment/requirements-lock.txt).
 
-Python 3.11.15 with the versions in `environment/requirements-lock.txt` (numpy
-2.4.4, numba 0.67.0, pytest, matplotlib; torch 2.14.0 and torchvision 0.29.0 only
-for re-exporting manifests, the BatchNorm equivalence test and the notebook smoke
-test). This package was developed on a 2-core, 8 GB Linux container.
+### 1. Set up the environment
 
 ```bash
-pip install -r environment/requirements-lock.txt --extra-index-url https://download.pytorch.org/whl/cu130
+git clone https://github.com/TravisDai/LHAS.git
+cd LHAS
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+# Pinned dependencies for simulation, analysis, plots, and tests without PyTorch.
+python -m pip install \
+  numpy==2.4.4 numba==0.67.0 llvmlite==0.49.0 \
+  pytest==9.1.1 matplotlib==3.10.9 nbformat==5.11.1
 ```
 
-## Exact commands
+Run subsequent commands from the repository root. PyTorch and torchvision are
+optional for this quick start; the [verification section](#model-and-verification)
+explains when they are needed.
+
+### 2. Reproduce a small case
+
+This example evaluates AlexNet on a modeled 64-node ring. It compares LHAS with
+DP on all nodes, the best feasible common-count DP, and adapted One-Weird-Trick
+(OWT). The output goes to a separate directory, preserving the supplied results.
 
 ```bash
-# 1. tests: verifier, rejection of invalid schedules, ownership, exhaustive DP,
-#    engine cross-check, audit regressions, notebook and ingestion safeguards
-python -m pytest -q tests
+python experiments/run_chain.py --workload alexnet --N 64 \
+  --baselines dp,dpbest,owt --out results/local --tag quickcheck
 
-# 2. (optional) re-export the pinned graph manifests and check their hashes
-python scripts/export_graphs.py && (cd configs/workloads && sha256sum -c SHA256SUMS)
+python scripts/check_reproduction.py \
+  results/local/quickcheck/alexnet_N64.json
+```
 
-# 3. write the final command lists (results/queues/*.txt) and run them
-python scripts/final_queues.py
-export LHAS_PACK_CACHE_DIR=$PWD/results/cache/packings
-scripts/run_list.sh results/queues/chain_main.txt chain_main   # AlexNet, VGG16, N = 64..512
-scripts/run_list.sh results/queues/graph_main.txt graph_main   # GoogLeNet, ResNet-50, N = 64..512
-scripts/run_list.sh results/queues/gpipe.txt gpipe
-scripts/run_list.sh results/queues/ablations.txt ablations
-scripts/run_list.sh results/queues/family.txt family
-scripts/run_list.sh results/queues/batch.txt batch
-scripts/run_list.sh results/queues/sens_chain.txt sens_chain
-scripts/run_list.sh results/queues/sens_graph.txt sens_graph
-scripts/run_list.sh results/queues/cold.txt cold               # empty packing cache (runtime study)
-scripts/run_list.sh results/queues/supp.txt supp               # AlexNet N = 1024 (supplementary)
-scripts/run_list.sh results/queues/profiled.txt profiled       # measured T4 computation, N = 64, 256
+The comparison should finish with `RESULT: agrees`. It checks the LHAS plan,
+predicted cost and status; the included baseline costs and statuses; and the
+source, workload, and specification hashes against
+[the stored AlexNet result](results/raw/final/alexnet_N64.json). It also reports
+which baselines in the stored result were not rerun.
 
-# single runs, for example
-python experiments/run_chain.py --workload alexnet --N 64 --tag final
-python experiments/run_graph.py --workload resnet50 --N 128 --tag final
-python experiments/run_gpipe.py --workload vgg16 --N 256 --tag final_gpipe
+This is a small reproduction check. Full experiment queues, particularly at large
+node counts, require substantially more time and memory.
 
-# 4. construction-cost pilot (one all-pairs first-fit phase)
-python scripts/pilot_allpairs.py 1024:256 1024:512 1024:1024
+## Figures and tables
 
-# 5. T4 compute-model analysis; summaries, tables and figures; comparison with the archived
-#    provisional results
-python scripts/analyse_profile.py
-cd scripts && python make_figures.py && python make_tables.py && python compare_provisional.py && cd ..
+The stored raw results are sufficient to regenerate the evaluation figures and
+tables without rerunning the experiments or collecting new GPU measurements.
 
-# 6. check reruns against the archived outputs of commit 0892134 (nonzero exit on any
-#    difference in costs, plans or recorded incumbent-cost traces, or a missing file)
-python scripts/compare_reruns.py
-
-# 7. the paper's Figures 6-10 and 12 from the stored raw results (no experiment is run);
-#    see docs/presentation_figures.md for the snapshot and hash checks
+```bash
+# Paper Figures 6–10 and 12, plus a snapshot of the plotted inputs.
 python scripts/make_presentation_figures.py --output figures/presentation
+
+# Grouped T4 computation-model analysis, its report, and Figure 11.
+python scripts/analyse_profile.py
+
+# Refresh the summary CSV files and additional artifact plots first.
+python scripts/make_figures.py
+
+# Then generate the numerical tables from those summaries and raw results.
+python scripts/make_tables.py
 ```
 
-## Paper figures and tables
+These commands refresh generated files in `figures/` and `results/processed/`.
+The presentation figures are exported as PDF, PNG, and SVG. Their input snapshot
+records the SHA-256 hash of every raw result used.
 
-Every evaluation figure and table of the paper is produced from the stored results by the
-commands below; no experiment needs to be rerun. The paper's Figures 1-5 and Tables 1 and 3-6
-are diagrams, definitions or notation.
+<details>
+<summary>Figure and table mapping</summary>
 
-| Paper | Content | Command | Inputs | Output |
-|---|---|---|---|---|
-| Table 2 | worked example (N = p = 4) | `python -m pytest tests/test_worked_example.py` | approved parameters | values asserted in the test |
-| Fig. 6, Table 7 | main comparison | `scripts/make_presentation_figures.py`; `scripts/make_tables.py` | `results/raw/final*`, `final_gpipe`, `final_supp*` | `figures/presentation/fig_main_comparison_compact.*`; `results/processed/tables.md` (main comparison) |
-| Fig. 7, Tables 8-9 | planner ablations; collective families | as above | `results/raw/final_ablations`, `final_family` | `fig_ablations_families.*`; `tables.md` |
-| Fig. 8, Table 10 | one-at-a-time sensitivity | as above | `results/raw/final_sens` | `fig_sensitivity_compact.*`; `tables.md` |
-| Fig. 9, Table 11 | batch-size sensitivity | as above | `results/raw/final`, `final_batch/B256` | `fig_batch_comparison.*`; `tables.md` |
-| Fig. 10, Table 12 | selected configurations | as above | `results/raw/final`, `final_supp` | `fig_layer_configurations.*`; `tables.md` |
-| Table 13 | verification coverage and planner runtime | `scripts/make_tables.py` | `results/raw/final`, `final_supp` | `tables.md` (coverage); `results/processed/main_summary.csv` (`construction_s`, `plan_s`) |
-| Fig. 11, Table 14 | T4 compute-model validation | `python scripts/analyse_profile.py` | `results/colab/Tesla_T4_2026-09-28/lhas_profile_Tesla_T4.zip` | `figures/fig_t4_compute_validation.*`; `results/processed/t4_validation.{json,md}` |
-| Fig. 12, Table 15 | measured-computation sensitivity | `scripts/make_presentation_figures.py`; `scripts/make_tables.py` | `results/raw/final_profiled_T4`, `final` | `fig_profiled_comparison.*`; `tables.md` |
+Numbering follows the revised manuscript associated with this artifact.
 
-`scripts/make_presentation_figures.py` writes a snapshot of its inputs with the SHA-256 hash of
-every raw file it reads; `tests/test_presentation_figures.py` checks that the snapshot
-regenerates exactly from `results/raw`. The other files in `figures/` are earlier artifact
-plots of the same results, kept for reference.
+| Paper item | Content | Generated output |
+|---|---|---|
+| Figure 6; Table 7 | Main comparison | `fig_main_comparison_compact.*`; main comparison in `tables.md` |
+| Figure 7; Tables 8–9 | Planner ablations and collective families | `fig_ablations_families.*`; corresponding sections in `tables.md` |
+| Figure 8; Table 10 | One-at-a-time sensitivity | `fig_sensitivity_compact.*`; sensitivity section in `tables.md` |
+| Figure 9; Table 11 | Batch-size sensitivity | `fig_batch_comparison.*`; batch section in `tables.md` |
+| Figure 10; Table 12 | Selected layer configurations | `fig_layer_configurations.*`; configuration listings in `tables.md` |
+| Table 13 | Verification coverage and planner runtime | Coverage section in `tables.md`; runtime fields in `main_summary.csv` |
+| Figure 11; Table 14 | T4 computation-model validation | `figures/fig_t4_compute_validation.*`; `results/processed/t4_validation.json` and `.md` |
+| Figure 12; Table 15 | Measured-computation sensitivity | `fig_profiled_comparison.*`; measured-computation section in `tables.md` |
 
-**Cheap reproduction check** (under a minute: 19 s on a 2-core container; no queue, no GPU). It reruns one
-primary configuration into a scratch directory and compares it with the stored result:
+Unless a full path is shown, figure files are in `figures/presentation/` and
+tables and summaries are in `results/processed/`.
+
+The four-node worked example in Table 2 is checked by:
 
 ```bash
-python experiments/run_chain.py --workload alexnet --N 64 --baselines dp,dpbest,owt \
-  --out /tmp/lhas_check --tag check
-python scripts/check_reproduction.py /tmp/lhas_check/check/alexnet_N64.json
+python -m pytest -q tests/test_worked_example.py
 ```
 
-The second command compares the LHAS cost, selected configurations and status, and the DP(N),
-best-common-DP and OWT values, with `results/raw/final/alexnet_N64.json`, and checks that the
-Python source digest equals the one recorded in the stored result.
+Figures 1–5 and Tables 1 and 3–6 describe the architecture, method, definitions,
+or notation; they are not generated from experiment outputs.
 
-**Large N.** Construction is exact and deterministic; its cost dominates at
-N ≥ 512. `LHAS_PACK_CACHE_DIR` stores every packing with ≥ 50 000 routes, keyed by
-the transport parameters and the route set, so interrupted runs resume without
-repacking. `scripts/run_list.sh` records each command's exit code, so an
-out-of-memory termination appears as `EXIT 137` rather than as a missing file.
+See [the figure reproduction guide](docs/presentation_figures.md) for input
+directories and snapshot checks. Other plots in `figures/` provide additional
+views of the stored results.
 
-Every run writes a JSON file (schema `lhas-run-v2`) containing the settings,
-transport and compute parameters (including the runtime reserve), provenance
-(manifest hash, code commit, packing-cache state at start), the selected
-configurations and schedule candidates, the charge breakdown and reservation
-summary, the status of every planner and baseline (`feasible`, `infeasible`,
-`not_established`, `incumbent`, and `unavailable` for a missing measured compute input),
-search statistics, verification coverage records,
-and runtimes split into construction, search, baselines and verification.
+</details>
 
-## Colab profiling (to be run by the author)
+## Experiment configuration
 
-1. Open `colab/LHAS_compute_profiling.ipynb` in Google Colab.
-2. Runtime → Change runtime type → any GPU.
-3. Runtime → Run all.
-4. The last cell downloads `lhas_profile_<gpu>.zip`. Return it unchanged.
-5. `python scripts/ingest_colab.py lhas_profile_<gpu>.zip` checks and converts it.
+Defaults come from
+[configs/nominal_experiment.json](configs/nominal_experiment.json), with optical
+and computation inputs in
+[configs/approved_reference_parameters.json](configs/approved_reference_parameters.json).
+Command-line options override these values, and each result records the settings
+used. The [model specification](docs/decision_table.md) explains the choices in
+detail.
 
-The notebook embeds the repository manifests and their hashes and stops before
-profiling if the Colab torchvision graphs differ. It records the GPU, driver,
-CUDA, cuDNN, PyTorch and torchvision versions and the precision settings (float32,
-TF32 off). It times forward, input-gradient and weight-gradient products separately
-at the actual local DP and MP shapes for B = 1024, with warm-up and CUDA-event
-synchronization, keeps all raw samples, saves after every shape (a rerun in the
-same runtime resumes), and releases every allocation in `finally` blocks. Shapes it
-cannot run are recorded as unmeasured; it never divides full-layer times by p. It
-reports a model-equivalent rate for the local reduction term, and fits a
-constant-throughput model of *that* GPU on calibration shapes, validated on held-out
-shapes (signed and absolute relative errors, tails, rank correlation; no statistics
-below the declared minimum sample counts). The ingestion rejects any ZIP whose
-batch, manifest hashes, precision or local shapes do not match. Results must not be
-relabeled or rescaled as P100. `python colab/cpu_smoke_test.py` checks the notebook
-logic and the ingestion checks on CPU only; it performs no GPU timing.
+| Setting | Nominal value |
+|---|---|
+| Workloads | AlexNet, VGG16, GoogLeNet, and ResNet50; GoogLeNet has no auxiliary heads |
+| Workload definitions | Pinned graph manifests in `configs/workloads/`, exported with torchvision 0.29.0; hashes in `SHA256SUMS` |
+| Global minibatch | 1,024, fixed across node counts; a separate sensitivity uses 256 at 64 nodes |
+| Modeled system sizes | 64, 128, 256, and 512 nodes; AlexNet at 1,024 nodes is supplementary |
+| Computation | Analytical FLOPs with 50% utilization of a hypothetical P100 PCIe 16 GB reference |
+| Precision | float32 |
+| Optical inputs | 64 wavelength labels per direction; 25 Gbit/s per wavelength; 25 μs circuit setup |
+| Compute–communication overlap | None in the nominal layer-wise objective; varied in sensitivity runs |
+| BatchNorm | Synchronized full-batch statistics; DP charges separate forward and backward statistics reductions, while MP keeps statistics channel-local |
+| Gradient of the raw input | Omitted; internal input gradients are retained |
+| Optimizer storage | SGD momentum with one parameter-sized state buffer |
+| Memory budget | 12 GiB per node, including a 1 GiB runtime reserve; per-layer workspace is set to zero |
 
-The author's Tesla T4 run is stored unmodified in `results/colab/Tesla_T4_2026-09-28/`
-and ingested as `configs/profiles/profiled_Tesla_T4_B1024.json`;
-`python scripts/analyse_profile.py` applies the grouped protocol of
-`docs/t4_validation_protocol.md` (calibration and validation split by timed kernel
-signature) and writes `results/processed/t4_validation.{json,md}` and
-`figures/fig_t4_compute_validation.pdf`; the report and the figure are generated from the
-JSON only. The T4 data were produced by notebook version 2. Version 3 (for future runs; not
-yet run on a GPU) records one row per timed kernel signature, refuses to resume under a
-changed configuration, device class, driver, CUDA, framework or precision policy, never
-overwrites existing files on a rejected resume, and does not repeat completed reduction
-measurements. A separately labeled planning run with measured
-computation uses `--profile <table> --red-rate <byte/s>` (configurations without a
-measured local shape are excluded for every method), for example
-`python experiments/run_chain.py --workload alexnet --N 64 --profile configs/profiles/profiled_Tesla_T4_B1024.json --red-rate 218.6e9 --baselines dp,dpbest,owt --tag final_profiled_T4`.
+These are modeling inputs. In particular, the memory ledger uses accumulated
+reservations rather than a measured peak GPU allocation.
 
-## Documents
+## Running experiments
 
-* `docs/decision_table.md`: final D1–D17 specification and where each item is implemented.
-* `docs/memory_ledger.md`: per-operation reservation ledger and corrected aliasing rules.
-* `docs/verification.md`: verification categories, coverage records, regression tests.
-* `docs/change_log.md`: model equations → modules and tests; changes and audit fixes.
-* `docs/experiments.md`: experiments, output directories and queues.
-* `docs/rerun_dependency_analysis.md`, `docs/t4_validation_protocol.md`: rerun decisions and
-  the T4 validation protocol.
-* `docs/REPORT.md`: what was executed, passed, failed and remains unverified.
-* `docs/STATUS.md`: outstanding work and open items.
-* `docs/presentation_figures.md`: commands, inputs and checks for the paper's Figures 6-10 and 12.
-* `docs/AI_USE.md`: how generative AI tools were used for the artifact and the paper.
-* `PROVENANCE.md`: development commits, source digests, versions of this public repository.
+Use `run_chain.py` for AlexNet and VGG16, and `run_graph.py` for the supported
+GoogLeNet and ResNet50 graphs. Adapted GPipe is evaluated only on the chain
+workloads.
 
-Identifiers such as 0892134, ac66b9e and e8f8d15 in test names, documents and generated reports
-refer to development commits that were audited independently; "reviewer" in those places means
-the code auditor. The audit reports are not included.
+```bash
+# Inspect the available options.
+python experiments/run_chain.py --help
 
-## Versions
+# Run an analytical experiment with the default baselines.
+python experiments/run_chain.py --workload alexnet --N 64 --tag example
 
-| Version | Date | Content |
-|---|---|---|
-| public checkpoint 1 (`4b608a1`) | 2026-10-04 | implementation, configurations, tests, notebook, raw and processed results, artifact documentation |
-| public checkpoint 2 (`b6a2b87`) | 2026-10-06 | plotting script and snapshot for the paper's Figures 6-10 and 12, figure and table mapping, MIT License, generative-AI note |
-| public checkpoint 3 (`6313d40` and this commit) | 2026-10-06 | Figures 6 and 11 made legible in print (axis labels, printed size); generative-AI note updated; results unchanged |
+# Run a branch workload.
+python experiments/run_graph.py --workload resnet50 --N 128 --tag example
 
-The Python source of `src/lhas` and `experiments` is unchanged since checkpoint 1 (source
-digest `af07e85b…`, see `PROVENANCE.md`). No archival release (for example Zenodo) has been made yet.
+# Evaluate adapted GPipe on a chain workload.
+python experiments/run_gpipe.py --workload vgg16 --N 256 --tag example_gpipe
+```
+
+Results are written to `results/raw/<tag>/<workload>_N<N>.json`. Use distinct tags
+or `--out` directories for your own runs.
+
+The comparison methods include DP on all nodes, best common-count DP, adapted
+OWT, a FlexFlow-derived Metropolis search, and adapted GPipe. These are
+implementations of the stated baseline contracts under the shared cost model;
+they are not executions of the original distributed-training frameworks.
+See [the specification](docs/decision_table.md) and
+[experiment guide](docs/experiments.md) for their definitions and search budgets.
+
+<details>
+<summary>Run the full experiment queues</summary>
+
+The queue generator writes the command lists for the reported experiment set.
+These commands target `results/raw/final*`, so use a separate checkout when
+rerunning them to keep the supplied reference outputs intact.
+
+```bash
+python scripts/final_queues.py
+mkdir -p results/logs results/cache/packings
+export LHAS_PACK_CACHE_DIR="$PWD/results/cache/packings"
+
+bash scripts/run_list.sh results/queues/chain_main.txt chain_main
+bash scripts/run_list.sh results/queues/graph_main.txt graph_main
+bash scripts/run_list.sh results/queues/gpipe.txt gpipe
+bash scripts/run_list.sh results/queues/ablations.txt ablations
+bash scripts/run_list.sh results/queues/family.txt family
+bash scripts/run_list.sh results/queues/batch.txt batch
+bash scripts/run_list.sh results/queues/sens_chain.txt sens_chain
+bash scripts/run_list.sh results/queues/sens_graph.txt sens_graph
+bash scripts/run_list.sh results/queues/profiled.txt profiled
+
+# Optional construction-runtime and supplementary large-system runs.
+bash scripts/run_list.sh results/queues/cold.txt cold
+bash scripts/run_list.sh results/queues/supp.txt supp
+```
+
+The profiled queue uses the included T4 input table; it does not collect new
+measurements. The supplementary queue contains AlexNet at 1,024 nodes.
+Corresponding 1,024-node results for the other three workloads are not included.
+
+Schedule construction becomes expensive at large node counts. The packing cache
+reuses eligible route packings with matching transport inputs, including when an
+interrupted experiment is restarted. Each queue writes command output and exit
+codes to `results/logs/<name>.log`; inspect these logs for failed commands.
+
+</details>
+
+### Reading result statuses
+
+Each JSON result records the model settings, selected configurations and
+collective candidates, cost and memory breakdowns, search statistics, verification
+coverage, execution times, and provenance.
+
+| Status | Meaning |
+|---|---|
+| `feasible` | A plan satisfies the modeled constraints. Optimality depends on the method and any recorded certification. |
+| `incumbent` | The best completed feasible result is retained, but optimality has not been established. |
+| `infeasible` | Infeasibility has been established within the stated model and candidate domain. |
+| `not_established` | The evaluation did not establish a result; this is not proof of infeasibility. |
+| `unavailable` | A required measured computation input is missing. |
+
+For best common-count DP, also inspect `certification` and `candidate_domain`.
+For Metropolis searches, inspect the unresolved-proposal counts and search budget.
+A feasible result alone does not certify global optimality.
+
+## Model and verification
+
+The implementation includes deterministic routing and wavelength packing,
+adaptations of OSM, WRHT, and mixed-radix OpTree, unequal-group communication
+candidates, and exchanges at layer and branch boundaries. An independent
+verifier in `src/lhas_verify/` checks exported communication schedules without
+importing the schedule-construction implementation.
+
+The configuration searches have different guarantees:
+
+- **Chain networks:** memory-aware dynamic programming minimizes the modeled
+  objective over the represented feasible candidates.
+- **Supported branch networks:** the search minimizes an additive objective and
+  then checks memory. A memory-feasible minimizer is certified within that
+  candidate family; a general memory-constrained branch search is not implemented.
+  The objective does not simulate optimal concurrent execution on shared GPUs.
+
+Run the tests with skip reasons visible:
+
+```bash
+python -m pytest -q -rs tests
+```
+
+The suite includes tensor-ownership checks, comparison with exhaustive search on
+small instances, invalid-schedule rejection, and regression tests. With the
+CPU-only dependency set above, tests that require PyTorch or torchvision are
+skipped.
+
+For graph export, the PyTorch BatchNorm equivalence test, and the notebook smoke
+tests, install the full recorded environment:
+
+```bash
+python -m pip install -r environment/requirements-lock.txt \
+  --extra-index-url https://download.pytorch.org/whl/cu130
+
+python -m pytest -q -rs tests
+python colab/cpu_smoke_test.py
+```
+
+The smoke test exercises notebook logic on CPU; it does not collect GPU timings.
+Existing workload manifests can be checked independently with:
+
+```bash
+(cd configs/workloads && sha256sum -c SHA256SUMS)
+```
+
+Verification records distinguish checks at actual payloads, checks at reduced
+payloads, and operations skipped because of resource limits. Recorded plan
+verification covers selected LHAS operations; baseline plans were not
+individually rechecked, and adapted GPipe has no recorded schedule check.
+Implementation verification does not establish optical hardware accuracy.
+
+See [verification scope and coverage](docs/verification.md),
+[the memory ledger](docs/memory_ledger.md), and
+[current limitations](docs/STATUS.md).
+
+## GPU profiling
+
+The [profiling notebook](colab/LHAS_compute_profiling.ipynb) measures local forward,
+weight-gradient, and input-gradient products at the DP and MP shapes used by
+the planner.
+
+1. Open the notebook in Google Colab.
+2. Select a GPU runtime, then choose **Run all**.
+3. Download the generated `lhas_profile_<gpu>.zip` and retain it unchanged as the
+   raw measurement archive.
+4. Convert it to a planner input table:
+
+```bash
+python scripts/ingest_colab.py path/to/lhas_profile_Tesla_T4.zip \
+  --out results/local/profiles
+```
+
+Replace the example ZIP path with the downloaded file. Ingestion checks the
+workload manifests, batch size, tensor shapes, precision settings, and timing
+records. Unmeasured configurations remain unavailable to every planner in
+profiled mode; they are not filled using scaled timings.
+
+The stored Tesla T4 measurements are in
+[results/colab/Tesla_T4_2026-09-28/](results/colab/Tesla_T4_2026-09-28/), with their
+ingested table in
+[configs/profiles/profiled_Tesla_T4_B1024.json](configs/profiles/profiled_Tesla_T4_B1024.json).
+They were collected using notebook **version 2**. The current notebook is
+**version 3**, with additional resume safeguards and CPU smoke checks; no GPU
+measurements from version 3 are included.
+
+The following example uses the stored T4 table and its model-equivalent local
+reduction rate:
+
+```bash
+python experiments/run_chain.py --workload alexnet --N 64 \
+  --profile configs/profiles/profiled_Tesla_T4_B1024.json \
+  --red-rate 218.6e9 --baselines dp,dpbest,owt \
+  --out results/local --tag profiled_T4
+```
+
+The `--red-rate` value is in bytes per second. Use a rate derived for the measured
+device when supplying a different profile. GPipe does not support profiled input
+mode. The included `scripts/analyse_profile.py` analyzes the stored T4 run;
+the [grouped validation protocol](docs/t4_validation_protocol.md) describes its
+calibration and held-out split by kernel signature.
+
+## Repository guide
+
+| Path | Contents |
+|---|---|
+| `configs/` | Optical and computation inputs, nominal settings, workload manifests, and measured computation tables |
+| `src/lhas/transport/`, `src/lhas/collectives/` | Routing, wavelength packing, timing, and collective candidates |
+| `src/lhas/model/`, `src/lhas/planner/` | Tensor layouts, cost and memory accounting, and configuration search |
+| `src/lhas/baselines/` | Baseline definitions and implementations |
+| `src/lhas_verify/`, `src/lhas/verify_plan.py` | Independent schedule verifier and selected-plan coverage checks |
+| `experiments/`, `scripts/` | Experiment runners, queues, analysis, plotting, and reproduction checks |
+| `colab/` | GPU profiling notebook, notebook generator, and CPU smoke test |
+| `results/raw/final*/` | Retained evaluation outputs |
+| `results/processed/`, `figures/` | Summaries, numerical tables, and generated figures |
+| `results/colab/` | Raw GPU profiling archives |
+| `tests/`, `docs/` | Tests, specification, verification documentation, and implementation notes |
+
+## Provenance and reuse
+
+Raw outputs record the configurations and development commits that produced
+them. [PROVENANCE.md](PROVENANCE.md) explains how these records relate to the
+public repository, including source digests and the retained supplementary runs.
+Superseded outputs are kept in archive directories for traceability and are not
+part of the current evaluation.
+
+The [implementation report](docs/REPORT.md) records completed checks, while
+[docs/STATUS.md](docs/STATUS.md) lists remaining limitations.
+[docs/AI_USE.md](docs/AI_USE.md) describes the use of generative AI tools.
+
+When reporting results obtained with this artifact, cite the accompanying paper
+and record the repository commit and configuration used. You can obtain the
+commit with `git rev-parse HEAD`. For questions or reproducibility problems,
+[open an issue](https://github.com/TravisDai/LHAS/issues) with the command,
+environment, commit, and relevant output or log.
 
 ## License
 
-MIT License; see `LICENSE`.
+Released under the [MIT License](LICENSE).
