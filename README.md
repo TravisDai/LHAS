@@ -1,8 +1,7 @@
 # LHAS reproducibility artifact
 
 A reimplementation of the approved analytical model of the paper "Layer-wise Hybrid
-Parallelism for Distributed DNN Training on Optical Interconnects" (LHAS). The paper is not
-yet published, and its manuscript is not part of this repository. The artifact covers:
+Parallelism for Distributed DNN Training on Optical Interconnects" (LHAS). The paper is under review at ACM Transactions on Modeling and Performance Evaluation of Computing Systems (ToMPECS), and its manuscript is not part of this repository. The artifact covers:
 
 * a physical transport scheduler with deterministic first-fit;
 * collective candidate families: adapted OSM, WRHT, mixed-radix OpTree, and unequal-group A/B/C;
